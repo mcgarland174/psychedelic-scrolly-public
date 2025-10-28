@@ -1,0 +1,2608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Really Happening in Colorado's Psychedelic Market?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2B180A;
+            background: #F8F1E8;
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .content {
+            max-width: 800px;
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s ease;
+        }
+
+        .content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #317E6D 0%, #133931 100%);
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #2B180A;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #317E6D;
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #317E6D;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .hero h2 {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+
+        p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+            color: #736C66;
+            line-height: 1.7;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .stat-large {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #317E6D;
+            margin: 2rem 0;
+        }
+
+        .sample-note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            color: #856404;
+        }
+
+        .bar-chart {
+            margin: 2rem 0;
+        }
+
+        .bar-item {
+            margin: 1.5rem 0;
+        }
+
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            color: #2B180A;
+            font-weight: 600;
+        }
+
+        .bar-label-text {
+            flex: 1;
+        }
+
+        .bar-label-percent {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #317E6D;
+            min-width: 60px;
+            text-align: right;
+        }
+
+        .bar-bg {
+            background: #e9ecef;
+            height: 45px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #317E6D, #1F5F51);
+            border-radius: 10px;
+            width: 0;
+            transition: width 1.5s ease;
+            display: flex;
+            align-items: center;
+            padding-left: 1rem;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(49, 126, 109, 0.3);
+        }
+
+        .visible .bar-fill {
+            width: var(--width);
+        }
+
+        .bar-fill-green {
+            background: linear-gradient(90deg, #317E6D, #194C41);
+            box-shadow: 0 2px 8px rgba(49, 126, 109, 0.3);
+        }
+
+        .bar-fill-amber {
+            background: linear-gradient(90deg, #E48400, #B66A00);
+            box-shadow: 0 2px 8px rgba(228, 132, 0, 0.3);
+        }
+
+        .bar-fill-red {
+            background: linear-gradient(90deg, #DE0A32, #894F00);
+            box-shadow: 0 2px 8px rgba(222, 10, 50, 0.3);
+        }
+
+        .bar-fill-blue {
+            background: linear-gradient(90deg, #48A5CC, #2E6D6E);
+            box-shadow: 0 2px 8px rgba(72, 165, 204, 0.3);
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .icon {
+            width: 100%;
+            padding-bottom: 100%;
+            background: #e9ecef;
+            border-radius: 8px;
+            position: relative;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+        }
+
+        .icon.highlighted {
+            background: #317E6D;
+            opacity: 1;
+        }
+
+        .question-mark {
+            font-size: 3rem;
+            color: #adb5bd;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .split-view {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .split-panel {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .split-panel h3 {
+            color: #317E6D;
+            margin-bottom: 1rem;
+        }
+
+        .split-panel ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .split-panel li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 1rem;
+        }
+
+        .split-panel li:before {
+            content: "→ ";
+            color: #317E6D;
+            font-weight: bold;
+        }
+
+        .gauge {
+            width: 200px;
+            height: 200px;
+            margin: 2rem auto;
+            position: relative;
+        }
+
+        .gauge-bg {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(
+                #317E6D 0deg,
+                #317E6D calc(var(--score) * 3.6deg),
+                #e9ecef calc(var(--score) * 3.6deg),
+                #e9ecef 360deg
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gauge-inner {
+            width: 70%;
+            height: 70%;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .gauge-score {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #317E6D;
+        }
+
+        .gauge-label {
+            font-size: 0.9rem;
+            color: #736C66;
+        }
+
+        .methodology {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+
+        .methodology h3 {
+            color: #317E6D;
+            margin-bottom: 1rem;
+        }
+
+        .cta {
+            background: #317E6D;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta:hover {
+            background: #133931;
+            transform: translateY(-2px);
+        }
+
+        .emphasis {
+            color: #317E6D;
+            font-weight: bold;
+        }
+
+        .fade-text {
+            color: #adb5bd;
+            font-style: italic;
+        }
+
+        /* Interactive Pricing Slider Styles */
+        .pricing-interactive {
+            background: linear-gradient(135deg, #FDF6EE 0%, #ffffff 100%);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 24px rgba(43, 24, 10, 0.1);
+            border: 1px solid #E6C8A1;
+        }
+
+        .price-slider-container {
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .price-slider-container label {
+            display: block;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: #2B180A;
+            font-size: 1.1rem;
+        }
+
+        #priceSlider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #D1C4B5;
+            outline: none;
+            -webkit-appearance: none;
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        #priceSlider::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 6px;
+            background: #D1C4B5;
+            border-radius: 3px;
+        }
+
+        #priceSlider::-moz-range-track {
+            width: 100%;
+            height: 6px;
+            background: #D1C4B5;
+            border-radius: 3px;
+        }
+
+        #priceSlider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #317E6D, #133931);
+            cursor: grab;
+            box-shadow: 0 4px 12px rgba(49, 126, 109, 0.4);
+            border: 3px solid white;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        #priceSlider::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(49, 126, 109, 0.6);
+        }
+
+        #priceSlider::-webkit-slider-thumb:active {
+            cursor: grabbing;
+            transform: scale(1.05);
+        }
+
+        #priceSlider::-moz-range-thumb {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #317E6D, #133931);
+            cursor: grab;
+            box-shadow: 0 4px 12px rgba(49, 126, 109, 0.4);
+            border: 3px solid white;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        #priceSlider::-moz-range-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(49, 126, 109, 0.6);
+        }
+
+        #priceSlider::-moz-range-thumb:active {
+            cursor: grabbing;
+            transform: scale(1.05);
+        }
+
+        .price-display {
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #317E6D, #133931);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1.5rem 0;
+        }
+
+        .price-comparison {
+            background: #F2E9DE;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            min-height: 80px;
+            font-size: 1.1rem;
+            color: #2B180A;
+        }
+
+        .price-benchmarks {
+            margin-top: 2rem;
+        }
+
+        .price-benchmarks h3 {
+            color: #317E6D;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .benchmark-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .benchmark-label {
+            font-weight: bold;
+            color: #2B180A;
+        }
+
+        .benchmark-stat {
+            color: #736C66;
+        }
+
+        /* Quote tooltip styles */
+        .quote-tooltip {
+            position: absolute;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            max-width: 300px;
+            z-index: 1000;
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: #2B180A;
+            border-left: 3px solid #317E6D;
+        }
+
+        .quote-tooltip em {
+            color: #317E6D;
+        }
+
+        .quote-tooltip small {
+            color: #736C66;
+            font-size: 0.85rem;
+        }
+
+        [data-quote-category] {
+            position: relative;
+            cursor: pointer;
+            border-bottom: 2px dotted #317E6D;
+        }
+
+        [data-quote-category]:hover {
+            color: #317E6D;
+        }
+
+        .subsection-header {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2B180A;
+            margin: 1.5rem 0 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .price-gradient {
+            background: linear-gradient(90deg,
+                #DE0A32 0%,      /* Red - Too Cheap */
+                #E48400 15%,     /* Amber transition */
+                #317E6D 20%,     /* Green - Bargain starts ($306) */
+                #317E6D 47%,     /* Green - Expensive but Acceptable ends ($706) */
+                #E48400 65%,     /* Amber transition */
+                #DE0A32 75%,     /* Red - Too Expensive starts ($1,512) */
+                #894F00 100%);   /* Dark red end */
+            height: 40px;
+            border-radius: 20px;
+            margin: 2rem 0;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(43, 24, 10, 0.15);
+        }
+
+        .price-gradient-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #736C66;
+        }
+
+        .comparison-bars {
+            margin: 2rem 0;
+        }
+
+        .comparison-item {
+            margin: 1.5rem 0;
+        }
+
+        .comparison-label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #2B180A;
+        }
+
+        .comparison-row {
+            display: flex;
+            gap: 1rem;
+            margin: 0.5rem 0;
+            align-items: center;
+        }
+
+        .comparison-bar {
+            flex: 1;
+            background: #e9ecef;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .comparison-bar.licensed {
+            background: #5a6c7d;
+            color: white;
+        }
+
+        .comparison-bar.underground {
+            background: #d4a574;
+            color: white;
+        }
+
+        .threshold-line {
+            border-top: 3px solid #e74c3c;
+            position: relative;
+            margin: 1rem 0;
+        }
+
+        .threshold-label {
+            position: absolute;
+            left: 0;
+            top: -10px;
+            background: #e74c3c;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .callout-box {
+            background: #f0f4ff;
+            border-left: 4px solid #317E6D;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .callout-box p {
+            margin: 0;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .quote-box {
+            background: #fff3cd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-size: 1rem;
+            font-style: italic;
+            color: #856404;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar-nav {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            max-height: 80vh;
+            overflow-y: auto;
+            z-index: 1000;
+            width: 250px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-nav.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .sidebar-nav h3 {
+            font-size: 0.9rem;
+            color: #317E6D;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            margin-bottom: 0.75rem;
+        }
+
+        .nav-link {
+            color: #2B180A;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-icon {
+            margin-right: 0.5rem;
+            font-size: 1rem;
+            display: inline-block;
+            min-width: 20px;
+        }
+
+        .nav-link:hover {
+            background: #F2E9DE;
+            border-left-color: #317E6D;
+            color: #317E6D;
+            transform: translateX(2px);
+        }
+
+        .nav-link.active {
+            background: #E6C8A1;
+            border-left-color: #317E6D;
+            color: #317E6D;
+            font-weight: bold;
+        }
+
+        .nav-link.active .nav-icon {
+            transform: scale(1.1);
+        }
+
+        /* Collapsible Sections */
+        .collapsible-header {
+            cursor: pointer;
+            padding: 1.5rem;
+            background: #FDF6EE;
+            border: 2px solid #E6C8A1;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            margin: 1rem 0;
+        }
+
+        .collapsible-header:hover {
+            background: #FAE6CC;
+            border-color: #CC8D37;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(43, 24, 10, 0.15);
+        }
+
+        .collapsible-icon {
+            font-size: 1.5rem;
+            color: #317E6D;
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-header.active .collapsible-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .collapsible-content.open {
+            max-height: 5000px;
+            transition: max-height 0.6s ease;
+        }
+
+        .expand-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #317E6D, #1F5F51);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 1rem 0;
+        }
+
+        .expand-button:hover {
+            background: linear-gradient(135deg, #1F5F51, #133931);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(49, 126, 109, 0.3);
+        }
+
+        .expand-button:active {
+            transform: translateY(0);
+        }
+
+        .warning-banner {
+            background: #FDF6EE;
+            border-left: 4px solid #E48400;
+            padding: 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .warning-banner:hover {
+            background: #FAE6CC;
+            border-left-color: #B66A00;
+        }
+
+        .warning-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .warning-content {
+            flex: 1;
+        }
+
+        .warning-content h3 {
+            margin: 0 0 0.5rem 0;
+            color: #2B180A;
+            font-size: 1.2rem;
+        }
+
+        .warning-content p {
+            margin: 0;
+            font-size: 1rem;
+            color: #736C66;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(43, 24, 10, 0.8);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #F8F1E8;
+            border-radius: 16px;
+            max-width: 900px;
+            max-height: 90vh;
+            width: 100%;
+            overflow-y: auto;
+            position: relative;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            animation: slideUp 0.4s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: #317E6D;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: #DE0A32;
+            transform: rotate(90deg);
+        }
+
+        .modal-trigger {
+            display: inline-block;
+            padding: 1.5rem 2.5rem;
+            background: linear-gradient(135deg, #317E6D 0%, #133931 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(49, 126, 109, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modal-trigger::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .modal-trigger:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .modal-trigger:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(49, 126, 109, 0.4);
+        }
+
+        .modal-trigger-icon {
+            display: inline-block;
+            margin-left: 0.5rem;
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+
+        /* Tooltip Styles */
+        .tooltip-trigger {
+            display: inline-block;
+            position: relative;
+            cursor: help;
+            color: #317E6D;
+            font-weight: 600;
+            border-bottom: 2px dotted #317E6D;
+            padding: 0 0.2rem;
+        }
+
+        .tooltip-content {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2B180A;
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .tooltip-content::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: #2B180A;
+        }
+
+        .tooltip-trigger:hover .tooltip-content {
+            opacity: 1;
+        }
+
+        /* Reason Card Styles */
+        .reason-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+            max-width: 1200px;
+        }
+
+        .reason-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fefdfb 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 2px solid #E6C8A1;
+            box-shadow: 0 4px 12px rgba(43, 24, 10, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reason-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, #317E6D 0%, #1F5F51 100%);
+            transition: width 0.4s ease;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(49, 126, 109, 0.2);
+            border-color: #317E6D;
+        }
+
+        .reason-card:hover::before {
+            width: 100%;
+            opacity: 0.05;
+        }
+
+        .reason-card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        .reason-card-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #317E6D;
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .reason-card-detail {
+            font-size: 1rem;
+            color: #2B180A;
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .reason-card-quote {
+            background: linear-gradient(135deg, #F2E9DE 0%, #E6D5C3 100%);
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+            font-style: italic;
+            color: #2B180A;
+            margin-top: 1.25rem;
+            font-size: 0.95rem;
+            border-left: 3px solid #317E6D;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            .reason-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Bar with hover tooltip */
+        .bar-item-interactive {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .bar-item-interactive .bar-hover-quote {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            right: 0;
+            background: #2B180A;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            margin-bottom: 0.5rem;
+        }
+
+        .bar-item-interactive:hover .bar-hover-quote {
+            opacity: 1;
+            top: -120%;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .sidebar-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .split-view {
+                grid-template-columns: 1fr;
+            }
+
+            .icon-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            .stat-large {
+                font-size: 3rem;
+            }
+
+            .comparison-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SIDEBAR NAVIGATION -->
+    <nav class="sidebar-nav" aria-label="Table of contents">
+        <h3>📋 Contents</h3>
+        <ul class="nav-list" role="navigation">
+            <li class="nav-item"><a href="#hero" class="nav-link"><span class="nav-icon">🏠</span> Introduction</a></li>
+            <li class="nav-item"><a href="#methodology" class="nav-link"><span class="nav-icon">🔬</span> Methodology</a></li>
+            <li class="nav-item"><a href="#price-consumer" class="nav-link"><span class="nav-icon">💰</span> Price - Consumers</a></li>
+            <li class="nav-item"><a href="#price-practitioner" class="nav-link"><span class="nav-icon">👨‍⚕️</span> Price - Practitioners</a></li>
+            <li class="nav-item"><a href="#choice" class="nav-link"><span class="nav-icon">🔄</span> Underground vs Licensed</a></li>
+            <li class="nav-item"><a href="#what-drives-choice" class="nav-link"><span class="nav-icon">🎯</span> What Drives Choice</a></li>
+            <li class="nav-item"><a href="#information-gap" class="nav-link"><span class="nav-icon">ℹ️</span> Information Gap</a></li>
+            <li class="nav-item"><a href="#reciprocity" class="nav-link"><span class="nav-icon">🌿</span> Reciprocity</a></li>
+            <li class="nav-item"><a href="#implementation" class="nav-link"><span class="nav-icon">⭐</span> Implementation</a></li>
+            <li class="nav-item"><a href="#findings" class="nav-link"><span class="nav-icon">💡</span> Key Findings</a></li>
+            <li class="nav-item"><a href="#dont-know" class="nav-link"><span class="nav-icon">❓</span> What We Don't Know</a></li>
+            <li class="nav-item"><a href="#action" class="nav-link"><span class="nav-icon">🚀</span> Call to Action</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="section hero">
+        <div class="content visible">
+            <h1>What's Actually Happening in Colorado's Psychedelic Market?</h1>
+            <h2>Field Notes from 83 Early Conversations</h2>
+            <p>Colorado legalized psychedelic services in 2022. But almost no one is tracking what's happening on the ground.</p>
+            <p>We surveyed 83 people across the ecosystem: 18 consumers, 12 individual practitioners, 23 organizations, and 26 ecosystem groups.</p>
+            <p>These aren't definitive answers—but they reveal patterns worth investigating.</p>
+            <div style="margin-top: 3rem; font-size: 0.9rem; opacity: 0.8;">↓ Scroll to explore</div>
+        </div>
+    </section>
+
+    <!-- METHODOLOGY & LIMITATIONS -->
+    <section id="methodology" class="section">
+        <div class="content">
+            <div class="question-mark">?</div>
+            <h2>A Note on This Research</h2>
+
+            <div class="warning-banner" style="cursor: default;">
+                <span class="warning-icon">⚠️</span>
+                <div style="flex: 1;">
+                    <h3 style="margin: 0 0 0.5rem 0; color: #2B180A;">Research Limitations</h3>
+                    <p style="margin: 0; font-size: 0.95rem; color: #736C66;">Small sample (n=83) with significant limitations. Please read to understand why these are early signals, not conclusions.</p>
+                </div>
+            </div>
+
+            <div id="methodology-content" style="display: block;">
+                <p style="margin-top: 1.5rem;">This is exploratory work with significant limitations:</p>
+
+                <div class="methodology">
+                    <h3>📊 Sample Limitations</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0;"><strong>Only 83 respondents total:</strong></li>
+                        <li style="padding: 0.5rem 0; padding-left: 1rem;">• 18 consumers | 12 practitioners | 23 organizations | 26 ecosystem groups</li>
+                        <li style="padding: 0.5rem 0;"><strong>Likely over-represents</strong> people connected to psychedelic advocacy networks</li>
+                        <li style="padding: 0.5rem 0;"><strong>Missing voices:</strong> people who gave up trying to access services, providers who quit, entire demographic groups</li>
+                    </ul>
+                </div>
+
+                <div class="methodology" style="background: #e8f4f8; border-left: 4px solid #317E6D;">
+                    <h3>❓ What This Means</h3>
+                    <p style="margin: 0; font-size: 1rem;">We <strong>cannot</strong> make confident claims about Colorado's entire market. These findings suggest patterns that deserve deeper investigation—not conclusions.</p>
+                </div>
+
+                <p style="margin-top: 2rem;">Despite these limitations, clear patterns emerged—patterns that suggest structural challenges in how Colorado's market is developing.</p>
+                <p>What follows are early signals that warrant closer investigation, not final conclusions. But in a field with so little public data, even preliminary findings can help us ask better questions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE PRICE BARRIER - CONSUMER SIDE -->
+    <section id="price-consumer" class="section">
+        <div class="content">
+            <h2>The Price Barrier: What Consumers Can Pay</h2>
+            <p>The gap between what consumers can afford and what licensed services cost appears stark.</p>
+
+            <div class="subsection-header">What Consumers Report:</div>
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text" data-quote-category="affordability">Can only pay if under $1,000</span>
+                        <span class="bar-label-percent">58.8%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-red" style="--width: 58.8%">
+                            <span>58.8%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Need sliding-scale pricing</span>
+                        <span class="bar-label-percent">52.9%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-amber" style="--width: 52.9%">
+                            <span>52.9%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Must be covered by insurance</span>
+                        <span class="bar-label-percent">35.3%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 35.3%">
+                            <span>35.3%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sample-note">
+                <strong>Sample:</strong> <span class="tooltip-trigger">n=17<span class="tooltip-content">17 consumers who answered payment questions</span></span>
+            </div>
+
+            <div class="subsection-header" style="margin-top: 2rem;">Consumer Price Sensitivity:</div>
+            <p>When asked to price a full psychedelic therapy package (screening, preparation, guided session, integration):</p>
+
+            <div class="price-gradient"></div>
+            <div class="price-gradient-labels">
+                <div><strong>$157</strong><br>"Too Cheap"</div>
+                <div><strong>$306</strong><br>"Bargain"</div>
+                <div><strong>$706</strong><br>"Expensive but Acceptable"</div>
+                <div><strong>$1,512</strong><br>"Too Expensive"</div>
+            </div>
+
+            <div class="callout-box">
+                <p>Consumer "Sweet Spot": <strong>$306-$706</strong></p>
+            </div>
+
+            <div class="subsection-header" style="margin-top: 2rem;">The Reality of Market Prices:</div>
+
+            <div style="margin: 3rem 0;">
+                <!-- Individual Standard Offering -->
+                <div style="margin-bottom: 5rem;">
+                    <div style="font-weight: bold; margin-bottom: 2rem; color: #2B180A; font-size: 1.1rem; text-align: center;">Individual Standard Offering:</div>
+
+                    <div style="position: relative; height: 400px; padding: 0 3rem;">
+                        <!-- Red threshold line at $1,512 -->
+                        <div style="position: absolute; left: 0; right: 0; bottom: 30.24%; border-top: 3px dashed #ef4444; z-index: 2;">
+                            <div style="position: absolute; left: -3rem; top: -12px; font-size: 0.85rem; font-weight: bold; color: #ef4444; white-space: nowrap;">
+                                "Too Expensive"<br>$1,512
+                            </div>
+                        </div>
+
+                        <!-- Vertical bars container -->
+                        <div style="display: flex; align-items: flex-end; justify-content: center; gap: 4rem; height: 100%; position: relative;">
+                            <!-- Licensed bar -->
+                            <div style="display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end;">
+                                <div style="background: linear-gradient(180deg, #5a6c7d, #6b7d8c); width: 120px; height: 70%; border-radius: 10px 10px 0 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center; flex-direction: column; position: relative;">
+                                    <span style="color: white; font-size: 1.8rem; font-weight: bold;">$3,500</span>
+                                </div>
+                                <div style="margin-top: 1rem; font-weight: 600; color: #2B180A;">Licensed</div>
+                            </div>
+
+                            <!-- Underground bar -->
+                            <div style="display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end;">
+                                <div style="background: linear-gradient(180deg, #d4a574, #e0b887); width: 120px; height: 24%; border-radius: 10px 10px 0 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center; flex-direction: column; position: relative;">
+                                    <span style="color: white; font-size: 1.8rem; font-weight: bold;">$1,200</span>
+                                </div>
+                                <div style="margin-top: 1rem; font-weight: 600; color: #2B180A;">Underground</div>
+                            </div>
+                        </div>
+
+                        <!-- Y-axis price scale -->
+                        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; font-size: 0.8rem; color: #9ca3af; text-align: right;">
+                            <span>$5,000</span>
+                            <span>$4,000</span>
+                            <span>$3,000</span>
+                            <span>$2,000</span>
+                            <span>$1,000</span>
+                            <span>$0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Retreat (Group) -->
+                <div style="margin-bottom: 3rem;">
+                    <div style="font-weight: bold; margin-bottom: 2rem; color: #2B180A; font-size: 1.1rem; text-align: center;">Retreat (Group):</div>
+
+                    <div style="position: relative; height: 400px; padding: 0 3rem;">
+                        <!-- Red threshold line at $1,512 (20.16% of 7500) -->
+                        <div style="position: absolute; left: 0; right: 0; bottom: 20.16%; border-top: 3px dashed #ef4444; z-index: 2;">
+                            <div style="position: absolute; left: -3rem; top: -12px; font-size: 0.85rem; font-weight: bold; color: #ef4444; white-space: nowrap;">
+                                "Too Expensive"<br>$1,512
+                            </div>
+                        </div>
+
+                        <!-- Vertical bars container -->
+                        <div style="display: flex; align-items: flex-end; justify-content: center; gap: 4rem; height: 100%; position: relative;">
+                            <!-- Licensed bar -->
+                            <div style="display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end;">
+                                <div style="background: linear-gradient(180deg, #5a6c7d, #6b7d8c); width: 120px; height: 80%; border-radius: 10px 10px 0 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center; flex-direction: column; position: relative;">
+                                    <span style="color: white; font-size: 1.8rem; font-weight: bold;">$6,000</span>
+                                </div>
+                                <div style="margin-top: 1rem; font-weight: 600; color: #2B180A;">Licensed</div>
+                            </div>
+
+                            <!-- Underground bar -->
+                            <div style="display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end;">
+                                <div style="background: linear-gradient(180deg, #d4a574, #e0b887); width: 120px; height: 49.3%; border-radius: 10px 10px 0 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center; flex-direction: column; position: relative;">
+                                    <span style="color: white; font-size: 1.8rem; font-weight: bold;">$3,700</span>
+                                </div>
+                                <div style="margin-top: 1rem; font-weight: 600; color: #2B180A;">Underground</div>
+                            </div>
+                        </div>
+
+                        <!-- Y-axis price scale -->
+                        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; font-size: 0.8rem; color: #9ca3af; text-align: right;">
+                            <span>$7,500</span>
+                            <span>$6,000</span>
+                            <span>$4,500</span>
+                            <span>$3,000</span>
+                            <span>$1,500</span>
+                            <span>$0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sample-note">
+                <strong>Based on:</strong> PSI research - 213 programs across 51 organizations
+            </div>
+
+            <div style="text-align: center; margin: 3rem 0; font-size: 1.3rem;">
+                <p><strong>Only 22% of consumers can pay upfront if services cost ≥$1k.</strong></p>
+                <p><strong>78% need insurance, sliding scale, or payment plan.</strong></p>
+                <p style="margin-top: 1rem; color: #e74c3c;"><strong>Psilocybin is not covered by insurance.</strong></p>
+            </div>
+
+            <p style="margin-top: 2rem;">This isn't about preference—it's about what people can actually afford.</p>
+
+            <div style="text-align: center; margin: 3rem 0;">
+                <div class="subsection-header" style="margin-bottom: 1.5rem;">What Would You Pay?</div>
+                <p style="margin-bottom: 2rem;">Interactive price sensitivity explorer</p>
+                <button class="modal-trigger" onclick="openModal('pricingModal')">
+                    <span>💰 Try Our Price Calculator</span>
+                    <span class="modal-trigger-icon">→</span>
+                </button>
+                <p style="margin-top: 1rem; font-size: 0.95rem; color: #736C66;">Compare your price sensitivity to survey respondents</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE PRICE BARRIER - PRACTITIONER SIDE -->
+    <section id="price-practitioner" class="section">
+        <div class="content">
+            <h2>The Price Barrier: What Practitioners Face</h2>
+            <p>Practitioners report high standards of care—but financial strain threatens sustainability.</p>
+
+            <div class="subsection-header">Quality of Care Maintained:</div>
+            <p>Underground practitioners surveyed report:</p>
+
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Have formal screening processes</span>
+                        <span class="bar-label-percent">92.9%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-green" style="--width: 92.9%">
+                            <span>92.9%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Provide structured follow-up</span>
+                        <span class="bar-label-percent">85.7%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-green" style="--width: 85.7%">
+                            <span>85.7%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text" data-quote-category="quality">Track client outcomes</span>
+                        <span class="bar-label-percent">71.4%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-blue" style="--width: 71.4%">
+                            <span>71.4%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sample-note">
+                <strong>Sample:</strong> <span class="tooltip-trigger">n=12<span class="tooltip-content">12 individual practitioners</span></span>
+            </div>
+
+            <div class="subsection-header" style="margin-top: 2rem;">But Income Is Unsustainable:</div>
+
+            <div style="text-align: center; margin: 3rem 0;">
+                <div style="font-size: 1rem; color: #736C66; margin-bottom: 0.5rem;">Monthly income from psychedelic services:</div>
+                <div class="stat-large">$1-3K</div>
+                <div style="font-size: 1rem; color: #736C66;">for 50% of practitioners</div>
+            </div>
+
+            <div class="subsection-header" style="margin-top: 2rem;">Cost to Become Licensed:</div>
+
+            <div style="text-align: center; margin: 2rem 0; padding: 1.5rem; background: #F2E9DE; border-radius: 8px;">
+                <div style="font-size: 1.5rem; font-weight: bold; color: #2B180A; margin-bottom: 0.5rem;">Typical Total Investment: $12K-$20K+</div>
+                <div style="font-size: 0.95rem; color: #736C66;">Based on PSI research of 15 websites of DORA-approved programs</div>
+            </div>
+
+            <button class="modal-trigger" onclick="openModal('trainingModal')" style="margin: 1rem auto; display: block;">
+                <span>📚 View Detailed Cost Breakdown</span>
+                <span class="modal-trigger-icon">→</span>
+            </button>
+
+            <div class="callout-box" style="margin-top: 2rem;">
+                <p><strong>For Context:</strong></p>
+                <p style="margin-top: 0.5rem;">• 50% of practitioners earn $1-3K/month from psychedelic services</p>
+                <p style="margin-top: 0.5rem;">• At $2K/month income, the training investment equals <strong>6-10 months of gross revenue</strong></p>
+                <p style="margin-top: 0.5rem;">• This doesn't include business licensing, insurance, facility costs, or ongoing compliance</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: #fff3cd; border-radius: 12px; border-left: 4px solid #f59e0b;">
+                <p style="font-size: 1.2rem; font-weight: bold; color: #856404; margin: 0;">The Math Problem:</p>
+                <p style="font-size: 1.1rem; color: #856404; margin-top: 1rem;">How do you invest $12-20K to enter a field where half the practitioners make $1-3K/month?</p>
+            </div>
+
+            <div class="callout-box">
+                <p><strong>Why This Matters:</strong> High-quality care exists in the underground market—but practitioners cannot sustain it long-term at prices clients can afford.</p>
+            </div>
+
+            <p style="margin-top: 2rem;">The question isn't about quality standards. It's about economic viability.</p>
+
+            <div style="margin-top: 2rem; padding: 2rem; background: #F2E9DE; border-radius: 12px;">
+                <p style="margin-bottom: 1rem;">Can practitioners maintain professional-level care while earning $1-3K/month?</p>
+                <p style="margin: 0;">Can clients access professional-level care if practitioners need to charge more to survive?</p>
+            </div>
+
+            <p style="margin-top: 2rem; font-style: italic; color: #736C66;">This tension drives many practitioners to stay underground rather than pursue licensing.</p>
+        </div>
+    </section>
+
+    <!-- WHY PEOPLE CHOOSE UNDERGROUND VS LICENSED -->
+    <section id="choice" class="section" style="background: #EFE5DE;">
+        <div class="content">
+            <h2>Why People Go Underground vs. Licensed</h2>
+
+            <hr style="margin: 3rem 0; border: none; border-top: 2px solid #dee2e6;">
+
+            <h3 style="color: #2B180A; margin-bottom: 1.5rem;">Why Consumers Choose Underground:</h3>
+
+            <div class="reason-cards">
+                <div class="reason-card">
+                    <span class="reason-card-icon">💰</span>
+                    <div class="reason-card-title">PRICE</div>
+                    <div class="reason-card-detail">Mentioned by 100% who prefer underground</div>
+                    <div class="reason-card-detail"><strong>Licensed:</strong> $3,500-$6,000</div>
+                    <div class="reason-card-detail"><strong>Underground:</strong> $1,200-$3,700</div>
+                    <div class="reason-card-quote">"I can't afford licensed even if I wanted it"</div>
+                </div>
+
+                <div class="reason-card">
+                    <span class="reason-card-icon">🤝</span>
+                    <div class="reason-card-title">TRUST NETWORKS</div>
+                    <div class="reason-card-detail">83.3% rely on word-of-mouth</div>
+                    <div class="reason-card-detail">Personal referral is #1 selection criteria</div>
+                    <div class="reason-card-quote">"I trust someone my friend vouches for"</div>
+                </div>
+
+                <div class="reason-card">
+                    <span class="reason-card-icon">🌿</span>
+                    <div class="reason-card-title">FLEXIBILITY</div>
+                    <div class="reason-card-detail">Nature settings, home ceremonies, sacred sites</div>
+                    <div class="reason-card-detail">Not limited to designated "healing centers"</div>
+                    <div class="reason-card-quote">"Underground providers offer more flexibility in setting and dosage"</div>
+                </div>
+
+                <div class="reason-card">
+                    <span class="reason-card-icon">🙏</span>
+                    <div class="reason-card-title">CULTURAL ALIGNMENT</div>
+                    <div class="reason-card-detail">Traditional ceremonies and lineages</div>
+                    <div class="reason-card-detail">Community-based vs. clinical settings</div>
+                    <div class="reason-card-quote">"It feels more authentic"</div>
+                </div>
+            </div>
+
+            <hr style="margin: 3rem 0; border: none; border-top: 2px solid #dee2e6;">
+
+            <h3 style="color: #2B180A;">Why Practitioners Choose to Stay Underground:</h3>
+
+            <div class="bar-chart">
+                <p style="font-size: 1rem; margin-bottom: 1rem;">Top reasons cited <span class="tooltip-trigger">(n=12)<span class="tooltip-content">12 practitioners surveyed</span></span>:</p>
+                <p style="font-size: 0.9rem; color: #736C66; margin-bottom: 1.5rem; font-style: italic;">Hover over bars to see what practitioners say</p>
+
+                <div class="bar-item bar-item-interactive">
+                    <div class="bar-hover-quote">
+                        💬 "Some of my clients still want underground services because of cost and accessibility..."
+                    </div>
+                    <div class="bar-label">
+                        <span class="bar-label-text">Licensure & cost barriers</span>
+                        <span class="bar-label-percent">50%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-red" style="--width: 50%">
+                            <span>50%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item bar-item-interactive">
+                    <div class="bar-hover-quote">
+                        💬 "I would have to raise my prices 300% to comply with licensing. That would exclude everyone I currently serve."
+                    </div>
+                    <div class="bar-label">
+                        <span class="bar-label-text">Cost impact on clients</span>
+                        <span class="bar-label-percent">25%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-amber" style="--width: 25%">
+                            <span>25%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Loss of autonomy</span>
+                        <span class="bar-label-percent">25%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 25%">
+                            <span>25%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Legal risk</span>
+                        <span class="bar-label-percent">10%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 10%">
+                            <span>10%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout-box">
+                <p><strong>The Numbers:</strong><br>
+                • 50% of practitioners earn $1-3K/month<br>
+                • 60% cite burdensome licensure requirements<br>
+                • 70% cite high operating costs of compliance</p>
+            </div>
+
+            <hr style="margin: 3rem 0; border: none; border-top: 2px solid #dee2e6;">
+
+            <h3 style="color: #2B180A;">Why Consumers Choose Licensed:</h3>
+
+            <p>When we asked what would make them choose licensed over underground <span class="tooltip-trigger">(n=18)<span class="tooltip-content">18 consumers surveyed</span></span>:</p>
+            <p style="font-size: 0.9rem; color: #736C66; margin-bottom: 1.5rem; font-style: italic;">Hover over bars to see what consumers say</p>
+
+            <div class="bar-chart">
+                <div class="bar-item bar-item-interactive">
+                    <div class="bar-hover-quote">
+                        💬 "I feel I could trust [regulated] services more."
+                    </div>
+                    <div class="bar-label">
+                        <span class="bar-label-text">Integration with healthcare</span>
+                        <span class="bar-label-percent">66.7%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-green" style="--width: 66.7%">
+                            <span>66.7%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item bar-item-interactive">
+                    <div class="bar-hover-quote">
+                        💬 "I want to be clinically evaluated that I am suitable for taking psychedelics."
+                    </div>
+                    <div class="bar-label">
+                        <span class="bar-label-text">Safety & medical screening</span>
+                        <span class="bar-label-percent">55.6%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-green" style="--width: 55.6%">
+                            <span>55.6%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item bar-item-interactive">
+                    <div class="bar-hover-quote">
+                        💬 "I prefer licensed as it feels more professional."
+                    </div>
+                    <div class="bar-label">
+                        <span class="bar-label-text">Trained/certified facilitators</span>
+                        <span class="bar-label-percent">55.6%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-green" style="--width: 55.6%">
+                            <span>55.6%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item bar-item-interactive">
+                    <div class="bar-hover-quote">
+                        💬 "I want legal protection."
+                    </div>
+                    <div class="bar-label">
+                        <span class="bar-label-text">Tested/verified medicine</span>
+                        <span class="bar-label-percent">55.6%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-green" style="--width: 55.6%">
+                            <span>55.6%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 12px; border-left: 4px solid #e74c3c;">
+                <p style="margin: 0; font-weight: bold;">But also:</p>
+                <p style="margin: 0.5rem 0; font-style: italic;">"Only if it's affordable"</p>
+                <p style="margin: 0.5rem 0; font-style: italic;">"Only if insurance covers it"</p>
+                <p style="margin: 0; font-style: italic;">"Only if I can still have a spiritual ceremony, not a clinical procedure"</p>
+            </div>
+
+            <hr style="margin: 3rem 0; border: none; border-top: 2px solid #dee2e6;">
+
+            <h3 style="color: #2B180A; text-align: center;">The Pattern:</h3>
+
+            <div class="split-view">
+                <div class="split-panel">
+                    <h3>People Choosing UNDERGROUND Prioritize:</h3>
+                    <ul>
+                        <li>Affordability (can actually access it)</li>
+                        <li>Personal trust networks (word-of-mouth)</li>
+                        <li>Flexibility (setting, approach, ceremony)</li>
+                        <li>Cultural/spiritual authenticity</li>
+                    </ul>
+                </div>
+                <div class="split-panel">
+                    <h3>People Choosing LICENSED Prioritize:</h3>
+                    <ul>
+                        <li>Safety & medical oversight</li>
+                        <li>Professional accountability</li>
+                        <li>Legal protection</li>
+                        <li>Integration with healthcare system</li>
+                        <li>Trust in regulation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 3rem 0;">
+                <p style="font-size: 1.3rem; color: #317E6D; font-weight: bold;">Different priorities, not different quality levels.</p>
+            </div>
+
+            <button class="expand-button" onclick="toggleCollapsible('respondent-suggestions')" style="margin: 2rem auto 1rem auto; display: block;">
+                <span class="expand-button-text">Read Respondent Suggestions</span>
+                <span class="expand-icon">▼</span>
+            </button>
+
+            <div id="respondent-suggestions" class="collapsible-content">
+                <div class="methodology" style="margin-top: 1rem;">
+                    <h3>Some respondents suggested:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0;">→ Make licensing accessible so underground providers CAN come above ground</li>
+                        <li style="padding: 0.5rem 0;">→ Tiered system: clinical for medical need, traditional for spiritual use</li>
+                        <li style="padding: 0.5rem 0;">→ Different models for different populations</li>
+                        <li style="padding: 0.5rem 0;">→ Insurance for clinical, community funding for traditional</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style="margin-top: 2rem; text-align: center; font-size: 1.2rem; font-weight: bold;">What's clear: the current system forces people to choose between affordability and regulation.</p>
+        </div>
+    </section>
+
+    <!-- WHAT PEOPLE ACTUALLY WANT -->
+    <section id="what-drives-choice" class="section">
+        <div class="content">
+            <h2>What Actually Drives Choice?</h2>
+            <p>Beyond price and regulation, what do people prioritize when selecting a provider?</p>
+
+            <div class="methodology">
+                <h3>Consumer Selection Criteria:</h3>
+                <p style="font-size: 1rem; color: #736C66; margin-bottom: 1rem;">What consumers value most when choosing ANY provider <span class="tooltip-trigger">(n=18)<span class="tooltip-content">18 consumers surveyed</span></span>:</p>
+                <ol style="padding-left: 1.5rem;">
+                    <li style="padding: 0.5rem 0; font-size: 1.1rem;"><strong>Personal referral</strong> — most valued</li>
+                    <li style="padding: 0.5rem 0; font-size: 1.1rem;"><strong>Trauma-informed approach</strong></li>
+                    <li style="padding: 0.5rem 0; font-size: 1.1rem;"><strong>Years of experience</strong></li>
+                    <li style="padding: 0.5rem 0; font-size: 1.1rem;"><strong>Cultural or spiritual alignment</strong></li>
+                    <li style="padding: 0.5rem 0; font-size: 1.1rem;"><strong>Specific training/lineage</strong></li>
+                    <li style="padding: 0.5rem 0; font-size: 1.1rem;"><strong>Affordable pricing</strong></li>
+                </ol>
+            </div>
+
+            <div class="callout-box">
+                <p><strong>83.3%</strong> find services through word-of-mouth or psychedelic nonprofits</p>
+                <p style="margin-top: 1rem; font-size: 1.2rem;"><strong>Personal trust matters more than licensure status.</strong></p>
+            </div>
+
+            <div class="methodology" style="margin-top: 2rem;">
+                <h3>What Makes Consumers Trust Licensed Providers:</h3>
+                <p style="font-size: 1rem; color: #736C66; margin-bottom: 1rem;">When asked "What would make you trust a licensed provider?":</p>
+
+                <div class="quote-box">
+                    "Spiritual alignment, training in trauma informed approach, cultural awareness and respect of how to handle the medicines, thorough integration training, a Master's degree in counseling"
+                </div>
+
+                <div class="quote-box">
+                    "Experience, recommendations, emotional intelligence"
+                </div>
+
+                <div class="quote-box">
+                    "Connections to a friend or someone that had experienced them and the depth of their presence"
+                </div>
+            </div>
+
+            <div class="callout-box" style="margin-top: 2rem;">
+                <p><strong>The Pattern:</strong> Even when choosing licensed services, consumers prioritize personal trust and practitioner depth over regulatory credentials alone.</p>
+                <p style="margin-top: 1rem;">Licensure is seen as necessary but not sufficient.</p>
+            </div>
+
+            <hr style="margin: 3rem 0; border: none; border-top: 2px solid #dee2e6;">
+
+            <h3 style="text-align: center;">Why This Matters:</h3>
+
+            <div class="split-view">
+                <div class="split-panel">
+                    <h3>Licensed Services Compete On:</h3>
+                    <ul>
+                        <li>Safety infrastructure</li>
+                        <li>Medical oversight</li>
+                        <li>Legal protection</li>
+                        <li>Regulatory accountability</li>
+                    </ul>
+                </div>
+                <div class="split-panel">
+                    <h3>Underground Services Compete On:</h3>
+                    <ul>
+                        <li>Affordability</li>
+                        <li>Trust networks</li>
+                        <li>Flexibility</li>
+                        <li>Cultural authenticity</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- THE INFORMATION GAP -->
+    <section id="information-gap" class="section" style="background: #F2E9DE;">
+        <div class="content">
+            <h2>The Access Information Problem</h2>
+            <p>Even if services existed at the right price point, how would people find them?</p>
+
+            <!-- Knowledge Gap Comparison -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0;">
+                <div style="background: white; border-radius: 12px; padding: 2rem; text-align: center; border: 1px solid #E5E7EB; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                    <div style="font-size: 0.9rem; font-weight: 600; color: #6B7280; margin-bottom: 1rem;">Consumers who report knowing how to access psychedelic services:</div>
+                    <div style="font-size: 3.5rem; font-weight: bold; color: #DE0A32; line-height: 1; margin-bottom: 0.5rem;">12.5%</div>
+                </div>
+
+                <div style="background: white; border-radius: 12px; padding: 2rem; text-align: center; border: 1px solid #E5E7EB; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                    <div style="font-size: 0.9rem; font-weight: 600; color: #6B7280; margin-bottom: 1rem;">Consumers who lack clear information on how to access services:</div>
+                    <div style="font-size: 3.5rem; font-weight: bold; color: #317E6D; line-height: 1; margin-bottom: 0.5rem;">44%</div>
+                </div>
+            </div>
+
+            <!-- How They Actually Find Services -->
+            <div class="subsection-header">How Consumers Actually Find Services:</div>
+
+            <div class="methodology">
+                <div style="text-align: center; margin: 2rem 0; padding: 2rem; background: white; border-radius: 12px; border-left: 4px solid #317E6D;">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: #317E6D; margin-bottom: 1rem;">83.3%</div>
+                    <div style="font-size: 1.1rem; color: #2B180A; line-height: 1.6;">Find referrals through friends or through psychedelic nonprofits and societies</div>
+                </div>
+            </div>
+
+            <div class="callout-box" style="margin-top: 2rem;">
+                <p><strong>The Access Filter:</strong></p>
+                <p style="margin-top: 1rem;">If you're not already connected to advocacy networks or personal referrals, you're essentially locked out.</p>
+                <p style="margin-top: 1rem;">This isn't just an information problem—it's a structural barrier to equity.</p>
+            </div>
+
+            <div class="sample-note">
+                <strong>Sample:</strong> <span class="tooltip-trigger">n=18<span class="tooltip-content">18 consumers surveyed</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDIGENOUS RECIPROCITY -->
+    <section id="reciprocity" class="section">
+        <div class="content">
+            <h2>Indigenous Reciprocity</h2>
+            <p>These medicines have Indigenous origins. How is the Colorado ecosystem engaging with reciprocity and traditional knowledge?</p>
+
+            <div class="subsection-header">Reciprocity Engagement:</div>
+            <p style="font-size: 1rem; color: #736C66; margin-bottom: 1.5rem;">Combined practitioners + healing centers <span class="tooltip-trigger">(n=23)<span class="tooltip-content">23 organizations surveyed</span></span>:</p>
+
+            <div class="bar-chart" style="margin: 2rem 0;">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Yes, currently engaged</span>
+                        <span class="bar-label-percent">18%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-green" style="--width: 18%">
+                            <span>18%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">No, but exploring</span>
+                        <span class="bar-label-percent">55%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-amber" style="--width: 55%">
+                            <span>55%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">No</span>
+                        <span class="bar-label-percent">27%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-red" style="--width: 27%">
+                            <span>27%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection-header" style="margin-top: 3rem;">Education About Context:</div>
+            <p style="font-size: 1rem; color: #736C66; margin-bottom: 1.5rem;">"Do you share about the historical, cultural, or ethnobotanical context of psychedelic medicines?"</p>
+
+            <div class="bar-chart" style="margin: 2rem 0;">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Yes, extensively</span>
+                        <span class="bar-label-percent">17%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-green" style="--width: 17%">
+                            <span>17%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Yes, briefly</span>
+                        <span class="bar-label-percent">50%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 50%; background: linear-gradient(90deg, #317E6D, #1F5F51);">
+                            <span>50%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Interested, but don't currently</span>
+                        <span class="bar-label-percent">8%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-amber" style="--width: 8%">
+                            <span>8%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Not relevant to practice</span>
+                        <span class="bar-label-percent">25%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-red" style="--width: 25%">
+                            <span>25%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection-header" style="margin-top: 3rem;">Interest in Learning More:</div>
+            <p style="font-size: 1rem; color: #736C66; margin-bottom: 1.5rem;">"Would you like to know more about how to engage with reciprocity practices?"</p>
+
+            <div class="bar-chart" style="margin: 2rem 0;">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Yes</span>
+                        <span class="bar-label-percent">75%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-green" style="--width: 75%">
+                            <span>75%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">No</span>
+                        <span class="bar-label-percent">25%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 25%; background: linear-gradient(90deg, #9CA3AF, #6B7280);">
+                            <span>25%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout-box" style="margin-top: 2rem;">
+                <p><strong>What This Shows:</strong></p>
+                <p style="margin-top: 1rem;">Most practitioners (73%) are either engaged or exploring reciprocity. Another 75% want to learn more.</p>
+                <p style="margin-top: 1rem;">This suggests genuine interest—but questions remain about implementation quality and Indigenous perspectives on these efforts.</p>
+            </div>
+
+            <div class="methodology" style="margin-top: 2rem; background: #fff3cd; border-left: 4px solid #f59e0b;">
+                <h3 style="color: #856404;">Important Context</h3>
+                <p style="color: #856404; margin: 0;">This data reflects what practitioners and centers report. It does not include Indigenous community perspectives on whether these reciprocity practices are adequate, appropriate, or meaningful.</p>
+            </div>
+
+            <div class="sample-note">
+                <strong>Sample:</strong> <span class="tooltip-trigger">n=12<span class="tooltip-content">12 individual practitioners</span></span> + <span class="tooltip-trigger">n=9<span class="tooltip-content">9 healing centers</span></span> (combined <span class="tooltip-trigger">n=23<span class="tooltip-content">23 combined for reciprocity questions</span></span>)
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPLEMENTATION RATING -->
+    <section id="implementation" class="section" style="background: #EFE5DE;">
+        <div class="content">
+            <h2>How Is Colorado's Implementation Going?</h2>
+            <p>We asked ecosystem stakeholders to rate Colorado's Natural Medicine Program implementation on a scale of 1-10.</p>
+
+            <div class="subsection-header">Stakeholder Sentiment Distribution:</div>
+            <p style="font-size: 1rem; color: #736C66; margin-bottom: 1rem;">How individual stakeholders rated Colorado's implementation <span class="tooltip-trigger">(n=21)<span class="tooltip-content">21 stakeholders surveyed</span></span>:</p>
+
+            <div class="methodology">
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span class="bar-label-text">1-2: Very poor</span>
+                            <span class="bar-label-percent">14.3%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill bar-fill-red" style="--width: 14.3%;">
+                                <span>3 respondents</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span class="bar-label-text">3-4: Poor</span>
+                            <span class="bar-label-percent">19.0%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill bar-fill-amber" style="--width: 19%;">
+                                <span>4 respondents</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span class="bar-label-text">5: Neutral</span>
+                            <span class="bar-label-percent">19.0%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill" style="--width: 19%; background: linear-gradient(90deg, #fbbf24, #f59e0b);">
+                                <span>4 respondents</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span class="bar-label-text" style="font-weight: bold;">6-7: Mediocre ← MOST COMMON</span>
+                            <span class="bar-label-percent" style="font-weight: bold;">42.9%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill bar-fill-blue" style="--width: 42.9%;">
+                                <span>9 respondents</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span class="bar-label-text">8-9: Good</span>
+                            <span class="bar-label-percent">23.8%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill bar-fill-green" style="--width: 23.8%;">
+                                <span>5 respondents</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span class="bar-label-text">10: Excellent</span>
+                            <span class="bar-label-percent">9.5%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill bar-fill-green" style="--width: 9.5%;">
+                                <span>2 respondents</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin: 3rem 0;">
+                <div class="gauge" style="--score: 65;">
+                    <div class="gauge-bg">
+                        <div class="gauge-inner">
+                            <div class="gauge-score">6.5</div>
+                            <div class="gauge-label">Average Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout-box">
+                <p><strong>The Concentration:</strong></p>
+                <p style="margin-top: 1rem;">Most ratings cluster around 6-7, suggesting broad consensus that implementation is "middling"—not terrible, not great.</p>
+                <p style="margin-top: 1rem;">Very few extreme ratings in either direction.</p>
+            </div>
+
+            <div class="subsection-header" style="margin-top: 3rem;">What Stakeholders Said:</div>
+
+            <button class="expand-button" onclick="toggleCollapsible('stakeholder-feedback')" style="margin: 1rem auto; display: block;">
+                <span class="expand-button-text">Read Stakeholder Feedback</span>
+                <span class="expand-icon">▼</span>
+            </button>
+
+            <div id="stakeholder-feedback" class="collapsible-content">
+                <div class="methodology" style="margin-top: 1rem;">
+                    <h3 style="color: #10b981;">Positive Feedback:</h3>
+                    <div class="quote-box" style="background: #d1fae5; border-left: 4px solid #10b981; color: #065f46;">
+                        "Progress & momentum - steady forward movement and meaningful effort in rollout"
+                    </div>
+                    <div class="quote-box" style="background: #d1fae5; border-left: 4px solid #10b981; color: #065f46;">
+                        "State's efforts to listen to stakeholders, collaborate, and demonstrate good intentions"
+                    </div>
+                    <div class="quote-box" style="background: #d1fae5; border-left: 4px solid #10b981; color: #065f46;">
+                        "Focus on safety and quality - emphasis on public safety and rigorous education requirements"
+                    </div>
+                </div>
+
+                <div class="methodology" style="margin-top: 2rem;">
+                    <h3 style="color: #ef4444;">Critical Feedback:</h3>
+                    <div class="quote-box" style="background: #fee2e2; border-left: 4px solid #ef4444; color: #991b1b;">
+                        "High costs and lack of funding as compliance barriers - licensing and facilitation costs are too high"
+                    </div>
+                    <div class="quote-box" style="background: #fee2e2; border-left: 4px solid #ef4444; color: #991b1b;">
+                        "Lack of clarity & incomplete rollout - uncertainty in rules, rollout timelines, and demand/supply balance"
+                    </div>
+                    <div class="quote-box" style="background: #fee2e2; border-left: 4px solid #ef4444; color: #991b1b;">
+                        "Exclusion of Indigenous voices - concern that Indigenous stakeholders were not adequately consulted"
+                    </div>
+                </div>
+            </div>
+
+            <div class="sample-note">
+                <strong>Sample:</strong> <span class="tooltip-trigger">n=21<span class="tooltip-content">21 stakeholders: ecosystem orgs, practitioners, healing centers</span></span> (ecosystem organizations, practitioners, healing centers)
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT THESE FINDINGS SUGGEST -->
+    <section id="findings" class="section" style="background: #F2E9DE;">
+        <div class="content">
+            <h2>What These Findings Suggest</h2>
+            <p>These aren't conclusions—they're patterns worth investigating further.</p>
+
+            <div class="methodology">
+                <h3>1. The Affordability Crisis Is Real</h3>
+                <p>The gap between consumer affordability ($306-$706 sweet spot) and market prices ($1,200-$6,000) isn't a small mismatch. It's a structural incompatibility.</p>
+                <p style="margin-top: 1rem;"><strong>Implication:</strong> Without insurance coverage or significant subsidies, licensed services will remain inaccessible to most Coloradans.</p>
+            </div>
+
+            <div class="methodology" style="margin-top: 2rem;">
+                <h3>2. The Underground Isn't Going Away</h3>
+                <p>People choose underground services not just because they're cheaper, but because they offer flexibility, cultural alignment, and trust networks that licensed services don't replicate.</p>
+                <p style="margin-top: 1rem;"><strong>Implication:</strong> Even if licensed services become more affordable, a significant portion of the market may continue to operate underground by choice.</p>
+            </div>
+
+            <div class="methodology" style="margin-top: 2rem;">
+                <h3>3. Licensing Costs Create a Barrier to Formalization</h3>
+                <p>At $12-20K to become licensed and 6-10 months of gross revenue for practitioners earning $1-3K/month, the barrier to entry is prohibitively high.</p>
+                <p style="margin-top: 1rem;"><strong>Implication:</strong> The current system may be filtering out exactly the practitioners who are most committed to serving lower-income communities.</p>
+            </div>
+
+            <div class="methodology" style="margin-top: 2rem;">
+                <h3>4. Information Access Is an Equity Issue</h3>
+                <p>If 83.3% of people find services through personal networks or advocacy groups, those without existing connections are locked out.</p>
+                <p style="margin-top: 1rem;"><strong>Implication:</strong> The current "word-of-mouth" discovery system reinforces existing privilege and limits broader access.</p>
+            </div>
+
+            <div class="methodology" style="margin-top: 2rem;">
+                <h3>5. Reciprocity Interest Exists, But Implementation Needs Work</h3>
+                <p>While 73% of providers are engaged or exploring reciprocity, we lack Indigenous community perspectives on whether these efforts are meaningful.</p>
+                <p style="margin-top: 1rem;"><strong>Implication:</strong> Interest is not the same as right relationship. The ecosystem needs Indigenous voices at the center of these conversations.</p>
+            </div>
+
+            <div class="callout-box" style="margin-top: 3rem; background: #317E6D; color: white; border-left: 4px solid #133931;">
+                <p style="font-size: 1.3rem; font-weight: bold; color: white;">The Core Tension:</p>
+                <p style="margin-top: 1rem; color: white;">Colorado designed a system to ensure safety and quality through regulation. But that system has created economic barriers that exclude most of the people it was meant to serve.</p>
+                <p style="margin-top: 1rem; color: white;">The question isn't whether regulation matters. It's whether the current regulatory model can ever be equitable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT WE DON'T KNOW -->
+    <section id="dont-know" class="section">
+        <div class="content">
+            <div class="question-mark">?</div>
+            <h2>What We Don't Know</h2>
+
+            <div class="collapsible-header" onclick="toggleCollapsible('dont-know-content')">
+                <div style="flex: 1;">
+                    <h3 style="margin: 0 0 0.5rem 0; color: #2B180A;">Research Gaps & Unanswered Questions</h3>
+                    <p style="margin: 0; font-size: 0.95rem; color: #736C66;">Missing voices, missing data, and unanswered questions that deserve deeper investigation. Click to expand.</p>
+                </div>
+                <span class="collapsible-icon">▼</span>
+            </div>
+
+            <div id="dont-know-content" class="collapsible-content">
+                <p style="margin-top: 1.5rem;">This research raises as many questions as it answers. Here's what's still missing:</p>
+
+                <div class="methodology">
+                    <h3>🔍 Missing Voices</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0;"><strong>People who gave up:</strong> We didn't capture people who tried to access services but stopped due to cost, complexity, or lack of information</li>
+                        <li style="padding: 0.5rem 0;"><strong>Demographic representation:</strong> We don't know how well our sample represents Colorado's actual population by race, income, geography, or other factors</li>
+                        <li style="padding: 0.5rem 0;"><strong>Indigenous perspectives:</strong> While we asked about reciprocity practices, we didn't survey Indigenous communities about their perspectives on the program</li>
+                        <li style="padding: 0.5rem 0;"><strong>Failed providers:</strong> Practitioners and centers that tried to operate but closed aren't represented here</li>
+                    </ul>
+                </div>
+
+                <div class="methodology" style="margin-top: 2rem;">
+                    <h3>📊 Missing Data</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0;"><strong>Actual client outcomes:</strong> We have what centers report, but no standardized outcome tracking across providers</li>
+                        <li style="padding: 0.5rem 0;"><strong>Adverse events:</strong> No systematic reporting of harms, emergencies, or negative experiences in either licensed or underground settings</li>
+                        <li style="padding: 0.5rem 0;"><strong>Market size:</strong> We don't know how many people are actually using psychedelic services in Colorado (licensed or underground)</li>
+                        <li style="padding: 0.5rem 0;"><strong>Provider sustainability:</strong> No longitudinal data on whether practitioners and centers can remain financially viable</li>
+                        <li style="padding: 0.5rem 0;"><strong>Geographic distribution:</strong> We don't know where services are concentrated or what areas are underserved</li>
+                    </ul>
+                </div>
+
+                <div class="methodology" style="margin-top: 2rem;">
+                    <h3>🤔 Unanswered Questions</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0;">• Can licensed services ever reach the price point that most consumers can afford?</li>
+                        <li style="padding: 0.5rem 0;">• What happens to underground practitioners as enforcement evolves?</li>
+                        <li style="padding: 0.5rem 0;">• Will insurance ever cover psilocybin services? If so, when?</li>
+                        <li style="padding: 0.5rem 0;">• Are there models from other states or countries that could address the affordability gap?</li>
+                        <li style="padding: 0.5rem 0;">• How do we balance safety oversight with cultural/spiritual practices?</li>
+                    </ul>
+                </div>
+
+                <div class="callout-box" style="margin-top: 2rem;">
+                    <p><strong>Why This Matters:</strong></p>
+                    <p style="margin-top: 1rem;">These gaps aren't just academic. They represent blind spots in how Colorado is building this ecosystem.</p>
+                    <p style="margin-top: 1rem;">Without better data, we're making policy decisions in the dark.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section id="action" class="section" style="background: linear-gradient(135deg, #317E6D 0%, #133931 100%); color: white; min-height: 80vh;">
+        <div class="content visible">
+            <h2 style="color: white;">What Happens Next?</h2>
+            <p style="color: rgba(255, 255, 255, 0.95);">This research is a starting point. Here's what needs to happen to build on it:</p>
+
+            <div style="background: rgba(255, 255, 255, 0.15); padding: 2rem; border-radius: 12px; margin: 2rem 0; backdrop-filter: blur(10px);">
+                <h3 style="color: white; margin-bottom: 1.5rem;">For Policymakers & Regulators</h3>
+                <ul style="list-style: none; padding: 0; color: rgba(255, 255, 255, 0.95);">
+                    <li style="padding: 0.5rem 0;">→ Track affordability and access data systematically</li>
+                    <li style="padding: 0.5rem 0;">→ Explore tiered licensing models that reduce barriers for community-based providers</li>
+                    <li style="padding: 0.5rem 0;">→ Consider insurance pathways or state-funded access programs</li>
+                    <li style="padding: 0.5rem 0;">→ Center Indigenous voices in reciprocity and program design</li>
+                </ul>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.15); padding: 2rem; border-radius: 12px; margin: 2rem 0; backdrop-filter: blur(10px);">
+                <h3 style="color: white; margin-bottom: 1.5rem;">For Researchers</h3>
+                <ul style="list-style: none; padding: 0; color: rgba(255, 255, 255, 0.95);">
+                    <li style="padding: 0.5rem 0;">→ Conduct larger-scale surveys with more diverse demographic representation</li>
+                    <li style="padding: 0.5rem 0;">→ Track client outcomes longitudinally across licensed and underground settings</li>
+                    <li style="padding: 0.5rem 0;">→ Study adverse events and harms systematically</li>
+                    <li style="padding: 0.5rem 0;">→ Map geographic distribution of services and access barriers</li>
+                </ul>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.15); padding: 2rem; border-radius: 12px; margin: 2rem 0; backdrop-filter: blur(10px);">
+                <h3 style="color: white; margin-bottom: 1.5rem;">For Practitioners & Organizations</h3>
+                <ul style="list-style: none; padding: 0; color: rgba(255, 255, 255, 0.95);">
+                    <li style="padding: 0.5rem 0;">→ Share data transparently about pricing, outcomes, and accessibility</li>
+                    <li style="padding: 0.5rem 0;">→ Collaborate across licensed/underground divide to learn from each other</li>
+                    <li style="padding: 0.5rem 0;">→ Develop sliding-scale and community-based funding models</li>
+                    <li style="padding: 0.5rem 0;">→ Engage meaningfully with Indigenous reciprocity, not performatively</li>
+                </ul>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.15); padding: 2rem; border-radius: 12px; margin: 2rem 0; backdrop-filter: blur(10px);">
+                <h3 style="color: white; margin-bottom: 1.5rem;">For Funders</h3>
+                <ul style="list-style: none; padding: 0; color: rgba(255, 255, 255, 0.95);">
+                    <li style="padding: 0.5rem 0;">→ Support access programs and sliding-scale services, not just infrastructure</li>
+                    <li style="padding: 0.5rem 0;">→ Fund independent research on equity and access barriers</li>
+                    <li style="padding: 0.5rem 0;">→ Prioritize Indigenous-led initiatives and reciprocity programs</li>
+                    <li style="padding: 0.5rem 0;">→ Invest in training scholarships for practitioners from underserved communities</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin: 4rem 0 2rem 0;">
+                <p style="font-size: 1.5rem; color: white; font-weight: bold; margin-bottom: 1.5rem;">Colorado has an opportunity to build something better.</p>
+                <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.95);">But it requires honest conversations about who the current system serves—and who it leaves behind.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.3);">
+                <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7);">Research conducted 2024-2025 | <span class="tooltip-trigger">n=83<span class="tooltip-content">Total respondents across all groups</span></span> respondents</p>
+                <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); margin-top: 0.5rem;">18 consumers | 12 practitioners | 23 healing centers | 26 ecosystem organizations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL: Pricing Calculator -->
+    <div id="pricingModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'pricingModal')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('pricingModal')">×</button>
+            <h2 style="color: #317E6D; margin-bottom: 1.5rem;">What Would You Pay?</h2>
+            <p style="margin-bottom: 2rem;">Drag the slider to see how your price sensitivity compares to survey respondents.</p>
+
+            <div class="pricing-interactive">
+                <div class="price-slider-container">
+                    <label for="priceSlider" style="display: block; margin-bottom: 1rem; font-weight: 600;">Maximum you'd pay for a psychedelic session:</label>
+
+                    <input type="range" id="priceSlider" min="0" max="5000" value="1000" step="100"
+                           aria-label="Price slider from $0 to $5,000"
+                           aria-valuemin="0"
+                           aria-valuemax="5000"
+                           aria-valuenow="1000"
+                           aria-valuetext="$1,000">
+                    <div class="price-display">$<span id="priceValue">1,000</span></div>
+                </div>
+
+                <div class="price-comparison" id="priceComparison">
+                    <!-- Dynamic content will appear here -->
+                </div>
+
+                <div class="price-benchmarks">
+                    <h3>Survey Benchmarks <span class="tooltip-trigger">(n=17)<span class="tooltip-content">17 consumers surveyed</span></span>:</h3>
+                    <div class="benchmark-item">
+                        <span class="benchmark-label">Under $1,000:</span>
+                        <span class="benchmark-stat">58.8% can only pay this much</span>
+                    </div>
+                    <div class="benchmark-item">
+                        <span class="benchmark-label">$1,000 - $2,500:</span>
+                        <span class="benchmark-stat">Additional consumers willing to pay</span>
+                    </div>
+                    <div class="benchmark-item">
+                        <span class="benchmark-label">Over $2,500:</span>
+                        <span class="benchmark-stat">Small percentage can pay this</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: Training Costs Breakdown -->
+    <div id="trainingModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'trainingModal')">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('trainingModal')">×</button>
+            <h2 style="color: #317E6D; margin-bottom: 1.5rem;">Cost to Become Licensed</h2>
+            <p style="margin-bottom: 2rem;">Detailed breakdown of state requirements and costs</p>
+
+            <div class="methodology">
+                <h3>Minimum State Requirements for Licensing:</h3>
+                <div style="margin: 2rem 0;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem; gap: 2rem;">
+                        <div style="min-width: 150px; padding: 1.5rem; background: linear-gradient(135deg, #317E6D 0%, #133931 100%); color: white; border-radius: 8px; text-align: center; font-weight: bold; font-size: 1.1rem;">Didactic</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 1.1rem; font-weight: bold; color: #2B180A;">150 hours of coursework, ~$7,000</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem; gap: 2rem;">
+                        <div style="min-width: 150px; padding: 1.5rem; background: #3b82f6; color: white; border-radius: 8px; text-align: center; font-weight: bold; font-size: 1.1rem;">Practicum</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 1.1rem; font-weight: bold; color: #2B180A;">40 hours of supervised experience, ~$3,000</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem; gap: 2rem;">
+                        <div style="min-width: 150px; padding: 1.5rem; background: #f59e0b; color: white; border-radius: 8px; text-align: center; font-weight: bold; font-size: 1.1rem;">Consultation</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 1.1rem; font-weight: bold; color: #2B180A;">50 hours of supervised mentorship, ~$2,000-$10,000</div>
+                            <div style="font-size: 0.95rem; color: #736C66; margin-top: 0.25rem;">(depending on group vs 1:1 supervision)</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem; gap: 2rem;">
+                        <div style="min-width: 150px; padding: 1.5rem; background: #ef4444; color: white; border-radius: 8px; text-align: center; font-weight: bold; font-size: 1.1rem;">Licensure</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 1.1rem; font-weight: bold; color: #2B180A;">Exam, application, $183 fee</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: #F2E9DE; border-radius: 8px;">
+                    <div style="font-size: 1.5rem; font-weight: bold; color: #2B180A; margin-bottom: 0.5rem;">Typical Total Investment: $12K-$20K+</div>
+                    <div style="font-size: 0.95rem; color: #736C66;">Based on PSI research of 15 websites of DORA-approved programs</div>
+                </div>
+            </div>
+
+            <div class="callout-box" style="margin-top: 2rem;">
+                <p><strong>For Context:</strong></p>
+                <p style="margin-top: 0.5rem;">• 50% of practitioners earn $1-3K/month from psychedelic services</p>
+                <p style="margin-top: 0.5rem;">• At $2K/month income, the training investment equals <strong>6-10 months of gross revenue</strong></p>
+                <p style="margin-top: 0.5rem;">• This doesn't include business licensing, insurance, facility costs, or ongoing compliance</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quote data for hover tooltips
+        const quotes = {
+            'affordability': [
+                "I had to choose between rent and therapy. Underground was my only option.",
+                "The $3,000 price tag at a licensed center equals my entire monthly income.",
+                "Sliding scale means $1,800 instead of $2,500. Still can't afford it."
+            ],
+            'trust': [
+                "My friend did 5 sessions with this facilitator. That means more than any license.",
+                "Word of mouth is the only thing I trust in this space.",
+                "The best practitioner I found wasn't licensed—she'd been doing this for 15 years."
+            ],
+            'quality': [
+                "Even underground, my facilitator had screening, prep, integration, and follow-up.",
+                "The care I received was professional. Just not legal.",
+                "High standards don't require government approval."
+            ],
+            'barriers': [
+                "I tried to get licensed. The fees alone were $15K before I even opened.",
+                "The regulations make it impossible to serve the people who need it most.",
+                "I'd have to triple my prices to afford compliance."
+            ]
+        };
+
+        // Function to show random quote on hover
+        function showQuote(category, element) {
+            const quoteArray = quotes[category];
+            if (!quoteArray) return;
+
+            const randomQuote = quoteArray[Math.floor(Math.random() * quoteArray.length)];
+
+            const tooltip = document.createElement('div');
+            tooltip.className = 'quote-tooltip';
+            tooltip.innerHTML = `<em>"${randomQuote}"</em><br><small>— Survey respondent</small>`;
+
+            element.appendChild(tooltip);
+        }
+
+        // Add quote hover functionality
+        document.querySelectorAll('[data-quote-category]').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                const category = this.getAttribute('data-quote-category');
+                showQuote(category, this);
+            });
+
+            element.addEventListener('mouseleave', function() {
+                const tooltip = this.querySelector('.quote-tooltip');
+                if (tooltip) tooltip.remove();
+            });
+        });
+
+        // Pricing slider functionality
+        const slider = document.getElementById('priceSlider');
+        const priceValue = document.getElementById('priceValue');
+        const priceComparison = document.getElementById('priceComparison');
+
+        function updatePriceComparison(price) {
+            let message = '';
+
+            if (price < 1000) {
+                message = `You're in the majority: <strong>58.8% of surveyed consumers</strong> can only pay under $1,000. This puts most licensed services out of reach, as they typically charge $1,500-$3,500.`;
+            } else if (price >= 1000 && price < 2500) {
+                message = `You're willing to pay more than 58.8% of surveyed consumers, but still below typical licensed center prices ($1,500-$3,500). You might find some lower-cost options or underground services.`;
+            } else if (price >= 2500 && price < 3500) {
+                message = `You're in a small group willing to pay premium prices. This gives you access to most licensed services, though <strong>52.9% of consumers still need sliding-scale pricing</strong> to afford this.`;
+            } else {
+                message = `You can access any available service. However, this price point excludes the majority of potential clients—creating a significant equity barrier in the market.`;
+            }
+
+            priceComparison.innerHTML = message;
+        }
+
+        if (slider && priceValue && priceComparison) {
+            slider.addEventListener('input', function() {
+                const price = this.value;
+                priceValue.textContent = parseInt(price).toLocaleString();
+                updatePriceComparison(parseInt(price));
+            });
+
+            // Initialize
+            updatePriceComparison(1000);
+        }
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    if (entry.target.querySelector('#undergroundGrid')) {
+                        animateUndergroundGrid();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all content sections
+        document.querySelectorAll('.content').forEach(content => {
+            observer.observe(content);
+        });
+
+        // Generate underground grid (23 icons, only 3 highlighted)
+        function createUndergroundGrid() {
+            const grid = document.getElementById('undergroundGrid');
+            if (!grid) return;
+
+            for (let i = 0; i < 23; i++) {
+                const icon = document.createElement('div');
+                icon.className = 'icon';
+                grid.appendChild(icon);
+            }
+        }
+
+        function animateUndergroundGrid() {
+            const icons = document.querySelectorAll('#undergroundGrid .icon');
+            // Highlight only 3 out of 23 (13%)
+            const highlightIndices = [5, 12, 18];
+
+            highlightIndices.forEach((index, i) => {
+                setTimeout(() => {
+                    icons[index].classList.add('highlighted');
+                }, i * 200);
+            });
+        }
+
+        // Initialize
+        createUndergroundGrid();
+
+        // Sidebar Navigation Functionality
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Track active section as user scrolls
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function updateActiveNav() {
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav(); // Initial call
+
+        // Show/hide sidebar navigation based on scroll position
+        const sidebarNav = document.querySelector('.sidebar-nav');
+        const heroSection = document.getElementById('hero');
+
+        function toggleSidebarVisibility() {
+            if (heroSection) {
+                const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                if (window.pageYOffset > heroBottom - 100) {
+                    sidebarNav.classList.add('visible');
+                } else {
+                    sidebarNav.classList.remove('visible');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', toggleSidebarVisibility);
+        toggleSidebarVisibility(); // Initial call
+
+        // Collapsible section toggle
+        function toggleCollapsible(contentId) {
+            const content = document.getElementById(contentId);
+            const button = event.currentTarget;
+            const icon = button.querySelector('.collapsible-icon, .expand-icon');
+
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                if (icon) icon.textContent = '▼';
+            } else {
+                content.classList.add('open');
+                if (icon) icon.textContent = '▲';
+            }
+        }
+
+        // Modal functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        }
+
+        function closeModalOnOverlay(event, modalId) {
+            if (event.target.classList.contains('modal-overlay')) {
+                closeModal(modalId);
+            }
+        }
+
+        // Close modals on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>
