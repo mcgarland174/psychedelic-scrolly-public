@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Design Comparison</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .intro {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1800px;
+            margin: 0 auto 40px;
+        }
+        .version {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .version h2 {
+            margin-top: 0;
+            color: #317E6D;
+            border-bottom: 2px solid #317E6D;
+            padding-bottom: 10px;
+        }
+        .version iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .features {
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+        .features h3 {
+            margin-top: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .features ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+        }
+        .features li {
+            font-size: 13px;
+            color: #555;
+            margin: 5px 0;
+        }
+        .link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .link a {
+            color: #317E6D;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+        .note {
+            background: #FEF6ED;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #317E6D;
+            margin-bottom: 30px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .note h3 {
+            margin-top: 0;
+            color: #317E6D;
+        }
+        .note ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .note li {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        .section-divider {
+            margin: 60px 0;
+            border-bottom: 2px solid #CBD5D9;
+            padding-bottom: 20px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2B180A;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Visual Design Comparison</h1>
+    <p class="intro">Compare the original clunky box designs with the new cleaner, more elegant alternatives. Same data, better presentation.</p>
+
+    <div class="note">
+        <h3>What Changed Across All Sections?</h3>
+        <ul>
+            <li><strong>Removed heavy borders:</strong> Replaced 3px colored borders with subtle shadows and clean white backgrounds</li>
+            <li><strong>Better visual hierarchy:</strong> Used typography (size, weight, color) instead of boxes to create structure</li>
+            <li><strong>More white space:</strong> Let content breathe - reduced clutter and visual weight</li>
+            <li><strong>Unified designs:</strong> Combined related stats into single cohesive visuals instead of competing boxes</li>
+            <li><strong>Professional simplicity:</strong> Clean, minimal, elegant - let the data do the talking</li>
+        </ul>
+    </div>
+
+    <!-- SECTION 1: Practitioner Economics -->
+    <div class="section-divider">
+        <div class="section-title">1. Practitioner Economics</div>
+    </div>
+
+    <div class="container">
+        <div class="version">
+            <h2>Current: Competing Boxes</h2>
+            <iframe src="index.html#price-practitioner" scrolling="yes"></iframe>
+            <div class="features">
+                <h3>Current Issues:</h3>
+                <ul>
+                    <li>Two side-by-side boxes compete for attention</li>
+                    <li>"The Math Doesn't Work" section feels disconnected</li>
+                    <li>Heavy borders (3px) create visual weight</li>
+                    <li>Multiple color backgrounds distract from content</li>
+                </ul>
+            </div>
+            <div class="link">
+                <a href="index.html#price-practitioner" target="_blank">Open Current in New Tab →</a>
+            </div>
+        </div>
+
+        <div class="version">
+            <h2>New: Vertical Flow</h2>
+            <iframe src="index-visual-v2.html#price-practitioner" scrolling="yes"></iframe>
+            <div class="features">
+                <h3>Improvements:</h3>
+                <ul>
+                    <li>✓ Single unified visual with natural top-to-bottom flow</li>
+                    <li>✓ Shows calculation clearly: Earn → × Months → Cost</li>
+                    <li>✓ Minimal borders, uses background colors for separation</li>
+                    <li>✓ Context moved below (no heavy box needed)</li>
+                    <li>✓ Professional and clean</li>
+                </ul>
+            </div>
+            <div class="link">
+                <a href="index-visual-v2.html#price-practitioner" target="_blank">Open New Version in New Tab →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: Consumer Reasons -->
+    <div class="section-divider">
+        <div class="section-title">2. What Consumers Say</div>
+    </div>
+
+    <div class="container">
+        <div class="version">
+            <h2>Current: Boxes Within Boxes</h2>
+            <iframe src="index.html#underground" scrolling="yes"></iframe>
+            <div class="features">
+                <h3>Current Issues:</h3>
+                <ul>
+                    <li>Split two-column layout creates disconnected reading</li>
+                    <li>White boxes inside colored boxes (boxes within boxes)</li>
+                    <li>Heavy shadows on every reason card</li>
+                    <li>"Hover to see" interaction hides content</li>
+                    <li>Feels crowded and cluttered</li>
+                </ul>
+            </div>
+            <div class="link">
+                <a href="index.html#underground" target="_blank">Open Current in New Tab →</a>
+            </div>
+        </div>
+
+        <div class="version">
+            <h2>New: Simple List</h2>
+            <iframe src="index-visual-v2.html#underground" scrolling="yes"></iframe>
+            <div class="features">
+                <h3>Improvements:</h3>
+                <ul>
+                    <li>✓ Single column - clear reading progression</li>
+                    <li>✓ No boxes - just clean typography</li>
+                    <li>✓ Icons provide visual interest without clutter</li>
+                    <li>✓ All quotes visible (no hidden hover states)</li>
+                    <li>✓ Scannable and professional</li>
+                    <li>✓ More white space</li>
+                </ul>
+            </div>
+            <div class="link">
+                <a href="index-visual-v2.html#underground" target="_blank">Open New Version in New Tab →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3: Access Statistics -->
+    <div class="section-divider">
+        <div class="section-title">3. The Access Problem</div>
+    </div>
+
+    <div class="container">
+        <div class="version">
+            <h2>Current: Two Heavy Boxes</h2>
+            <iframe src="index.html#access" scrolling="yes"></iframe>
+            <div class="features">
+                <h3>Current Issues:</h3>
+                <ul>
+                    <li>Two separate bordered boxes compete visually</li>
+                    <li>Heavy 3px borders on both</li>
+                    <li>Stats presented separately miss the paradox</li>
+                    <li>Third callout box adds more visual weight</li>
+                </ul>
+            </div>
+            <div class="link">
+                <a href="index.html#access" target="_blank">Open Current in New Tab →</a>
+            </div>
+        </div>
+
+        <div class="version">
+            <h2>New: Unified Paradox</h2>
+            <iframe src="index-visual-v2.html#access" scrolling="yes"></iframe>
+            <div class="features">
+                <h3>Improvements:</h3>
+                <ul>
+                    <li>✓ Single white card with subtle shadow</li>
+                    <li>✓ Both stats shown side-by-side highlighting paradox</li>
+                    <li>✓ "Access Paradox" label makes relationship clear</li>
+                    <li>✓ Context integrated with thin line separator</li>
+                    <li>✓ Much cleaner and more elegant</li>
+                </ul>
+            </div>
+            <div class="link">
+                <a href="index-visual-v2.html#access" target="_blank">Open New Version in New Tab →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 4: Reciprocity Stats -->
+    <div class="section-divider">
+        <div class="section-title">4. Indigenous Reciprocity</div>
+    </div>
+
+    <div class="container">
+        <div class="version">
+            <h2>Current: Separate Boxes</h2>
+            <iframe src="index.html#reciprocity" scrolling="yes"></iframe>
+            <div class="features">
+                <h3>Current Issues:</h3>
+                <ul>
+                    <li>Two separate colored boxes with heavy borders</li>
+                    <li>Stats feel disconnected</li>
+                    <li>Visual weight from borders and backgrounds</li>
+                </ul>
+            </div>
+            <div class="link">
+                <a href="index.html#reciprocity" target="_blank">Open Current in New Tab →</a>
+            </div>
+        </div>
+
+        <div class="version">
+            <h2>New: Side-by-Side Cards</h2>
+            <iframe src="index-visual-v2.html#reciprocity" scrolling="yes"></iframe>
+            <div class="features">
+                <h3>Improvements:</h3>
+                <ul>
+                    <li>✓ Single white container with two internal cards</li>
+                    <li>✓ Stats presented together showing relationship</li>
+                    <li>✓ Subtle background colors (no heavy borders)</li>
+                    <li>✓ Clean, professional, easy to compare</li>
+                </ul>
+            </div>
+            <div class="link">
+                <a href="index-visual-v2.html#reciprocity" target="_blank">Open New Version in New Tab →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 5: Stakeholder Rating -->
+    <div class="section-divider">
+        <div class="section-title">5. Implementation Rating</div>
+    </div>
+
+    <div class="container">
+        <div class="version">
+            <h2>Current: Multiple Boxes</h2>
+            <iframe src="index.html#implementation" scrolling="yes"></iframe>
+            <div class="features">
+                <h3>Current Issues:</h3>
+                <ul>
+                    <li>Two separate bordered boxes</li>
+                    <li>Heavy 3px borders compete</li>
+                    <li>Repetitive information across boxes</li>
+                    <li>Multiple background colors</li>
+                </ul>
+            </div>
+            <div class="link">
+                <a href="index.html#implementation" target="_blank">Open Current in New Tab →</a>
+            </div>
+        </div>
+
+        <div class="version">
+            <h2>New: Unified Card</h2>
+            <iframe src="index-visual-v2.html#implementation" scrolling="yes"></iframe>
+            <div class="features">
+                <h3>Improvements:</h3>
+                <ul>
+                    <li>✓ Single white card with all information</li>
+                    <li>✓ Clear hierarchy: Rating → Consensus → Context</li>
+                    <li>✓ Thin line separators instead of borders</li>
+                    <li>✓ Context in subtle background box at bottom</li>
+                    <li>✓ Professional and elegant</li>
+                </ul>
+            </div>
+            <div class="link">
+                <a href="index-visual-v2.html#implementation" target="_blank">Open New Version in New Tab →</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 60px; text-align: center; color: #666; font-size: 14px;">
+        <p><strong>Live Preview:</strong></p>
+        <p>Current: <a href="http://localhost:5555/index.html" target="_blank" style="color: #317E6D;">localhost:5555/index.html</a></p>
+        <p>New Version: <a href="http://localhost:5555/index-visual-v2.html" target="_blank" style="color: #317E6D;">localhost:5555/index-visual-v2.html</a></p>
+    </div>
+
+    <div class="note" style="margin-top: 40px;">
+        <h3>Design Philosophy</h3>
+        <p>The new designs follow these principles:</p>
+        <ul>
+            <li><strong>Less is more:</strong> Remove unnecessary visual elements</li>
+            <li><strong>White space:</strong> Let content breathe</li>
+            <li><strong>Typography first:</strong> Use size, weight, and color to create hierarchy</li>
+            <li><strong>Subtle shadows:</strong> Soft depth instead of heavy borders</li>
+            <li><strong>Natural flow:</strong> Clear reading progression</li>
+            <li><strong>Professional simplicity:</strong> Clean, elegant, trustworthy</li>
+        </ul>
+    </div>
+</body>
+</html>

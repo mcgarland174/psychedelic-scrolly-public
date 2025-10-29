@@ -4,12 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's Really Happening in Colorado's Psychedelic Market?</title>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <style>
         * {
             margin: 0;
@@ -26,10 +20,10 @@
             /* Semantic Colors */
             --color-success: #317E6D;
             --color-success-dark: #1F5F51;
-            --color-warning: #D9994F;
-            --color-warning-dark: #9B6D3F;
-            --color-error: #C48955;
-            --color-error-dark: #A87548;
+            --color-warning: #E48400;
+            --color-warning-dark: #894F00;
+            --color-error: #B66A00;
+            --color-error-dark: #B66A00;
             --color-info: #48A5CC;
             --color-info-dark: #317E6D;
 
@@ -90,9 +84,9 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
             font-size: 15px;
-            line-height: 1.75;
+            line-height: 1.6;
             color: var(--color-text);
             background: var(--color-bg);
         }
@@ -101,12 +95,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 5.5rem 2rem;
+            padding: 4rem 2rem;
             position: relative;
         }
 
         .content {
-            max-width: 850px;
+            max-width: 800px;
             opacity: 1;
             transform: translateY(0);
             transition: all 0.8s ease;
@@ -210,47 +204,42 @@
         }
 
         h1 {
-            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
             font-size: var(--font-size-5xl);
             margin-bottom: var(--space-sm);
             line-height: 1.4;
-            font-weight: 700;
+            font-weight: var(--font-weight-bold);
             color: var(--color-text);
         }
 
         h2 {
-            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
             font-size: var(--font-size-4xl);
             margin-bottom: var(--space-lg);
             margin-top: var(--space-2xl);
             color: var(--color-text);
-            font-weight: 700;
+            font-weight: var(--font-weight-bold);
             line-height: 1.4;
         }
 
         h3 {
-            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
             font-size: var(--font-size-2xl);
             margin-bottom: var(--space-md);
             margin-top: var(--space-lg);
             color: var(--color-primary);
-            font-weight: 600;
+            font-weight: var(--font-weight-semibold);
             line-height: 1.4;
         }
 
         h4 {
-            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
             font-size: var(--font-size-xl);
             margin-bottom: var(--space-sm);
             color: var(--color-text);
-            font-weight: 500;
+            font-weight: var(--font-weight-medium);
             line-height: 1.4;
         }
 
         .subsection-header {
-            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
             font-size: var(--font-size-xl);
-            font-weight: 600;
+            font-weight: var(--font-weight-semibold);
             color: var(--color-text);
             margin: var(--space-lg) 0 var(--space-md) 0;
             text-transform: uppercase;
@@ -286,7 +275,7 @@
         }
 
         .bar-item {
-            margin: 1.2rem 0;
+            margin: var(--space-md) 0;
         }
 
         .bar-label {
@@ -311,47 +300,46 @@
         }
 
         .bar-bg {
-            background: rgba(203, 213, 217, 0.15);
+            background: var(--color-border);
             height: 45px;
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             overflow: hidden;
             position: relative;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
         }
 
         .bar-fill {
             height: 100%;
             background: var(--color-primary);
-            border-radius: 8px;
+            border-radius: var(--radius-sm);
             width: var(--width);
-            transition: all 0.4s ease;
+            transition: var(--transition-slow);
             display: flex;
             align-items: center;
             padding-left: var(--space-sm);
             color: white;
             font-weight: var(--font-weight-semibold);
-            box-shadow: 0 2px 6px rgba(43, 24, 10, 0.08);
-        }
-
-        .bar-fill:hover {
-            transform: scaleX(1.01);
-            box-shadow: 0 3px 8px rgba(43, 24, 10, 0.12);
+            box-shadow: var(--shadow-md);
         }
 
         .bar-fill-green {
             background: var(--color-primary);
+            box-shadow: var(--shadow-md);
         }
 
         .bar-fill-amber {
             background: var(--color-warning);
+            box-shadow: var(--shadow-md);
         }
 
         .bar-fill-red {
             background: var(--color-error);
+            box-shadow: var(--shadow-md);
         }
 
         .bar-fill-blue {
             background: var(--color-info);
+            box-shadow: var(--shadow-md);
         }
 
         .icon-grid {
@@ -496,18 +484,18 @@
             background: var(--color-primary);
             color: white;
             padding: var(--space-lg);
-            border-radius: 8px;
+            border-radius: var(--radius-md);
             margin: var(--space-xl) 0;
-            box-shadow: 0 4px 12px rgba(43, 24, 10, 0.12);
+            
+            box-shadow: var(--shadow-lg);
         }
 
         .key-takeaway-label {
-            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
-            font-size: 0.85rem;
-            font-weight: 700;
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-semibold);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: rgba(255, 255, 255, 0.95);
+            letter-spacing: 1px;
+            color: var(--color-warning);
             margin-bottom: 0.75rem;
         }
 
@@ -817,10 +805,10 @@
 
         .callout-box {
             background: var(--color-bg-subtle);
+            
             padding: var(--space-md);
             margin: var(--space-lg) 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(43, 24, 10, 0.06);
+            border-radius: var(--radius-sm);
         }
 
         .callout-box p {
@@ -867,7 +855,7 @@
             transform: translateY(-50%);
             background: var(--color-bg-alt);
             padding: var(--space-lg) var(--space-md);
-            border-radius: 0;
+            border-radius: var(--radius-md);
             box-shadow: var(--shadow-md);
             max-height: 80vh;
             overflow-y: auto;
@@ -905,14 +893,12 @@
             color: var(--color-text);
             text-decoration: none;
             font-size: var(--font-size-xs);
-            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
-            font-weight: 500;
             display: flex;
             align-items: center;
             padding: var(--space-xs) 0.75rem;
-            border-radius: 0;
+            border-radius: var(--radius-sm);
             transition: var(--transition-fast);
-
+            
         }
 
         .nav-icon {
@@ -930,10 +916,10 @@
         }
 
         .nav-link.active {
-            background: transparent;
-            border-left: 3px solid var(--color-primary);
-            color: var(--color-text);
-            font-weight: var(--font-weight-semibold);
+            background: var(--color-border-muted);
+            border-left-color: var(--color-primary);
+            color: var(--color-primary);
+            font-weight: var(--font-weight-bold);
         }
 
         .nav-link.active .nav-icon {
@@ -973,7 +959,7 @@
             font-weight: 600;
             padding: 0.75rem 1.5rem;
             border: 2px solid #317E6D;
-            border-radius: 8px;
+            border-radius: 4px;
             transition: all 0.3s ease;
             background: white;
         }
@@ -1069,10 +1055,10 @@
 
         .limitations-callout {
             background: #FDF6EE;
+            
             padding: 2rem;
-            border-radius: 8px;
+            border-radius: 4px;
             margin-bottom: 2rem;
-            box-shadow: 0 2px 8px rgba(43, 24, 10, 0.06);
         }
 
         .limitations-callout h3 {
@@ -1167,13 +1153,13 @@
             background: var(--color-primary);
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: var(--radius-md);
             cursor: pointer;
             font-size: var(--font-size-xl);
             font-weight: var(--font-weight-bold);
             text-align: center;
             transition: var(--transition-base);
-            box-shadow: 0 2px 8px rgba(43, 24, 10, 0.1);
+            box-shadow: var(--shadow-md);
             position: relative;
             overflow: hidden;
         }
@@ -1484,7 +1470,7 @@
             <li class="nav-item"><a href="#reciprocity" class="nav-link">6. Reciprocity</a></li>
             <li class="nav-item"><a href="#implementation" class="nav-link">7. Implementation</a></li>
             <li class="nav-item"><a href="#findings" class="nav-link">8. Key Findings</a></li>
-            <li class="nav-item"><a href="#action" class="nav-link">We Want to Hear From You</a></li>
+            <li class="nav-item"><a href="#action" class="nav-link">Call to Action</a></li>
         </ul>
     </nav>
 
@@ -1492,21 +1478,19 @@
     <section id="hero" class="section hero">
         <div class="content visible">
             <!-- Sponsor & Presenter -->
-            <div style="margin-bottom: 1rem; text-align: center;">
-                <!-- Labels on same line -->
-                <div style="display: flex; gap: 3rem; justify-content: center; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap;">
-                    <div style="font-size: 0.75rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; opacity: 0.8;">Sponsored by</div>
-                    <div style="font-size: 0.75rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; opacity: 0.8;">Presented by</div>
+            <div style="margin-bottom: 1rem; display: flex; gap: 3rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <div style="font-size: 0.75rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; opacity: 0.8; margin-bottom: 0.5rem;">Presented by</div>
+                    <img src="psi_logo_white.png" alt="Psychedelic Science Initiative" style="height: 60px; opacity: 0.95;" />
                 </div>
-                <!-- Logos below -->
-                <div style="display: flex; gap: 3rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <div style="font-size: 0.75rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; opacity: 0.8; margin-bottom: 0.5rem;">Sponsored by</div>
                     <img src="flourish_logo_white_5.avif" alt="Flourish Trust" style="height: 70px; opacity: 0.95;" />
-                    <img src="psi_logo_white.png" alt="Psychedelic Science Initiative" style="height: 50px; opacity: 0.95;" />
                 </div>
             </div>
 
             <!-- Main Content Card -->
-            <div style="max-width: 900px; margin: 0 auto; background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.12)); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 8px; padding: 2rem 2rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
+            <div style="max-width: 900px; margin: 0 auto; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 4px; padding: 2rem 2rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);">
                 <h1 style="font-size: 2.4rem; line-height: 1.2; margin-bottom: 0.75rem; font-weight: 700;">What's Actually Happening in Colorado's Psychedelic Market?</h1>
 
                 <h2 style="font-size: 1.05rem; color: rgba(255, 255, 255, 0.95); font-weight: 400; margin-bottom: 1rem; font-style: italic;">Field notes from the ground</h2>
@@ -1520,11 +1504,11 @@
 
             <!-- CTA Buttons -->
             <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap;">
-                <button onclick="document.getElementById('methodology').scrollIntoView({behavior: 'smooth'})" class="hero-cta-button" style="background: rgba(255, 255, 255, 0.25); border: 2px solid rgba(255, 255, 255, 0.5); color: white; padding: 0.85rem 2rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);">
+                <button onclick="document.getElementById('methodology').scrollIntoView({behavior: 'smooth'})" class="hero-cta-button" style="background: rgba(255, 255, 255, 0.25); border: 2px solid rgba(255, 255, 255, 0.5); color: white; padding: 0.85rem 2rem; border-radius: 4px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);">
                     Read Our Findings
                 </button>
                 <span style="color: rgba(255, 255, 255, 0.9); font-size: 0.8rem; font-weight: 500; padding: 0 0.5rem;">or</span>
-                <a href="https://co-market-research-explorer.vercel.app/" target="_blank" class="hero-cta-button" style="background: #FFFFFF; border: 2px solid #FFFFFF; color: #317E6D; padding: 0.85rem 2rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); text-decoration: none; display: inline-block;">
+                <a href="https://co-market-research-explorer.vercel.app/" target="_blank" class="hero-cta-button" style="background: #FFFFFF; border: 2px solid #FFFFFF; color: #317E6D; padding: 0.85rem 2rem; border-radius: 4px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); text-decoration: none; display: inline-block;">
                     Explore the Data
                 </a>
             </div>
@@ -1542,83 +1526,81 @@
     <!-- METHODOLOGY & LIMITATIONS -->
     <section id="methodology" class="section">
         <div class="content">
+            <div class="question-mark">?</div>
             <h2>1. A Note on This Research</h2>
 
-            <!-- Opening Context -->
-            <div style="background: #F0FAF8; padding: 1.5rem 2rem; border-radius: 8px; border-left: 4px solid #317E6D; margin-top: 2rem;">
-                <p style="margin: 0 0 0.75rem 0; font-size: 1rem; line-height: 1.7;">Colorado legalized psychedelic services in 2022, but we still have limited public data about what's happening on the ground. This research offers <strong>early signals</strong> from stakeholders navigating this emerging market—not definitive conclusions.</p>
-                <p style="margin: 0; font-size: 0.95rem; color: #736C66;">We surveyed 83 people across four stakeholder groups between 2024-2025 to understand who's involved, what challenges they face, and how the market is developing.</p>
-            </div>
+            <!-- Research Approach -->
+            <div>
+                <h3 style="color: #317E6D; margin-top: 2rem;">Our Approach</h3>
+                <p>We explored Colorado's psychedelic ecosystem to understand who's involved, what challenges they face, and how the market is developing.</p>
 
-            <!-- Who We Surveyed - Visual Grid -->
-            <div style="margin-top: 3rem;">
-                <h3 style="color: #317E6D; text-align: center; margin-bottom: 2rem;">Who We Surveyed</h3>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto 2rem;">
-                    <!-- Card 1: Consumers -->
-                    <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08); text-align: center;">
-                        <div style="font-size: 3rem; font-weight: 700; color: #317E6D; line-height: 1;">18</div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #2B180A; margin: 0.5rem 0;">Consumers</div>
-                        <div style="font-size: 0.85rem; color: #736C66; line-height: 1.5;">Seeking or considering psychedelic services</div>
-                    </div>
-
-                    <!-- Card 2: Practitioners -->
-                    <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08); text-align: center;">
-                        <div style="font-size: 3rem; font-weight: 700; color: #317E6D; line-height: 1;">12</div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #2B180A; margin: 0.5rem 0;">Practitioners</div>
-                        <div style="font-size: 0.85rem; color: #736C66; line-height: 1.5;">Individual facilitators (licensed & underground)</div>
-                    </div>
-
-                    <!-- Card 3: Healing Centers -->
-                    <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08); text-align: center;">
-                        <div style="font-size: 3rem; font-weight: 700; color: #317E6D; line-height: 1;">23</div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #2B180A; margin: 0.5rem 0;">Healing Centers</div>
-                        <div style="font-size: 0.85rem; color: #736C66; line-height: 1.5;">Organizations providing psychedelic services</div>
-                    </div>
-
-                    <!-- Card 4: Ecosystem Organizations -->
-                    <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08); text-align: center;">
-                        <div style="font-size: 3rem; font-weight: 700; color: #317E6D; line-height: 1;">26</div>
-                        <div style="font-size: 1.1rem; font-weight: 600; color: #2B180A; margin: 0.5rem 0;">Organizations</div>
-                        <div style="font-size: 0.85rem; color: #736C66; line-height: 1.5;">Nonprofits, advocacy groups, supporting orgs</div>
+                <!-- Ecosystem Map Embed -->
+                <div style="margin: 2.5rem auto; max-width: 1100px;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08); border: 1px solid #EFE5DE;">
+                        <h4 style="text-align: center; color: #317E6D; margin-bottom: 1.5rem; font-size: 1.1rem;">Colorado's Psychedelic Ecosystem</h4>
+                        <div style="position: relative; border-radius: 4px; overflow: hidden; height: 650px; background: #FEF6ED;">
+                            <iframe src="https://psychedelic-ecosystem-map.vercel.app/ecosystem-map?embed=true&section=organizations&view=grouped&chartType=bubble&groupBy=ecosystemRole&filterType=state&filterValue=Colorado" width="100%" height="750" style="border: none; display: block; position: absolute; top: 0; left: 0;"></iframe>
+                        </div>
+                        <div style="text-align: center; margin-top: 1.5rem;">
+                            <p style="font-size: 0.8rem; color: #A19D9B; font-style: italic; margin-bottom: 1rem;">
+                                Interactive visualization of Colorado's psychedelic ecosystem
+                            </p>
+                            <a href="https://psychedelic-ecosystem-map.vercel.app/ecosystem-map?section=organizations&view=grouped&chartType=bubble&groupBy=ecosystemRole&filterType=state&filterValue=Colorado" target="_blank" class="ecosystem-map-link">
+                                <span>View Full Interactive Map</span>
+                                <span>→</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div style="text-align: center; margin-top: 1.5rem;">
-                    <div style="display: inline-block; background: white; padding: 1rem 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08);">
-                        <span style="font-size: 0.85rem; color: #736C66; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">Total Respondents</span>
-                        <div style="font-size: 2.5rem; font-weight: 700; color: #317E6D; margin-top: 0.25rem;">83</div>
-                    </div>
-                </div>
-            </div>
+                <div class="methodology" style="margin-top: 2.5rem;">
+                    <h3>What We Did</h3>
 
-            <!-- How We Did It -->
-            <div style="margin-top: 3rem;">
-                <h3 style="color: #317E6D;">How We Did It</h3>
-                <p>We combined ecosystem mapping with targeted surveys. First, we mapped Colorado's psychedelic landscape through publicly available sources, building a database of practitioners, centers, and supporting organizations. Then we surveyed stakeholders across these groups to understand their experiences, challenges, and perspectives.</p>
+                    <p style="margin-bottom: 1.5rem;"><strong>1. Ecosystem Mapping & Desk Research</strong></p>
+                    <p style="margin-left: 1rem; margin-bottom: 1rem;">We surveyed the ecosystem through publicly available sources, building a comprehensive database of organizations, practitioners, and service providers. We analyzed services, offerings, and organizational structures to understand the market landscape.</p>
+
+                    <p style="margin-top: 2rem; margin-bottom: 1.5rem;"><strong>2. Stakeholder Surveys</strong></p>
+                    <p style="margin-left: 1rem; margin-bottom: 1rem;">We created four surveys targeting different stakeholder groups:</p>
+                    <ul style="list-style: none; padding: 0; margin-left: 1rem;">
+                        <li style="padding: 0.5rem 0;">• <strong>Consumers</strong> — 18 respondents seeking or considering psychedelic services</li>
+                        <li style="padding: 0.5rem 0;">• <strong>Individual Practitioners</strong> — 12 respondents providing facilitation services</li>
+                        <li style="padding: 0.5rem 0;">• <strong>Healing Centers</strong> — 23 organizations providing psychedelic services</li>
+                        <li style="padding: 0.5rem 0;">• <strong>Ecosystem Organizations</strong> — 26 nonprofits, advocacy groups, and supporting organizations</li>
+                    </ul>
+                    <p style="margin-left: 1rem; margin-top: 1rem; font-style: italic; color: #736C66;">Note: For individual practitioners and healing centers, respondents included both licensed (above-ground) and unlicensed (underground) providers.</p>
+                </div>
             </div>
 
             <!-- Research Limitations -->
             <div style="margin-top: 3rem;">
-                <h3 style="color: #9B6D3F;">Research Limitations</h3>
-                <div style="background: #FDF6EE; padding: 1.5rem 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.06);">
-                    <p style="margin: 0 0 1rem 0;"><strong>Small sample size.</strong> With only 83 respondents across all groups, we cannot make confident claims about Colorado's entire psychedelic market. These numbers provide early directional signals, not statistical certainty.</p>
+                <h3 style="color: #B66A00;">Research Limitations</h3>
 
-                    <p style="margin: 0 0 1rem 0;"><strong>Selection bias.</strong> Our sample likely over-represents people connected to psychedelic advocacy networks and engaged stakeholders. We're missing voices from people who gave up trying to access services, providers who closed their practices, and those who never entered the system.</p>
-
-                    <p style="margin: 0 0 1rem 0;"><strong>No demographic data.</strong> We don't know how well our sample represents Colorado's actual population by race, income, geography, age, or other demographic factors. This limits our ability to understand equity and access issues.</p>
-
-                    <p style="margin: 0 0 1rem 0;"><strong>Self-reported data.</strong> All responses are self-reported perceptions and experiences, not verified through independent observation or administrative data.</p>
-
-                    <p style="margin: 0; font-style: italic; color: #736C66;">Despite these constraints, clear patterns emerged that suggest structural challenges worth investigating. What follows are <strong>early signals</strong>, not final conclusions—but in a field with so little public data, even preliminary findings can help us ask better questions.</p>
+                <div class="limitations-callout">
+                    <h3>Small Sample Size</h3>
+                    <p>Small sample (<span class="tooltip-trigger">n=83<span class="tooltip-content">83 respondents total across all groups</span></span>) with significant limitations. These are early signals, not conclusions.</p>
                 </div>
-            </div>
 
-            <!-- Ecosystem Map Link -->
-            <div style="margin-top: 3rem; text-align: center;">
-                <a href="https://psychedelic-ecosystem-map.vercel.app/ecosystem-map?section=organizations&view=grouped&chartType=bar&groupBy=ecosystemRole&filterType=state&filterValue=Colorado" target="_blank" style="display: inline-block; background: white; border: 2px solid #317E6D; color: #317E6D; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08);" onmouseover="this.style.background='#317E6D'; this.style.color='white';" onmouseout="this.style.background='white'; this.style.color='#317E6D';">
-                    View Interactive Ecosystem Map →
-                </a>
+                <div>
+                    <p style="margin-top: 1.5rem;">This is exploratory work with significant limitations:</p>
+
+                    <div class="methodology">
+                        <h3>Sample Limitations</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.5rem 0;"><strong>Only 83 respondents total:</strong></li>
+                            <li style="padding: 0.5rem 0; padding-left: 1rem;">• 18 consumers | 12 practitioners | 23 organizations | 26 ecosystem groups</li>
+                            <li style="padding: 0.5rem 0;"><strong>Likely over-represents</strong> people connected to psychedelic advocacy networks</li>
+                            <li style="padding: 0.5rem 0;"><strong>Missing voices:</strong> people who gave up trying to access services, providers who quit, entire demographic groups</li>
+                        </ul>
+                    </div>
+
+                    <div class="methodology" style="background: #F2E9DE; ">
+                        <h3>❓ What This Means</h3>
+                        <p style="margin: 0; font-size: 1rem;">We <strong>cannot</strong> make confident claims about Colorado's entire market. These findings suggest patterns that deserve deeper investigation—not conclusions.</p>
+                    </div>
+
+                    <p style="margin-top: 2rem;">Despite these limitations, clear patterns emerged—patterns that suggest structural challenges in how Colorado's market is developing.</p>
+                    <p>What follows are early signals that warrant closer investigation, not final conclusions. But in a field with so little public data, even preliminary findings can help us ask better questions.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1631,7 +1613,7 @@
             <h2>2. The Price Barrier: What Consumers Can Pay</h2>
             <p>The gap between what consumers can afford and what licensed services cost appears stark.</p>
 
-            <h4 style="text-align: center; color: #2B180A; font-size: 1.5rem; font-weight: 700; margin: 4rem 0 1rem 0; padding-bottom: 0.75rem; border-bottom: 2px solid #CBD5D9; max-width: 800px; margin-left: auto; margin-right: auto;">What Consumers Can Actually Afford</h4>
+            <h3 style="text-align: center; margin: 4rem 0 2rem 0;">What Consumers Can Actually Afford</h3>
             <p style="text-align: center; margin-bottom: 2rem;">When surveyed about payment capacity <span class="tooltip-trigger">(n=17)<span class="tooltip-content">17 consumers who answered payment questions</span></span>:</p>
 
             <div class="bar-chart">
@@ -1674,63 +1656,65 @@
 
             <!-- Price Sensitivity Analysis -->
             <div style="margin: 4rem auto 3rem; max-width: 1000px;">
-                <h4 style="text-align: center; color: #2B180A; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid #CBD5D9;">Price Perception: What Are Consumers Willing to Pay?</h4>
+                <h3 style="text-align: center; color: #2B180A; font-size: 1.8rem; margin-bottom: 1rem;">Price Perception: What Are Consumers Willing to Pay?</h3>
 
                 <p style="text-align: center; color: #736C66; margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6; font-size: 0.95rem;">
                     Using Van Westendorp Price Sensitivity Analysis, we measured consumer willingness to pay at different price points for a full therapy package (screening, preparation, guided session, integration). Respondents rated prices from "too cheap to trust the quality" to "a bargain" to "expensive but I'd consider it" to "too expensive."
                 </p>
 
-                <!-- Price Zones Visual - Elegant Version -->
+                <!-- Price Zones Visual - Option A -->
                 <div style="background: white; padding: 2.5rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08);">
                     <h4 style="text-align: center; color: #2B180A; margin-bottom: 2rem; font-size: 1.1rem;">Consumer Willingness to Pay Zones (n=18)</h4>
 
-                    <!-- Visual bar with zones - no borders -->
-                    <div style="position: relative; margin-bottom: 2rem;">
-                        <!-- Willing to Pay badge -->
-                        <div style="text-align: center; margin-bottom: 0.75rem;">
-                            <span style="display: inline-block; background: #317E6D; color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.5px;">WILLING TO PAY</span>
+                    <!-- Price markers -->
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding: 0 2rem;">
+                        <div style="text-align: center; flex: 1;">
+                            <div style="font-size: 1.3rem; font-weight: bold; color: #2B180A; margin-bottom: 0.5rem;">$157</div>
                         </div>
+                        <div style="text-align: center; flex: 1;">
+                            <div style="font-size: 1.3rem; font-weight: bold; color: #317E6D; margin-bottom: 0.5rem;">$306</div>
+                        </div>
+                        <div style="text-align: center; flex: 1;">
+                            <div style="font-size: 1.3rem; font-weight: bold; color: #317E6D; margin-bottom: 0.5rem;">$706</div>
+                        </div>
+                        <div style="text-align: center; flex: 1;">
+                            <div style="font-size: 1.3rem; font-weight: bold; color: #2B180A; margin-bottom: 0.5rem;">$1,512</div>
+                        </div>
+                    </div>
 
-                        <!-- Zone bar -->
-                        <div style="display: flex; height: 120px; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.1);">
-                            <!-- Zone 1: Too Cheap -->
-                            <div style="flex: 1; background: linear-gradient(to bottom, #F5EDE6 0%, #EFE5DE 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 1rem; position: relative;">
-                                <div style="position: absolute; top: 0.75rem; left: 50%; transform: translateX(-50%); font-size: 1.2rem; font-weight: 700; color: #736C66;">$157</div>
-                                <div style="text-align: center; margin-top: 1.5rem;">
-                                    <div style="font-size: 0.85rem; font-weight: 600; color: #736C66;">"Too Cheap"</div>
-                                    <div style="font-size: 0.7rem; color: #736C66; opacity: 0.7; margin-top: 0.25rem;">quality concerns</div>
-                                </div>
-                                <!-- Subtle right divider -->
-                                <div style="position: absolute; right: 0; top: 15%; bottom: 15%; width: 1px; background: linear-gradient(to bottom, transparent, #CBD5D9 20%, #CBD5D9 80%, transparent);"></div>
+                    <!-- Visual bar with zones -->
+                    <div style="position: relative; height: 100px; display: flex; margin-bottom: 1.5rem;">
+                        <!-- Too Cheap zone -->
+                        <div style="flex: 1; background: #EFE5DE; border: 2px solid #CBD5D9; border-right: none; border-radius: 4px 0 0 4px; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+                            <div style="text-align: center; font-size: 0.8rem; color: #736C66; line-height: 1.3;">
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">Zone 1</div>
+                                <div>"Too Cheap"</div>
+                                <div style="font-size: 0.7rem; margin-top: 0.25rem; opacity: 0.8;">(quality concerns)</div>
                             </div>
-
-                            <!-- Zone 2: A Bargain -->
-                            <div style="flex: 1; background: linear-gradient(to bottom, #F0FAF8 0%, #E6F7F4 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 1rem; position: relative;">
-                                <div style="position: absolute; top: 0.75rem; left: 50%; transform: translateX(-50%); font-size: 1.2rem; font-weight: 700; color: #317E6D;">$306</div>
-                                <div style="text-align: center; margin-top: 1.5rem;">
-                                    <div style="font-size: 0.85rem; font-weight: 600; color: #317E6D;">"A Bargain"</div>
-                                </div>
-                                <!-- Subtle right divider -->
-                                <div style="position: absolute; right: 0; top: 15%; bottom: 15%; width: 1px; background: linear-gradient(to bottom, transparent, #317E6D 20%, #317E6D 80%, transparent); opacity: 0.3;"></div>
+                        </div>
+                        <!-- Acceptable Range START -->
+                        <div style="flex: 1; background: #E6F7F4; border: 3px solid #317E6D; border-right: none; display: flex; align-items: center; justify-content: center; padding: 1rem; position: relative;">
+                            <div style="position: absolute; top: -1.5rem; left: 0; right: 0; text-align: center; font-weight: 700; color: #317E6D; font-size: 0.9rem;">
+                                WILLING TO PAY
                             </div>
-
-                            <!-- Zone 3: I'd Consider It -->
-                            <div style="flex: 1; background: linear-gradient(to bottom, #F0FAF8 0%, #E6F7F4 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 1rem; position: relative;">
-                                <div style="position: absolute; top: 0.75rem; left: 50%; transform: translateX(-50%); font-size: 1.2rem; font-weight: 700; color: #317E6D;">$706</div>
-                                <div style="text-align: center; margin-top: 1.5rem;">
-                                    <div style="font-size: 0.85rem; font-weight: 600; color: #317E6D;">"I'd Consider It"</div>
-                                </div>
-                                <!-- Subtle right divider -->
-                                <div style="position: absolute; right: 0; top: 15%; bottom: 15%; width: 1px; background: linear-gradient(to bottom, transparent, #CBD5D9 20%, #CBD5D9 80%, transparent);"></div>
+                            <div style="text-align: center; font-size: 0.8rem; color: #133931; line-height: 1.3;">
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">Zone 2</div>
+                                <div>"A Bargain"</div>
                             </div>
-
-                            <!-- Zone 4: Too Expensive -->
-                            <div style="flex: 1; background: linear-gradient(to bottom, #F5EDE6 0%, #EFE5DE 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 1rem; position: relative;">
-                                <div style="position: absolute; top: 0.75rem; left: 50%; transform: translateX(-50%); font-size: 1.2rem; font-weight: 700; color: #736C66;">$1,512</div>
-                                <div style="text-align: center; margin-top: 1.5rem;">
-                                    <div style="font-size: 0.85rem; font-weight: 600; color: #736C66;">"Too Expensive"</div>
-                                    <div style="font-size: 0.7rem; color: #736C66; opacity: 0.7; margin-top: 0.25rem;">beyond reach</div>
-                                </div>
+                        </div>
+                        <div style="flex: 1; background: #E6F7F4; border: 3px solid #317E6D; border-left: none; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+                            <div style="text-align: center; font-size: 0.8rem; color: #133931; line-height: 1.3;">
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">Zone 3</div>
+                                <div>"I'd Consider It"</div>
+                            </div>
+                        </div>
+                        <!-- Acceptable Range END -->
+                        <!-- Too Expensive zone -->
+                        <div style="flex: 1; background: #EFE5DE; border: 2px solid #CBD5D9; border-left: none; border-radius: 0 4px 4px 0; display: flex; align-items: center; justify-content: center; padding: 1rem;">
+                            <div style="text-align: center; font-size: 0.8rem; color: #736C66; line-height: 1.3;">
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">Zone 4</div>
+                                <div>"Too Expensive"</div>
+                                <div style="font-size: 0.7rem; margin-top: 0.25rem; opacity: 0.8;">(beyond reach)</div>
                             </div>
                         </div>
                     </div>
@@ -1741,7 +1725,7 @@
                             Most consumers willing to pay between $306-$706
                         </p>
                         <p style="font-size: 0.95rem; color: #736C66; margin-bottom: 0.5rem;">
-                            But only <strong>22%</strong> said they could pay upfront if services cost ≥$1k
+                            ⚠️ But only <strong>22%</strong> said they could pay upfront if services cost ≥$1k
                         </p>
                         <p style="font-size: 0.95rem; color: #736C66;">
                             <strong>78%</strong> need insurance, sliding scale, or payment plans
@@ -1750,9 +1734,6 @@
 
                     <p style="text-align: center; font-size: 0.75rem; color: #A19D9B; margin-top: 1.5rem; font-style: italic;">
                         Note: Non-representative sample population and size. Van Westendorp Price Sensitivity Meter used.
-                    </p>
-                    <p style="text-align: center; font-size: 0.9rem; margin-top: 1rem;">
-                        <a href="#" onclick="event.preventDefault(); openModal('pricingModal');" style="color: #317E6D; text-decoration: none; border-bottom: 1px dotted #317E6D; font-weight: 500;">What would you pay? Try the interactive calculator</a>
                     </p>
                 </div>
             </div>
@@ -1764,7 +1745,7 @@
                 </p>
             </div>
 
-            <h4 style="text-align: center; color: #2B180A; font-size: 1.5rem; font-weight: 700; margin: 3rem auto 2rem; padding-bottom: 0.75rem; border-bottom: 2px solid #CBD5D9; max-width: 800px;">The Reality: What Services Actually Cost <span class="tooltip-trigger" style="font-size: 0.85rem; font-weight: normal;">(213 programs)<span class="tooltip-content">Based on PSI research - 213 programs across 51 organizations</span></span></h4>
+            <h3 style="text-align: center; margin: 3rem 0 2rem 0;">The Reality: What Services Actually Cost <span class="tooltip-trigger" style="font-size: 0.85rem; font-weight: normal;">(213 programs)<span class="tooltip-content">Based on PSI research - 213 programs across 51 organizations</span></span></h3>
 
             <div style="margin: 2rem 0; display: flex; gap: 3rem; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
                 <!-- Individual Standard Offering -->
@@ -1860,6 +1841,16 @@
                 <div class="key-takeaway-label">Key Takeaway</div>
                 <p class="key-takeaway-text">This isn't just a pricing mismatch—it's a structural barrier. 78% of consumers need insurance coverage, sliding scale, or payment plans, but psilocybin isn't covered by insurance, and sliding scale options strain clinics and practitioners. The current market structure creates a fundamental affordability gap that systematically pushes people toward underground options, regardless of regulatory intent.</p>
             </div>
+
+            <div style="text-align: center; margin: 4rem 0 2rem 0;">
+                <div class="subsection-header" style="margin-bottom: 1.5rem;">What Would You Pay?</div>
+                <p style="margin-bottom: 2rem;">Interactive price sensitivity explorer</p>
+                <button class="modal-trigger" onclick="openModal('pricingModal')">
+                    <span>Try Our Price Calculator</span>
+                    <span class="modal-trigger-icon">→</span>
+                </button>
+                <p style="margin-top: 1rem; font-size: 0.95rem; color: #736C66;">Compare your price sensitivity to survey respondents</p>
+            </div>
         </div>
     </section>
 
@@ -1871,13 +1862,13 @@
             <h2>3. The Price Barrier: What Practitioners Face</h2>
             <p>The economics of becoming licensed don't work for most practitioners—even those providing high-quality care.</p>
 
-            <h4 style="text-align: center; color: #2B180A; font-size: 1.5rem; font-weight: 700; margin: 2rem auto 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid #CBD5D9; max-width: 800px;">The Economic Reality <span class="tooltip-trigger" style="font-size: 0.85rem; font-weight: normal;">(n=12)<span class="tooltip-content">12 individual practitioners</span></span></h4>
+            <h3 style="text-align: center; margin: 2rem 0 1.5rem 0; font-size: 1.5rem;">The Economic Reality <span class="tooltip-trigger" style="font-size: 0.85rem; font-weight: normal;">(n=12)<span class="tooltip-content">12 individual practitioners</span></span></h3>
 
             <!-- Cleaner Vertical Flow Design -->
             <div style="margin: 2.5rem auto; max-width: 700px; background: white; border-radius: 4px; box-shadow: 0 2px 12px rgba(43, 24, 10, 0.1); overflow: hidden;">
                 <!-- What They Earn Section -->
                 <div style="padding: 2.5rem; text-align: center; background: #FCF3E5;">
-                    <div style="font-size: 0.85rem; font-weight: 600; color: #894F00; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px;">What Practitioners Earn</div>
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #894F00; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px;">💸 What Practitioners Earn</div>
                     <div style="font-size: 3.5rem; font-weight: 700; color: #B66A00; line-height: 1; margin: 0.5rem 0;">$1-3K</div>
                     <div style="font-size: 1.1rem; color: #894F00; margin-bottom: 0.25rem;">per month</div>
                     <div style="font-size: 0.9rem; color: #B66A00;">for 50% of practitioners</div>
@@ -1891,12 +1882,12 @@
 
                 <!-- Cost to Go Legal Section -->
                 <div style="padding: 2.5rem; text-align: center; background: #F7DAB2;">
-                    <div style="font-size: 0.85rem; font-weight: 600; color: #B66A00; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px;">Cost to Become Licensed</div>
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #B66A00; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px;">💼 Cost to Become Licensed</div>
                     <div style="font-size: 3.5rem; font-weight: 700; color: #894F00; line-height: 1; margin: 0.5rem 0;">$26K-$56K</div>
                     <div style="font-size: 1.1rem; color: #B66A00; margin-bottom: 1rem;">upfront investment</div>
                     <div style="font-size: 0.9rem; color: #B66A00; line-height: 1.6; margin-bottom: 1.5rem;">Training • Licensing • Insurance • Facility • Compliance</div>
                     <button class="modal-trigger" onclick="openModal('trainingModal')" style="background: #894F00; margin-top: 0.5rem; border: none; padding: 0.75rem 1.5rem; border-radius: 4px; cursor: pointer; font-size: 0.9rem; font-weight: 600; color: white; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease;">
-                        <span>View Breakdown</span>
+                        <span>📚 View Breakdown</span>
                         <span>→</span>
                     </button>
                 </div>
@@ -1912,7 +1903,7 @@
                 </p>
             </div>
 
-            <h4 style="text-align: center; color: #2B180A; font-size: 1.5rem; font-weight: 700; margin: 3rem auto 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid #CBD5D9; max-width: 800px;">But Quality Isn't the Issue</h4>
+            <h3 style="text-align: center; margin: 3rem 0 1.5rem 0;">But Quality Isn't the Issue</h3>
             <p style="text-align: center; margin-bottom: 2rem;">Underground practitioners already maintain high standards of care:</p>
 
             <div class="bar-chart">
@@ -1922,7 +1913,7 @@
                         <span class="bar-label-percent">92.9%</span>
                     </div>
                     <div class="bar-bg">
-                        <div class="bar-fill" style="--width: 92.9%; background: #317E6D;">
+                        <div class="bar-fill bar-fill-green" style="--width: 92.9%">
                             <span>92.9%</span>
                         </div>
                     </div>
@@ -1934,7 +1925,7 @@
                         <span class="bar-label-percent">85.7%</span>
                     </div>
                     <div class="bar-bg">
-                        <div class="bar-fill" style="--width: 85.7%; background: #5A9B8C;">
+                        <div class="bar-fill bar-fill-green" style="--width: 85.7%">
                             <span>85.7%</span>
                         </div>
                     </div>
@@ -1946,7 +1937,7 @@
                         <span class="bar-label-percent">71.4%</span>
                     </div>
                     <div class="bar-bg">
-                        <div class="bar-fill" style="--width: 71.4%; background: #7AB8B8;">
+                        <div class="bar-fill bar-fill-blue" style="--width: 71.4%">
                             <span>71.4%</span>
                         </div>
                     </div>
@@ -1972,7 +1963,7 @@
             <h2>4. Why People Go Underground vs. Licensed</h2>
             <p>The choice between underground and licensed isn't about quality—it's about fundamentally different priorities.</p>
 
-            <h4 style="text-align: center; color: #2B180A; font-size: 1.5rem; font-weight: 700; margin: 3rem auto 2rem; padding-bottom: 0.75rem; border-bottom: 2px solid #CBD5D9; max-width: 800px;">The Pattern: Two Different Value Systems</h4>
+            <h3 style="text-align: center; margin: 3rem 0 2rem 0;">The Pattern: Two Different Value Systems</h3>
 
             <div class="split-view">
                 <div class="split-panel">
@@ -1996,67 +1987,86 @@
                 </div>
             </div>
 
-            <h4 style="text-align: center; color: #2B180A; font-size: 1.5rem; font-weight: 700; margin: 4rem auto 2rem; padding-bottom: 0.75rem; border-bottom: 2px solid #CBD5D9; max-width: 800px;">What Consumers Say</h4>
+            <h3 style="text-align: center; margin: 4rem 0 2rem 0;">What Consumers Say</h3>
 
-            <!-- Two-Column Comparison Design -->
-            <div style="max-width: 1200px; margin: 2rem auto; padding: 0 1rem;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <!-- Cleaner Simple List Design -->
+            <div style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
 
-                    <!-- Underground Column -->
-                    <div style="background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08); padding: 2rem;">
-                        <h4 style="color: #894F00; margin: 0 0 1.5rem 0; font-size: 1.3rem; font-weight: 700; text-align: center; padding-bottom: 1rem; border-bottom: 3px solid #894F00;">Why Consumers Choose Underground</h4>
+                <h4 style="color: #894F00; margin: 3rem 0 2rem 0; font-size: 1.4rem; font-weight: 700;">Why Consumers Choose Underground</h4>
 
-                        <div style="margin-bottom: 2rem;">
-                            <div style="font-size: 1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Price (100%)</div>
-                            <div style="font-size: 0.9rem; color: #736C66; line-height: 1.6; margin-bottom: 0.5rem;">Every consumer choosing underground cites cost as a factor</div>
-                            <div style="font-size: 0.85rem; color: #736C66; font-style: italic; padding-left: 1rem; border-left: 2px solid #CBD5D9;">"I can't afford licensed even if I wanted it"</div>
-                        </div>
-
-                        <div style="margin-bottom: 2rem;">
-                            <div style="font-size: 1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Trust Networks (83.3%)</div>
-                            <div style="font-size: 0.9rem; color: #736C66; line-height: 1.6; margin-bottom: 0.5rem;">83.3% rely on word-of-mouth recommendations</div>
-                            <div style="font-size: 0.85rem; color: #736C66; font-style: italic; padding-left: 1rem; border-left: 2px solid #CBD5D9;">"I trust someone my friend vouches for"</div>
-                        </div>
-
-                        <div style="margin-bottom: 2rem;">
-                            <div style="font-size: 1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Flexibility</div>
-                            <div style="font-size: 0.85rem; color: #736C66; font-style: italic; padding-left: 1rem; border-left: 2px solid #CBD5D9;">"Underground providers offer more flexibility in setting and dosage"</div>
-                        </div>
-
-                        <div>
-                            <div style="font-size: 1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Cultural Alignment</div>
-                            <div style="font-size: 0.85rem; color: #736C66; font-style: italic; padding-left: 1rem; border-left: 2px solid #CBD5D9;">"It feels more authentic"</div>
+                <div style="margin-bottom: 2.5rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem;">
+                        <span style="font-size: 2rem; line-height: 1;">💰</span>
+                        <div style="flex: 1;">
+                            <div style="font-size: 1.1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Price (100%)</div>
+                            <div style="font-size: 0.95rem; color: #736C66; line-height: 1.6; margin-bottom: 0.5rem;">Every consumer choosing underground cites cost as a factor</div>
+                            <div style="font-size: 0.95rem; color: #736C66; font-style: italic;">"I can't afford licensed even if I wanted it"</div>
                         </div>
                     </div>
 
-                    <!-- Licensed Column -->
-                    <div style="background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08); padding: 2rem;">
-                        <h4 style="color: #317E6D; margin: 0 0 1.5rem 0; font-size: 1.3rem; font-weight: 700; text-align: center; padding-bottom: 1rem; border-bottom: 3px solid #317E6D;">Why Consumers Choose Licensed</h4>
-
-                        <div style="margin-bottom: 2rem;">
-                            <div style="font-size: 1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Integration with healthcare (66.7%)</div>
-                            <div style="font-size: 0.85rem; color: #736C66; font-style: italic; padding-left: 1rem; border-left: 2px solid #CBD5D9;">"I feel I could trust [regulated] services more" • "I prefer licensed as it feels more professional"</div>
-                        </div>
-
-                        <div style="margin-bottom: 2rem;">
-                            <div style="font-size: 1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Safety & medical screening (55.6%)</div>
-                            <div style="font-size: 0.85rem; color: #736C66; font-style: italic; padding-left: 1rem; border-left: 2px solid #CBD5D9;">"I want to be clinically evaluated that I am suitable for taking psychedelics"</div>
-                        </div>
-
-                        <div style="margin-bottom: 2rem;">
-                            <div style="font-size: 1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Trained/certified facilitators (55.6%)</div>
-                        </div>
-
-                        <div>
-                            <div style="font-size: 1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Tested/verified medicine (55.6%)</div>
-                            <div style="font-size: 0.85rem; color: #736C66; font-style: italic; padding-left: 1rem; border-left: 2px solid #CBD5D9;">"I want legal protection"</div>
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem;">
+                        <span style="font-size: 2rem; line-height: 1;">🤝</span>
+                        <div style="flex: 1;">
+                            <div style="font-size: 1.1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Trust Networks (83.3%)</div>
+                            <div style="font-size: 0.95rem; color: #736C66; line-height: 1.6; margin-bottom: 0.5rem;">83.3% rely on word-of-mouth recommendations</div>
+                            <div style="font-size: 0.95rem; color: #736C66; font-style: italic;">"I trust someone my friend vouches for"</div>
                         </div>
                     </div>
 
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem;">
+                        <span style="font-size: 2rem; line-height: 1;">🔄</span>
+                        <div style="flex: 1;">
+                            <div style="font-size: 1.1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Flexibility</div>
+                            <div style="font-size: 0.95rem; color: #736C66; font-style: italic;">"Underground providers offer more flexibility in setting and dosage"</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                        <span style="font-size: 2rem; line-height: 1;">🙏</span>
+                        <div style="flex: 1;">
+                            <div style="font-size: 1.1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Cultural Alignment</div>
+                            <div style="font-size: 0.95rem; color: #736C66; font-style: italic;">"It feels more authentic"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="color: #317E6D; margin: 4rem 0 2rem 0; font-size: 1.4rem; font-weight: 700;">Why Consumers Choose Licensed</h4>
+
+                <div>
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem;">
+                        <span style="font-size: 2rem; line-height: 1;">⚕️</span>
+                        <div style="flex: 1;">
+                            <div style="font-size: 1.1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Integration with healthcare (66.7%)</div>
+                            <div style="font-size: 0.95rem; color: #736C66; font-style: italic;">"I feel I could trust [regulated] services more" • "I prefer licensed as it feels more professional"</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem;">
+                        <span style="font-size: 2rem; line-height: 1;">🛡️</span>
+                        <div style="flex: 1;">
+                            <div style="font-size: 1.1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Safety & medical screening (55.6%)</div>
+                            <div style="font-size: 0.95rem; color: #736C66; font-style: italic;">"I want to be clinically evaluated that I am suitable for taking psychedelics"</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem;">
+                        <span style="font-size: 2rem; line-height: 1;">👨‍⚕️</span>
+                        <div style="flex: 1;">
+                            <div style="font-size: 1.1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Trained/certified facilitators (55.6%)</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                        <span style="font-size: 2rem; line-height: 1;">🔬</span>
+                        <div style="flex: 1;">
+                            <div style="font-size: 1.1rem; font-weight: 700; color: #2B180A; margin-bottom: 0.5rem;">Tested/verified medicine (55.6%)</div>
+                            <div style="font-size: 0.95rem; color: #736C66; font-style: italic;">"I want legal protection"</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <h4 style="text-align: center; color: #2B180A; font-size: 1.5rem; font-weight: 700; margin: 4rem auto 2rem; padding-bottom: 0.75rem; border-bottom: 2px solid #CBD5D9; max-width: 800px;">Why Practitioners Stay Underground</h4>
+            <h3 style="text-align: center; margin: 4rem 0 2rem 0;">Why Practitioners Stay Underground</h3>
 
             <div class="bar-chart">
                 <p style="font-size: 1rem; margin-bottom: 1rem;">Top reasons cited <span class="tooltip-trigger">(n=12)<span class="tooltip-content">12 practitioners surveyed</span></span>:</p>
@@ -2119,12 +2129,28 @@
                 </div>
             </div>
 
-            <!-- Elegant 100% Callout -->
-            <div style="margin: 3rem auto; max-width: 900px; padding: 3rem 2rem; background: rgba(217, 153, 79, 0.04); border-radius: 8px; text-align: center; border: 3px solid #C48955; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.06);">
-                <div style="font-size: 0.9rem; font-weight: 600; color: #894F00; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px;">The Deciding Factor</div>
-                <div style="font-size: 5rem; font-weight: 700; color: #B66A00; line-height: 1; margin: 0.5rem 0;">100%</div>
-                <div style="font-size: 1.4rem; color: #2B180A; font-weight: 600; margin: 1rem 0 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">of people choosing underground cite <span style="color: #B66A00;">PRICE</span></div>
-                <div style="font-size: 1rem; color: #736C66; padding-top: 1.5rem; margin-top: 1.5rem; border-top: 1px solid rgba(182, 106, 0, 0.3); max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.6;">The choice isn't about quality or trust—it's about what people can afford.</div>
+            <div style="margin: 3rem auto; max-width: 800px; padding: 2.5rem; background: #FCF3E5; border: 3px solid #B66A00; border-radius: 4px; text-align: center; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08);">
+                <div style="font-size: 1.2rem; font-weight: 600; color: #894F00; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;">The Deciding Factor</div>
+                <div style="font-size: 3.6rem; font-weight: bold; color: #B66A00; line-height: 1; margin: 1rem 0;">100%</div>
+                <div style="font-size: 1.5rem; color: #894F00; font-weight: 600; margin-bottom: 1rem;">of people choosing underground cite PRICE</div>
+                <div style="font-size: 1.1rem; color: #B66A00; border-top: 2px solid #B66A00; padding-top: 1.5rem; margin-top: 1.5rem;">The choice isn't about quality or trust—it's about what people can afford.</div>
+            </div>
+
+            <button class="expand-button" onclick="toggleCollapsible('respondent-suggestions')" style="margin: 3rem auto 1rem auto; display: block;">
+                <span class="expand-button-text">Read Respondent Suggestions</span>
+                <span class="expand-icon">▼</span>
+            </button>
+
+            <div id="respondent-suggestions" class="collapsible-content">
+                <div class="methodology" style="margin-top: 1rem;">
+                    <h3>Some respondents suggested:</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0;">→ Make licensing accessible so underground providers CAN come above ground</li>
+                        <li style="padding: 0.5rem 0;">→ Tiered system: clinical for medical need, traditional for spiritual use</li>
+                        <li style="padding: 0.5rem 0;">→ Different models for different populations</li>
+                        <li style="padding: 0.5rem 0;">→ Insurance for clinical, community funding for traditional</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="key-takeaway">
@@ -2228,79 +2254,56 @@
 
             <!-- The Gap: How Deep? -->
             <div class="subsection-header" style="margin-top: 3rem;">The Gap: How Deep Is the Engagement?</div>
-            <p style="font-size: 1rem; color: #736C66; margin-bottom: 2rem; text-align: center; font-style: italic;">"Do you share about the historical, cultural, or ethnobotanical context of psychedelic medicines?"</p>
+            <p style="font-size: 1rem; color: #736C66; margin-bottom: 1.5rem;">"Do you share about the historical, cultural, or ethnobotanical context of psychedelic medicines?"</p>
 
-            <!-- Split Design Showing The Gap -->
-            <div style="max-width: 900px; margin: 2rem auto; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-
-                <!-- Left: Those Sharing Context -->
-                <div style="background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08); border-left: 4px solid #317E6D;">
-                    <div style="text-align: center; margin-bottom: 2rem;">
-                        <div style="font-size: 0.85rem; font-weight: 600; color: #317E6D; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">Sharing Context</div>
-                        <div style="font-size: 3rem; font-weight: 700; color: #317E6D; line-height: 1;">67%</div>
-                        <div style="font-size: 0.9rem; color: #736C66; margin-top: 0.5rem;">of practitioners share</div>
+            <div class="bar-chart" style="margin: 2rem 0;">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Yes, extensively</span>
+                        <span class="bar-label-percent">17%</span>
                     </div>
-
-                    <div style="border-top: 1px solid #EFE5DE; padding-top: 1.5rem;">
-                        <div style="margin-bottom: 1rem;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <span style="font-size: 0.9rem; color: #2B180A; font-weight: 600;">Extensively</span>
-                                <span style="font-size: 1.1rem; font-weight: 700; color: #317E6D;">17%</span>
-                            </div>
-                            <div style="height: 8px; background: #EFE5DE; border-radius: 4px; overflow: hidden;">
-                                <div style="height: 100%; width: 17%; background: #317E6D; border-radius: 4px;"></div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <span style="font-size: 0.9rem; color: #2B180A; font-weight: 600;">Briefly</span>
-                                <span style="font-size: 1.1rem; font-weight: 700; color: #6FA99A;">50%</span>
-                            </div>
-                            <div style="height: 8px; background: #EFE5DE; border-radius: 4px; overflow: hidden;">
-                                <div style="height: 100%; width: 50%; background: #6FA99A; border-radius: 4px;"></div>
-                            </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-green" style="--width: 17%">
+                            <span>17%</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: The Gap -->
-                <div style="background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08); border-left: 4px solid #B66A00;">
-                    <div style="text-align: center; margin-bottom: 2rem;">
-                        <div style="font-size: 0.85rem; font-weight: 600; color: #B66A00; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">The Gap</div>
-                        <div style="font-size: 3rem; font-weight: 700; color: #B66A00; line-height: 1;">33%</div>
-                        <div style="font-size: 0.9rem; color: #736C66; margin-top: 0.5rem;">don't currently share</div>
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Yes, briefly</span>
+                        <span class="bar-label-percent">50%</span>
                     </div>
-
-                    <div style="border-top: 1px solid #EFE5DE; padding-top: 1.5rem;">
-                        <div style="margin-bottom: 1rem;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <span style="font-size: 0.9rem; color: #2B180A; font-weight: 600;">Interested, not yet</span>
-                                <span style="font-size: 1.1rem; font-weight: 700; color: #CC8D37;">8%</span>
-                            </div>
-                            <div style="height: 8px; background: #EFE5DE; border-radius: 4px; overflow: hidden;">
-                                <div style="height: 100%; width: 8%; background: #CC8D37; border-radius: 4px;"></div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <span style="font-size: 0.9rem; color: #2B180A; font-weight: 600;">Not relevant</span>
-                                <span style="font-size: 1.1rem; font-weight: 700; color: #8B5E3C;">25%</span>
-                            </div>
-                            <div style="height: 8px; background: #EFE5DE; border-radius: 4px; overflow: hidden;">
-                                <div style="height: 100%; width: 25%; background: #8B5E3C; border-radius: 4px;"></div>
-                            </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 50%; background: #317E6D;">
+                            <span>50%</span>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Key Insight -->
-            <div style="max-width: 900px; margin: 2rem auto; padding: 1.5rem; background: #E6F7F4; border-left: 4px solid #317E6D; border-radius: 4px;">
-                <p style="font-size: 0.95rem; color: #2B180A; margin: 0; line-height: 1.6;">
-                    <strong>The engagement gap:</strong> While two-thirds of practitioners share some context, only 17% do so extensively. One in four practitioners don't see it as relevant to their practice.
-                </p>
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Interested, but don't currently</span>
+                        <span class="bar-label-percent">8%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-amber" style="--width: 8%">
+                            <span>8%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Not relevant to practice</span>
+                        <span class="bar-label-percent">25%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill bar-fill-red" style="--width: 25%">
+                            <span>25%</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="methodology" style="margin-top: 2rem; background: #FAE6CC; ">
@@ -2332,18 +2335,12 @@
                     <div style="margin-bottom: 2.5rem;">
                         <div style="font-size: 4rem; font-weight: 700; color: #894F00; line-height: 1;">6.5<span style="font-size: 2.5rem; color: #B66A00;">/10</span></div>
                         <div style="font-size: 1.3rem; color: #B66A00; font-weight: 600; margin-top: 0.75rem;">"Cautious Optimism"</div>
-                        <div style="font-size: 0.85rem; margin-top: 1rem;">
-                            <a href="#" onclick="event.preventDefault(); openModal('stakeholderFeedbackModal');" style="color: #317E6D; text-decoration: none; border-bottom: 1px dotted #317E6D; font-weight: 500; opacity: 0.8; transition: opacity 0.2s ease;">Read stakeholder feedback</a>
-                        </div>
                     </div>
 
                     <div style="border-top: 1px solid #EFE5DE; padding-top: 2rem; margin-top: 0;">
                         <div style="font-size: 0.9rem; font-weight: 600; color: #736C66; margin-bottom: 1rem;">Where Most Stakeholders Agree</div>
                         <div style="font-size: 2.5rem; font-weight: 700; color: #894F00; line-height: 1; margin-bottom: 0.5rem;">42.9%</div>
-                        <div style="font-size: 1rem; color: #2B180A; font-weight: 500; margin-bottom: 0.75rem;">rated it 6-7 (Cautious Optimism)</div>
-                        <div style="font-size: 0.85rem;">
-                            <a href="#" onclick="event.preventDefault(); openModal('ratingDistributionModal');" style="color: #317E6D; text-decoration: none; border-bottom: 1px dotted #317E6D; font-weight: 500; opacity: 0.8; transition: opacity 0.2s ease;">See full rating distribution</a>
-                        </div>
+                        <div style="font-size: 1rem; color: #2B180A; font-weight: 500;">rated it 6-7 (Cautious Optimism)</div>
                     </div>
 
                     <div style="margin-top: 2rem; padding: 1.5rem; background: #FCF3E5; border-radius: 4px; text-align: left;">
@@ -2352,6 +2349,64 @@
 
                 </div>
             </div>
+
+            <!-- Detailed Distribution -->
+            <div class="subsection-header" style="margin-top: 3rem;">Full Rating Distribution:</div>
+
+            <div class="methodology">
+                <div style="display: flex; justify-content: space-around; align-items: flex-end; gap: 1rem; height: 500px; padding: 2rem; background: white; border-radius: 4px; border: 1px solid #EFE5DE;">
+                    <!-- 1-2: Very poor -->
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; height: 100%;">
+                        <div style="font-weight: 600; font-size: 1.2rem; color: #2B180A; margin-bottom: 0.5rem;">14.3%</div>
+                        <div style="width: 100%; height: 14.3%; background: #B66A00; border-radius: 4px 4px 0 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08);"></div>
+                        <div style="margin-top: 1rem; text-align: center; font-size: 0.85rem; color: #2B180A; line-height: 1.3; font-weight: 500;">1-2:<br>Very poor</div>
+                    </div>
+
+                    <!-- 3-4: Poor -->
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; height: 100%;">
+                        <div style="font-weight: 600; font-size: 1.2rem; color: #2B180A; margin-bottom: 0.5rem;">19.0%</div>
+                        <div style="width: 100%; height: 19%; background: #E48400; border-radius: 4px 4px 0 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08);"></div>
+                        <div style="margin-top: 1rem; text-align: center; font-size: 0.85rem; color: #2B180A; line-height: 1.3; font-weight: 500;">3-4:<br>Poor</div>
+                    </div>
+
+                    <!-- 5: Neutral -->
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; height: 100%;">
+                        <div style="font-weight: 600; font-size: 1.2rem; color: #2B180A; margin-bottom: 0.5rem;">19.0%</div>
+                        <div style="width: 100%; height: 19%; background: #EFB566; border-radius: 4px 4px 0 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);"></div>
+                        <div style="margin-top: 1rem; text-align: center; font-size: 0.85rem; color: #2B180A; line-height: 1.3; font-weight: 500;">5:<br>Neutral</div>
+                    </div>
+
+                    <!-- 6-7: Cautious Optimism (MOST COMMON) -->
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; height: 100%;">
+                        <div style="font-weight: 700; font-size: 1.3rem; color: #2B180A; margin-bottom: 0.5rem;">42.9%</div>
+                        <div style="width: 100%; height: 42.9%; background: #48A5CC; border-radius: 4px 4px 0 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08); border: 2px solid #194C41;"></div>
+                        <div style="margin-top: 1rem; text-align: center; font-size: 0.85rem; color: #2B180A; line-height: 1.3; font-weight: 700;">6-7:<br>Cautious<br>Optimism</div>
+                    </div>
+
+                    <!-- 8-9: Good -->
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; height: 100%;">
+                        <div style="font-weight: 600; font-size: 1.2rem; color: #2B180A; margin-bottom: 0.5rem;">23.8%</div>
+                        <div style="width: 100%; height: 23.8%; background: #317E6D; border-radius: 4px 4px 0 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);"></div>
+                        <div style="margin-top: 1rem; text-align: center; font-size: 0.85rem; color: #2B180A; line-height: 1.3; font-weight: 500;">8-9:<br>Good</div>
+                    </div>
+
+                    <!-- 10: Excellent -->
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; height: 100%;">
+                        <div style="font-weight: 600; font-size: 1.2rem; color: #2B180A; margin-bottom: 0.5rem;">9.5%</div>
+                        <div style="width: 100%; height: 9.5%; background: #1F5F51; border-radius: 4px 4px 0 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);"></div>
+                        <div style="margin-top: 1rem; text-align: center; font-size: 0.85rem; color: #2B180A; line-height: 1.3; font-weight: 500;">10:<br>Excellent</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="subsection-header" style="margin-top: 3rem; text-align: center; font-size: 1.3rem; color: #2B180A; background: linear-gradient(to bottom, transparent 60%, rgba(157, 205, 195, 0.2) 60%); display: inline-block; padding: 0 1rem;">
+                💬 What Stakeholders Said
+            </div>
+
+            <button class="modal-trigger" onclick="openModal('stakeholderFeedbackModal')" style="margin: 1.5rem auto; display: block;">
+                <span>Read Stakeholder Feedback</span>
+                <span class="modal-trigger-icon">→</span>
+            </button>
 
             <div class="key-takeaway">
                 <div class="key-takeaway-label">Key Takeaway</div>
@@ -2369,61 +2424,23 @@
             <p style="font-size: 1.05rem; line-height: 1.7; max-width: 800px; margin: 0 auto 2rem;">These aren't conclusions—they're patterns worth investigating further.</p>
 
             <!-- OPENING NARRATIVE -->
-            <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #317E6D; margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+            <div style="background: white; padding: 2rem; border-radius: 4px; border-left: 4px solid #317E6D; margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto;">
                 <p style="font-size: 1.05rem; line-height: 1.8; color: #2B180A;">
                     Three interconnected patterns emerged from this research that tell a story about Colorado's psychedelic ecosystem:
+                    <strong>an affordability trap that prevents both consumers and providers from accessing legal services</strong>,
+                    <strong>adaptive responses as people navigate around these barriers</strong>, and
+                    <strong>deeper systemic issues that amplify existing inequities</strong>.
                 </p>
                 <p style="font-size: 1.05rem; line-height: 1.8; color: #2B180A; margin-top: 1.5rem;">
                     Together, these patterns reveal a fundamental tension: Colorado designed a system to ensure safety through regulation, but that system created economic barriers that exclude most of the people it was meant to serve.
                 </p>
             </div>
 
-            <!-- THREE PATTERNS OVERVIEW -->
-            <div style="max-width: 1100px; margin: 0 auto 4rem; padding: 0 1rem;">
-                <div style="background: white; padding: 2rem; border-radius: 4px; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08);">
-                    <!-- Pattern 1 -->
-                    <div style="display: flex; align-items: flex-start; gap: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #EFE5DE;">
-                        <div style="width: 50px; height: 50px; background: #FCF3E5; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #CC8D37; flex-shrink: 0;">
-                            <span style="font-size: 1.5rem; font-weight: 700; color: #894F00;">1</span>
-                        </div>
-                        <div style="flex: 1;">
-                            <h4 style="font-size: 1.1rem; font-weight: 700; color: #894F00; margin: 0 0 0.5rem 0;">The Affordability Trap</h4>
-                            <p style="font-size: 0.9rem; color: #736C66; line-height: 1.5; margin: 0;">High costs prevent both consumers and providers from accessing legal services</p>
-                        </div>
-                    </div>
-
-                    <!-- Pattern 2 -->
-                    <div style="display: flex; align-items: flex-start; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid #EFE5DE;">
-                        <div style="width: 50px; height: 50px; background: #E6F7F4; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #317E6D; flex-shrink: 0;">
-                            <span style="font-size: 1.5rem; font-weight: 700; color: #1F5F51;">2</span>
-                        </div>
-                        <div style="flex: 1;">
-                            <h4 style="font-size: 1.1rem; font-weight: 700; color: #317E6D; margin: 0 0 0.5rem 0;">How People Respond</h4>
-                            <p style="font-size: 0.9rem; color: #736C66; line-height: 1.5; margin: 0;">Adaptive responses as people navigate around these barriers</p>
-                        </div>
-                    </div>
-
-                    <!-- Pattern 3 -->
-                    <div style="display: flex; align-items: flex-start; gap: 1.5rem; padding-top: 1.5rem;">
-                        <div style="width: 50px; height: 50px; background: #F7DAB2; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #B66A00; flex-shrink: 0;">
-                            <span style="font-size: 1.5rem; font-weight: 700; color: #894F00;">3</span>
-                        </div>
-                        <div style="flex: 1;">
-                            <h4 style="font-size: 1.1rem; font-weight: 700; color: #B66A00; margin: 0 0 0.5rem 0;">Deeper Systems at Play</h4>
-                            <p style="font-size: 0.9rem; color: #736C66; line-height: 1.5; margin: 0;">Systemic issues that amplify existing inequities</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- PART 1: THE AFFORDABILITY TRAP -->
             <div style="margin-top: 4rem;">
                 <div style="text-align: center; margin-bottom: 2.5rem;">
-                    <div style="display: inline-flex; align-items: center; gap: 1rem; padding: 1rem 2rem; background: #FCF3E5; border-radius: 4px; border: 2px solid #CC8D37;">
-                        <div style="width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #CC8D37; flex-shrink: 0;">
-                            <span style="font-size: 1.5rem; font-weight: 700; color: #894F00;">1</span>
-                        </div>
-                        <h3 style="color: #894F00; margin: 0; font-size: 1.5rem;">The Affordability Trap</h3>
+                    <div style="display: inline-block; padding: 0.75rem 2rem; background: #FCF3E5; border-radius: 4px; border: 2px solid #CC8D37;">
+                        <h3 style="color: #894F00; margin: 0; font-size: 1.5rem;">Part 1: The Affordability Trap</h3>
                     </div>
                 </div>
 
@@ -2448,7 +2465,7 @@
                 </div>
 
                 <!-- CONNECTING PARAGRAPH -->
-                <div style="background: #FCF3E5; padding: 2rem; border-radius: 4px; max-width: 900px; margin: 0 auto 3rem; border-left: 4px solid #CC8D37;">
+                <div style="background: linear-gradient(to bottom, #FCF3E5 0%, #E6F7F4 100%); padding: 2rem; border-radius: 4px; max-width: 900px; margin: 0 auto 3rem; border-left: 4px solid #CC8D37;">
                     <p style="font-size: 1rem; line-height: 1.8; color: #2B180A; font-weight: 500;">
                         <strong>This creates a vicious cycle:</strong> High regulatory costs force providers to charge high prices, which pushes consumers to underground options, which reduces the customer base for legal services, which makes it even harder for providers to achieve financial sustainability. The math simply doesn't work.
                     </p>
@@ -2458,11 +2475,8 @@
             <!-- PART 2: HOW PEOPLE RESPOND -->
             <div style="margin-top: 4rem;">
                 <div style="text-align: center; margin-bottom: 2.5rem;">
-                    <div style="display: inline-flex; align-items: center; gap: 1rem; padding: 1rem 2rem; background: #E6F7F4; border-radius: 4px; border: 2px solid #317E6D;">
-                        <div style="width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #317E6D; flex-shrink: 0;">
-                            <span style="font-size: 1.5rem; font-weight: 700; color: #1F5F51;">2</span>
-                        </div>
-                        <h3 style="color: #133931; margin: 0; font-size: 1.5rem;">How People Respond</h3>
+                    <div style="display: inline-block; padding: 0.75rem 2rem; background: #9DCDC3; border-radius: 4px; border: 2px solid #317E6D;">
+                        <h3 style="color: #133931; margin: 0; font-size: 1.5rem;">Part 2: How People Respond</h3>
                     </div>
                 </div>
 
@@ -2481,7 +2495,7 @@
                 </div>
 
                 <!-- CONNECTING PARAGRAPH -->
-                <div style="background: #E6F7F4; padding: 2rem; border-radius: 4px; max-width: 900px; margin: 0 auto 3rem; border-left: 4px solid #317E6D;">
+                <div style="background: linear-gradient(to bottom, #E6F7F4 0%, #F7DAB2 100%); padding: 2rem; border-radius: 4px; max-width: 900px; margin: 0 auto 3rem; border-left: 4px solid #317E6D;">
                     <p style="font-size: 1rem; line-height: 1.8; color: #2B180A; font-weight: 500;">
                         <strong>These aren't bugs in the system—they're adaptive responses.</strong> When formal pathways are unaffordable or inaccessible, people create informal ones. The question isn't whether these networks will exist, but how policy can work with them rather than against them.
                     </p>
@@ -2491,11 +2505,8 @@
             <!-- PART 3: THE DEEPER SYSTEMS AT PLAY -->
             <div style="margin-top: 4rem;">
                 <div style="text-align: center; margin-bottom: 2.5rem;">
-                    <div style="display: inline-flex; align-items: center; gap: 1rem; padding: 1rem 2rem; background: #F7DAB2; border-radius: 4px; border: 2px solid #B66A00;">
-                        <div style="width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #B66A00; flex-shrink: 0;">
-                            <span style="font-size: 1.5rem; font-weight: 700; color: #894F00;">3</span>
-                        </div>
-                        <h3 style="color: #894F00; margin: 0; font-size: 1.5rem;">The Deeper Systems at Play</h3>
+                    <div style="display: inline-block; padding: 0.75rem 2rem; background: #F7DAB2; border-radius: 4px; border: 2px solid #B66A00;">
+                        <h3 style="color: #894F00; margin: 0; font-size: 1.5rem;">Part 3: The Deeper Systems at Play</h3>
                     </div>
                 </div>
 
@@ -2524,7 +2535,9 @@
             <!-- IMPLEMENTATION PROGRESS (BRIDGE) -->
             <div style="margin-top: 4rem;">
                 <div style="text-align: center; margin-bottom: 2.5rem;">
-                    <h3 style="color: #317E6D; margin: 0; font-size: 1.6rem; font-weight: 700; display: inline-block; padding-bottom: 0.5rem; border-bottom: 3px solid #317E6D;">Where Things Stand</h3>
+                    <div style="display: inline-block; padding: 0.75rem 2rem; background: #9DCDC3; border-radius: 4px; border: 2px solid #317E6D;">
+                        <h3 style="color: #133931; margin: 0; font-size: 1.5rem;">Where Things Stand</h3>
+                    </div>
                 </div>
 
                 <div class="methodology" style="max-width: 900px; margin: 0 auto;">
@@ -2535,15 +2548,55 @@
                 </div>
             </div>
 
-            <!-- WHAT WE DON'T KNOW - Click to Open Modal -->
+            <!-- WHAT WE DON'T KNOW -->
             <div style="margin-top: 4rem;">
-                <div onclick="openModal('dontKnowModal')" style="cursor: pointer; background: #FDF6EE; padding: 2rem; border-radius: 8px; border: 2px solid #D9994F; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.06);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(43, 24, 10, 0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(43, 24, 10, 0.06)';">
-                    <div style="display: flex; align-items: center; justify-content: space-between;">
-                        <div style="flex: 1;">
-                            <h3 style="margin: 0 0 0.5rem 0; color: #2B180A;">What We Don't Know</h3>
-                            <p style="margin: 0; font-size: 0.95rem; color: #736C66;">Research gaps & unanswered questions that deserve deeper investigation. Click to expand.</p>
-                        </div>
-                        <span style="font-size: 1.5rem; color: #317E6D; margin-left: 1rem;">▼</span>
+                <div class="collapsible-header" onclick="toggleCollapsible('dont-know-content')" style="cursor: pointer;">
+                    <div style="flex: 1;">
+                        <h3 style="margin: 0 0 0.5rem 0; color: #2B180A;">❓ What We Don't Know</h3>
+                        <p style="margin: 0; font-size: 0.95rem; color: #736C66;">Research gaps & unanswered questions that deserve deeper investigation. Click to expand.</p>
+                    </div>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+
+                <div id="dont-know-content" class="collapsible-content">
+                    <p style="margin-top: 1.5rem;">This research raises as many questions as it answers. Here's what's still missing:</p>
+
+                    <div class="methodology">
+                        <h3>Missing Voices</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.5rem 0;"><strong>People who gave up:</strong> We didn't capture people who tried to access services but stopped due to cost, complexity, or lack of information</li>
+                            <li style="padding: 0.5rem 0;"><strong>Demographic representation:</strong> We don't know how well our sample represents Colorado's actual population by race, income, geography, or other factors</li>
+                            <li style="padding: 0.5rem 0;"><strong>Indigenous perspectives:</strong> While we asked about reciprocity practices, we didn't survey Indigenous communities about their perspectives on the program</li>
+                            <li style="padding: 0.5rem 0;"><strong>Failed providers:</strong> Practitioners and centers that tried to operate but closed aren't represented here</li>
+                        </ul>
+                    </div>
+
+                    <div class="methodology" style="margin-top: 2rem;">
+                        <h3>Missing Data</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.5rem 0;"><strong>Actual client outcomes:</strong> We have what centers report, but no standardized outcome tracking across providers</li>
+                            <li style="padding: 0.5rem 0;"><strong>Adverse events:</strong> No systematic reporting of harms, emergencies, or negative experiences in either licensed or underground settings</li>
+                            <li style="padding: 0.5rem 0;"><strong>Market size:</strong> We don't know how many people are actually using psychedelic services in Colorado (licensed or underground)</li>
+                            <li style="padding: 0.5rem 0;"><strong>Provider sustainability:</strong> No longitudinal data on whether practitioners and centers can remain financially viable</li>
+                            <li style="padding: 0.5rem 0;"><strong>Geographic distribution:</strong> We don't know where services are concentrated or what areas are underserved</li>
+                        </ul>
+                    </div>
+
+                    <div class="methodology" style="margin-top: 2rem;">
+                        <h3>🤔 Unanswered Questions</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.5rem 0;">• Can licensed services ever reach the price point that most consumers can afford?</li>
+                            <li style="padding: 0.5rem 0;">• What happens to underground practitioners as enforcement evolves?</li>
+                            <li style="padding: 0.5rem 0;">• Will insurance ever cover psilocybin services? If so, when?</li>
+                            <li style="padding: 0.5rem 0;">• Are there models from other states or countries that could address the affordability gap?</li>
+                            <li style="padding: 0.5rem 0;">• How do we balance safety oversight with cultural/spiritual practices?</li>
+                        </ul>
+                    </div>
+
+                    <div class="callout-box" style="margin-top: 2rem;">
+                        <p><strong>Why This Matters:</strong></p>
+                        <p style="margin-top: 1rem;">These gaps aren't just academic. They represent blind spots in how Colorado is building this ecosystem.</p>
+                        <p style="margin-top: 1rem;">Without better data, we're making policy decisions in the dark.</p>
                     </div>
                 </div>
             </div>
@@ -2559,26 +2612,26 @@
     <div class="section-divider"></div>
 
     <!-- CALL TO ACTION -->
-    <section id="action" class="section" style="background: linear-gradient(135deg, #317E6D 0%, #2B6B5D 100%); color: white;">
+    <section id="action" class="section" style="background: #317E6D; color: white;">
         <div class="content visible">
             <h2 style="color: white;">We Want to Hear From You</h2>
-            <p style="color: rgba(255, 255, 255, 0.95); font-size: 1.1rem; max-width: 700px; margin: 1.5rem auto; line-height: 1.75;">This research is a starting point. What do these findings mean to you? Do they match your experience? What questions do they raise?</p>
+            <p style="color: white; font-size: 1.1rem; max-width: 700px; margin: 1.5rem auto;">This research is a starting point. What do these findings mean to you? Do they match your experience? What questions do they raise?</p>
 
             <div style="text-align: center; margin: 4rem auto; max-width: 800px;">
-                <div style="background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(10px); border: 2px solid rgba(255, 255, 255, 0.25); padding: 3rem 2rem; border-radius: 8px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);">
+                <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border: 2px solid rgba(255, 255, 255, 0.3); padding: 3rem 2rem; border-radius: 4px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
                     <h3 style="color: white; font-size: 1.8rem; margin-bottom: 1.5rem;">Share Your Thoughts</h3>
-                    <p style="color: rgba(255, 255, 255, 0.95); font-size: 1.1rem; line-height: 1.75; margin-bottom: 2.5rem;">
+                    <p style="color: rgba(255, 255, 255, 0.95); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2.5rem;">
                         Whether you're a consumer, practitioner, policymaker, or community member—your perspective matters. Help us understand what resonates, what's missing, and what needs to happen next.
                     </p>
-                    <a href="https://forms.gle/YOUR_FORM_ID" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: white; color: #317E6D; padding: 1.25rem 3rem; border-radius: 8px; font-size: 1.2rem; font-weight: 600; text-decoration: none; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); transition: all 0.3s ease; border: none; cursor: pointer;">
+                    <a href="https://forms.gle/YOUR_FORM_ID" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #317E6D; color: white; padding: 1.25rem 3rem; border-radius: 4px; font-size: 1.2rem; font-weight: 600; text-decoration: none; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4); transition: all 0.3s ease; border: none; cursor: pointer;">
                         Let Us Know What You Think
                     </a>
                     <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin-top: 1.5rem;">Takes 2-3 minutes • Responses are anonymous</p>
 
                     <!-- Data Explorer Link -->
                     <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.2);">
-                        <p style="color: rgba(255, 255, 255, 0.95); font-size: 1rem; margin-bottom: 1rem;">Want to dig deeper into the data yourself?</p>
-                        <a href="https://co-market-research-explorer.vercel.app/" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); border: 2px solid rgba(255, 255, 255, 0.3); color: white; padding: 1rem 2.5rem; border-radius: 8px; font-size: 1.1rem; font-weight: 600; text-decoration: none; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); transition: all 0.3s ease;">
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; margin-bottom: 1rem;">Want to dig deeper into the data yourself?</p>
+                        <a href="https://co-market-research-explorer.vercel.app/" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: rgba(49, 126, 109, 0.9); backdrop-filter: blur(10px); border: 2px solid rgba(255, 255, 255, 0.4); color: white; padding: 1rem 2.5rem; border-radius: 4px; font-size: 1.1rem; font-weight: 600; text-decoration: none; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); transition: all 0.3s ease;">
                             Explore the Interactive Data
                         </a>
                     </div>
@@ -2691,193 +2744,6 @@
                 <p style="margin-top: 0.5rem;">• 50% of practitioners earn $1-3K/month from psychedelic services</p>
                 <p style="margin-top: 0.5rem;">• At $2K/month income, the training investment equals <strong>6-10 months of gross revenue</strong></p>
                 <p style="margin-top: 0.5rem;">• This doesn't include business licensing, insurance, facility costs, or ongoing compliance</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL: Rating Distribution -->
-    <div id="ratingDistributionModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'ratingDistributionModal')">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('ratingDistributionModal')">×</button>
-            <h2 style="color: #317E6D; margin-bottom: 1.5rem;">Full Rating Distribution</h2>
-            <p style="margin-bottom: 2rem;">How stakeholders rated Colorado's implementation (n=21)</p>
-
-            <div class="methodology">
-                <div style="display: flex; justify-content: space-around; align-items: flex-end; gap: 1rem; height: 500px; padding: 2rem; background: white; border-radius: 4px; border: 1px solid #EFE5DE;">
-                    <!-- 1-2: Very poor -->
-                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; height: 100%;">
-                        <div style="font-weight: 600; font-size: 1.2rem; color: #2B180A; margin-bottom: 0.5rem;">14.3%</div>
-                        <div style="width: 100%; height: 14.3%; background: #B66A00; border-radius: 4px 4px 0 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08);"></div>
-                        <div style="margin-top: 1rem; text-align: center; font-size: 0.85rem; color: #2B180A; line-height: 1.3; font-weight: 500;">1-2:<br>Very poor</div>
-                    </div>
-
-                    <!-- 3-4: Poor -->
-                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; height: 100%;">
-                        <div style="font-weight: 600; font-size: 1.2rem; color: #2B180A; margin-bottom: 0.5rem;">19.0%</div>
-                        <div style="width: 100%; height: 19%; background: #E48400; border-radius: 4px 4px 0 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08);"></div>
-                        <div style="margin-top: 1rem; text-align: center; font-size: 0.85rem; color: #2B180A; line-height: 1.3; font-weight: 500;">3-4:<br>Poor</div>
-                    </div>
-
-                    <!-- 5: Neutral -->
-                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; height: 100%;">
-                        <div style="font-weight: 600; font-size: 1.2rem; color: #2B180A; margin-bottom: 0.5rem;">19.0%</div>
-                        <div style="width: 100%; height: 19%; background: #EFB566; border-radius: 4px 4px 0 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);"></div>
-                        <div style="margin-top: 1rem; text-align: center; font-size: 0.85rem; color: #2B180A; line-height: 1.3; font-weight: 500;">5:<br>Neutral</div>
-                    </div>
-
-                    <!-- 6-7: Cautious Optimism (MOST COMMON) -->
-                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; height: 100%;">
-                        <div style="font-weight: 700; font-size: 1.3rem; color: #2B180A; margin-bottom: 0.5rem;">42.9%</div>
-                        <div style="width: 100%; height: 42.9%; background: #48A5CC; border-radius: 4px 4px 0 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08); border: 2px solid #194C41;"></div>
-                        <div style="margin-top: 1rem; text-align: center; font-size: 0.85rem; color: #2B180A; line-height: 1.3; font-weight: 700;">6-7:<br>Cautious<br>Optimism</div>
-                    </div>
-
-                    <!-- 8-9: Good -->
-                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; height: 100%;">
-                        <div style="font-weight: 600; font-size: 1.2rem; color: #2B180A; margin-bottom: 0.5rem;">23.8%</div>
-                        <div style="width: 100%; height: 23.8%; background: #317E6D; border-radius: 4px 4px 0 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);"></div>
-                        <div style="margin-top: 1rem; text-align: center; font-size: 0.85rem; color: #2B180A; line-height: 1.3; font-weight: 500;">8-9:<br>Good</div>
-                    </div>
-
-                    <!-- 10: Excellent -->
-                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; min-width: 0; height: 100%;">
-                        <div style="font-weight: 600; font-size: 1.2rem; color: #2B180A; margin-bottom: 0.5rem;">9.5%</div>
-                        <div style="width: 100%; height: 9.5%; background: #1F5F51; border-radius: 4px 4px 0 0; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);"></div>
-                        <div style="margin-top: 1rem; text-align: center; font-size: 0.85rem; color: #2B180A; line-height: 1.3; font-weight: 500;">10:<br>Excellent</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="callout-box" style="margin-top: 2rem;">
-                <p><strong>Key Insight:</strong> Most ratings cluster around "cautiously optimistic" (6-7), with very few extreme ratings in either direction. This suggests broad consensus about steady progress with room for improvement.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL: Stakeholder Feedback -->
-    <div id="stakeholderFeedbackModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'stakeholderFeedbackModal')">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('stakeholderFeedbackModal')">×</button>
-            <h2 style="color: #317E6D; margin-bottom: 1.5rem;">What Stakeholders Said About Implementation</h2>
-            <p style="margin-bottom: 2rem;">Qualitative feedback from ecosystem stakeholders (n=21)</p>
-
-            <div class="methodology">
-                <div style="margin-bottom: 2.5rem; padding: 1.5rem; background: #E6F7F4; border-left: 4px solid #317E6D; border-radius: 4px;">
-                    <div style="font-weight: 700; color: #317E6D; margin-bottom: 0.5rem;">Positive Progress (Ratings 6-10)</div>
-                    <div style="font-size: 0.95rem; color: #2B180A; line-height: 1.6; margin-top: 1rem;">
-                        <p style="margin-bottom: 1rem;">"Implementation is moving steadily. There are clear frameworks in place and genuine effort to do this right."</p>
-                        <p style="margin-bottom: 1rem;">"The state is being thoughtful about safety while still allowing access. It's a careful balance."</p>
-                        <p style="margin-bottom: 1rem;">"We're seeing real progress on training standards and practitioner licensing. The system is working."</p>
-                        <p style="margin-bottom: 0;">"Compared to other states, Colorado is leading the way with a comprehensive approach."</p>
-                    </div>
-                </div>
-
-                <div style="margin-bottom: 2.5rem; padding: 1.5rem; background: #FCF3E5; border-left: 4px solid #B66A00; border-radius: 4px;">
-                    <div style="font-weight: 700; color: #B66A00; margin-bottom: 0.5rem;">Areas for Improvement (Common Themes)</div>
-                    <div style="font-size: 0.95rem; color: #2B180A; line-height: 1.6; margin-top: 1rem;">
-                        <p style="margin-bottom: 1rem;">"The costs are prohibitive for most practitioners. We need pathways for existing underground providers to come above ground."</p>
-                        <p style="margin-bottom: 1rem;">"More clarity needed on regulations. Some requirements feel ambiguous or inconsistent."</p>
-                        <p style="margin-bottom: 1rem;">"There's still not enough Indigenous representation in decision-making. Reciprocity needs to be more than performative."</p>
-                        <p style="margin-bottom: 1rem;">"We need better public education about what these services actually are and how to access them safely."</p>
-                        <p style="margin-bottom: 0;">"Insurance coverage is essential. Without it, this remains a luxury service for the wealthy."</p>
-                    </div>
-                </div>
-
-                <div style="margin-bottom: 2.5rem; padding: 1.5rem; background: #FEF6ED; border-left: 4px solid #E48400; border-radius: 4px;">
-                    <div style="font-weight: 700; color: #E48400; margin-bottom: 0.5rem;">Critical Concerns (Ratings 1-4)</div>
-                    <div style="font-size: 0.95rem; color: #2B180A; line-height: 1.6; margin-top: 1rem;">
-                        <p style="margin-bottom: 1rem;">"The system is creating a two-tier market. Licensed services are unaffordable, so people are forced underground."</p>
-                        <p style="margin-bottom: 1rem;">"Too much focus on medical model. We're losing the spiritual and cultural aspects that make these medicines meaningful."</p>
-                        <p style="margin-bottom: 0;">"Implementation feels rushed in some areas and too slow in others. We need better coordination."</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="callout-box" style="margin-top: 2rem;">
-                <p><strong>Overall Sentiment:</strong> Most stakeholders express cautious optimism. There's recognition of real progress alongside clear concerns about affordability, accessibility, and the need for more inclusive decision-making processes.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Respondent Suggestions Modal -->
-    <div id="respondentSuggestionsModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'respondentSuggestionsModal')">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('respondentSuggestionsModal')">×</button>
-            <h2 style="color: #894F00; margin-bottom: 1.5rem;">Respondent Suggestions</h2>
-            <p style="margin-bottom: 2rem; color: #736C66;">When asked how to address the affordability gap, respondents offered these ideas:</p>
-
-            <div style="background: white; border-left: 4px solid #B66A00; padding: 2rem; border-radius: 4px;">
-                <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li style="padding: 1rem 0; border-bottom: 1px solid #EFE5DE; display: flex; align-items: flex-start;">
-                        <span style="color: #B66A00; font-weight: 700; margin-right: 1rem; font-size: 1.2rem;">→</span>
-                        <span style="font-size: 1rem; line-height: 1.6; color: #2B180A;">Make licensing accessible so underground providers CAN come above ground</span>
-                    </li>
-                    <li style="padding: 1rem 0; border-bottom: 1px solid #EFE5DE; display: flex; align-items: flex-start;">
-                        <span style="color: #B66A00; font-weight: 700; margin-right: 1rem; font-size: 1.2rem;">→</span>
-                        <span style="font-size: 1rem; line-height: 1.6; color: #2B180A;">Tiered system: clinical for medical need, traditional for spiritual use</span>
-                    </li>
-                    <li style="padding: 1rem 0; border-bottom: 1px solid #EFE5DE; display: flex; align-items: flex-start;">
-                        <span style="color: #B66A00; font-weight: 700; margin-right: 1rem; font-size: 1.2rem;">→</span>
-                        <span style="font-size: 1rem; line-height: 1.6; color: #2B180A;">Different models for different populations</span>
-                    </li>
-                    <li style="padding: 1rem 0; display: flex; align-items: flex-start;">
-                        <span style="color: #B66A00; font-weight: 700; margin-right: 1rem; font-size: 1.2rem;">→</span>
-                        <span style="font-size: 1rem; line-height: 1.6; color: #2B180A;">Insurance for clinical, community funding for traditional</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div style="margin-top: 2rem; padding: 1.5rem; background: #FCF3E5; border-radius: 4px;">
-                <p style="font-size: 0.9rem; color: #736C66; margin: 0; line-height: 1.6;">
-                    <strong>Note:</strong> These are suggestions from survey respondents, not policy recommendations. They reflect the types of solutions that practitioners and consumers believe might help address the affordability crisis.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL: What We Don't Know -->
-    <div id="dontKnowModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'dontKnowModal')">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('dontKnowModal')">×</button>
-            <h2 style="color: #317E6D; margin-bottom: 1rem;">What We Don't Know</h2>
-            <p style="font-size: 1rem; color: #736C66; margin-bottom: 2rem;">This research raises as many questions as it answers. Here's what's still missing:</p>
-
-            <div class="methodology">
-                <h3>Missing Voices</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 0.5rem 0;"><strong>People who gave up:</strong> We didn't capture people who tried to access services but stopped due to cost, complexity, or lack of information</li>
-                    <li style="padding: 0.5rem 0;"><strong>Demographic representation:</strong> We don't know how well our sample represents Colorado's actual population by race, income, geography, or other factors</li>
-                    <li style="padding: 0.5rem 0;"><strong>Indigenous perspectives:</strong> While we asked about reciprocity practices, we didn't survey Indigenous communities about their perspectives on the program</li>
-                    <li style="padding: 0.5rem 0;"><strong>Failed providers:</strong> Practitioners and centers that tried to operate but closed aren't represented here</li>
-                </ul>
-            </div>
-
-            <div class="methodology" style="margin-top: 2rem;">
-                <h3>Missing Data</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 0.5rem 0;"><strong>Actual client outcomes:</strong> We have what centers report, but no standardized outcome tracking across providers</li>
-                    <li style="padding: 0.5rem 0;"><strong>Adverse events:</strong> No systematic reporting of harms, emergencies, or negative experiences in either licensed or underground settings</li>
-                    <li style="padding: 0.5rem 0;"><strong>Market size:</strong> We don't know how many people are actually using psychedelic services in Colorado (licensed or underground)</li>
-                    <li style="padding: 0.5rem 0;"><strong>Provider sustainability:</strong> No longitudinal data on whether practitioners and centers can remain financially viable</li>
-                    <li style="padding: 0.5rem 0;"><strong>Geographic distribution:</strong> We don't know where services are concentrated or what areas are underserved</li>
-                </ul>
-            </div>
-
-            <div class="methodology" style="margin-top: 2rem;">
-                <h3>Unanswered Questions</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="padding: 0.5rem 0;">• Can licensed services ever reach the price point that most consumers can afford?</li>
-                    <li style="padding: 0.5rem 0;">• What happens to underground practitioners as enforcement evolves?</li>
-                    <li style="padding: 0.5rem 0;">• Will insurance ever cover psilocybin services? If so, when?</li>
-                    <li style="padding: 0.5rem 0;">• Are there models from other states or countries that could address the affordability gap?</li>
-                    <li style="padding: 0.5rem 0;">• How do we balance safety oversight with cultural/spiritual practices?</li>
-                </ul>
-            </div>
-
-            <div class="callout-box" style="margin-top: 2rem;">
-                <p><strong>Why This Matters:</strong></p>
-                <p style="margin-top: 1rem;">These gaps aren't just academic. They represent blind spots in how Colorado is building this ecosystem.</p>
-                <p style="margin-top: 1rem;">Without better data, we're making policy decisions in the dark.</p>
             </div>
         </div>
     </div>
@@ -3121,8 +2987,5 @@
             }
         });
     </script>
-
-    <!-- Commented.io Integration -->
-    <script defer src="https://cdn.commented.io/latest.js"></script>
 </body>
 </html>

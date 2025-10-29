@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Findings Section Comparison</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        .version {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .version h2 {
+            margin-top: 0;
+            color: #317E6D;
+            border-bottom: 2px solid #317E6D;
+            padding-bottom: 10px;
+        }
+        .version iframe {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .features {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+        .features h3 {
+            margin-top: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .features ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+        }
+        .features li {
+            font-size: 13px;
+            color: #555;
+            margin: 5px 0;
+        }
+        .link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .link a {
+            color: #317E6D;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+        .note {
+            background: #FEF6ED;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #317E6D;
+            margin-bottom: 30px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .note h3 {
+            margin-top: 0;
+            color: #317E6D;
+        }
+        .note p {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .note ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .note li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Findings Section Comparison</h1>
+    <p>Compare the original findings section with the restructured narrative version. Both contain the same data and insights—the difference is in how the story is told.</p>
+
+    <div class="note">
+        <h3>What Changed in Version 2 (Narrative Structure)?</h3>
+        <ul>
+            <li><strong>Opening narrative:</strong> Added introduction that frames the three-part story and reveals the core tension upfront</li>
+            <li><strong>Single-column layout:</strong> Removed two-column grid for clearer reading flow (no more choosing which column to read first)</li>
+            <li><strong>Story-driven sections:</strong> Reorganized into "Part 1: The Affordability Trap", "Part 2: How People Respond", "Part 3: The Deeper Systems at Play"</li>
+            <li><strong>Connecting paragraphs:</strong> Added transitions between each part showing how patterns reinforce each other</li>
+            <li><strong>Clearer hierarchy:</strong> Larger section headers, better visual distinction between main themes and individual findings</li>
+            <li><strong>Narrative transitions:</strong> Changed "Implication:" to "What this means:" for more conversational tone</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="version">
+            <h2>Original: Categorical Structure</h2>
+            <iframe src="index.html#findings"></iframe>
+            <div class="features">
+                <h3>Original Structure:</h3>
+                <ul>
+                    <li>Organized by abstract categories (Economic Barriers, Market Dynamics, Systemic Issues)</li>
+                    <li>Two-column grid layout for findings</li>
+                    <li>Each finding stands independently</li>
+                    <li>Minimal transitions between sections</li>
+                    <li>Facts presented in bullet point style</li>
+                </ul>
+            </div>
+            <div class="link">
+                <a href="index.html#findings" target="_blank">Open Original Section in New Tab →</a>
+            </div>
+        </div>
+
+        <div class="version">
+            <h2>Version 2: Narrative Structure</h2>
+            <iframe src="index-findings-v2.html#findings"></iframe>
+            <div class="features">
+                <h3>New Structure:</h3>
+                <ul>
+                    <li>✓ Opening narrative framing the three-part story</li>
+                    <li>✓ Single-column layout with clear reading progression</li>
+                    <li>✓ Story-driven section headers (The Affordability Trap, How People Respond, etc.)</li>
+                    <li>✓ Connecting paragraphs showing relationships between patterns</li>
+                    <li>✓ More conversational tone with "What this means:" instead of "Implication:"</li>
+                    <li>✓ Visual hierarchy with colored section badges and gradient transitions</li>
+                </ul>
+            </div>
+            <div class="link">
+                <a href="index-findings-v2.html#findings" target="_blank">Open Narrative Version in New Tab →</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center; color: #666; font-size: 14px;">
+        <p><strong>Local Preview:</strong></p>
+        <p><a href="http://localhost:5555/index.html#findings" target="_blank" style="color: #317E6D;">Original on localhost:5555</a> | <a href="http://localhost:5555/index-findings-v2.html#findings" target="_blank" style="color: #317E6D;">Narrative version on localhost:5555</a></p>
+    </div>
+</body>
+</html>

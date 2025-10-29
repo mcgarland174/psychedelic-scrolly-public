@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology Section Comparison</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .intro {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1800px;
+            margin: 0 auto 40px;
+        }
+        .version {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .version h2 {
+            margin-top: 0;
+            color: #317E6D;
+            border-bottom: 2px solid #317E6D;
+            padding-bottom: 10px;
+        }
+        .version iframe {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .features {
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+        .features h3 {
+            margin-top: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .features ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+        }
+        .features li {
+            font-size: 13px;
+            color: #555;
+            margin: 5px 0;
+        }
+        .note {
+            background: #FEF6ED;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #317E6D;
+            margin-bottom: 30px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .note h3 {
+            margin-top: 0;
+            color: #317E6D;
+        }
+        .note ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .note li {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Methodology Section Comparison</h1>
+    <p class="intro">Compare the original text-heavy approach with the new streamlined, visual design.</p>
+
+    <div class="note">
+        <h3>Key Changes in New Version</h3>
+        <ul>
+            <li><strong>Lead with value:</strong> Frame as "early signals" upfront, not apologetic</li>
+            <li><strong>Visual stakeholder grid:</strong> 2x2 card layout makes sample size scannable at a glance</li>
+            <li><strong>Clearer flow:</strong> Context → Sample → Method → Limitations (tight, logical progression)</li>
+            <li><strong>Tighter language:</strong> Removed redundancy, kept it concise</li>
+            <li><strong>Better hierarchy:</strong> Clear sections with visual separation</li>
+            <li><strong>Ecosystem link repositioned:</strong> Clean button at end instead of mid-sentence</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="version">
+            <h2>Current: Text-Heavy</h2>
+            <iframe src="index.html#methodology" scrolling="yes"></iframe>
+            <div class="features">
+                <h3>Current Issues:</h3>
+                <ul>
+                    <li>Stakeholder breakdown buried in text</li>
+                    <li>Says "small sample" multiple times</li>
+                    <li>Ecosystem map link awkwardly placed mid-sentence</li>
+                    <li>Hard to quickly grasp who was surveyed</li>
+                    <li>Defensive tone throughout</li>
+                    <li>Redundant explanations</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="version">
+            <h2>New: Streamlined & Visual</h2>
+            <iframe src="index-methodology-v2.html#methodology" scrolling="yes"></iframe>
+            <div class="features">
+                <h3>Improvements:</h3>
+                <ul>
+                    <li>✓ Clear 2x2 stakeholder grid (scannable at a glance)</li>
+                    <li>✓ Frames as "early signals" upfront - honest but not apologetic</li>
+                    <li>✓ Tighter, clearer language (removed redundancy)</li>
+                    <li>✓ Better visual hierarchy with cards and sections</li>
+                    <li>✓ Logical flow: Context → Sample → Limitations</li>
+                    <li>✓ Ecosystem map link as clean button at bottom</li>
+                    <li>✓ Professional, confident tone</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 60px; text-align: center; color: #666; font-size: 14px;">
+        <p><strong>Live Preview:</strong></p>
+        <p>Current: <a href="http://localhost:5555/index.html#methodology" target="_blank" style="color: #317E6D;">localhost:5555/index.html#methodology</a></p>
+        <p>New Version: <a href="http://localhost:5555/index-methodology-v2.html#methodology" target="_blank" style="color: #317E6D;">localhost:5555/index-methodology-v2.html#methodology</a></p>
+    </div>
+</body>
+</html>
