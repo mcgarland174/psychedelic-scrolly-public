@@ -1591,11 +1591,62 @@
                 padding: 4rem 1.25rem;
             }
         }
+        .view-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(49, 126, 109, 0.2);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #317E6D;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .view-toggle:hover {
+            background: #317E6D;
+            color: white;
+            box-shadow: 0 4px 20px rgba(49, 126, 109, 0.25);
+            transform: translateY(-1px);
+        }
+
+        .view-toggle-icon {
+            font-size: 1rem;
+        }
+
+        .view-toggle-text {
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .view-toggle {
+                top: auto;
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- SCROLL PROGRESS BAR -->
     <div class="scroll-progress" id="scrollProgress"></div>
+
+    <a class="view-toggle" href="https://co-market-research-explorer.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <span class="view-toggle-icon">📊</span>
+        <span class="view-toggle-text">Explore the Data</span>
+    </a>
 
     <!-- SIDEBAR NAVIGATION -->
     <nav class="sidebar-nav" aria-label="Table of contents">

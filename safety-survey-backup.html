@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Challenges in Psychedelic Safety | PSI Survey Results</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Brand Colors */
+            --color-primary: #317E6D;
+            --color-primary-dark: #133931;
+            --color-primary-light: #48A5CC;
+
+            /* Semantic Colors */
+            --color-success: #317E6D;
+            --color-success-dark: #1F5F51;
+            --color-warning: #D9994F;
+            --color-warning-dark: #9B6D3F;
+            --color-error: #C48955;
+            --color-error-dark: #A87548;
+            --color-info: #48A5CC;
+            --color-info-dark: #317E6D;
+
+            /* Neutral Colors */
+            --color-text: #2B180A;
+            --color-text-muted: #736C66;
+            --color-text-light: #736C66;
+            --color-bg: #F7F0E8;
+            --color-bg-alt: #FFFFFF;
+            --color-bg-subtle: #FDF6EE;
+            --color-border: #EFE5DE;
+            --color-border-muted: #E6C8A1;
+
+            /* Typography Scale */
+            --font-size-xs: 0.7rem;
+            --font-size-sm: 0.75rem;
+            --font-size-base: 0.85rem;
+            --font-size-lg: 0.95rem;
+            --font-size-xl: 1rem;
+            --font-size-2xl: 1.2rem;
+            --font-size-3xl: 1.4rem;
+            --font-size-4xl: 1.8rem;
+            --font-size-5xl: 2.4rem;
+            --font-size-6xl: 2.8rem;
+
+            /* Font Weights */
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+
+            /* Spacing Scale */
+            --space-xs: 0.4rem;
+            --space-sm: 0.8rem;
+            --space-md: 1.2rem;
+            --space-lg: 1.6rem;
+            --space-xl: 2.4rem;
+            --space-2xl: 3.2rem;
+            --space-3xl: 4.8rem;
+
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 50px;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-base: 0.3s ease;
+            --transition-slow: 0.8s ease;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.75;
+            color: var(--color-text);
+            background: var(--color-bg);
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5.5rem 2rem;
+            position: relative;
+        }
+
+        .content {
+            max-width: 850px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 3rem 2rem 5rem 2rem;
+        }
+
+        .hero .content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 2rem 1rem;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero h1 {
+            font-size: var(--font-size-5xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-lg);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-2xl);
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .survey-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-xl);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-indicator:hover {
+            color: rgba(255, 255, 255, 1);
+            transform: translateX(-50%) translateY(-4px);
+        }
+
+        .scroll-indicator-text {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        .scroll-indicator-arrow {
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Sidebar Navigation */
+        .nav-sidebar {
+            position: fixed;
+            top: 50%;
+            right: 2rem;
+            transform: translateY(-50%);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-sidebar.visible {
+            opacity: 1;
+        }
+
+        .nav-sidebar ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .nav-sidebar a {
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-border);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-sidebar a:hover,
+        .nav-sidebar a.active {
+            background: var(--color-primary);
+            transform: scale(1.3);
+        }
+
+        .nav-sidebar a:hover::after {
+            content: attr(data-label);
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--color-text);
+            color: white;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-sm);
+            white-space: nowrap;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Typography */
+        h2 {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--space-xl);
+            color: var(--color-text);
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-lg);
+            color: var(--color-text);
+        }
+
+        p {
+            margin-bottom: var(--space-lg);
+            color: var(--color-text);
+        }
+
+        /* Key Takeaway Box */
+        .key-takeaway {
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            margin: var(--space-2xl) 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .key-takeaway p {
+            color: white;
+            margin: 0;
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: var(--color-bg-alt);
+            border-left: 4px solid var(--color-primary);
+            padding: var(--space-xl);
+            margin: var(--space-2xl) 0;
+            font-style: italic;
+            color: var(--color-text-muted);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .quote-box::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--color-primary);
+            line-height: 0;
+            display: block;
+            margin-bottom: var(--space-md);
+        }
+
+        /* Stat Grid */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-2xl) 0;
+        }
+
+        .stat-card {
+            background: var(--color-bg-alt);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-number {
+            font-size: var(--font-size-5xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            display: block;
+            margin-bottom: var(--space-sm);
+        }
+
+        .stat-label {
+            font-size: var(--font-size-base);
+            color: var(--color-text-muted);
+            font-weight: var(--font-weight-medium);
+        }
+
+        /* Progress Bar */
+        .progress-item {
+            margin-bottom: var(--space-xl);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--space-sm);
+        }
+
+        .progress-label {
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text);
+        }
+
+        .progress-percentage {
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+        }
+
+        .progress-bar-container {
+            background: var(--color-border);
+            height: 12px;
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+            border-radius: var(--radius-full);
+            transition: width 1s ease;
+            width: 0;
+        }
+
+        .progress-bar.animate {
+            width: var(--progress-width);
+        }
+
+        .progress-description {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+            margin-top: var(--space-xs);
+        }
+
+        /* Collapsible Sections */
+        .collapsible-section {
+            margin-bottom: var(--space-lg);
+            background: var(--color-bg-alt);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .collapsible-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-lg);
+            cursor: pointer;
+            transition: background 0.3s ease;
+            user-select: none;
+        }
+
+        .collapsible-header:hover {
+            background: var(--color-bg-subtle);
+        }
+
+        .collapsible-title {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text);
+        }
+
+        .collapsible-icon {
+            font-size: var(--font-size-xl);
+            color: var(--color-primary);
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-section.open .collapsible-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .collapsible-section.open .collapsible-content {
+            max-height: 2000px;
+        }
+
+        .collapsible-inner {
+            padding: 0 var(--space-lg) var(--space-lg) var(--space-lg);
+        }
+
+        .collapsible-inner ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .collapsible-inner li {
+            padding: var(--space-sm) 0;
+            padding-left: var(--space-lg);
+            position: relative;
+        }
+
+        .collapsible-inner li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        /* List Styling */
+        ul.styled-list {
+            list-style: none;
+            padding: 0;
+            margin: var(--space-lg) 0;
+        }
+
+        ul.styled-list li {
+            padding: var(--space-sm) 0;
+            padding-left: var(--space-xl);
+            position: relative;
+        }
+
+        ul.styled-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: bold;
+            font-size: var(--font-size-lg);
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: var(--space-3xl);
+            border-radius: var(--radius-lg);
+            margin: var(--space-2xl) 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--color-primary);
+            padding: var(--space-lg) var(--space-2xl);
+            border-radius: var(--radius-full);
+            font-weight: var(--font-weight-semibold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Data Explorer Section */
+        .data-explorer {
+            background: var(--color-bg-alt);
+            padding: var(--space-2xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            margin: var(--space-2xl) 0;
+        }
+
+        .explorer-controls {
+            display: flex;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+            flex-wrap: wrap;
+        }
+
+        .explorer-control {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .explorer-control label {
+            display: block;
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--space-sm);
+            color: var(--color-text);
+        }
+
+        .explorer-control select {
+            width: 100%;
+            padding: var(--space-md);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-base);
+            background: white;
+            cursor: pointer;
+        }
+
+        .explorer-results {
+            margin-top: var(--space-xl);
+        }
+
+        .result-item {
+            background: var(--color-bg-subtle);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .result-title {
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-text);
+            margin-bottom: var(--space-sm);
+        }
+
+        .result-stat {
+            color: var(--color-primary);
+            font-weight: var(--font-weight-bold);
+            font-size: var(--font-size-lg);
+        }
+
+        .result-description {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+            margin-top: var(--space-sm);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: var(--font-size-4xl);
+            }
+
+            h2 {
+                font-size: var(--font-size-3xl);
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .nav-sidebar {
+                display: none;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="nav-sidebar" id="navSidebar">
+        <ul>
+            <li><a href="#foundation" data-label="Safety Foundation"></a></li>
+            <li><a href="#causes" data-label="Causes of Harm"></a></li>
+            <li><a href="#contexts" data-label="Where Challenges Emerge"></a></li>
+            <li><a href="#responses" data-label="Community Responses"></a></li>
+            <li><a href="#vision" data-label="Vision for Safety"></a></li>
+            <li><a href="#infrastructure" data-label="Infrastructure Needs"></a></li>
+            <li><a href="#explorer" data-label="Data Explorer"></a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="content">
+            <div class="survey-badge">Survey Results | 40 Community Leaders</div>
+            <h1>Community Challenges in Psychedelic Safety</h1>
+            <p>Insights from 35 psychedelic society leaders and 5 Students for Sensible Drug Policy representatives worldwide</p>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('foundation').scrollIntoView({behavior: 'smooth'})">
+            <span class="scroll-indicator-text">Explore</span>
+            <span class="scroll-indicator-arrow">↓</span>
+        </div>
+    </section>
+
+    <!-- Safety as Foundation -->
+    <section class="section" id="foundation" style="background: var(--color-bg);">
+        <div class="content">
+            <h2>Safety as the Foundation</h2>
+            <p>100% of respondents identified safety as critical to their communities. But their reasons reveal a deeper story:</p>
+
+            <div class="quote-box">
+                I've been in a lot of spaces where set and setting were not considered. (...) Fostering a space of safety with education first and foremost allows for a deeper experience in a safe container.
+            </div>
+
+            <h3>The Data Speaks Volumes</h3>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <div class="stat-label">Emphasize education & knowledge sharing</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <div class="stat-label">See safety as enabling healing</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <div class="stat-label">Believe in community responsibility</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">95%</span>
+                    <div class="stat-label">Focus on access and equity</div>
+                </div>
+            </div>
+
+            <div class="key-takeaway">
+                <p>This isn't just about preventing bad trips—it's about creating safe conditions for profound transformation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Causes of Harm -->
+    <section class="section" id="causes" style="background: var(--color-bg-alt);">
+        <div class="content">
+            <h2>Causes of Psychedelic Harm</h2>
+
+            <div class="progress-item">
+                <div class="progress-header">
+                    <span class="progress-label">1. The Knowledge Gap</span>
+                    <span class="progress-percentage">100%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="--progress-width: 100%"></div>
+                </div>
+                <div class="progress-description">100% of communities affected</div>
+            </div>
+
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    <span class="collapsible-title">The Knowledge Gap</span>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <ul>
+                            <li>Treating psychedelics as quick fixes</li>
+                            <li>Misinformation spreading faster than education</li>
+                            <li>First-timers going in completely unprepared</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-item">
+                <div class="progress-header">
+                    <span class="progress-label">2. Unsafe Practitioners</span>
+                    <span class="progress-percentage">100%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="--progress-width: 100%"></div>
+                </div>
+                <div class="progress-description">100% report concerns</div>
+            </div>
+
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    <span class="collapsible-title">Unsafe Practitioners</span>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <ul>
+                            <li>Self-proclaimed facilitators without training</li>
+                            <li>Facilitators crossing boundaries</li>
+                            <li>Culturally inappropriate care</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-item">
+                <div class="progress-header">
+                    <span class="progress-label">3. System Failures</span>
+                    <span class="progress-percentage">83%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="--progress-width: 83%"></div>
+                </div>
+                <div class="progress-description">83% experiencing barriers</div>
+            </div>
+
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    <span class="collapsible-title">System Failures</span>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <ul>
+                            <li>Criminalization preventing people from seeking help</li>
+                            <li>No accountability systems for bad actors</li>
+                            <li>Underground markets without labelling and testing standards</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-item">
+                <div class="progress-header">
+                    <span class="progress-label">4. Vulnerable Populations at Risk</span>
+                    <span class="progress-percentage">90%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="--progress-width: 90%"></div>
+                </div>
+                <div class="progress-description">90% worried about vulnerable populations</div>
+            </div>
+
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    <span class="collapsible-title">Vulnerable Populations at Risk</span>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <ul>
+                            <li>Neurodivergent individuals without adapted support</li>
+                            <li>Trauma survivors being retraumatized</li>
+                            <li>Marginalized communities facing additional barriers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Where Challenges Emerge -->
+    <section class="section" id="contexts" style="background: var(--color-bg);">
+        <div class="content">
+            <h2>Where Do Safety Challenges Emerge?</h2>
+            <p>Our research identified five critical contexts where safety challenges emerge:</p>
+
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    <span class="collapsible-title">🎉 At Festivals & Parties</span>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <p><strong>56% report contaminated substances as top concern</strong></p>
+                        <ul>
+                            <li>Contaminated substances</li>
+                            <li>No quiet spaces for overwhelm</li>
+                            <li>Peer pressure and suggestibility</li>
+                            <li>Absent harm reduction services</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    <span class="collapsible-title">🧘 Taking Psychedelics Alone</span>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <p><strong>65% cite no support during crisis as major risk</strong></p>
+                        <ul>
+                            <li>No support during crisis</li>
+                            <li>Panic and psychological overwhelm</li>
+                            <li>Physical safety risks</li>
+                            <li>Inability to call for help</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    <span class="collapsible-title">👥 In Small Groups</span>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <ul>
+                            <li>Group emotional responses</li>
+                            <li>Pressure to dose higher</li>
+                            <li>Lack of clear boundaries</li>
+                            <li>No trained crisis support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    <span class="collapsible-title">🏥 In Facilitated Sessions</span>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <p><strong>70% report power abuse and boundary violations</strong></p>
+                        <ul>
+                            <li>Power abuse and boundary violations</li>
+                            <li>Inadequate screening for trauma/medications</li>
+                            <li>Sexual misconduct</li>
+                            <li>No integration support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapsible-section">
+                <div class="collapsible-header">
+                    <span class="collapsible-title">🌿 In Traditional/Spiritual Contexts</span>
+                    <span class="collapsible-icon">▼</span>
+                </div>
+                <div class="collapsible-content">
+                    <div class="collapsible-inner">
+                        <ul>
+                            <li>Cultural appropriation</li>
+                            <li>Spiritual manipulation</li>
+                            <li>Unsafe ceremonial practices</li>
+                            <li>Trauma reactivation without support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Communities Responding -->
+    <section class="section" id="responses" style="background: var(--color-bg-alt);">
+        <div class="content">
+            <h2>Communities are Already Responding</h2>
+            <p>Community leaders report various support initiatives, but critical gaps remain.</p>
+
+            <h3>Direct Services</h3>
+            <ul class="styled-list">
+                <li>Free Narcan and fentanyl test strips</li>
+                <li>Drug checking at events</li>
+                <li>Peer support and "Zendo" tents, hotline support</li>
+                <li>Integration circles</li>
+            </ul>
+
+            <h3>Education Initiatives</h3>
+            <ul class="styled-list">
+                <li>Workshops on vetting facilitators</li>
+                <li>Public education and awareness on psychedelic safety</li>
+                <li>Dosage and interaction guides</li>
+                <li>Consent and boundary education</li>
+            </ul>
+
+            <h3>Community Building</h3>
+            <ul class="styled-list">
+                <li>Peer support networks</li>
+                <li>Survivor support groups</li>
+                <li>Word-of-mouth warning systems</li>
+                <li>Local society meetings</li>
+            </ul>
+
+            <div class="key-takeaway">
+                <p>But it's not enough. Critical gaps remain.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision for Safety -->
+    <section class="section" id="vision" style="background: var(--color-bg);">
+        <div class="content">
+            <h2>A Vision for Psychedelic Safety</h2>
+            <p>When asked what they'd change, community and student leaders converged on three solutions:</p>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-number">95%</span>
+                    <div class="stat-label">Safe & Legal Access</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">95%</span>
+                    <div class="stat-label">Facilitator Accountability</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <div class="stat-label">Centralized Education Hub</div>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                Decriminalization would allow people to seek help without fear. It would bring practices out of the shadows.
+            </div>
+
+            <div class="quote-box">
+                We need a public database of reported bad actors. Standardized training. Ethics boards with teeth.
+            </div>
+
+            <div class="quote-box">
+                Accurate, accessible information that counters both stigma and hype. Resources in multiple languages. Training that doesn't cost thousands.
+            </div>
+        </div>
+    </section>
+
+    <!-- Infrastructure Needs -->
+    <section class="section" id="infrastructure" style="background: var(--color-bg-alt);">
+        <div class="content">
+            <h2>Building the Infrastructure of Safety</h2>
+            <p>Communities are clear about what they need:</p>
+
+            <h3>Immediate Needs</h3>
+            <ul class="styled-list">
+                <li>Drug checking access at every event</li>
+                <li>Crisis hotlines staffed 24/7</li>
+                <li>Integration circles</li>
+                <li>Psychedelic-friendly therapists directories</li>
+            </ul>
+
+            <h3>Educational Revolution</h3>
+            <ul class="styled-list">
+                <li>School and university programs</li>
+                <li>Corporate wellness integration</li>
+                <li>Public awareness campaigns</li>
+            </ul>
+
+            <h3>Systemic Changes</h3>
+            <ul class="styled-list">
+                <li>Decriminalization</li>
+                <li>Standardized facilitator certification</li>
+                <li>Independent ethics review boards</li>
+                <li>Public health approach to psychedelics</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Data Explorer -->
+    <section class="section" id="explorer" style="background: var(--color-bg);">
+        <div class="content">
+            <h2>Explore the Survey Data</h2>
+            <p>Dive deeper into the responses from community and student leaders.</p>
+
+            <div class="data-explorer">
+                <div class="explorer-controls">
+                    <div class="explorer-control">
+                        <label for="questionSelect">Select Question</label>
+                        <select id="questionSelect">
+                            <option value="">Loading questions...</option>
+                        </select>
+                    </div>
+                    <div class="explorer-control">
+                        <label for="themeSelect">Filter by Theme</label>
+                        <select id="themeSelect">
+                            <option value="">All Themes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="explorer-results" id="explorerResults">
+                    <p style="text-align: center; color: var(--color-text-muted);">Select a question to view detailed results</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section" style="background: var(--color-bg-alt);">
+        <div class="content">
+            <div class="cta-section">
+                <h2>Join the Movement for Psychedelic Safety</h2>
+                <p style="color: white; margin-bottom: var(--space-xl);">PSI is committed to supporting psychedelic safety through research, education, and advocacy.</p>
+                <a href="#" class="cta-button">Explore Education Guides</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Animate progress bars
+                    const progressBars = entry.target.querySelectorAll('.progress-bar');
+                    progressBars.forEach(bar => {
+                        bar.classList.add('animate');
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.content').forEach(el => observer.observe(el));
+
+        // Show sidebar navigation on scroll
+        window.addEventListener('scroll', () => {
+            const navSidebar = document.getElementById('navSidebar');
+            if (window.scrollY > window.innerHeight) {
+                navSidebar.classList.add('visible');
+            } else {
+                navSidebar.classList.remove('visible');
+            }
+
+            // Update active navigation
+            const sections = document.querySelectorAll('section[id]');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    document.querySelectorAll('.nav-sidebar a').forEach(a => a.classList.remove('active'));
+                    const activeLink = document.querySelector(`.nav-sidebar a[href="#${section.id}"]`);
+                    if (activeLink) activeLink.classList.add('active');
+                }
+            });
+        });
+
+        // Collapsible sections
+        document.querySelectorAll('.collapsible-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const section = header.parentElement;
+                section.classList.toggle('open');
+            });
+        });
+
+        // Load and parse CSV data
+        let surveyData = [];
+
+        async function loadSurveyData() {
+            try {
+                const response = await fetch('survey-data.csv');
+                const text = await response.text();
+                surveyData = parseCSV(text);
+                populateExplorer();
+            } catch (error) {
+                console.error('Error loading survey data:', error);
+                document.getElementById('explorerResults').innerHTML =
+                    '<p style="text-align: center; color: var(--color-error);">Error loading survey data</p>';
+            }
+        }
+
+        function parseCSV(text) {
+            const lines = text.split('\n');
+            const headers = lines[0].split(',');
+            const data = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                if (lines[i].trim()) {
+                    const values = parseCSVLine(lines[i]);
+                    const row = {};
+                    headers.forEach((header, index) => {
+                        row[header.trim()] = values[index] ? values[index].trim() : '';
+                    });
+                    data.push(row);
+                }
+            }
+
+            return data;
+        }
+
+        function parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current);
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+            result.push(current);
+
+            return result;
+        }
+
+        function populateExplorer() {
+            // Get unique questions
+            const questions = [...new Set(surveyData.map(row => row.Question))].filter(q => q);
+            const questionSelect = document.getElementById('questionSelect');
+            questionSelect.innerHTML = '<option value="">Select a question...</option>';
+            questions.forEach(q => {
+                const option = document.createElement('option');
+                option.value = q;
+                option.textContent = q.substring(0, 100) + (q.length > 100 ? '...' : '');
+                questionSelect.appendChild(option);
+            });
+
+            // Get unique themes
+            const themes = [...new Set(surveyData.map(row => row.Parent_code_name))].filter(t => t);
+            const themeSelect = document.getElementById('themeSelect');
+            themes.forEach(t => {
+                const option = document.createElement('option');
+                option.value = t;
+                option.textContent = t;
+                themeSelect.appendChild(option);
+            });
+
+            // Event listeners
+            questionSelect.addEventListener('change', updateResults);
+            themeSelect.addEventListener('change', updateResults);
+        }
+
+        function updateResults() {
+            const question = document.getElementById('questionSelect').value;
+            const theme = document.getElementById('themeSelect').value;
+            const resultsDiv = document.getElementById('explorerResults');
+
+            if (!question) {
+                resultsDiv.innerHTML = '<p style="text-align: center; color: var(--color-text-muted);">Select a question to view detailed results</p>';
+                return;
+            }
+
+            let filtered = surveyData.filter(row => row.Question === question);
+            if (theme) {
+                filtered = filtered.filter(row => row.Parent_code_name === theme);
+            }
+
+            // Group by parent code
+            const grouped = {};
+            filtered.forEach(row => {
+                const parentCode = row.Parent_code_name;
+                if (!grouped[parentCode]) {
+                    grouped[parentCode] = {
+                        definition: row.Parent_code_definition,
+                        percentage: row['% of total interviewees'],
+                        subcodes: []
+                    };
+                }
+                if (row.subcode_name) {
+                    grouped[parentCode].subcodes.push({
+                        name: row.subcode_name,
+                        definition: row.subcode_definition,
+                        count: row['# subcode respondents '],
+                        percentage: row['% of  subcode per parent code respondents']
+                    });
+                }
+            });
+
+            // Display results
+            let html = '';
+            Object.keys(grouped).forEach(parentCode => {
+                const data = grouped[parentCode];
+                html += `
+                    <div class="result-item">
+                        <div class="result-title">${parentCode} <span class="result-stat">${data.percentage}</span></div>
+                        <div class="result-description">${data.definition}</div>
+                        ${data.subcodes.length > 0 ? `
+                            <ul style="margin-top: var(--space-md); padding-left: var(--space-lg);">
+                                ${data.subcodes.map(sub => `
+                                    <li style="margin-bottom: var(--space-sm);">
+                                        <strong>${sub.name}</strong> (${sub.percentage})
+                                        ${sub.definition ? `<br><span style="color: var(--color-text-muted); font-size: var(--font-size-sm);">${sub.definition}</span>` : ''}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        ` : ''}
+                    </div>
+                `;
+            });
+
+            resultsDiv.innerHTML = html || '<p style="text-align: center; color: var(--color-text-muted);">No results found</p>';
+        }
+
+        // Load data on page load
+        loadSurveyData();
+    </script>
+</body>
+</html>
