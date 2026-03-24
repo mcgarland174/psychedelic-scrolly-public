@@ -18,18 +18,12 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/garnett" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         :root {
-            /* Brand Colors */
+            /* Primary Colors */
             --color-primary: #317E6D;
             --color-primary-dark: #133931;
             --color-primary-light: #48A5CC;
@@ -37,11 +31,11 @@
             /* Semantic Colors */
             --color-success: #317E6D;
             --color-success-dark: #1F5F51;
-            --color-warning: #D9994F;
-            --color-warning-dark: #9B6D3F;
-            --color-warning-light: #FAE6CC;
-            --color-error: #DE0A32;
-            --color-error-dark: #A87548;
+            --color-warning: #E8A838;
+            --color-warning-dark: #C48420;
+            --color-warning-light: #FFF0D6;
+            --color-error: #E85D6C;
+            --color-error-dark: #C94B5A;
             --color-info: #48A5CC;
             --color-info-dark: #317E6D;
 
@@ -61,15 +55,15 @@
 
             /* Typography Scale */
             --font-size-xs: 0.7rem;
-            --font-size-sm: 0.75rem;
-            --font-size-base: 0.85rem;
-            --font-size-lg: 0.95rem;
-            --font-size-xl: 1rem;
-            --font-size-2xl: 1.2rem;
-            --font-size-3xl: 1.4rem;
-            --font-size-4xl: 1.8rem;
-            --font-size-5xl: 2.4rem;
-            --font-size-6xl: 2.8rem;
+            --font-size-sm: 0.8rem;
+            --font-size-base: 0.95rem;
+            --font-size-lg: 1.05rem;
+            --font-size-xl: 1.1rem;
+            --font-size-2xl: 1.3rem;
+            --font-size-3xl: 1.6rem;
+            --font-size-4xl: 2.2rem;
+            --font-size-5xl: 3.2rem;
+            --font-size-6xl: 3.4rem;
 
             /* Font Weights */
             --font-weight-normal: 400;
@@ -84,7 +78,7 @@
             --space-lg: 1.6rem;
             --space-xl: 2.4rem;
             --space-2xl: 3.2rem;
-            --space-3xl: 4.8rem;
+            --space-3xl: 5.6rem;
 
             /* Border Radius */
             --radius-xs: 6px;
@@ -95,31 +89,67 @@
             --radius-full: 50px;
 
             /* Shadows */
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
-            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.3);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.16);
+            --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
 
             /* Transitions */
-            --transition-fast: 0.15s ease;
-            --transition-base: 0.3s ease;
-            --transition-slow: 0.8s ease;
+            --transition-fast: 150ms ease;
+            --transition-base: 250ms ease;
+            --transition-slow: 350ms ease;
+        }
+
+        /* Global polish */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background: rgba(49, 126, 109, 0.25);
+            color: var(--color-primary-dark);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            font-size: 15px;
-            line-height: 1.75;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: var(--font-size-base);
+            line-height: 1.8;
             color: var(--color-text);
             background: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'ss01', 'ss02';
+        }
+
+        /* Scroll progress bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light), var(--color-accent-mint));
+            z-index: 2000;
+            transition: width 50ms linear;
         }
 
         .section {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: var(--space-2xl) 2rem;
+            padding: var(--space-3xl) 2rem;
             position: relative;
+            scroll-margin-top: 2rem;
         }
 
         .content {
@@ -134,76 +164,230 @@
             transform: translateY(0);
         }
 
-        .hero {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-            color: white;
-            text-align: center;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 3rem 0 5rem 0;
-        }
-
-        .hero .content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            padding: 2rem 1rem;
+        /* Staggered child animations */
+        .content.visible .stagger-item {
             opacity: 1;
             transform: translateY(0);
         }
 
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .stagger-item:nth-child(1) { transition-delay: 0.1s; }
+        .stagger-item:nth-child(2) { transition-delay: 0.2s; }
+        .stagger-item:nth-child(3) { transition-delay: 0.3s; }
+        .stagger-item:nth-child(4) { transition-delay: 0.4s; }
+        .stagger-item:nth-child(5) { transition-delay: 0.5s; }
+        .stagger-item:nth-child(6) { transition-delay: 0.6s; }
+
+        /* ======================== */
+        /* HERO                     */
+        /* ======================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #0a1f1a;
+            color: white;
+            position: relative;
+            padding: var(--space-3xl) 2rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% 40%, rgba(49, 126, 109, 0.6) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 80% at 80% 20%, rgba(72, 165, 204, 0.4) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 60% at 60% 80%, rgba(109, 181, 163, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse 40% 40% at 40% 60%, rgba(19, 57, 49, 0.8) 0%, transparent 60%);
+            animation: meshMove 20s ease-in-out infinite alternate;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes meshMove {
+            0% { transform: scale(1) rotate(0deg); }
+            33% { transform: scale(1.1) rotate(2deg); }
+            66% { transform: scale(0.95) rotate(-1deg); }
+            100% { transform: scale(1.05) rotate(1deg); }
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.3), transparent),
+                radial-gradient(2px 2px at 30% 60%, rgba(255,255,255,0.2), transparent),
+                radial-gradient(3px 3px at 50% 40%, rgba(255,255,255,0.15), transparent),
+                radial-gradient(2px 2px at 70% 80%, rgba(255,255,255,0.25), transparent),
+                radial-gradient(2px 2px at 90% 30%, rgba(255,255,255,0.2), transparent),
+                radial-gradient(3px 3px at 15% 70%, rgba(255,255,255,0.15), transparent),
+                radial-gradient(2px 2px at 45% 90%, rgba(255,255,255,0.2), transparent),
+                radial-gradient(2px 2px at 85% 50%, rgba(255,255,255,0.15), transparent);
+            background-size: 100% 100%;
+            animation: floatParticles 30s linear infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        @keyframes floatParticles {
+            0% { transform: translateY(0); opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0.6; }
+        }
+
+        .hero .content {
+            opacity: 1;
+            transform: none;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            margin-bottom: var(--space-lg);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.6rem);
+            font-weight: 300;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(109, 181, 163, 0.9));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-top: var(--space-md);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hero stat cards */
+        .hero-stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            z-index: 10;
+            position: relative;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .hero-stat-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        .hero-stat-card:nth-child(1) { animation-delay: 0.3s; }
+        .hero-stat-card:nth-child(2) { animation-delay: 0.5s; }
+        .hero-stat-card:nth-child(3) { animation-delay: 0.7s; }
+
+        .hero-stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            font-family: 'Garnett', Georgia, serif;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .hero-stat-label {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.25rem;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Pulsing scroll indicator */
         .scroll-indicator {
             position: absolute;
-            bottom: 1.5rem;
+            bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.25rem;
-            color: rgba(255, 255, 255, 0.8);
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.7);
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .scroll-indicator:hover {
             color: rgba(255, 255, 255, 1);
-            transform: translateX(-50%) translateY(-4px);
         }
 
         .scroll-indicator-text {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             font-weight: 500;
         }
 
         .scroll-indicator-arrow {
-            font-size: 1.5rem;
-            animation: bounce 2s infinite;
+            width: 24px;
+            height: 24px;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: rotate(45deg);
+            animation: pulse 2s ease-in-out infinite;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; transform: rotate(45deg) translateY(0); }
+            50% { opacity: 1; transform: rotate(45deg) translateY(6px); }
         }
 
+        /* ======================== */
+        /* TYPOGRAPHY               */
+        /* ======================== */
         h1 {
             font-family: 'Garnett', Georgia, 'Times New Roman', serif;
-            font-size: var(--font-size-5xl);
-            margin-bottom: var(--space-sm);
-            line-height: 1.4;
             font-weight: 700;
             color: var(--color-text);
         }
@@ -215,7 +399,23 @@
             margin-top: var(--space-2xl);
             color: var(--color-text);
             font-weight: 700;
-            line-height: 1.4;
+            line-height: 1.3;
+            position: relative;
+        }
+
+        /* Decorative gradient accent line before h2 */
+        .content h2::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent-mint));
+            margin-bottom: 1rem;
+            border-radius: 2px;
+        }
+
+        .content h2:first-child::before {
+            margin-top: 0;
         }
 
         h3 {
@@ -228,42 +428,30 @@
             line-height: 1.4;
         }
 
-        .hero h1 {
-            color: white;
-            font-size: var(--font-size-5xl);
-        }
-
-        .hero h2 {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: var(--font-size-3xl);
-            font-weight: var(--font-weight-normal);
-            margin-top: var(--space-md);
-        }
-
         p {
             font-size: var(--font-size-base);
             margin-bottom: var(--space-md);
             color: var(--color-text-light);
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .lead-text {
             font-size: var(--font-size-xl);
             font-weight: var(--font-weight-normal);
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
-        .hero p {
-            color: rgba(255, 255, 255, 0.95);
-            font-size: var(--font-size-lg);
-        }
-
+        /* ======================== */
+        /* STAT NUMBERS             */
+        /* ======================== */
         .stat-large {
             font-size: var(--font-size-6xl);
             font-weight: var(--font-weight-bold);
             color: var(--color-primary);
             margin: var(--space-lg) 0;
             text-align: center;
+            font-family: 'Garnett', Georgia, serif;
+            font-variant-numeric: tabular-nums;
         }
 
         .stat-description {
@@ -274,6 +462,9 @@
             margin-bottom: var(--space-lg);
         }
 
+        /* ======================== */
+        /* BAR CHARTS               */
+        /* ======================== */
         .bar-chart {
             margin: var(--space-lg) 0;
         }
@@ -301,12 +492,13 @@
             color: var(--color-primary);
             min-width: 60px;
             text-align: right;
+            font-variant-numeric: tabular-nums;
         }
 
         .bar-bg {
             background: rgba(203, 213, 217, 0.15);
-            height: 45px;
-            border-radius: var(--radius-sm);
+            height: 52px;
+            border-radius: var(--radius-full);
             overflow: hidden;
             position: relative;
             box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);
@@ -315,12 +507,12 @@
         .bar-fill {
             height: 100%;
             background: var(--color-primary);
-            border-radius: var(--radius-sm);
+            border-radius: var(--radius-full);
             width: 0;
-            transition: width 1.5s ease;
+            transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             display: flex;
             align-items: center;
-            padding-left: var(--space-sm);
+            padding-left: var(--space-md);
             color: white;
             font-weight: var(--font-weight-semibold);
             box-shadow: 0 2px 6px rgba(43, 24, 10, 0.08);
@@ -330,55 +522,88 @@
             width: var(--width);
         }
 
-        .bar-fill:hover {
-            transform: scaleX(1.01);
-            box-shadow: 0 3px 8px rgba(43, 24, 10, 0.12);
-        }
+        .bar-item:nth-child(1) .bar-fill { transition-delay: 0.1s; }
+        .bar-item:nth-child(2) .bar-fill { transition-delay: 0.25s; }
+        .bar-item:nth-child(3) .bar-fill { transition-delay: 0.4s; }
 
+        /* ======================== */
+        /* ICON GRID (Trust)        */
+        /* ======================== */
         .icon-grid {
             display: grid;
             grid-template-columns: repeat(10, 1fr);
             gap: var(--space-sm);
             margin: var(--space-xl) auto;
-            max-width: 600px;
+            max-width: 500px;
         }
 
         .icon {
             width: 100%;
             padding-bottom: 100%;
             position: relative;
-            opacity: 0.3;
-            transition: all 0.3s ease;
+            opacity: 0.25;
+            transition: all 0.4s ease;
+            border-radius: 50%;
         }
 
-        .icon svg {
+        .icon-inner {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            border-radius: 50%;
+            background: var(--color-border-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-inner::after {
+            content: '';
+            width: 40%;
+            height: 40%;
+            border-radius: 50%;
+            background: inherit;
+            position: absolute;
+            top: 15%;
         }
 
         .icon.highlighted {
             opacity: 1;
         }
 
-        .quote-box {
-            background: var(--color-bg-alt);
-            border-left: 6px solid var(--color-primary);
-            padding: var(--space-lg);
-            margin: var(--space-lg) 0;
-            font-size: var(--font-size-lg);
-            font-style: italic;
-            color: var(--color-text-muted);
-            box-shadow: 0 2px 8px rgba(43, 24, 10, 0.1);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            line-height: 1.6;
+        .icon.highlighted .icon-inner {
+            background: var(--color-accent-mint);
         }
 
-        .quote-box:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(43, 24, 10, 0.15);
+        /* ======================== */
+        /* QUOTES                   */
+        /* ======================== */
+        .quote-box {
+            position: relative;
+            border-left: 4px solid;
+            border-image: linear-gradient(to bottom, var(--color-primary), var(--color-accent-mint)) 1;
+            padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--space-2xl);
+            margin: var(--space-xl) 0;
+            font-size: var(--font-size-lg);
+            font-style: italic;
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            background: transparent;
+        }
+
+        .quote-box::before {
+            content: '\201C';
+            position: absolute;
+            top: -0.5rem;
+            left: 0.5rem;
+            font-size: 4rem;
+            color: rgba(49, 126, 109, 0.15);
+            font-family: 'Garnett', Georgia, serif;
+            line-height: 1;
+            pointer-events: none;
         }
 
         .quote-attribution {
@@ -387,8 +612,60 @@
             font-style: normal;
             color: var(--color-text-muted);
             font-size: var(--font-size-sm);
+            font-family: 'Inter', sans-serif;
         }
 
+        /* Quote highlight variant */
+        .quote-highlight {
+            border-left: none;
+            border-image: none;
+            text-align: center;
+            padding: var(--space-2xl) var(--space-xl);
+        }
+
+        .quote-highlight::before {
+            display: none;
+        }
+
+        .quote-highlight::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: var(--color-primary);
+            margin: 1.5rem auto 0;
+        }
+
+        .quote-highlight .quote-attribution {
+            text-align: center;
+        }
+
+        /* Quote with stat variant */
+        .quote-with-stat {
+            border-left: none;
+            border-image: none;
+            text-align: center;
+            padding: var(--space-2xl) var(--space-xl);
+        }
+
+        .quote-with-stat::before {
+            display: none;
+        }
+
+        .quote-stat-number {
+            display: block;
+            font-size: var(--font-size-5xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            font-family: 'Garnett', Georgia, serif;
+            font-style: normal;
+            margin-bottom: 0.5rem;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ======================== */
+        /* CARDS / PANELS           */
+        /* ======================== */
         .split-view {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -399,19 +676,21 @@
         .split-panel {
             background: var(--color-bg-alt);
             padding: var(--space-xl);
-            border-radius: var(--radius-md);
+            border-radius: var(--radius-lg);
             box-shadow: var(--shadow-sm);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--color-primary);
         }
 
         .split-panel:hover {
             transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 8px 24px rgba(49, 126, 109, 0.12);
         }
 
         .split-panel h3 {
             color: var(--color-primary);
             margin-bottom: 1rem;
+            margin-top: 0;
             font-size: var(--font-size-2xl);
         }
 
@@ -430,8 +709,8 @@
             border-bottom: none;
         }
 
-        .split-panel li:before {
-            content: "→ ";
+        .split-panel li::before {
+            content: "\2192 ";
             color: var(--color-primary);
             font-weight: var(--font-weight-bold);
         }
@@ -445,126 +724,359 @@
 
         .methodology {
             background: var(--color-bg-alt);
-            padding: var(--space-lg);
-            border-radius: var(--radius-md);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
             box-shadow: var(--shadow-sm);
             margin: var(--space-lg) 0;
+            border-top: 4px solid var(--color-primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .methodology:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
         }
 
         .methodology h3 {
             color: var(--color-primary);
             margin-bottom: var(--space-sm);
+            margin-top: 0;
         }
 
+        /* ======================== */
+        /* CHECKLIST                */
+        /* ======================== */
         .checklist {
-            background: var(--color-bg-subtle);
+            background: #FFFBF0;
             padding: var(--space-xl);
-            border-radius: var(--radius-md);
+            border-radius: var(--radius-lg);
             margin: var(--space-xl) 0;
             box-shadow: var(--shadow-sm);
+            border-top: 4px solid var(--color-warning);
         }
 
         .checklist h4 {
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
             font-weight: var(--font-weight-bold);
             margin-bottom: 1rem;
-            color: var(--color-primary);
+            color: var(--color-warning-dark);
             font-size: var(--font-size-xl);
         }
 
         .checklist-item {
-            padding: 1rem;
+            padding: 1rem 1rem 1rem 1.25rem;
             margin: 0.5rem 0;
             background: white;
             border-left: 4px solid var(--color-error);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
             font-size: var(--font-size-base);
             box-shadow: var(--shadow-sm);
+            color: var(--color-text);
         }
 
-        .checklist-item:before {
-            content: "✗ ";
+        .checklist-item::before {
+            content: "\2717 ";
             color: var(--color-error);
             font-weight: var(--font-weight-bold);
             margin-right: 0.5rem;
         }
 
-        .venn-diagram {
+        /* ======================== */
+        /* FLOW CHART (HTML/CSS)    */
+        /* ======================== */
+        .flow-sequence {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            margin: var(--space-2xl) 0;
+            position: relative;
+        }
+
+        .flow-step {
+            flex: 1;
+            text-align: center;
+            padding: var(--space-lg) var(--space-md);
+            position: relative;
+        }
+
+        .flow-step-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            margin: 0 auto var(--space-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .flow-step:nth-child(2) .flow-step-icon { background: var(--color-warning); }
+        .flow-step:nth-child(3) .flow-step-icon { background: var(--color-error); }
+        .flow-step:nth-child(4) .flow-step-icon { background: var(--color-error-dark); }
+
+        .flow-step-label {
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--font-size-base);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Connecting line between steps */
+        .flow-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: calc(var(--space-lg) + 24px);
+            right: 0;
+            width: 50%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 1;
+        }
+
+        .flow-step:not(:first-child)::before {
+            content: '';
+            position: absolute;
+            top: calc(var(--space-lg) + 24px);
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 1;
+        }
+
+        /* ======================== */
+        /* VENN REPLACEMENT         */
+        /* ======================== */
+        .safety-triad {
             margin: var(--space-2xl) auto;
             text-align: center;
         }
 
-        .venn-title {
+        .safety-triad-title {
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
             font-size: var(--font-size-2xl);
             margin-bottom: var(--space-xl);
             color: var(--color-primary);
             font-weight: var(--font-weight-bold);
         }
 
-        .venn-circles {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .triad-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
             position: relative;
-            height: 200px;
-            margin: 2rem 0;
         }
 
-        .venn-circle {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: var(--font-weight-bold);
-            color: white;
-            position: absolute;
-            font-size: var(--font-size-lg);
+        .triad-card {
+            padding: var(--space-xl) var(--space-lg);
+            border-radius: var(--radius-lg);
+            background: white;
+            box-shadow: var(--shadow-sm);
+            border-top: 4px solid var(--color-primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .venn-circle:nth-child(1) {
-            background: rgba(49, 126, 109, 0.6);
-            left: 30%;
-        }
+        .triad-card:nth-child(2) { border-top-color: var(--color-warning); }
+        .triad-card:nth-child(3) { border-top-color: var(--color-error); }
 
-        .venn-circle:nth-child(2) {
-            background: rgba(204, 141, 55, 0.6);
-            left: 45%;
-        }
-
-        .venn-circle:nth-child(3) {
-            background: rgba(222, 10, 50, 0.6);
-            left: 60%;
-        }
-
-        .flow-chart {
-            margin: var(--space-2xl) 0;
-        }
-
-        .flow-items {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: var(--space-md);
-        }
-
-        .flow-item {
-            background: var(--color-primary);
-            padding: var(--space-lg);
-            border-radius: var(--radius-md);
+        .triad-card:hover {
+            transform: translateY(-4px);
             box-shadow: var(--shadow-md);
-            min-width: 150px;
-            text-align: center;
-            color: white;
-            font-weight: var(--font-weight-semibold);
         }
 
-        .flow-arrow {
+        .triad-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin: 0 auto var(--space-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .triad-card:nth-child(1) .triad-card-icon { background: rgba(49, 126, 109, 0.1); color: var(--color-primary); }
+        .triad-card:nth-child(2) .triad-card-icon { background: rgba(232, 168, 56, 0.1); color: var(--color-warning); }
+        .triad-card:nth-child(3) .triad-card-icon { background: rgba(232, 93, 108, 0.1); color: var(--color-error); }
+
+        .triad-card h4 {
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 0;
+        }
+
+        /* Overlap indicator */
+        .triad-overlap {
+            margin-top: var(--space-lg);
+            padding: var(--space-md) var(--space-lg);
+            background: rgba(49, 126, 109, 0.06);
+            border-radius: var(--radius-full);
+            display: inline-block;
+            font-size: var(--font-size-sm);
             color: var(--color-primary);
-            font-size: 2rem;
-            font-weight: var(--font-weight-bold);
+            font-weight: var(--font-weight-semibold);
+            letter-spacing: 0.05em;
         }
 
+        /* ======================== */
+        /* TIMELINE (PATH FORWARD)  */
+        /* ======================== */
+        .timeline {
+            margin: var(--space-2xl) 0;
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--color-warning), var(--color-accent-mint), var(--color-primary), var(--color-primary-dark));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-xl);
+            padding: var(--space-lg) var(--space-xl);
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: calc(-3rem + 5px);
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 3px solid var(--color-primary);
+            background: white;
+            z-index: 2;
+        }
+
+        .timeline-item:first-child::before { border-color: var(--color-warning); background: var(--color-warning-light); }
+        .timeline-item:last-child::before { border-color: var(--color-primary-dark); background: var(--color-primary); }
+
+        .timeline-item h4 {
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.25rem;
+            font-size: var(--font-size-xl);
+        }
+
+        .timeline-item p {
+            margin: 0;
+            font-size: var(--font-size-base);
+        }
+
+        /* ======================== */
+        /* DARK SECTIONS            */
+        /* ======================== */
+        .section-dark {
+            background: #0F1F1B;
+        }
+
+        .section-dark .content h2,
+        .section-dark .content h3,
+        .section-dark .content h4,
+        .section-dark .content p,
+        .section-dark .content li,
+        .section-dark .content span,
+        .section-dark .content .lead-text,
+        .section-dark .content .stat-description,
+        .section-dark .content .bar-label-text,
+        .section-dark .content .bar-label-percent,
+        .section-dark .content .part-label {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .section-dark .content .stat-large {
+            color: var(--color-accent-mint);
+        }
+
+        .section-dark .content h2::before {
+            background: linear-gradient(90deg, var(--color-accent-mint), rgba(255, 255, 255, 0.3));
+        }
+
+        .section-dark .content .bar-bg {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .section-dark .content .quote-box {
+            border-image: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(109, 181, 163, 0.4)) 1;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .section-dark .content .quote-box::before {
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        .section-dark .content .quote-attribution {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .section-dark .content .methodology,
+        .section-dark .content .split-panel {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .section-dark .content .methodology h3,
+        .section-dark .content .split-panel h3 {
+            color: var(--color-accent-mint);
+        }
+
+        .section-dark .content .methodology li,
+        .section-dark .content .split-panel li {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .section-dark .content .split-panel li::before {
+            color: var(--color-accent-mint);
+        }
+
+        /* ======================== */
+        /* SOLUTIONS SECTION (MINT) */
+        /* ======================== */
+        .section-mint {
+            background: #EEFAF6;
+        }
+
+        /* ======================== */
+        /* WARNING SECTION          */
+        /* ======================== */
+        .section-warning {
+            background: #FFF5F5;
+        }
+
+        .section-amber {
+            background: #FFFBF0;
+        }
+
+        /* ======================== */
+        /* KEY TAKEAWAY (dark bg)   */
+        /* ======================== */
         .key-takeaway {
             padding: var(--space-lg) 0 var(--space-lg) var(--space-xl);
             border-left: 4px solid rgba(255, 255, 255, 0.3);
@@ -575,6 +1087,7 @@
             color: white;
             margin-bottom: var(--space-md);
             font-size: var(--font-size-2xl);
+            margin-top: 0;
         }
 
         .key-takeaway ul {
@@ -588,17 +1101,20 @@
             color: rgba(255, 255, 255, 0.9);
         }
 
-        .key-takeaway li:before {
-            content: "✓ ";
+        .key-takeaway li::before {
+            content: "\2713 ";
             margin-right: 0.5rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--color-accent-mint);
             font-weight: var(--font-weight-bold);
         }
 
+        /* ======================== */
+        /* CASE STUDY BOX           */
+        /* ======================== */
         .case-study-box {
             background: rgba(255, 255, 255, 0.95);
-            padding: var(--space-xl);
-            border-radius: var(--radius-md);
+            padding: var(--space-2xl);
+            border-radius: var(--radius-lg);
             margin: var(--space-2xl) 0;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
@@ -610,17 +1126,49 @@
             font-size: var(--font-size-3xl);
         }
 
+        .case-study-box h3::before {
+            display: none;
+        }
+
         .case-study-box p {
             color: var(--color-text-dark) !important;
             line-height: 1.8;
         }
 
+        /* ======================== */
+        /* CTA / FINAL SECTION      */
+        /* ======================== */
         .section-final {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            background: linear-gradient(135deg, #0F1F1B 0%, var(--color-primary-dark) 50%, #0a1f1a 100%);
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-final::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+        }
+
+        .section-final .content {
+            position: relative;
+            z-index: 2;
         }
 
         .section-final h2 {
+            color: white;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        .section-final h2::before {
+            background: linear-gradient(90deg, var(--color-accent-mint), rgba(255,255,255,0.3));
+        }
+
+        .section-final h3 {
             color: white;
         }
 
@@ -628,19 +1176,67 @@
             color: rgba(255, 255, 255, 0.95);
         }
 
+        .section-final .lead-text {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
         .logo-credit {
             font-size: var(--font-size-sm);
-            opacity: 0.8;
+            opacity: 0.7;
             margin-top: 2rem;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: var(--font-size-4xl);
-            }
+        /* ======================== */
+        /* RELATED RESEARCH         */
+        /* ======================== */
+        .related-research-card {
+            display: block;
+            text-decoration: none;
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            border-top: 3px solid var(--color-primary);
+        }
 
+        .related-research-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 8px 24px rgba(49, 126, 109, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .related-research-card h3 {
+            margin-top: 0;
+        }
+
+        /* ======================== */
+        /* MOBILE RESPONSIVE        */
+        /* ======================== */
+        @media (max-width: 768px) {
             h2 {
                 font-size: var(--font-size-3xl);
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                letter-spacing: 0.05em;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .hero-stat-card {
+                width: 100%;
+                max-width: 280px;
             }
 
             .split-view {
@@ -651,60 +1247,65 @@
                 grid-template-columns: 1fr;
             }
 
+            .triad-cards {
+                grid-template-columns: 1fr;
+            }
+
             .icon-grid {
                 grid-template-columns: repeat(5, 1fr);
             }
 
-            .flow-items {
+            .flow-sequence {
                 flex-direction: column;
+                padding-left: 0;
             }
 
-            .flow-arrow {
-                transform: rotate(90deg);
+            .flow-step:not(:last-child)::after,
+            .flow-step:not(:first-child)::before {
+                display: none;
             }
 
-            .venn-circles {
-                flex-direction: column;
-                height: auto;
-                gap: 1rem;
+            .timeline {
+                padding-left: 2.5rem;
             }
 
-            .venn-circle {
-                position: relative;
-                left: auto !important;
+            .section-final h2 {
+                font-size: var(--font-size-3xl);
             }
-        }
-
-        .related-research-card {
-            display: block;
-            text-decoration: none;
-            background: var(--color-bg-subtle);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-sm, 8px);
-            padding: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-        }
-
-        .related-research-card:hover {
-            border-color: var(--color-primary);
-            box-shadow: 0 4px 16px rgba(49, 126, 109, 0.12);
-            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- Hero Section -->
     <section class="section hero">
         <div class="content">
             <h1>Understanding Product Safety Challenges</h1>
-            <h2>Survey Results from Hard-to-Access Supply Networks</h2>
+            <div class="hero-subtitle">Survey Results from Hard-to-Access Supply Networks</div>
             <p style="margin-top: 2rem;">PSI surveyed 20 underground manufacturers, which revealed significant concerns about product safety and authenticity in the psychedelic marketplace.</p>
+
+            <div class="hero-stats">
+                <div class="hero-stat-card">
+                    <span class="hero-stat-number">20</span>
+                    <span class="hero-stat-label">Manufacturers Surveyed</span>
+                </div>
+                <div class="hero-stat-card">
+                    <span class="hero-stat-number">95%</span>
+                    <span class="hero-stat-label">Report Trust Erosion</span>
+                </div>
+                <div class="hero-stat-card">
+                    <span class="hero-stat-number">85%</span>
+                    <span class="hero-stat-label">See Authenticity Issues</span>
+                </div>
+            </div>
+
             <p class="logo-credit" style="margin-top: 2rem;">Thank you to PsiloSafe for their collaboration and support in collecting these responses.</p>
         </div>
         <div class="scroll-indicator" onclick="document.querySelector('.section:nth-of-type(2)').scrollIntoView({behavior: 'smooth'})">
             <span class="scroll-indicator-text">Scroll to explore</span>
-            <span class="scroll-indicator-arrow">↓</span>
+            <span class="scroll-indicator-arrow"></span>
         </div>
     </section>
 
@@ -714,20 +1315,20 @@
             <h2>Understanding the Landscape: Underground vs. Regulated</h2>
 
             <div class="two-col">
-                <div class="methodology" style="background: rgba(49, 126, 109, 0.1); border: 2px solid var(--color-primary);">
+                <div class="methodology" style="border-top-color: var(--color-primary);">
                     <h3 style="color: var(--color-primary-dark);">Underground Manufacturers</h3>
-                    <p style="color: var(--color-primary-dark);">Operating in the gray market—community or ceremonial spaces outside formal regulatory frameworks. Similarly, underground therapeutic practitioners offering one-on-one sessions exist in this same gray area, providing individualized support without formal regulatory oversight.</p>
+                    <p style="color: var(--color-text);">Operating in the gray market—community or ceremonial spaces outside formal regulatory frameworks. Similarly, underground therapeutic practitioners offering one-on-one sessions exist in this same gray area, providing individualized support without formal regulatory oversight.</p>
                 </div>
-                <div class="methodology" style="background: var(--color-warning-light); border: 2px solid var(--color-warning-dark);">
+                <div class="methodology" style="border-top-color: var(--color-warning);">
                     <h3 style="color: var(--color-warning-dark);">Regulated Manufacturers</h3>
-                    <p style="color: var(--color-warning-dark);">Operating in jurisdictions where psychedelics are legal for medical or therapeutic use, following state regulations on manufacturing, testing, and labeling.</p>
+                    <p style="color: var(--color-text);">Operating in jurisdictions where psychedelics are legal for medical or therapeutic use, following state regulations on manufacturing, testing, and labeling.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Trust Erosion Section -->
-    <section class="section">
+    <section class="section section-dark">
         <div class="content">
             <h2>Perspectives from Those on the Ground</h2>
             <p class="lead-text">Among the 20 underground manufacturers surveyed:</p>
@@ -742,7 +1343,7 @@
     </section>
 
     <!-- Product Integrity Concerns -->
-    <section class="section">
+    <section class="section section-warning">
         <div class="content">
             <h2>What Underground Manufacturers Are Seeing</h2>
             <h3>Product Integrity Concerns</h3>
@@ -755,7 +1356,7 @@
                         <span class="bar-label-percent">94%</span>
                     </div>
                     <div class="bar-bg">
-                        <div class="bar-fill" style="--width: 94%; background: var(--color-primary);"></div>
+                        <div class="bar-fill" style="--width: 94%; background: var(--color-error);"></div>
                     </div>
                 </div>
 
@@ -775,7 +1376,7 @@
                         <span class="bar-label-percent">30%</span>
                     </div>
                     <div class="bar-bg">
-                        <div class="bar-fill" style="--width: 30%; background: var(--color-accent-mint);"></div>
+                        <div class="bar-fill" style="--width: 30%; background: var(--color-primary);"></div>
                     </div>
                 </div>
             </div>
@@ -788,7 +1389,7 @@
     </section>
 
     <!-- Impact on Consumers -->
-    <section class="section">
+    <section class="section section-dark">
         <div class="content">
             <h2>Impact on Consumers and Communities</h2>
             <p class="lead-text">These product integrity issues have real consequences. Manufacturers report witnessing concerning outcomes in their communities:</p>
@@ -810,22 +1411,30 @@
                         <span class="bar-label-percent">61%</span>
                     </div>
                     <div class="bar-bg">
-                        <div class="bar-fill" style="--width: 61%; background: var(--color-warning-dark);"></div>
+                        <div class="bar-fill" style="--width: 61%; background: var(--color-error);"></div>
                     </div>
                 </div>
             </div>
 
             <p class="lead-text" style="margin-top: 2rem;">Multiple manufacturers express concern about how bad actors affect the entire industry, noting how these issues ripple outward:</p>
 
-            <div class="flow-chart">
-                <div class="flow-items">
-                    <div class="flow-item">Product Issues</div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-item">Impact on Consumers</div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-item">Impact on Communities</div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-item">Impact on Legalization Efforts</div>
+            <!-- Flow chart: HTML/CSS replacement -->
+            <div class="flow-sequence">
+                <div class="flow-step">
+                    <div class="flow-step-icon">1</div>
+                    <div class="flow-step-label">Product Issues</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">2</div>
+                    <div class="flow-step-label">Impact on Consumers</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">3</div>
+                    <div class="flow-step-label">Impact on Communities</div>
+                </div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">4</div>
+                    <div class="flow-step-label">Impact on Legalization Efforts</div>
                 </div>
             </div>
 
@@ -837,26 +1446,26 @@
     </section>
 
     <!-- Solutions -->
-    <section class="section">
+    <section class="section section-mint">
         <div class="content" style="max-width: 950px;">
             <h2>Solutions from Within the Industry: Manufacturers' Recommendations</h2>
             <p class="lead-text">Those working in the underground market have clear ideas about what would improve safety:</p>
 
             <div class="two-col">
-                <div class="split-panel" style="background: var(--color-primary); color: white;">
-                    <h3 style="color: white;">Product Standards</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="color: white; border-bottom-color: rgba(255,255,255,0.3); padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.3);">→ Standardized testing protocols (67%)</li>
-                        <li style="color: white; border-bottom-color: rgba(255,255,255,0.3); padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.3);">→ Accurate labeling requirements (53%)</li>
-                        <li style="color: white; border-bottom-color: rgba(255,255,255,0.3); padding: 0.75rem 0;">→ Manufacturing quality controls (33%)</li>
+                <div class="split-panel" style="border-top-color: var(--color-primary);">
+                    <h3>Product Standards</h3>
+                    <ul>
+                        <li>Standardized testing protocols (67%)</li>
+                        <li>Accurate labeling requirements (53%)</li>
+                        <li>Manufacturing quality controls (33%)</li>
                     </ul>
                 </div>
-                <div class="split-panel" style="background: var(--color-primary); color: white;">
-                    <h3 style="color: white;">Accountability Systems</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="color: white; border-bottom-color: rgba(255,255,255,0.3); padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.3);">→ Third-party certification (50%)</li>
-                        <li style="color: white; border-bottom-color: rgba(255,255,255,0.3); padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.3);">→ Industry self-regulation (50%)</li>
-                        <li style="color: white; border-bottom-color: rgba(255,255,255,0.3); padding: 0.75rem 0;">→ Legalization essential for addressing safety (38%)</li>
+                <div class="split-panel" style="border-top-color: var(--color-accent-mint);">
+                    <h3>Accountability Systems</h3>
+                    <ul>
+                        <li>Third-party certification (50%)</li>
+                        <li>Industry self-regulation (50%)</li>
+                        <li>Legalization essential for addressing safety (38%)</li>
                     </ul>
                 </div>
             </div>
@@ -869,18 +1478,21 @@
     </section>
 
     <!-- Education Gap -->
-    <section class="section">
+    <section class="section section-amber">
         <div class="content">
             <h2>The Education Gap: What's Missing from the Market</h2>
 
-            <p style="text-align: center;"><span class="stat-large" style="display: inline; margin: 0;">75%</span> <span class="stat-description" style="display: inline;">of manufacturers identify critical gaps in consumer education</span></p>
+            <div class="quote-box quote-with-stat">
+                <span class="quote-stat-number" style="color: var(--color-warning-dark);">75%</span>
+                <span style="font-size: var(--font-size-xl); font-style: normal; color: var(--color-text);">of manufacturers identify critical gaps in consumer education</span>
+            </div>
 
-            <div class="checklist" style="background: var(--color-warning-light);">
-                <h4 style="color: var(--color-warning-dark);">Essential Information Often Missing:</h4>
-                <div class="checklist-item" style="background: var(--color-bg-alt);">Limited information on set and setting</div>
-                <div class="checklist-item" style="background: var(--color-bg-alt);">Absence of proper dosing guidance</div>
-                <div class="checklist-item" style="background: var(--color-bg-alt);">Lack of informed consent practices (80%)</div>
-                <div class="checklist-item" style="background: var(--color-bg-alt);">Missing harm reduction resources</div>
+            <div class="checklist">
+                <h4>Essential Information Often Missing:</h4>
+                <div class="checklist-item">Limited information on set and setting</div>
+                <div class="checklist-item">Absence of proper dosing guidance</div>
+                <div class="checklist-item">Lack of informed consent practices (80%)</div>
+                <div class="checklist-item">Missing harm reduction resources</div>
             </div>
 
             <p class="lead-text">Manufacturers recognize that even well-intentioned producers often fail to provide adequate educational materials with their products.</p>
@@ -908,7 +1520,7 @@
                         <span class="bar-label-percent">92%</span>
                     </div>
                     <div class="bar-bg">
-                        <div class="bar-fill" style="--width: 92%; background: var(--color-warning);"></div>
+                        <div class="bar-fill" style="--width: 92%; background: var(--color-primary);"></div>
                     </div>
                 </div>
 
@@ -918,7 +1530,7 @@
                         <span class="bar-label-percent">71%</span>
                     </div>
                     <div class="bar-bg">
-                        <div class="bar-fill" style="--width: 71%; background: var(--color-warning-dark);"></div>
+                        <div class="bar-fill" style="--width: 71%; background: var(--color-warning);"></div>
                     </div>
                 </div>
 
@@ -933,16 +1545,27 @@
                 </div>
             </div>
 
-            <div class="venn-diagram">
-                <p class="venn-title">Safety requires the intersection of:</p>
-                <div class="venn-circles">
-                    <div class="venn-circle">Testing & Certification</div>
-                    <div class="venn-circle">Education</div>
-                    <div class="venn-circle">Harm Reduction</div>
+            <!-- Venn diagram replacement: triad cards -->
+            <div class="safety-triad">
+                <p class="safety-triad-title">Safety requires the intersection of:</p>
+                <div class="triad-cards">
+                    <div class="triad-card stagger-item">
+                        <div class="triad-card-icon">&#9745;</div>
+                        <h4>Testing &amp; Certification</h4>
+                    </div>
+                    <div class="triad-card stagger-item">
+                        <div class="triad-card-icon">&#9997;</div>
+                        <h4>Education</h4>
+                    </div>
+                    <div class="triad-card stagger-item">
+                        <div class="triad-card-icon">&#9829;</div>
+                        <h4>Harm Reduction</h4>
+                    </div>
                 </div>
+                <div class="triad-overlap">All three must work together</div>
             </div>
 
-            <div class="quote-box">
+            <div class="quote-box quote-highlight">
                 "A meaningful strategy for psychedelic public health and safety should prioritize education, harm reduction, and accessibility... Public health efforts should be centered around transparency, community support, and reducing stigma."
                 <div class="quote-attribution">— Underground manufacturer</div>
             </div>
@@ -950,13 +1573,13 @@
     </section>
 
     <!-- Challenges -->
-    <section class="section">
+    <section class="section section-dark">
         <div class="content">
             <h2>Challenges and Opportunities: What Stands in the Way</h2>
             <p class="lead-text">Manufacturers identify key obstacles:</p>
 
             <div class="two-col">
-                <div class="methodology">
+                <div class="methodology" style="border-top-color: var(--color-error);">
                     <h3>Structural Barriers</h3>
                     <ul style="list-style: disc; margin-left: 1.5rem;">
                         <li>Lack of regulatory framework makes standardization difficult</li>
@@ -964,7 +1587,7 @@
                         <li>Need for confidential certification given legal risks</li>
                     </ul>
                 </div>
-                <div class="methodology">
+                <div class="methodology" style="border-top-color: var(--color-warning);">
                     <h3>Cultural Barriers</h3>
                     <ul style="list-style: disc; margin-left: 1.5rem;">
                         <li>Fear of legal repercussions prevents open dialogue</li>
@@ -983,7 +1606,7 @@
     </section>
 
     <!-- The Path Forward -->
-    <section class="section">
+    <section class="section section-mint">
         <div class="content">
             <h2>The Path Forward</h2>
             <p class="lead-text">Despite operating underground, manufacturers show commitment to:</p>
@@ -994,93 +1617,25 @@
                 <li>Contributing to responsible industry development</li>
             </ul>
 
-            <!-- Horizontal Timeline -->
-            <div style="margin: var(--space-3xl) 0; padding: var(--space-xl); background: var(--color-bg-subtle); border-radius: var(--radius-md);">
-                <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 2rem; font-size: 1.8rem;">Building a Safer Future</h3>
-                <div style="max-width: 1400px; margin: 0 auto; padding: 60px;">
+            <!-- Timeline: HTML/CSS replacement for horizontal timeline -->
+            <h3 style="text-align: center; margin-top: var(--space-2xl); margin-bottom: 0; font-size: 1.8rem;">Building a Safer Future</h3>
 
-                    <!-- Circles and Boxes (Above Timeline) -->
-                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 0; gap: 20px;">
-
-                        <!-- Current State Circle -->
-                        <div style="width: 25%; display: flex; justify-content: center;">
-                            <div style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--color-warning-dark); background: var(--color-warning-light); display: flex; align-items: center; justify-content: center; font-weight: var(--font-weight-bold); color: var(--color-warning-dark); font-size: 1rem; text-align: center; padding: 10px;">Current State</div>
-                        </div>
-
-                        <!-- Industry Self-Regulation Box -->
-                        <div style="width: 25%; display: flex; justify-content: center;">
-                            <div style="background: white; padding: 1.25rem; border-radius: var(--radius-sm); border-left: 5px solid var(--color-accent-mint); box-shadow: 0 4px 12px rgba(0,0,0,0.12); max-width: 290px;">
-                                <div style="font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1rem;">Industry Self-Regulation</div>
-                                <p style="margin: 0; color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.4;">Testing protocols, certifications</p>
-                            </div>
-                        </div>
-
-                        <!-- Consumer Education Box -->
-                        <div style="width: 25%; display: flex; justify-content: center;">
-                            <div style="background: white; padding: 1.25rem; border-radius: var(--radius-sm); border-left: 5px solid var(--color-primary); box-shadow: 0 4px 12px rgba(0,0,0,0.12); max-width: 290px;">
-                                <div style="font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1rem;">Consumer Education</div>
-                                <p style="margin: 0; color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.4;">Harm reduction resources, dosing guidance</p>
-                            </div>
-                        </div>
-
-                        <!-- Desired Future Circle -->
-                        <div style="width: 25%; display: flex; justify-content: center;">
-                            <div style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--color-primary-dark); background: var(--color-primary); display: flex; align-items: center; justify-content: center; font-weight: var(--font-weight-bold); color: white; font-size: 1rem; text-align: center; padding: 10px;">Desired Future</div>
-                        </div>
-
-                    </div>
-
-                    <!-- Connector Lines and Diamonds -->
-                    <div style="display: flex; justify-content: space-between; position: relative; height: 80px;">
-
-                        <!-- Current State Connector -->
-                        <div style="width: 25%; position: relative;">
-                            <div style="position: absolute; left: 50%; top: 0; width: 3px; height: 70px; background: var(--color-warning-dark); transform: translateX(-50%);"></div>
-                            <div style="position: absolute; bottom: 0; left: 50%; width: 18px; height: 18px; background: var(--color-warning); transform: translateX(-50%) rotate(45deg); border: 3px solid var(--color-warning-dark);"></div>
-                        </div>
-
-                        <!-- Industry Self-Regulation Connector -->
-                        <div style="width: 25%; position: relative;">
-                            <div style="position: absolute; left: 50%; top: 0; width: 3px; height: 70px; background: var(--color-accent-mint); transform: translateX(-50%);"></div>
-                            <div style="position: absolute; bottom: 0; left: 50%; width: 18px; height: 18px; background: var(--color-accent-mint); transform: translateX(-50%) rotate(45deg); border: 3px solid var(--color-primary);"></div>
-                        </div>
-
-                        <!-- Consumer Education Connector -->
-                        <div style="width: 25%; position: relative;">
-                            <div style="position: absolute; left: 50%; top: 0; width: 3px; height: 70px; background: var(--color-primary); transform: translateX(-50%);"></div>
-                            <div style="position: absolute; bottom: 0; left: 50%; width: 18px; height: 18px; background: var(--color-primary); transform: translateX(-50%) rotate(45deg); border: 3px solid var(--color-primary-dark);"></div>
-                        </div>
-
-                        <!-- Desired Future Connector -->
-                        <div style="width: 25%; position: relative;">
-                            <div style="position: absolute; left: 50%; top: 0; width: 3px; height: 70px; background: var(--color-primary-dark); transform: translateX(-50%);"></div>
-                            <div style="position: absolute; bottom: 0; left: 50%; width: 18px; height: 18px; background: var(--color-primary); transform: translateX(-50%) rotate(45deg); border: 3px solid var(--color-primary-dark);"></div>
-                        </div>
-
-                    </div>
-
-                    <!-- Timeline Bar -->
-                    <div style="height: 12px; background: linear-gradient(to right, var(--color-warning) 0%, var(--color-warning) 25%, var(--color-accent-mint) 50%, var(--color-primary) 75%, var(--color-primary-dark) 100%); border-radius: var(--radius-xs); margin: -6px 0 20px 0;"></div>
-
-                    <!-- Description Text Below Timeline -->
-                    <div style="display: flex; justify-content: space-between;">
-
-                        <!-- Current State Text -->
-                        <div style="width: 25%; display: flex; justify-content: center;">
-                            <p style="margin: 0; color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.4; text-align: center; max-width: 180px;">Unregulated market with safety concerns</p>
-                        </div>
-
-                        <!-- Empty spacers for middle items -->
-                        <div style="width: 25%;"></div>
-                        <div style="width: 25%;"></div>
-
-                        <!-- Desired Future Text -->
-                        <div style="width: 25%; display: flex; justify-content: center;">
-                            <p style="margin: 0; color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.4; text-align: center; max-width: 180px;">Safe and accountable industry</p>
-                        </div>
-
-                    </div>
-
+            <div class="timeline">
+                <div class="timeline-item stagger-item">
+                    <h4>Current State</h4>
+                    <p>Unregulated market with safety concerns</p>
+                </div>
+                <div class="timeline-item stagger-item">
+                    <h4>Industry Self-Regulation</h4>
+                    <p>Testing protocols, certifications</p>
+                </div>
+                <div class="timeline-item stagger-item">
+                    <h4>Consumer Education</h4>
+                    <p>Harm reduction resources, dosing guidance</p>
+                </div>
+                <div class="timeline-item stagger-item">
+                    <h4>Desired Future</h4>
+                    <p>Safe and accountable industry</p>
                 </div>
             </div>
         </div>
@@ -1115,7 +1670,7 @@
             <p class="lead-text">By establishing testing protocols, labeling standards, and verification systems now, the underground market is building the foundation for responsible regulation. The industry isn't waiting for permission to do the right thing—safety improvements are happening now, led by those who understand both the profound potential and serious risks of these compounds.</p>
 
             <div style="text-align: center; margin-top: 3rem;">
-                <p style="font-size: var(--font-size-sm); opacity: 0.8;">This report is based on 20 underground manufacturer surveys conducted in collaboration with PsiloSafe</p>
+                <p style="font-size: var(--font-size-sm); opacity: 0.7;">This report is based on 20 underground manufacturer surveys conducted in collaboration with PsiloSafe</p>
             </div>
         </div>
     </section>
@@ -1144,14 +1699,23 @@
     </section>
 
     <script>
+        // Scroll progress bar
+        var scrollProgress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', function() {
+            var scrollTop = window.scrollY;
+            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            var scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
         // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.3,
+        var observerOptions = {
+            threshold: 0.2,
             rootMargin: '0px'
         };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
 
@@ -1159,55 +1723,78 @@
                     if (entry.target.querySelector('#trustGrid')) {
                         animateTrustGrid();
                     }
+
+                    // Animate stat counters
+                    entry.target.querySelectorAll('.stat-large').forEach(function(stat) {
+                        animateCounter(stat);
+                    });
                 }
             });
         }, observerOptions);
 
         // Observe all content sections
-        document.querySelectorAll('.content').forEach(content => {
+        document.querySelectorAll('.content').forEach(function(content) {
             observer.observe(content);
         });
 
-        // Generate and animate trust grid
+        // Animated number counter
+        function animateCounter(el) {
+            if (el.dataset.animated) return;
+            el.dataset.animated = 'true';
+            var text = el.textContent.trim();
+            var match = text.match(/(\d+)/);
+            if (!match) return;
+            var target = parseInt(match[1]);
+            var suffix = text.replace(match[1], '');
+            var duration = 1200;
+            var start = performance.now();
+
+            function update(now) {
+                var elapsed = now - start;
+                var progress = Math.min(elapsed / duration, 1);
+                var eased = 1 - Math.pow(1 - progress, 3);
+                var current = Math.round(target * eased);
+                el.textContent = current + suffix;
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+        }
+
+        // Generate and animate trust grid (CSS circles instead of SVGs)
         function createTrustGrid() {
-            const grid = document.getElementById('trustGrid');
+            var grid = document.getElementById('trustGrid');
             if (!grid) return;
 
-            for (let i = 0; i < 20; i++) {
-                const icon = document.createElement('div');
+            for (var i = 0; i < 20; i++) {
+                var icon = document.createElement('div');
                 icon.className = 'icon';
-                icon.innerHTML = `
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="8" r="4" fill="#E6C8A1"/>
-                        <path d="M6 21c0-3.314 2.686-6 6-6s6 2.686 6 6" fill="#E6C8A1"/>
-                    </svg>
-                `;
+                var inner = document.createElement('div');
+                inner.className = 'icon-inner';
+                icon.appendChild(inner);
                 grid.appendChild(icon);
             }
         }
 
         function animateTrustGrid() {
-            const icons = document.querySelectorAll('#trustGrid .icon');
+            var icons = document.querySelectorAll('#trustGrid .icon');
             // Highlight 95% (19 out of 20) - leave last one unhighlighted
-            for (let i = 0; i < 19; i++) {
-                setTimeout(() => {
-                    icons[i].classList.add('highlighted');
-                    const svg = icons[i].querySelector('svg');
-                    svg.querySelectorAll('circle, path').forEach(el => {
-                        el.setAttribute('fill', '#317E6D');
-                    });
-                }, i * 80);
+            for (var i = 0; i < 19; i++) {
+                (function(index) {
+                    setTimeout(function() {
+                        icons[index].classList.add('highlighted');
+                    }, index * 80);
+                })(i);
             }
         }
 
         // Initialize
         createTrustGrid();
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                var target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth'
