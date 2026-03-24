@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's Really Happening in Colorado's Psychedelic Market?</title>
+    <meta name="description" content="Colorado psychedelic market research — data-driven insights on safety, access, and the emerging ecosystem.">
+    <meta property="og:title" content="PSI Colorado Psychedelic Market Research">
+    <meta property="og:description" content="Data-driven insights on psychedelic safety, access, and the emerging Colorado ecosystem.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PSI Colorado Psychedelic Market Research">
+    <meta name="twitter:description" content="Data-driven insights on psychedelic safety, access, and the emerging Colorado ecosystem.">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FTX4SK993B"></script>
@@ -18,6 +25,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/garnett" rel="stylesheet">
+    <link rel="preload" as="image" href="hero-bg.jpg">
 
     <style>
         * {
@@ -116,9 +125,9 @@
 
         .content {
             max-width: 850px;
-            opacity: 1;
-            transform: translateY(0);
-            transition: all 0.8s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
         .content.visible {
@@ -127,11 +136,10 @@
         }
 
         .hero {
-            background-image: url('https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=1920&h=1080&fit=crop&q=80');
+            background-image: url('hero-bg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
             background-color: #317E6D;
             color: white;
             text-align: center;
@@ -363,35 +371,6 @@
             background: var(--color-info);
         }
 
-        .icon-grid {
-            display: grid;
-            grid-template-columns: repeat(10, 1fr);
-            gap: 0.5rem;
-            margin: 2rem 0;
-        }
-
-        .icon {
-            width: 100%;
-            padding-bottom: 100%;
-            background: #EFE5DE;
-            border-radius: 4px;
-            position: relative;
-            opacity: 0.3;
-            transition: all 0.3s ease;
-        }
-
-        .icon.highlighted {
-            background: #317E6D;
-            opacity: 1;
-        }
-
-        .question-mark {
-            font-size: 2.4rem;
-            color: #A19D9B;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
         .split-view {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -426,53 +405,6 @@
             content: "→ ";
             color: #317E6D;
             font-weight: bold;
-        }
-
-        .rating-display {
-            max-width: 500px;
-            margin: 3rem auto;
-            text-align: center;
-        }
-
-        .rating-score {
-            font-size: 4rem;
-            font-weight: bold;
-            color: #E48400;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .rating-label {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #2B180A;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 2rem;
-        }
-
-        .progress-bar-container {
-            width: 100%;
-            height: 40px;
-            background: #EFE5DE;
-            border-radius: 4px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .progress-bar-fill {
-            height: 100%;
-            background: #E48400;
-            width: var(--progress);
-            transition: width 1.5s ease;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 1rem;
-            color: white;
-            font-weight: 600;
-            font-size: 1.1rem;
         }
 
         .methodology {
@@ -729,45 +661,6 @@
             color: #317E6D;
         }
 
-        .price-zones {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-sm);
-            margin: var(--space-lg) 0;
-        }
-
-        .price-zone {
-            text-align: center;
-            padding: var(--space-md) var(--space-sm);
-            border-radius: var(--radius-sm);
-            border: 2px solid var(--color-border);
-        }
-
-        .price-zone-amount {
-            font-size: var(--font-size-xl);
-            font-weight: var(--font-weight-bold);
-            margin-bottom: var(--space-xs);
-            color: var(--color-text);
-        }
-
-        .price-zone-label {
-            font-size: var(--font-size-sm);
-            color: var(--color-text-muted);
-        }
-
-        .price-zone.sweet-spot {
-            background: var(--color-bg-subtle);
-            border-color: var(--color-primary);
-        }
-
-        .price-zone.sweet-spot .price-zone-amount {
-            color: var(--color-primary);
-        }
-
-        .comparison-bars {
-            margin: var(--space-lg) 0;
-        }
-
         .comparison-item {
             margin: var(--space-md) 0;
         }
@@ -783,28 +676,6 @@
             gap: var(--space-sm);
             margin: var(--space-xs) 0;
             align-items: center;
-        }
-
-        .comparison-bar {
-            flex: 1;
-            background: var(--color-border);
-            height: 50px;
-            border-radius: var(--radius-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: var(--font-weight-bold);
-            position: relative;
-        }
-
-        .comparison-bar.licensed {
-            background: var(--color-info-dark);
-            color: white;
-        }
-
-        .comparison-bar.underground {
-            background: var(--color-warning);
-            color: white;
         }
 
         .threshold-line {
@@ -992,77 +863,6 @@
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(49, 126, 109, 0.2);
-        }
-
-        .collapsible-header:focus-visible {
-            outline: 2px solid var(--color-primary);
-            outline-offset: -2px;
-        }
-
-        /* Collapsible Sections */
-        .collapsible-header {
-            cursor: pointer;
-            padding: var(--space-md);
-            background: var(--color-bg-subtle);
-            border: 2px solid var(--color-border-muted);
-            border-radius: var(--radius-md);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition-base);
-            margin: var(--space-sm) 0;
-        }
-
-        .collapsible-header:hover {
-            background: var(--color-border-muted);
-            border-color: var(--color-warning-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .collapsible-icon {
-            font-size: var(--font-size-2xl);
-            color: var(--color-primary);
-            transition: var(--transition-base);
-        }
-
-        .collapsible-header.active .collapsible-icon {
-            transform: rotate(180deg);
-        }
-
-        .collapsible-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-        }
-
-        .collapsible-content.open {
-            max-height: 5000px;
-            transition: max-height 0.6s ease;
-        }
-
-        .expand-button {
-            display: inline-block;
-            padding: 0.75rem var(--space-md);
-            background: var(--color-primary);
-            color: white;
-            border: none;
-            border-radius: var(--radius-sm);
-            cursor: pointer;
-            font-size: var(--font-size-base);
-            font-weight: var(--font-weight-semibold);
-            transition: var(--transition-base);
-            margin: var(--space-sm) 0;
-        }
-
-        .expand-button:hover {
-            background: var(--color-primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .expand-button:active {
-            transform: translateY(0);
         }
 
         .warning-banner {
@@ -1261,70 +1061,10 @@
             opacity: 1;
         }
 
-        /* Reason Card Styles */
-        .reason-cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
-            max-width: 1200px;
-        }
-
-        .reason-card {
-            background: #ffffff;
-            border-radius: 4px;
-            padding: 2rem;
-            border: 1px solid #E6C8A1;
-            
-            box-shadow: 0 2px 8px rgba(43, 24, 10, 0.06);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .reason-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(43, 24, 10, 0.12);
-        }
-
-        .reason-card-icon {
-            font-size: 2.4rem;
-            margin-bottom: 1rem;
-            display: block;
-            text-align: center;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-        }
-
-        .reason-card-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #317E6D;
-            margin-bottom: 1rem;
-            text-align: center;
-            letter-spacing: 0.5px;
-        }
-
-        .reason-card-detail {
-            font-size: 1rem;
-            color: #2B180A;
-            margin-bottom: 0.75rem;
-            line-height: 1.6;
-        }
-
-        .reason-card-quote {
-            background: #F2E9DE;
-            padding: 1rem 1.25rem;
-            border-radius: 4px;
-            font-style: italic;
-            color: #2B180A;
-            margin-top: 1.25rem;
-            font-size: 0.95rem;
-            
-            line-height: 1.6;
-        }
-
-        @media (max-width: 900px) {
-            .reason-cards {
-                grid-template-columns: 1fr;
+        @media (max-width: 768px) {
+            .tooltip-content {
+                white-space: normal;
+                max-width: 250px;
             }
         }
 
@@ -1442,10 +1182,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .icon-grid {
-                grid-template-columns: repeat(5, 1fr);
-            }
-
             .stat-large {
                 font-size: 2.4rem;
             }
@@ -1477,13 +1213,19 @@
                 grid-template-columns: 1fr !important;
             }
         }
+
+        #related-research a:hover {
+            border-color: #317E6D;
+            box-shadow: 0 4px 16px rgba(49, 126, 109, 0.12);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
     <!-- SIDEBAR NAVIGATION -->
     <nav class="sidebar-nav" aria-label="Table of contents">
         <h3>Contents</h3>
-        <ul class="nav-list" role="navigation">
+        <ul class="nav-list">
             <li class="nav-item"><a href="#hero" class="nav-link">Introduction</a></li>
             <li class="nav-item"><a href="#methodology" class="nav-link">1. Methodology</a></li>
             <li class="nav-item"><a href="#price-consumer" class="nav-link">2. Price - Consumers</a></li>
@@ -1493,6 +1235,7 @@
             <li class="nav-item"><a href="#reciprocity" class="nav-link">6. Reciprocity</a></li>
             <li class="nav-item"><a href="#implementation" class="nav-link">7. Implementation</a></li>
             <li class="nav-item"><a href="#findings" class="nav-link">8. Key Findings</a></li>
+            <li class="nav-item"><a href="#related-research" class="nav-link">Related Research</a></li>
             <li class="nav-item"><a href="#action" class="nav-link">We Want to Hear From You</a></li>
         </ul>
     </nav>
@@ -1527,7 +1270,7 @@
                     Read Our Findings
                 </button>
                 <span style="color: rgba(255, 255, 255, 0.9); font-size: 0.8rem; font-weight: 500; padding: 0 0.5rem;">or</span>
-                <a href="https://co-market-research-explorer.vercel.app/" target="_blank" class="hero-cta-button" style="background: #FFFFFF; border: 2px solid #FFFFFF; color: #317E6D; padding: 0.85rem 2rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); text-decoration: none; display: inline-block;">
+                <a href="https://co-market-research-explorer.vercel.app/" target="_blank" rel="noopener noreferrer" class="hero-cta-button" style="background: #FFFFFF; border: 2px solid #FFFFFF; color: #317E6D; padding: 0.85rem 2rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); text-decoration: none; display: inline-block;">
                     Explore the Data
                 </a>
             </div>
@@ -1619,7 +1362,7 @@
 
             <!-- Ecosystem Map Link -->
             <div style="margin-top: 3rem; text-align: center;">
-                <a href="https://psychedelic-ecosystem-map.vercel.app/ecosystem-map?section=organizations&view=grouped&chartType=bar&groupBy=ecosystemRole&filterType=state&filterValue=Colorado" target="_blank" style="display: inline-block; background: white; border: 2px solid #317E6D; color: #317E6D; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08);" onmouseover="this.style.background='#317E6D'; this.style.color='white';" onmouseout="this.style.background='white'; this.style.color='#317E6D';">
+                <a href="https://psychedelic-ecosystem-map.vercel.app/ecosystem-map?section=organizations&view=grouped&chartType=bar&groupBy=ecosystemRole&filterType=state&filterValue=Colorado" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: white; border: 2px solid #317E6D; color: #317E6D; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(43, 24, 10, 0.08);" onmouseover="this.style.background='#317E6D'; this.style.color='white';" onmouseout="this.style.background='white'; this.style.color='#317E6D';">
                     View Interactive Ecosystem Map →
                 </a>
             </div>
@@ -1645,7 +1388,6 @@
                     </div>
                     <div class="bar-bg">
                         <div class="bar-fill bar-fill-red" style="--width: 58.8%">
-                            <span>58.8%</span>
                         </div>
                     </div>
                 </div>
@@ -1657,7 +1399,6 @@
                     </div>
                     <div class="bar-bg">
                         <div class="bar-fill bar-fill-amber" style="--width: 52.9%">
-                            <span>52.9%</span>
                         </div>
                     </div>
                 </div>
@@ -1669,7 +1410,6 @@
                     </div>
                     <div class="bar-bg">
                         <div class="bar-fill" style="--width: 35.3%">
-                            <span>35.3%</span>
                         </div>
                     </div>
                 </div>
@@ -1926,7 +1666,6 @@
                     </div>
                     <div class="bar-bg">
                         <div class="bar-fill" style="--width: 92.9%; background: #317E6D;">
-                            <span>92.9%</span>
                         </div>
                     </div>
                 </div>
@@ -1938,7 +1677,6 @@
                     </div>
                     <div class="bar-bg">
                         <div class="bar-fill" style="--width: 85.7%; background: #5A9B8C;">
-                            <span>85.7%</span>
                         </div>
                     </div>
                 </div>
@@ -1950,7 +1688,6 @@
                     </div>
                     <div class="bar-bg">
                         <div class="bar-fill" style="--width: 71.4%; background: #7AB8B8;">
-                            <span>71.4%</span>
                         </div>
                     </div>
                 </div>
@@ -2561,6 +2298,30 @@
 
     <div class="section-divider"></div>
 
+    <section id="related-research" class="section">
+        <div class="content visible">
+            <h2>Explore Our Other Research</h2>
+            <p style="font-size: 1.05rem; color: #736C66; max-width: 700px; margin: 1rem auto 2.5rem; line-height: 1.75;">This market research is part of a broader investigation into psychedelic safety in Colorado. Dive deeper with these companion studies.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+                <a href="/stakeholder-interviews-scrolly/" style="display: block; text-decoration: none; background: #FAFAF8; border: 1px solid #E8E4DF; border-radius: 8px; padding: 2rem; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                    <h3 style="color: #317E6D; font-size: 1.15rem; margin-bottom: 0.75rem;">Stakeholder Interviews</h3>
+                    <p style="color: #736C66; font-size: 0.95rem; line-height: 1.6; margin: 0;">Voices from the field on human impacts, professional crisis, emergency response gaps, and collaborative solutions.</p>
+                </a>
+                <a href="/community-leaders-scrolly/" style="display: block; text-decoration: none; background: #FAFAF8; border: 1px solid #E8E4DF; border-radius: 8px; padding: 2rem; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                    <h3 style="color: #317E6D; font-size: 1.15rem; margin-bottom: 0.75rem;">Community Leaders Survey</h3>
+                    <p style="color: #736C66; font-size: 0.95rem; line-height: 1.6; margin: 0;">Safety challenges and a vision for safer practices from 40 community and student leaders.</p>
+                </a>
+                <a href="/underground-manufacturers-scrolly/" style="display: block; text-decoration: none; background: #FAFAF8; border: 1px solid #E8E4DF; border-radius: 8px; padding: 2rem; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                    <h3 style="color: #317E6D; font-size: 1.15rem; margin-bottom: 0.75rem;">Underground Manufacturers</h3>
+                    <p style="color: #736C66; font-size: 0.95rem; line-height: 1.6; margin: 0;">Product safety challenges from underground supply networks — consumer impact, education gaps, and building a responsible industry.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
     <!-- CALL TO ACTION -->
     <section id="action" class="section" style="background: linear-gradient(135deg, #317E6D 0%, #2B6B5D 100%); color: white;">
         <div class="content visible">
@@ -2603,7 +2364,7 @@
     <!-- MODAL: Pricing Calculator -->
     <div id="pricingModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'pricingModal')">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('pricingModal')">×</button>
+            <button class="modal-close" aria-label="Close" onclick="closeModal('pricingModal')">×</button>
             <h2 style="color: #317E6D; margin-bottom: 1.5rem;">What Would You Pay?</h2>
             <p style="margin-bottom: 2rem;">Drag the slider to see how your price sensitivity compares to survey respondents.</p>
 
@@ -2646,7 +2407,7 @@
     <!-- MODAL: Training Costs Breakdown -->
     <div id="trainingModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'trainingModal')">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('trainingModal')">×</button>
+            <button class="modal-close" aria-label="Close" onclick="closeModal('trainingModal')">×</button>
             <h2 style="color: #317E6D; margin-bottom: 1.5rem;">Cost to Become Licensed</h2>
             <p style="margin-bottom: 2rem;">Detailed breakdown of state requirements and costs</p>
 
@@ -2701,7 +2462,7 @@
     <!-- MODAL: Rating Distribution -->
     <div id="ratingDistributionModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'ratingDistributionModal')">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('ratingDistributionModal')">×</button>
+            <button class="modal-close" aria-label="Close" onclick="closeModal('ratingDistributionModal')">×</button>
             <h2 style="color: #317E6D; margin-bottom: 1.5rem;">Full Rating Distribution</h2>
             <p style="margin-bottom: 2rem;">How stakeholders rated Colorado's implementation (n=21)</p>
 
@@ -2760,7 +2521,7 @@
     <!-- MODAL: Stakeholder Feedback -->
     <div id="stakeholderFeedbackModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'stakeholderFeedbackModal')">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('stakeholderFeedbackModal')">×</button>
+            <button class="modal-close" aria-label="Close" onclick="closeModal('stakeholderFeedbackModal')">×</button>
             <h2 style="color: #317E6D; margin-bottom: 1.5rem;">What Stakeholders Said About Implementation</h2>
             <p style="margin-bottom: 2rem;">Qualitative feedback from ecosystem stakeholders (n=21)</p>
 
@@ -2805,7 +2566,7 @@
     <!-- Respondent Suggestions Modal -->
     <div id="respondentSuggestionsModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'respondentSuggestionsModal')">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('respondentSuggestionsModal')">×</button>
+            <button class="modal-close" aria-label="Close" onclick="closeModal('respondentSuggestionsModal')">×</button>
             <h2 style="color: #894F00; margin-bottom: 1.5rem;">Respondent Suggestions</h2>
             <p style="margin-bottom: 2rem; color: #736C66;">When asked how to address the affordability gap, respondents offered these ideas:</p>
 
@@ -2841,7 +2602,7 @@
     <!-- MODAL: What We Don't Know -->
     <div id="dontKnowModal" class="modal-overlay" onclick="closeModalOnOverlay(event, 'dontKnowModal')">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('dontKnowModal')">×</button>
+            <button class="modal-close" aria-label="Close" onclick="closeModal('dontKnowModal')">×</button>
             <h2 style="color: #317E6D; margin-bottom: 1rem;">What We Don't Know</h2>
             <p style="font-size: 1rem; color: #736C66; margin-bottom: 2rem;">This research raises as many questions as it answers. Here's what's still missing:</p>
 
@@ -2962,6 +2723,8 @@
             slider.addEventListener('input', function() {
                 const price = this.value;
                 priceValue.textContent = parseInt(price).toLocaleString();
+                slider.setAttribute('aria-valuenow', slider.value);
+                slider.setAttribute('aria-valuetext', '$' + parseInt(slider.value).toLocaleString());
                 updatePriceComparison(parseInt(price));
             });
 
@@ -3077,7 +2840,7 @@
         toggleSidebarVisibility(); // Initial call
 
         // Collapsible section toggle
-        function toggleCollapsible(contentId) {
+        function toggleCollapsible(event, contentId) {
             const content = document.getElementById(contentId);
             const button = event.currentTarget;
             const icon = button.querySelector('.collapsible-icon, .expand-icon');
@@ -3125,7 +2888,5 @@
         });
     </script>
 
-    <!-- Commented.io Integration -->
-    <script defer src="https://cdn.commented.io/latest.js"></script>
 </body>
 </html>

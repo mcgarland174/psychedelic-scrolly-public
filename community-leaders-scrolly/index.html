@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Challenges in Psychedelic Safety: Voices from the Ground</title>
+    <meta name="description" content="Survey results from 40 community and student leaders on psychedelic safety challenges, causes of harm, and a vision for safer practices.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FTX4SK993B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FTX4SK993B');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/garnett" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Primary Colors */
+            --color-primary: #317E6D;
+            --color-primary-dark: #133931;
+            --color-primary-light: #48A5CC;
+
+            /* Semantic Colors */
+            --color-success: #317E6D;
+            --color-success-dark: #1F5F51;
+            --color-warning: #D9994F;
+            --color-warning-dark: #9B6D3F;
+            --color-warning-light: #FAE6CC;
+            --color-error: #DE0A32;
+            --color-error-dark: #A87548;
+            --color-info: #48A5CC;
+            --color-info-dark: #317E6D;
+
+            /* Neutral Colors */
+            --color-text: #2B180A;
+            --color-text-dark: #2C3E50;
+            --color-text-muted: #736C66;
+            --color-text-light: #736C66;
+            --color-bg: #F7F0E8;
+            --color-bg-alt: #FFFFFF;
+            --color-bg-subtle: #FDF6EE;
+            --color-border: #EFE5DE;
+            --color-border-muted: #E6C8A1;
+
+            /* Accent Colors */
+            --color-accent-mint: #6DB5A3;
+
+            /* Typography Scale */
+            --font-size-xs: 0.7rem;
+            --font-size-sm: 0.75rem;
+            --font-size-base: 0.85rem;
+            --font-size-lg: 0.95rem;
+            --font-size-xl: 1rem;
+            --font-size-2xl: 1.2rem;
+            --font-size-3xl: 1.4rem;
+            --font-size-4xl: 1.8rem;
+            --font-size-5xl: 2.4rem;
+            --font-size-6xl: 2.8rem;
+
+            /* Font Weights */
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+
+            /* Spacing Scale */
+            --space-xs: 0.4rem;
+            --space-sm: 0.8rem;
+            --space-md: 1.2rem;
+            --space-lg: 1.6rem;
+            --space-xl: 2.4rem;
+            --space-2xl: 3.2rem;
+            --space-3xl: 4.8rem;
+
+            /* Border Radius */
+            --radius-xs: 6px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 50px;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.2);
+            --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.25);
+
+            /* Transitions */
+            --transition-fast: 150ms ease;
+            --transition-base: 250ms ease;
+            --transition-slow: 350ms ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--color-text);
+            background: var(--color-bg);
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-2xl) 2rem;
+            position: relative;
+        }
+
+        .content {
+            max-width: 850px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            position: relative;
+            padding: var(--space-3xl) 2rem;
+        }
+
+        .hero .content {
+            opacity: 1;
+            transform: none;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: var(--font-size-5xl);
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            margin-bottom: var(--space-lg);
+            line-height: 1.2;
+        }
+
+        .hero h2 {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-normal);
+            margin-top: var(--space-md);
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: var(--font-size-lg);
+            line-height: 1.7;
+        }
+
+        /* Typography */
+        h2 {
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--space-lg);
+            margin-top: var(--space-2xl);
+            color: var(--color-primary);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        h3 {
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-md);
+            margin-top: var(--space-lg);
+            color: var(--color-primary);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        p {
+            font-size: var(--font-size-base);
+            margin-bottom: var(--space-md);
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        .lead-text {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-normal);
+            line-height: 1.7;
+        }
+
+        /* Stat displays */
+        .stat-large {
+            font-size: var(--font-size-6xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin: var(--space-lg) 0;
+            text-align: center;
+        }
+
+        .stat-description {
+            font-size: var(--font-size-xl);
+            color: var(--color-primary);
+            font-weight: var(--font-weight-semibold);
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        /* Bar charts */
+        .bar-chart {
+            margin: var(--space-lg) 0;
+        }
+
+        .bar-item {
+            margin: var(--space-md) 0;
+        }
+
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            font-size: var(--font-size-base);
+            color: var(--color-text);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .bar-label-text {
+            flex: 1;
+        }
+
+        .bar-label-percent {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            min-width: 60px;
+            text-align: right;
+        }
+
+        .bar-bg {
+            background: rgba(203, 213, 217, 0.15);
+            height: 45px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: var(--color-primary);
+            border-radius: var(--radius-sm);
+            width: 0;
+            transition: width 1.5s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .bar-fill.animate {
+            width: var(--width);
+        }
+
+        /* Quote styling */
+        .quote {
+            font-style: italic;
+            font-size: var(--font-size-lg);
+            color: var(--color-text);
+            padding: var(--space-lg);
+            border-left: 4px solid var(--color-primary);
+            background: var(--color-bg-subtle);
+            margin: var(--space-xl) 0;
+            border-radius: var(--radius-sm);
+        }
+
+        /* Context cards */
+        .context-card {
+            background: var(--color-bg-subtle);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin: var(--space-md) 0;
+            border-left: 4px solid var(--color-warning);
+        }
+
+        .context-card h4 {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .context-card ul {
+            list-style-position: inside;
+            color: var(--color-text-light);
+        }
+
+        .context-card li {
+            margin: var(--space-xs) 0;
+            line-height: 1.6;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator::after {
+            content: '↓';
+            font-size: var(--font-size-3xl);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: var(--font-size-4xl);
+            }
+
+            .hero h2 {
+                font-size: var(--font-size-2xl);
+            }
+
+            h2 {
+                font-size: var(--font-size-3xl);
+            }
+        }
+
+        .related-research-card {
+            display: block;
+            text-decoration: none;
+            background: var(--color-bg-subtle);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm, 8px);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .related-research-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 16px rgba(49, 126, 109, 0.12);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="content">
+            <h1>Community Challenges in Psychedelic Safety</h1>
+            <h2>Survey Results from 40 Community and Student Leaders</h2>
+            <p style="margin-top: var(--space-xl);">Across the globe, psychedelic societies and student organizations are witnessing a shift. As interest in psychedelics increases, so do the risks. PSI surveyed 35 leaders from psychedelic societies and 5 representatives from various Students for Sensible Drug Policy chapters worldwide to understand the safety challenges their communities face daily.</p>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Safety as Foundation -->
+    <section class="section" id="safety-foundation">
+        <div class="content">
+            <h2>Safety as the Foundation</h2>
+            <p class="lead-text" style="text-align: center;"><span class="stat-large" style="display: inline; margin: 0;">100%</span> <span class="stat-description" style="display: inline;">of respondents identified safety as critical to their communities.</span></p>
+
+            <p class="lead-text">Over 8 million Americans used psychedelics in 2023, while clinical trials typically enroll only hundreds to thousands of participants — meaning the vast majority of psychedelic use happens outside clinical and regulated settings. This is where community organizations play a crucial role.</p>
+
+            <p class="lead-text">Community leaders understand something fundamental: safety isn't just about crisis prevention. It's about creating the conditions where people can explore consciousness, process trauma, and experience healing without unnecessary risk. When asked about their communities' values and priorities, leaders revealed a sophisticated understanding of how safety enables transformation.</p>
+
+            <p class="lead-text">One leader explained what this means in practice:</p>
+
+            <blockquote class="quote">
+                "I've been in a lot of spaces where set and setting were not considered. (...) Fostering a space of safety with education first and foremost allows for a deeper experience in a safe container."
+            </blockquote>
+
+            <p class="lead-text">This isn't just about preventing bad trips—it's about creating safe conditions for profound transformation, where education and knowledge form the foundation for healing, growth, and lasting change.</p>
+
+            <!-- Pyramid Visualization -->
+            <svg viewBox="0 0 800 500" style="max-width: 100%; height: auto; margin: var(--space-sm) 0 var(--space-sm) 0;">
+                <!-- Pyramid layers from bottom to top -->
+                <!-- Layer 1: Safety (base) -->
+                <polygon points="150,450 650,450 600,350 200,350" fill="var(--color-primary)" opacity="0.9" stroke="var(--color-primary-dark)" stroke-width="2"/>
+                <text x="400" y="405" font-size="20" font-weight="bold" fill="white" text-anchor="middle">SAFETY</text>
+                <text x="400" y="430" font-size="14" fill="white" text-anchor="middle">Education & Knowledge</text>
+
+                <!-- Layer 2: Healing -->
+                <polygon points="200,350 600,350 550,250 250,250" fill="#48A5CC" opacity="0.9" stroke="#317E6D" stroke-width="2"/>
+                <text x="400" y="305" font-size="18" font-weight="bold" fill="white" text-anchor="middle">HEALING</text>
+                <text x="400" y="325" font-size="13" fill="white" text-anchor="middle">Personal & Collective</text>
+
+                <!-- Layer 3: Growth -->
+                <polygon points="250,250 550,250 500,150 300,150" fill="#90C695" opacity="0.9" stroke="#317E6D" stroke-width="2"/>
+                <text x="400" y="205" font-size="16" font-weight="bold" fill="white" text-anchor="middle">GROWTH</text>
+
+                <!-- Layer 4: Transformation (top) -->
+                <polygon points="300,150 500,150 400,70 400,70" fill="#D9994F" opacity="0.9" stroke="#9B6D3F" stroke-width="2"/>
+                <text x="400" y="115" font-size="9" font-weight="bold" fill="white" text-anchor="middle">TRANSFORMATION</text>
+            </svg>
+
+            <p class="lead-text">The priorities they identified:</p>
+
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Emphasize education and knowledge sharing</span>
+                        <span class="bar-label-percent">100%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 100%; background: var(--color-primary);"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">See safety as enabling personal and collective healing</span>
+                        <span class="bar-label-percent">100%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 100%; background: #48A5CC;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Believe in community responsibility and ethics</span>
+                        <span class="bar-label-percent">100%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 100%; background: #90C695;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Focus on ensuring access and equity</span>
+                        <span class="bar-label-percent">95%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 95%; background: #D9994F;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Causes of Harm -->
+    <section class="section" id="causes-of-harm" style="padding-top: var(--space-md);">
+        <div class="content">
+            <h2>Causes of Psychedelic Harm</h2>
+
+            <p class="lead-text">When 100% of respondents say safety is critical, they're speaking from experience. These communities have witnessed harm firsthand—they've seen what happens when education is missing, when practitioners lack training, when systems fail, and when vulnerable people fall through the cracks. Understanding where safety breaks down is essential to building it back up. Community leaders identified four interconnected causes of harm, each affecting communities in distinct but overlapping ways.</p>
+
+            <h3 style="color: var(--color-primary);">The Knowledge Gap <span style="color: var(--color-primary);">(100% of communities affected)</span></h3>
+            <ul style="list-style: disc; margin-left: 1.5rem; margin-top: var(--space-md); margin-bottom: var(--space-lg);">
+                <li style="margin-bottom: var(--space-sm); font-size: var(--font-size-lg); line-height: 1.7; color: var(--color-text-light);">Treating psychedelics as quick fixes</li>
+                <li style="margin-bottom: var(--space-sm); font-size: var(--font-size-lg); line-height: 1.7; color: var(--color-text-light);">Misinformation spreading faster than education</li>
+                <li style="margin-bottom: var(--space-sm); font-size: var(--font-size-lg); line-height: 1.7; color: var(--color-text-light);">First-timers going in completely unprepared</li>
+            </ul>
+            <blockquote class="quote">"My biggest concern is just really like level setting with people that this isn't just like an easy button that you push. This isn't just like another pharmaceutical drug that you can just take."</blockquote>
+
+            <h3 style="color: var(--color-primary);">Unsafe Practitioners <span style="color: var(--color-primary);">(100% report concerns)</span></h3>
+            <ul style="list-style: disc; margin-left: 1.5rem; margin-top: var(--space-md); margin-bottom: var(--space-lg);">
+                <li style="margin-bottom: var(--space-sm); font-size: var(--font-size-lg); line-height: 1.7; color: var(--color-text-light);">Self-proclaimed facilitators without training</li>
+                <li style="margin-bottom: var(--space-sm); font-size: var(--font-size-lg); line-height: 1.7; color: var(--color-text-light);">Facilitators crossing boundaries</li>
+                <li style="margin-bottom: var(--space-sm); font-size: var(--font-size-lg); line-height: 1.7; color: var(--color-text-light);">Culturally inappropriate care</li>
+            </ul>
+            <blockquote class="quote">"There is no way to really know about the ethics and reputation of the person leading the experience in an objective way. There are issues of trust. How do we establish trust BEFORE first contact?"</blockquote>
+
+            <h3 style="color: var(--color-primary);">System Failures <span style="color: var(--color-primary);">(83% experiencing barriers)</span></h3>
+            <ul style="list-style: disc; margin-left: 1.5rem; margin-top: var(--space-md); margin-bottom: var(--space-lg);">
+                <li style="margin-bottom: var(--space-sm); font-size: var(--font-size-lg); line-height: 1.7; color: var(--color-text-light);">Criminalization preventing people from seeking help</li>
+                <li style="margin-bottom: var(--space-sm); font-size: var(--font-size-lg); line-height: 1.7; color: var(--color-text-light);">No accountability systems for bad actors</li>
+                <li style="margin-bottom: var(--space-sm); font-size: var(--font-size-lg); line-height: 1.7; color: var(--color-text-light);">Underground markets without labelling and testing standards</li>
+            </ul>
+            <blockquote class="quote">"There is no recourse for reporting of abuse in a criminalized system where the abuse itself is criminal yet dismissed because it took place 'under ground'."</blockquote>
+
+            <h3 style="color: var(--color-primary);">Vulnerable Populations at Risk <span style="color: var(--color-primary);">(90% worried)</span></h3>
+            <ul style="list-style: disc; margin-left: 1.5rem; margin-top: var(--space-md); margin-bottom: var(--space-lg);">
+                <li style="margin-bottom: var(--space-sm); font-size: var(--font-size-lg); line-height: 1.7; color: var(--color-text-light);">Neurodivergent individuals without adapted support</li>
+                <li style="margin-bottom: var(--space-sm); font-size: var(--font-size-lg); line-height: 1.7; color: var(--color-text-light);">Trauma survivors being retraumatized</li>
+                <li style="margin-bottom: var(--space-sm); font-size: var(--font-size-lg); line-height: 1.7; color: var(--color-text-light);">Marginalized communities facing additional barriers</li>
+            </ul>
+            <blockquote class="quote">"A facilitator may not have great training or may take advantage of someone in a vulnerable state."</blockquote>
+        </div>
+    </section>
+
+    <!-- Where Challenges Emerge -->
+    <section class="section" id="contexts">
+        <div class="content">
+            <h2>Safety Challenges Across Different Settings</h2>
+
+            <!-- Circular Context Diagram -->
+            <svg viewBox="0 0 800 800" style="max-width: 100%; height: auto; margin: var(--space-sm) 0 0 0;">
+                <!-- Center circle -->
+                <circle cx="400" cy="400" r="100" fill="var(--color-primary)" opacity="0.2" stroke="var(--color-primary)" stroke-width="3"/>
+                <text x="400" y="395" font-size="16" font-weight="bold" fill="var(--color-text)" text-anchor="middle">Safety</text>
+                <text x="400" y="415" font-size="16" font-weight="bold" fill="var(--color-text)" text-anchor="middle">Challenges</text>
+
+                <!-- Context 1: Festivals & Parties (top) -->
+                <circle cx="400" cy="150" r="80" fill="var(--color-warning)" opacity="0.7" stroke="#9B6D3F" stroke-width="2"/>
+                <text x="400" y="145" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Festivals &</text>
+                <text x="400" y="165" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Parties</text>
+                <line x1="400" y1="300" x2="400" y2="230" stroke="var(--color-warning)" stroke-width="2" stroke-dasharray="5,5"/>
+
+                <!-- Context 2: Solo (top right) -->
+                <circle cx="600" cy="250" r="80" fill="#48A5CC" opacity="0.7" stroke="#317E6D" stroke-width="2"/>
+                <text x="600" y="245" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Taking</text>
+                <text x="600" y="265" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Alone</text>
+                <line x1="490" y1="360" x2="540" y2="310" stroke="#48A5CC" stroke-width="2" stroke-dasharray="5,5"/>
+
+                <!-- Context 3: Small Groups (bottom right) -->
+                <circle cx="600" cy="550" r="80" fill="#90C695" opacity="0.7" stroke="var(--color-primary-dark)" stroke-width="2"/>
+                <text x="600" y="545" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Small</text>
+                <text x="600" y="565" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Groups</text>
+                <line x1="490" y1="440" x2="540" y2="490" stroke="#90C695" stroke-width="2" stroke-dasharray="5,5"/>
+
+                <!-- Context 4: Facilitated (bottom left) -->
+                <circle cx="200" cy="550" r="80" fill="var(--color-error)" opacity="0.7" stroke="#A87548" stroke-width="2"/>
+                <text x="200" y="545" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Facilitated</text>
+                <text x="200" y="565" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Sessions</text>
+                <line x1="310" y1="440" x2="260" y2="490" stroke="var(--color-error)" stroke-width="2" stroke-dasharray="5,5"/>
+
+                <!-- Context 5: Traditional (top left) -->
+                <circle cx="200" cy="250" r="80" fill="#6B7AA1" opacity="0.7" stroke="#4A5A7C" stroke-width="2"/>
+                <text x="200" y="240" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Traditional/</text>
+                <text x="200" y="260" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Spiritual</text>
+                <text x="200" y="278" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Contexts</text>
+                <line x1="310" y1="360" x2="260" y2="310" stroke="#6B7AA1" stroke-width="2" stroke-dasharray="5,5"/>
+            </svg>
+
+            <p class="lead-text" style="margin-top: -2rem; margin-bottom: var(--space-md);">Our research identified distinct safety challenges that emerge in five critical contexts:</p>
+
+            <div class="context-card" style="margin-top: var(--space-sm);">
+                <h4>At Festivals & Parties <span style="color: var(--color-primary); font-weight: normal;">(especially reported by students)</span></h4>
+                <ul>
+                    <li>Contaminated substances (56% report as top concern)</li>
+                    <li>No quiet spaces for overwhelm</li>
+                    <li>Peer pressure and suggestibility</li>
+                    <li>Absent harm reduction services</li>
+                </ul>
+                <blockquote class="quote" style="margin-top: var(--space-md);">"Ensuring drugs are not laced. We strongly encourage testing before ingesting."</blockquote>
+            </div>
+
+            <div class="context-card" style="border-left-color: #48A5CC;">
+                <h4>When Taking Psychedelics Alone</h4>
+                <ul>
+                    <li>No support during crisis (65% cite as major risk)</li>
+                    <li>Panic and psychological overwhelm</li>
+                    <li>Physical safety risks</li>
+                    <li>Inability to call for help</li>
+                </ul>
+                <blockquote class="quote" style="margin-top: var(--space-md);">"Risks of taking alone include overwhelm, feeling untethered—like they will never be normal or come back from this place."</blockquote>
+            </div>
+
+            <div class="context-card" style="border-left-color: #90C695;">
+                <h4>In Small Groups</h4>
+                <ul>
+                    <li>Group emotional responses</li>
+                    <li>Pressure to dose higher</li>
+                    <li>Lack of clear boundaries</li>
+                    <li>No trained crisis support</li>
+                </ul>
+                <blockquote class="quote" style="margin-top: var(--space-md);">"Is someone sober to help? Where is it being held? What is the experience and education of the facilitator?"</blockquote>
+            </div>
+
+            <div class="context-card" style="border-left-color: var(--color-error);">
+                <h4>In Facilitated Sessions</h4>
+                <ul>
+                    <li>Power abuse and boundary violations (70% say is a concern)</li>
+                    <li>Inadequate screening for trauma/medications</li>
+                    <li>Sexual misconduct</li>
+                    <li>No integration support</li>
+                </ul>
+                <blockquote class="quote" style="margin-top: var(--space-md);">"It took me 3 years to find a facilitator for me. Power, ego—calling themselves a 'Shaman' or 'Guru', thinking they can 'fix' or 'cure' people."</blockquote>
+            </div>
+
+            <div class="context-card" style="border-left-color: #6B7AA1;">
+                <h4>In Traditional/Spiritual Contexts</h4>
+                <ul>
+                    <li>Cultural appropriation</li>
+                    <li>Spiritual manipulation</li>
+                    <li>Unsafe ceremonial practices</li>
+                    <li>Trauma reactivation without support</li>
+                </ul>
+                <blockquote class="quote" style="margin-top: var(--space-md);">"How is reciprocity being done? What is the ownership structure of retreats when claims are being made about following indigenous traditions and practice?"</blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Communities Responding -->
+    <section class="section" id="community-response">
+        <div class="content">
+            <h2>Communities are Already Responding</h2>
+            <p class="lead-text">Even without formal infrastructure, psychedelic communities have built their own safety networks. The figure below shows the current harm reduction resources communities are already providing—and the percentages reflect how many communities report offering each type of support.</p>
+
+            <!-- Resource Tree Visualization -->
+            <svg viewBox="0 0 800 600" style="max-width: 100%; height: auto; margin: var(--space-3xl) 0;">
+                <!-- Tree trunk -->
+                <rect x="360" y="400" width="80" height="180" fill="#8B6F47" rx="5"/>
+
+                <!-- Root system -->
+                <ellipse cx="400" cy="580" rx="150" ry="30" fill="#8B6F47" opacity="0.5"/>
+
+                <!-- Main branches -->
+                <!-- Left branch - Direct Services -->
+                <path d="M 400 400 Q 250 380, 150 300" stroke="var(--color-primary)" stroke-width="8" fill="none"/>
+
+                <!-- Center branch - Education -->
+                <path d="M 400 400 L 400 200" stroke="var(--color-warning)" stroke-width="8" fill="none"/>
+
+                <!-- Right branch - Community Building -->
+                <path d="M 400 400 Q 550 380, 650 300" stroke="#48A5CC" stroke-width="8" fill="none"/>
+
+                <!-- Left section: Direct Services -->
+                <circle cx="150" cy="300" r="50" fill="var(--color-primary)" opacity="0.8"/>
+                <text x="150" y="295" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Direct</text>
+                <text x="150" y="312" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Services</text>
+
+                <!-- Leaves for Direct Services -->
+                <circle cx="96" cy="237" r="40" fill="var(--color-primary)" opacity="0.7"/>
+                <text x="96" y="229" font-size="9" fill="white" text-anchor="middle">Substance</text>
+                <text x="96" y="240" font-size="9" fill="white" text-anchor="middle">Testing</text>
+                <text x="96" y="253" font-size="14" font-weight="bold" fill="white" text-anchor="middle">82%</text>
+
+                <circle cx="179" cy="222" r="40" fill="var(--color-primary)" opacity="0.7"/>
+                <text x="179" y="214" font-size="9" fill="white" text-anchor="middle">Drug</text>
+                <text x="179" y="225" font-size="9" fill="white" text-anchor="middle">Checking</text>
+                <text x="179" y="238" font-size="14" font-weight="bold" fill="white" text-anchor="middle">82%</text>
+
+                <circle cx="68" cy="309" r="40" fill="var(--color-primary)" opacity="0.7"/>
+                <text x="68" y="301" font-size="9" fill="white" text-anchor="middle">Peer</text>
+                <text x="68" y="312" font-size="9" fill="white" text-anchor="middle">Support</text>
+                <text x="68" y="325" font-size="14" font-weight="bold" fill="white" text-anchor="middle">57%</text>
+
+                <circle cx="228" cy="271" r="40" fill="var(--color-primary)" opacity="0.7"/>
+                <text x="228" y="263" font-size="9" fill="white" text-anchor="middle">Integration</text>
+                <text x="228" y="274" font-size="9" fill="white" text-anchor="middle">Circles</text>
+                <text x="228" y="287" font-size="14" font-weight="bold" fill="white" text-anchor="middle">77%</text>
+
+                <!-- Center section: Education -->
+                <circle cx="400" cy="200" r="50" fill="var(--color-warning)" opacity="0.8"/>
+                <text x="400" y="205" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Education</text>
+
+                <!-- Leaves for Education -->
+                <circle cx="346" cy="137" r="40" fill="var(--color-warning)" opacity="0.7"/>
+                <text x="346" y="129" font-size="9" fill="white" text-anchor="middle">Workshops</text>
+                <text x="346" y="140" font-size="9" fill="white" text-anchor="middle">& Training</text>
+                <text x="346" y="153" font-size="14" font-weight="bold" fill="white" text-anchor="middle">63%</text>
+
+                <circle cx="454" cy="137" r="40" fill="var(--color-warning)" opacity="0.7"/>
+                <text x="454" y="129" font-size="9" fill="white" text-anchor="middle">Online</text>
+                <text x="454" y="140" font-size="9" fill="white" text-anchor="middle">Resources</text>
+                <text x="454" y="153" font-size="14" font-weight="bold" fill="white" text-anchor="middle">88%</text>
+
+                <circle cx="324" cy="234" r="40" fill="var(--color-warning)" opacity="0.7"/>
+                <text x="324" y="226" font-size="9" fill="white" text-anchor="middle">Harm Red.</text>
+                <text x="324" y="237" font-size="9" fill="white" text-anchor="middle">Manuals</text>
+                <text x="324" y="250" font-size="14" font-weight="bold" fill="white" text-anchor="middle">48%</text>
+
+                <circle cx="476" cy="234" r="40" fill="var(--color-warning)" opacity="0.7"/>
+                <text x="476" y="226" font-size="9" fill="white" text-anchor="middle">Crisis</text>
+                <text x="476" y="237" font-size="9" fill="white" text-anchor="middle">Guides</text>
+                <text x="476" y="250" font-size="14" font-weight="bold" fill="white" text-anchor="middle">40%</text>
+
+                <!-- Right section: Community Building -->
+                <circle cx="650" cy="300" r="50" fill="#48A5CC" opacity="0.8"/>
+                <text x="650" y="295" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Community</text>
+                <text x="650" y="312" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Building</text>
+
+                <!-- Leaves for Community Building -->
+                <circle cx="704" cy="237" r="40" fill="#48A5CC" opacity="0.7"/>
+                <text x="704" y="229" font-size="9" fill="white" text-anchor="middle">Knowledge</text>
+                <text x="704" y="240" font-size="9" fill="white" text-anchor="middle">Sharing</text>
+                <text x="704" y="253" font-size="14" font-weight="bold" fill="white" text-anchor="middle">90%</text>
+
+                <circle cx="621" cy="222" r="40" fill="#48A5CC" opacity="0.7"/>
+                <text x="621" y="214" font-size="9" fill="white" text-anchor="middle">Networking</text>
+                <text x="621" y="225" font-size="9" fill="white" text-anchor="middle">& Referrals</text>
+                <text x="621" y="238" font-size="14" font-weight="bold" fill="white" text-anchor="middle">72%</text>
+
+                <circle cx="732" cy="309" r="40" fill="#48A5CC" opacity="0.7"/>
+                <text x="732" y="301" font-size="9" fill="white" text-anchor="middle">Affinity</text>
+                <text x="732" y="312" font-size="9" fill="white" text-anchor="middle">Groups</text>
+                <text x="732" y="325" font-size="14" font-weight="bold" fill="white" text-anchor="middle">15%</text>
+
+                <circle cx="572" cy="271" r="40" fill="#48A5CC" opacity="0.7"/>
+                <text x="572" y="263" font-size="9" fill="white" text-anchor="middle">Large-Scale</text>
+                <text x="572" y="274" font-size="9" fill="white" text-anchor="middle">Events</text>
+                <text x="572" y="287" font-size="14" font-weight="bold" fill="white" text-anchor="middle">28%</text>
+            </svg>
+
+            <p class="lead-text" style="margin-top: var(--space-xl);">But it's not enough. Critical gaps remain.</p>
+
+            <blockquote class="quote" style="margin-top: var(--space-xl);">
+                "We need a public database of reported bad actors. Standardized training. Ethics boards with teeth. Accurate, accessible information that counters both stigma and hype. Decriminalization would allow people to seek help without fear—it would bring practices out of the shadows."
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Vision for Safety -->
+    <section class="section" id="vision">
+        <div class="content">
+            <h2>A Vision for Psychedelic Safety</h2>
+            <p class="lead-text">When asked what they'd change, community leaders converged on three core priorities:</p>
+
+            <!-- Priority Bar Charts -->
+            <div class="bar-chart" style="margin-top: var(--space-xl);">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Safe & Legal Access</span>
+                        <span class="bar-label-percent">95%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 95%; background: var(--color-primary);"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Facilitator Accountability</span>
+                        <span class="bar-label-percent">95%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 95%; background: var(--color-warning);"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Centralized Education Hub</span>
+                        <span class="bar-label-percent">100%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 100%; background: #48A5CC;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="lead-text" style="margin-top: var(--space-2xl);">Building this vision requires infrastructure at three interconnected levels:</p>
+
+            <!-- Interconnected Infrastructure Levels -->
+            <svg viewBox="0 0 900 800" style="max-width: 100%; height: auto; margin: var(--space-xl) 0;">
+                <!-- Arrow marker definition -->
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                        <polygon points="0 0, 10 5, 0 10" fill="#6A6A6A" />
+                    </marker>
+                </defs>
+
+                <!-- Level 1: Immediate Needs (top) -->
+                <rect x="50" y="40" width="800" height="200" fill="#5FA896" opacity="0.9" stroke="#4A8F7D" stroke-width="3" rx="8"/>
+                <text x="450" y="90" font-size="22" font-weight="bold" fill="white" text-anchor="middle">Immediate Needs</text>
+                <text x="450" y="125" font-size="16" fill="white" text-anchor="middle">Drug checking access at every event</text>
+                <text x="450" y="150" font-size="16" fill="white" text-anchor="middle">Crisis hotlines staffed 24/7</text>
+                <text x="450" y="175" font-size="16" fill="white" text-anchor="middle">Integration circles</text>
+                <text x="450" y="200" font-size="16" fill="white" text-anchor="middle">Psychedelic-friendly therapist directories</text>
+
+                <!-- Arrow down from Immediate to Educational -->
+                <path d="M 450 255 L 450 295" stroke="#6A6A6A" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+                <!-- Level 2: Educational Revolution (middle) -->
+                <rect x="50" y="310" width="800" height="200" fill="#E5B470" opacity="0.9" stroke="#D9A45F" stroke-width="3" rx="8"/>
+                <text x="450" y="360" font-size="22" font-weight="bold" fill="white" text-anchor="middle">Educational Revolution</text>
+                <text x="450" y="395" font-size="16" fill="white" text-anchor="middle">School and university programs</text>
+                <text x="450" y="420" font-size="16" fill="white" text-anchor="middle">Public awareness campaigns</text>
+                <text x="450" y="445" font-size="16" fill="white" text-anchor="middle">Accessible training resources</text>
+                <text x="450" y="470" font-size="16" fill="white" text-anchor="middle">Facilitator certification programs</text>
+
+                <!-- Arrow down from Educational to Systemic -->
+                <path d="M 450 525 L 450 565" stroke="#6A6A6A" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
+                <!-- Level 3: Systemic Changes (bottom) -->
+                <rect x="50" y="580" width="800" height="200" fill="#6BAAD1" opacity="0.9" stroke="#5599C0" stroke-width="3" rx="8"/>
+                <text x="450" y="630" font-size="22" font-weight="bold" fill="white" text-anchor="middle">Systemic Changes</text>
+                <text x="450" y="665" font-size="16" fill="white" text-anchor="middle">Decriminalization & legal frameworks</text>
+                <text x="450" y="690" font-size="16" fill="white" text-anchor="middle">Independent ethics review boards</text>
+                <text x="450" y="715" font-size="16" fill="white" text-anchor="middle">Regulated, safe access</text>
+                <text x="450" y="740" font-size="16" fill="white" text-anchor="middle">National standards for facilitators</text>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Related Research -->
+    <section class="section" style="background: var(--color-bg);">
+        <div class="content">
+            <h2 style="text-align: center;">Explore Our Other Research</h2>
+            <p style="font-size: var(--font-size-lg); color: var(--color-text-muted); max-width: 700px; margin: 1rem auto 2.5rem; line-height: 1.75; text-align: center;">This community leaders survey is part of a broader investigation into psychedelic safety in Colorado. Dive deeper with these companion studies.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+                <a href="/" class="related-research-card">
+                    <h3 style="color: var(--color-primary); font-size: 1.15rem; margin-bottom: 0.75rem;">Market Research Report</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Data-driven insights on pricing, access, the underground vs. licensed divide, and the emerging Colorado psychedelic ecosystem.</p>
+                </a>
+                <a href="/stakeholder-interviews-scrolly/" class="related-research-card">
+                    <h3 style="color: var(--color-primary); font-size: 1.15rem; margin-bottom: 0.75rem;">Stakeholder Interviews</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Voices from the field on human impacts, professional crisis, emergency response gaps, and collaborative solutions.</p>
+                </a>
+                <a href="/underground-manufacturers-scrolly/" class="related-research-card">
+                    <h3 style="color: var(--color-primary); font-size: 1.15rem; margin-bottom: 0.75rem;">Underground Manufacturers</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Product safety challenges from underground supply networks — consumer impact, education gaps, and building a responsible industry.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="hero" style="min-height: 70vh;">
+        <div class="content">
+            <h2>Support Psychedelic Safety</h2>
+            <p style="margin-top: var(--space-xl);">PSI is committed to supporting psychedelic safety through research, education, and advocacy. Check out our stakeholder-specific education guides for safer psychedelic experiences.</p>
+            <div style="margin-top: var(--space-2xl); text-align: center;">
+                <a href="#" style="display: inline-block; background: white; color: var(--color-primary); padding: var(--space-md) var(--space-xl); border-radius: var(--radius-lg); font-weight: var(--font-weight-semibold); text-decoration: none; font-size: var(--font-size-lg);">Access Education Guides</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Animate bar fills when section becomes visible
+                    const barFills = entry.target.querySelectorAll('.bar-fill');
+                    barFills.forEach(bar => {
+                        setTimeout(() => {
+                            bar.classList.add('animate');
+                        }, 100);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe all content sections
+        document.querySelectorAll('.content').forEach(content => {
+            observer.observe(content);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,4812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapping the Path to Psychedelic Safety: Voices from the Field</title>
+    <meta name="description" content="Voices from the field mapping the path to psychedelic safety — stakeholder interviews covering human impacts, professional crisis, emergency response gaps, and collaborative solutions.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FTX4SK993B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FTX4SK993B');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/garnett" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Primary Colors */
+            --color-primary: #317E6D;
+            --color-primary-dark: #133931;
+            --color-primary-light: #48A5CC;
+
+            /* Semantic Colors */
+            --color-success: #317E6D;
+            --color-success-dark: #1F5F51;
+            --color-warning: #E8A838;
+            --color-warning-dark: #C48420;
+            --color-warning-light: #FFF0D6;
+            --color-error: #E85D6C;
+            --color-error-dark: #C94B5A;
+            --color-info: #48A5CC;
+            --color-info-dark: #317E6D;
+
+            /* Neutral Colors */
+            --color-text: #2B180A;
+            --color-text-dark: #2C3E50;
+            --color-text-muted: #736C66;
+            --color-text-light: #736C66;
+            --color-bg: #F7F0E8;
+            --color-bg-alt: #FFFFFF;
+            --color-bg-subtle: #FDF6EE;
+            --color-border: #EFE5DE;
+            --color-border-muted: #E6C8A1;
+
+            /* Accent Colors */
+            --color-accent-mint: #6DB5A3;
+
+            /* Typography Scale */
+            --font-size-xs: 0.7rem;
+            --font-size-sm: 0.8rem;
+            --font-size-base: 0.95rem;
+            --font-size-lg: 1.05rem;
+            --font-size-xl: 1.1rem;
+            --font-size-2xl: 1.3rem;
+            --font-size-3xl: 1.6rem;
+            --font-size-4xl: 2.2rem;
+            --font-size-5xl: 3.2rem;
+            --font-size-6xl: 3.4rem;
+
+            /* Font Weights */
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+
+            /* Spacing Scale */
+            --space-xs: 0.4rem;
+            --space-sm: 0.8rem;
+            --space-md: 1.2rem;
+            --space-lg: 1.6rem;
+            --space-xl: 2.4rem;
+            --space-2xl: 3.2rem;
+            --space-3xl: 5.6rem;
+
+            /* Border Radius */
+            --radius-xs: 6px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 50px;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.16);
+            --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+            /* Transitions */
+            --transition-fast: 150ms ease;
+            --transition-base: 250ms ease;
+            --transition-slow: 350ms ease;
+        }
+
+        /* Global polish */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background: rgba(49, 126, 109, 0.25);
+            color: var(--color-primary-dark);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--color-text);
+            background: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'ss01', 'ss02';
+        }
+
+        /* Scroll progress bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light), var(--color-accent-mint));
+            z-index: 2000;
+            transition: width 50ms linear;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-3xl) 2rem;
+            position: relative;
+            scroll-margin-top: 2rem;
+        }
+
+        .content {
+            max-width: 850px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered child animations */
+        .content.visible .stagger-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .stagger-item:nth-child(1) { transition-delay: 0.1s; }
+        .stagger-item:nth-child(2) { transition-delay: 0.2s; }
+        .stagger-item:nth-child(3) { transition-delay: 0.3s; }
+        .stagger-item:nth-child(4) { transition-delay: 0.4s; }
+        .stagger-item:nth-child(5) { transition-delay: 0.5s; }
+        .stagger-item:nth-child(6) { transition-delay: 0.6s; }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #0a1f1a;
+            color: white;
+            position: relative;
+            padding: var(--space-3xl) 2rem;
+            overflow: hidden;
+        }
+
+        /* Animated mesh gradient background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% 40%, rgba(49, 126, 109, 0.6) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 80% at 80% 20%, rgba(72, 165, 204, 0.4) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 60% at 60% 80%, rgba(109, 181, 163, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse 40% 40% at 40% 60%, rgba(19, 57, 49, 0.8) 0%, transparent 60%);
+            animation: meshMove 20s ease-in-out infinite alternate;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes meshMove {
+            0% { transform: scale(1) rotate(0deg); }
+            33% { transform: scale(1.1) rotate(2deg); }
+            66% { transform: scale(0.95) rotate(-1deg); }
+            100% { transform: scale(1.05) rotate(1deg); }
+        }
+
+        /* Floating particles */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,0.3), transparent),
+                radial-gradient(2px 2px at 30% 60%, rgba(255,255,255,0.2), transparent),
+                radial-gradient(3px 3px at 50% 40%, rgba(255,255,255,0.15), transparent),
+                radial-gradient(2px 2px at 70% 80%, rgba(255,255,255,0.25), transparent),
+                radial-gradient(2px 2px at 90% 30%, rgba(255,255,255,0.2), transparent),
+                radial-gradient(3px 3px at 15% 70%, rgba(255,255,255,0.15), transparent),
+                radial-gradient(2px 2px at 45% 90%, rgba(255,255,255,0.2), transparent),
+                radial-gradient(2px 2px at 85% 50%, rgba(255,255,255,0.15), transparent);
+            background-size: 100% 100%;
+            animation: floatParticles 30s linear infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        @keyframes floatParticles {
+            0% { transform: translateY(0); opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0.6; }
+        }
+
+        .hero .content {
+            opacity: 1;
+            transform: none;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            margin-bottom: var(--space-lg);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+        }
+
+        .hero h2 {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(109, 181, 163, 0.9));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-top: var(--space-md);
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: var(--font-size-lg);
+            line-height: 1.8;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hero stat cards */
+        .hero-stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            z-index: 10;
+            position: relative;
+            justify-content: center;
+        }
+
+        .hero-stat-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .hero-stat-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        .hero-stat-card:nth-child(1) { animation-delay: 0.3s; }
+        .hero-stat-card:nth-child(2) { animation-delay: 0.5s; }
+        .hero-stat-card:nth-child(3) { animation-delay: 0.7s; }
+
+        .hero-stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            font-family: 'Garnett', Georgia, serif;
+        }
+
+        .hero-stat-label {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.25rem;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            padding: var(--space-3xl) 2rem var(--space-xl) 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            pointer-events: none;
+        }
+
+        .section-divider .content {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Reduce spacing for sections immediately after dividers */
+        .section-divider + .section {
+            padding-top: var(--space-lg);
+        }
+
+        .divider-label {
+            display: inline-block;
+            padding: var(--space-sm) var(--space-xl);
+            background: var(--color-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            font-weight: var(--font-weight-semibold);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--space-lg);
+        }
+
+        .divider-title {
+            color: var(--color-primary);
+            margin-bottom: var(--space-md);
+            margin-top: 0;
+            font-weight: 700;
+            font-size: var(--font-size-3xl);
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            letter-spacing: -0.01em;
+        }
+
+        .divider-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light), var(--color-accent-mint));
+            border-radius: 2px;
+            margin: var(--space-md) auto;
+        }
+
+        /* Gradient fade between sections - dark treatment */
+        .section-challenges {
+            background: #0F1F1B;
+            --color-text: rgba(255, 255, 255, 0.9);
+            --color-text-muted: rgba(255, 255, 255, 0.6);
+            --color-text-light: rgba(255, 255, 255, 0.85);
+            --color-text-dark: rgba(255, 255, 255, 0.9);
+            --color-primary-dark: #6DB5A3;
+            --color-bg-subtle: rgba(255, 255, 255, 0.05);
+            --color-bg-alt: rgba(255, 255, 255, 0.08);
+            --color-border: rgba(255, 255, 255, 0.12);
+        }
+
+        .section-challenges h2 {
+            color: #6DB5A3;
+        }
+
+        .section-challenges h2::before {
+            background: linear-gradient(90deg, rgba(109,181,163,0.7), rgba(72,165,204,0.5)) !important;
+        }
+
+        .section-challenges h3 {
+            color: #6DB5A3;
+        }
+
+        .section-challenges .bar-label-percent {
+            color: #6DB5A3;
+        }
+
+        .section-challenges .bar-bg {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .section-challenges .quote:not(.quote-fullbleed) {
+            background: rgba(255, 255, 255, 0.06);
+            border-image: none;
+            border-left: 4px solid rgba(109, 181, 163, 0.6);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .section-challenges .quote-group .quote:not(.quote-fullbleed):nth-child(3n+2) {
+            border-image: none;
+            border-left: 4px solid rgba(232, 93, 108, 0.6);
+            background: rgba(232, 93, 108, 0.06);
+        }
+
+        .section-challenges .quote-group .quote:not(.quote-fullbleed):nth-child(3n) {
+            border-image: none;
+            border-left: 4px solid rgba(232, 168, 56, 0.6);
+            background: rgba(232, 168, 56, 0.06);
+        }
+
+        .section-challenges .quote:not(.quote-fullbleed)::before {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .section-challenges .stat-large {
+            color: white;
+        }
+
+        .section-challenges .stat-description {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .section-challenges .bar-label-text {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .section-challenges .lead-text,
+        .section-challenges p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .section-challenges .split-panel {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-top: 3px solid rgba(255, 255, 255, 0.15);
+            border-left: 4px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .section-challenges .split-panel h3 {
+            color: white;
+        }
+
+        .section-challenges .split-panel li {
+            color: rgba(255, 255, 255, 0.9);
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .section-challenges .split-panel li:before {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .section-challenges .split-panel li span {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .section-challenges .divider-label {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .section-challenges .divider-title {
+            color: #6DB5A3;
+        }
+
+        /* Reset CSS variables for white-background cards inside dark sections.
+           These cards use inline style background:white, so we scope variable resets. */
+        .section-challenges [style*="background: white"],
+        .section-challenges [style*="background: #FDF8F3"] {
+            --color-text: #2B180A;
+            --color-text-muted: #736C66;
+            --color-text-light: #736C66;
+            --color-text-dark: #2C3E50;
+            --color-primary-dark: #133931;
+            --color-bg-subtle: #FDF6EE;
+        }
+
+        /* Box sections with dark bg-subtle need light text */
+        .section-challenges > .content > div[style] > h3 {
+            color: #6DB5A3;
+        }
+
+        .section-challenges > .content > div[style] > p.lead-text {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .section-challenges > .content > div[style] > .bar-chart .bar-label-text {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .section-challenges > .content > div[style] > .bar-chart .bar-label-percent {
+            color: #6DB5A3;
+        }
+
+        .section-challenges > .content > div[style] > .bar-chart .bar-bg {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .section-solutions {
+            background: #F0F7F5;
+            position: relative;
+        }
+
+        .section-solutions::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(49,126,109,0.04) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+
+        /* Typography */
+        h2 {
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--space-lg);
+            margin-top: var(--space-2xl);
+            color: var(--color-primary);
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        /* Decorative accent before section h2 */
+        .content > h2:first-child::before,
+        .content > h2:not(.divider-title)::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent-mint));
+            margin-bottom: var(--space-md);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-md);
+            margin-top: var(--space-lg);
+            color: var(--color-primary);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        p {
+            font-size: var(--font-size-base);
+            margin-bottom: var(--space-md);
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        /* Full-bleed pull quotes */
+        .quote-fullbleed {
+            width: 100%;
+            margin-left: 0;
+            padding: 2.5rem 2.5rem;
+            background: #0F1F1B;
+            text-align: center;
+            font-family: 'Garnett', Georgia, serif;
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            box-sizing: border-box;
+            border-left: none;
+            border-image: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .quote-fullbleed::before {
+            content: '\201C';
+            display: block;
+            font-size: 5rem;
+            font-family: 'Garnett', Georgia, serif;
+            color: #6DB5A3;
+            opacity: 0.4;
+            line-height: 0.5;
+            margin-bottom: 1rem;
+            position: static;
+        }
+
+        .quote-fullbleed:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .section-challenges .quote-fullbleed {
+            background: rgba(49, 126, 109, 0.15);
+        }
+
+        .lead-text {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-normal);
+            line-height: 1.8;
+        }
+
+        /* Stat displays */
+        .stat-large {
+            font-size: var(--font-size-6xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin: var(--space-lg) 0;
+            text-align: center;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .stat-description {
+            font-size: var(--font-size-xl);
+            color: var(--color-primary);
+            font-weight: var(--font-weight-semibold);
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        /* Bar charts */
+        .bar-chart {
+            margin: var(--space-lg) 0;
+        }
+
+        .bar-item {
+            margin: var(--space-md) 0;
+        }
+
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            font-size: var(--font-size-base);
+            color: var(--color-text);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .bar-label-text {
+            flex: 1;
+        }
+
+        .bar-label-percent {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            min-width: 60px;
+            text-align: right;
+        }
+
+        .bar-bg {
+            background: rgba(203, 213, 217, 0.15);
+            height: 52px;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: var(--color-primary);
+            border-radius: var(--radius-xl);
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            position: relative;
+            overflow: hidden;
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+        }
+
+        .bar-fill .bar-inner-label {
+            color: white;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-bold);
+            padding-right: 14px;
+            white-space: nowrap;
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 0.5s ease 1.2s;
+        }
+
+        .bar-fill.animate .bar-inner-label {
+            opacity: 1;
+        }
+
+        .bar-fill.animate {
+            width: var(--width);
+        }
+
+        /* Staggered bar animation delays */
+        .bar-item:nth-child(1) .bar-fill { transition-delay: 0s; }
+        .bar-item:nth-child(2) .bar-fill { transition-delay: 0.15s; }
+        .bar-item:nth-child(3) .bar-fill { transition-delay: 0.3s; }
+        .bar-item:nth-child(4) .bar-fill { transition-delay: 0.45s; }
+        .bar-item:nth-child(5) .bar-fill { transition-delay: 0.6s; }
+
+        /* Bar tooltip on hover */
+        .bar-bg {
+            cursor: pointer;
+        }
+
+        .bar-bg:hover .bar-fill::after {
+            opacity: 1;
+            transform: translateY(-50%) scale(1);
+        }
+
+        .bar-fill::after {
+            content: attr(data-value);
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%) scale(0.9);
+            background: rgba(0,0,0,0.75);
+            color: white;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-bold);
+            opacity: 0;
+            transition: all var(--transition-base);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        /* Bar shimmer effect on hover */
+        .bar-fill::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: none;
+            pointer-events: none;
+        }
+
+        .bar-bg:hover .bar-fill::before {
+            animation: barShimmer 0.8s ease forwards;
+        }
+
+        @keyframes barShimmer {
+            from { left: -100%; }
+            to { left: 100%; }
+        }
+
+        /* Heat Map */
+        .heat-map {
+            margin: var(--space-xl) auto;
+            max-width: 900px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .heat-map-row {
+            display: flex;
+            align-items: stretch;
+            gap: var(--space-md);
+        }
+
+        .heat-map-row-header {
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-bold);
+            color: white;
+            width: 150px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            padding: var(--space-sm) var(--space-md);
+            background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+            border-radius: var(--radius-sm);
+        }
+
+        .heat-map-cells {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            flex: 1;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+
+        .heat-cell {
+            background: var(--color-bg-alt);
+            padding: var(--space-lg) var(--space-md);
+            text-align: center;
+            position: relative;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            cursor: pointer;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 3px;
+        }
+
+        .heat-cell:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-lg), 0 0 25px currentColor;
+            z-index: 10;
+            border-radius: var(--radius-sm);
+        }
+
+        .heat-cell-label {
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-medium);
+            color: var(--color-text);
+            line-height: 1.4;
+        }
+
+        .heat-cell-value {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            color: rgba(255, 255, 255, 0.95);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity var(--transition-base);
+            pointer-events: none;
+        }
+
+        .heat-cell:hover .heat-cell-value {
+            opacity: 1;
+        }
+
+        .heat-cell:hover .heat-cell-label {
+            opacity: 0.3;
+        }
+
+        /* Heat intensity colors - granular heat map scale */
+        .heat-cell[data-intensity="98"] {
+            background: #8b0000;
+        }
+
+        .heat-cell[data-intensity="98"] .heat-cell-label {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .heat-cell[data-intensity="92"] {
+            background: #c41e1e;
+        }
+
+        .heat-cell[data-intensity="92"] .heat-cell-label {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .heat-cell[data-intensity="91"] {
+            background: #d32f2f;
+        }
+
+        .heat-cell[data-intensity="91"] .heat-cell-label {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .heat-cell[data-intensity="89"] {
+            background: #e64a19;
+        }
+
+        .heat-cell[data-intensity="89"] .heat-cell-label {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .heat-cell[data-intensity="81"] {
+            background: #f57c00;
+        }
+
+        .heat-cell[data-intensity="81"] .heat-cell-label {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .heat-cell[data-intensity="78"] {
+            background: #fb8c00;
+        }
+
+        .heat-cell[data-intensity="78"] .heat-cell-label {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .heat-cell[data-intensity="75"] {
+            background: #ffa726;
+        }
+
+        .heat-cell[data-intensity="75"] .heat-cell-label {
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        .heat-cell[data-intensity="75"] .heat-cell-value {
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        .heat-cell[data-intensity="72"] {
+            background: #ffb74d;
+        }
+
+        .heat-cell[data-intensity="72"] .heat-cell-label {
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        .heat-cell[data-intensity="72"] .heat-cell-value {
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        .heat-cell[data-intensity="68"] {
+            background: #ffd54f;
+        }
+
+        .heat-cell[data-intensity="68"] .heat-cell-label {
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        .heat-cell[data-intensity="68"] .heat-cell-value {
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        .heat-cell[data-intensity="62"] {
+            background: #ffe082;
+        }
+
+        .heat-cell[data-intensity="62"] .heat-cell-label {
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        .heat-cell[data-intensity="62"] .heat-cell-value {
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        /* Heat map legend */
+        .heat-legend {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            margin-top: var(--space-lg);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+        }
+
+        .heat-legend-bar {
+            width: 200px;
+            height: 12px;
+            border-radius: 6px;
+            background: linear-gradient(90deg, #ffe082, #ffd54f, #ffb74d, #ffa726, #fb8c00, #f57c00, #e64a19, #d32f2f, #c41e1e, #8b0000);
+        }
+
+        /* Quote boxes */
+        .quote-box {
+            background: var(--color-bg-alt);
+            border-left: none;
+            padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--space-2xl);
+            margin: var(--space-lg) 0;
+            font-size: var(--font-size-lg);
+            font-style: italic;
+            color: var(--color-text-muted);
+            box-shadow: 0 2px 8px rgba(43, 24, 10, 0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            line-height: 1.7;
+            border-radius: var(--radius-md);
+            position: relative;
+            border-left: 4px solid;
+            border-image: linear-gradient(180deg, var(--color-primary), var(--color-accent-mint)) 1;
+        }
+
+        .quote-box::before {
+            content: '\201C';
+            position: absolute;
+            top: -8px;
+            left: 12px;
+            font-size: 4rem;
+            font-family: 'Garnett', Georgia, serif;
+            color: var(--color-primary);
+            opacity: 0.2;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .quote-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(43, 24, 10, 0.1);
+        }
+
+        .quote-attribution {
+            text-align: right;
+            margin-top: 1rem;
+            font-style: normal;
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+        }
+
+        .quote-attribution::before {
+            content: '\2014\00a0';
+        }
+
+        /* Split view */
+        .split-view {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+            margin: var(--space-xl) 0;
+        }
+
+        .split-panel {
+            background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg-subtle) 100%);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            border: 1px solid transparent;
+            border-top: 3px solid var(--color-primary);
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .split-panel:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 24px rgba(49, 126, 109, 0.18);
+            border-color: rgba(49, 126, 109, 0.15);
+            border-top-color: var(--color-primary);
+            border-left-color: var(--color-primary);
+        }
+
+        .split-panel h3 {
+            color: var(--color-primary);
+            margin-top: 0;
+        }
+
+        .split-panel ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .split-panel li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: var(--font-size-base);
+            line-height: 1.7;
+        }
+
+        .split-panel li:last-child {
+            border-bottom: none;
+        }
+
+        .split-panel li:before {
+            content: "\2192 ";
+            color: var(--color-primary);
+            font-weight: var(--font-weight-bold);
+        }
+
+        /* Two column layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            margin: var(--space-xl) 0;
+        }
+
+        /* Flow chart */
+        /* Cascading Tree Chart */
+        .flow-chart {
+            margin: var(--space-2xl) auto;
+            max-width: 800px;
+            position: relative;
+        }
+
+        .cascade-level {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
+            position: relative;
+        }
+
+        .cascade-level-1 {
+            margin-bottom: var(--space-2xl);
+        }
+
+        .cascade-level-2 {
+            margin-bottom: var(--space-2xl);
+        }
+
+        .flow-item {
+            background: var(--color-primary);
+            padding: var(--space-lg) var(--space-xl);
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg), 0 4px 15px rgba(49, 126, 109, 0.2);
+            text-align: center;
+            color: white;
+            font-weight: var(--font-weight-semibold);
+            position: relative;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            flex: 1;
+            max-width: 200px;
+            cursor: pointer;
+        }
+
+        .flow-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl), 0 8px 25px rgba(49, 126, 109, 0.3);
+        }
+
+        .cascade-level-1 .flow-item {
+            background: linear-gradient(135deg, #1a3a33, #0F2620);
+            max-width: 300px;
+            box-shadow: var(--shadow-lg), 0 4px 15px rgba(19, 57, 49, 0.3);
+            font-size: var(--font-size-lg);
+            padding: var(--space-xl) var(--space-2xl);
+        }
+
+        .cascade-level-2 .flow-item:nth-child(1) {
+            background: linear-gradient(135deg, #E85D6C, #C94B5A);
+            box-shadow: var(--shadow-lg), 0 4px 15px rgba(232, 93, 108, 0.3);
+        }
+
+        .cascade-level-2 .flow-item:nth-child(2) {
+            background: linear-gradient(135deg, #E8A838, #C48420);
+            box-shadow: var(--shadow-lg), 0 4px 15px rgba(232, 168, 56, 0.3);
+        }
+
+        .cascade-level-2 .flow-item:nth-child(3) {
+            background: linear-gradient(135deg, #5A6B8A, #3E4D6B);
+            box-shadow: var(--shadow-lg), 0 4px 15px rgba(90, 107, 138, 0.3);
+        }
+
+        .cascade-level-3 .flow-item {
+            background: linear-gradient(135deg, #C41E1E, #8b0000);
+            box-shadow: var(--shadow-lg), 0 4px 20px rgba(196, 30, 30, 0.35);
+            animation: pulseGlow 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: var(--shadow-lg), 0 4px 20px rgba(196, 30, 30, 0.35); }
+            50% { box-shadow: var(--shadow-lg), 0 4px 30px rgba(196, 30, 30, 0.6), 0 0 40px rgba(196, 30, 30, 0.2); }
+        }
+
+        /* Tree diagram connecting lines */
+        .flow-chart {
+            position: relative;
+        }
+
+        /* SVG for connecting lines */
+        .flow-chart svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .flow-chart svg line {
+            stroke: var(--color-primary);
+            stroke-width: 4;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dashDraw 2s ease forwards;
+        }
+
+        @keyframes dashDraw {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .cascade-level {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Divergence Chart */
+        .divergence-chart {
+            margin: var(--space-2xl) auto;
+            max-width: 700px;
+        }
+
+        .divergence-arrows {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+            position: relative;
+            padding: var(--space-xl) 0;
+        }
+
+        .arrow-track {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            background: var(--color-bg-alt);
+            box-shadow: var(--shadow-md);
+        }
+
+        .arrow-up {
+            border-left: 6px solid var(--color-warning);
+        }
+
+        .arrow-down {
+            border-left: 6px solid var(--color-warning-dark);
+        }
+
+        .arrow-label {
+            font-weight: var(--font-weight-bold);
+            font-size: var(--font-size-lg);
+            color: var(--color-primary-dark);
+            min-width: 180px;
+        }
+
+        .arrow-path {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .arrow-line {
+            flex: 1;
+            height: 4px;
+            background: linear-gradient(to right, var(--color-warning), var(--color-warning-dark));
+            position: relative;
+        }
+
+        .arrow-up .arrow-line {
+            background: var(--color-warning);
+        }
+
+        .arrow-down .arrow-line {
+            background: var(--color-warning-dark);
+        }
+
+        .arrow-head {
+            font-size: 3rem;
+            line-height: 1;
+            margin-left: -10px;
+        }
+
+        .arrow-up .arrow-head {
+            color: var(--color-warning);
+        }
+
+        .arrow-down .arrow-head {
+            color: var(--color-warning-dark);
+        }
+
+        .arrow-details {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+            margin-top: var(--space-xs);
+        }
+
+        .gap-indicator {
+            text-align: center;
+            padding: var(--space-md) 0;
+        }
+
+        .gap-label {
+            display: inline-block;
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--color-error);
+            color: white;
+            border-radius: var(--radius-full);
+            font-weight: var(--font-weight-semibold);
+            font-size: var(--font-size-sm);
+        }
+
+        .tipping-factors-section {
+            margin-top: var(--space-3xl);
+            text-align: center;
+        }
+
+        .tipping-factors-label {
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-lg);
+            font-size: var(--font-size-lg);
+        }
+
+        .factors-grid {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        .factor-card {
+            background: linear-gradient(135deg, var(--color-warning-light) 0%, #FFF8EE 100%);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            border: 2px solid var(--color-warning);
+            font-weight: var(--font-weight-medium);
+            color: var(--color-text);
+            min-width: 180px;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            cursor: pointer;
+        }
+
+        .factor-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(232, 168, 56, 0.2);
+        }
+
+        /* Balance Section */
+        .balance-section {
+            margin-top: var(--space-3xl);
+            padding: var(--space-2xl);
+            background: var(--color-bg-subtle);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--color-border);
+        }
+
+        .balance-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+
+        .balance-icon {
+            flex-shrink: 0;
+        }
+
+        .balance-header h3 {
+            color: var(--color-primary-dark);
+            margin: 0;
+            font-size: var(--font-size-2xl);
+        }
+
+        .balance-factors {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+
+        .balance-factor {
+            background: linear-gradient(135deg, white 0%, #FFF8F0 100%);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid var(--color-warning);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .balance-factor:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(232, 168, 56, 0.2);
+        }
+
+        .balance-factor strong {
+            display: block;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-xs);
+            font-size: var(--font-size-lg);
+        }
+
+        .balance-factor strong::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--color-warning);
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .balance-factor span {
+            font-size: var(--font-size-sm);
+        }
+
+        .balance-factor .factor-progress {
+            display: block;
+            height: 4px;
+            background: rgba(0,0,0,0.06);
+            border-radius: 2px;
+            margin-top: var(--space-sm);
+            overflow: hidden;
+        }
+
+        .balance-factor .factor-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-warning), var(--color-primary));
+            border-radius: 2px;
+        }
+
+        .balance-context {
+            font-size: var(--font-size-lg);
+            line-height: 1.7;
+            color: var(--color-text);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Key takeaway */
+        .key-takeaway {
+            padding: var(--space-lg) 0 var(--space-lg) var(--space-xl);
+            border-left: 4px solid var(--color-primary);
+            margin: var(--space-xl) 0;
+        }
+
+        .key-takeaway h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-2xl);
+        }
+
+        .key-takeaway ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .key-takeaway li {
+            padding: 0.6rem 0;
+            font-size: var(--font-size-base);
+            color: var(--color-text);
+        }
+
+        .key-takeaway li:before {
+            content: "\2713 ";
+            margin-right: 0.5rem;
+            color: var(--color-primary);
+            font-weight: var(--font-weight-bold);
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 240px;
+            background: rgba(19, 57, 49, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: var(--space-xl) var(--space-lg);
+            overflow-y: auto;
+            z-index: 1000;
+            transform: translateX(-100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .sidebar.visible {
+            transform: translateX(0);
+        }
+
+        /* Sidebar scroll progress */
+        .sidebar-progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 0%;
+            background: linear-gradient(180deg, var(--color-primary-light), var(--color-accent-mint));
+            transition: height 100ms linear;
+            border-radius: 0 2px 2px 0;
+        }
+
+        .sidebar-toggle {
+            position: fixed;
+            left: 1rem;
+            top: 1rem;
+            background: rgba(49, 126, 109, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: white;
+            border: none;
+            padding: 0.6rem 0.9rem;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-semibold);
+            z-index: 1001;
+            box-shadow: var(--shadow-md);
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-toggle:hover {
+            background: var(--color-primary-dark);
+            box-shadow: var(--shadow-lg);
+            transform: scale(1.02);
+        }
+
+        .sidebar h3 {
+            color: white;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+            margin-top: 0;
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+        }
+
+        .sidebar nav a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            padding: var(--space-sm);
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+            border-left: 2px solid transparent;
+        }
+
+        .sidebar nav a:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            border-left-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .sidebar nav a.active {
+            background: rgba(49, 126, 109, 0.5);
+            color: white;
+            font-weight: var(--font-weight-semibold);
+            border-left-color: var(--color-accent-mint);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .scroll-indicator:hover {
+            color: white;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        .scroll-indicator-text {
+            display: block;
+            font-size: var(--font-size-sm);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .scroll-indicator-arrow {
+            font-size: var(--font-size-2xl);
+            display: block;
+            animation: pulse-bounce 2s infinite;
+        }
+
+        @keyframes pulse-bounce {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-8px);
+                opacity: 1;
+            }
+        }
+
+        /* Final section */
+        .section-final {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #0d2a24 60%, #081c18 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-final::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+        }
+
+        .section-final::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 30% 40%, rgba(49, 126, 109, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(72, 165, 204, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .section-final .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-final h2,
+        .section-final h3 {
+            color: white;
+        }
+
+        .section-final h2::before {
+            background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(109,181,163,0.6)) !important;
+        }
+
+        .section-final p {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* CTA button */
+        .cta-button {
+            display: inline-block;
+            padding: var(--space-md) var(--space-2xl);
+            background: white;
+            color: var(--color-primary-dark);
+            border: none;
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            background: #f0f0f0;
+        }
+
+        /* Quote styles */
+        .quote {
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            font-size: var(--font-size-lg);
+            font-style: italic;
+            color: var(--color-text-dark);
+            padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--space-2xl);
+            margin: var(--space-xl) 0;
+            border-left: 4px solid;
+            border-image: linear-gradient(180deg, var(--color-primary), var(--color-accent-mint)) 1;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            line-height: 1.7;
+            position: relative;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .quote::before {
+            content: '\201C';
+            position: absolute;
+            top: -4px;
+            left: 12px;
+            font-size: 4rem;
+            font-family: 'Garnett', Georgia, serif;
+            color: var(--color-primary);
+            opacity: 0.15;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .quote:hover {
+            transform: translateX(4px);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .quote-group {
+            margin: var(--space-xl) 0;
+        }
+
+        .quote-group .quote {
+            margin: var(--space-md) 0;
+        }
+
+        .quote-group .quote:not(.quote-fullbleed):nth-child(3n+2) {
+            border-image: linear-gradient(180deg, #E85D6C, #C94B5A) 1;
+            background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(232,93,108,0.04));
+        }
+        .quote-group .quote:not(.quote-fullbleed):nth-child(3n+2)::before {
+            color: #E85D6C;
+        }
+
+        .quote-group .quote:not(.quote-fullbleed):nth-child(3n) {
+            border-image: linear-gradient(180deg, #E8A838, #C48420) 1;
+            background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(232,168,56,0.04));
+        }
+        .quote-group .quote:not(.quote-fullbleed):nth-child(3n)::before {
+            color: #E8A838;
+        }
+
+        .quote-group .quote:not(.quote-fullbleed):nth-child(3n+1) {
+            background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(49,126,109,0.04));
+        }
+
+        .related-research-card {
+            display: block;
+            text-decoration: none;
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-top: 4px solid var(--color-primary);
+            cursor: pointer;
+        }
+
+        .related-research-card:hover {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F0FAF7 100%);
+            border-color: var(--color-primary);
+            border-top-color: var(--color-primary);
+            box-shadow: 0 4px 16px rgba(49, 126, 109, 0.12);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            :root {
+                --font-size-5xl: 2.2rem;
+                --font-size-4xl: 1.6rem;
+                --font-size-3xl: 1.3rem;
+                --space-3xl: 3.6rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 8vw, 2.8rem);
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .hero-stat-card {
+                width: 100%;
+                max-width: 280px;
+                padding: 1rem 1.5rem;
+            }
+
+            .hero-stat-number {
+                font-size: 2rem;
+            }
+
+            .quote-fullbleed {
+                padding: 1.5rem 1.25rem;
+                font-size: clamp(0.95rem, 3.5vw, 1.2rem);
+            }
+
+            .split-view {
+                grid-template-columns: 1fr;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .heat-map-row {
+                flex-direction: column;
+                margin-bottom: var(--space-lg);
+            }
+
+            .heat-map-row-header {
+                font-size: var(--font-size-base);
+                padding: var(--space-md);
+                justify-content: center;
+                min-width: auto;
+                border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+            }
+
+            .heat-map-cells {
+                grid-template-columns: 1fr;
+            }
+
+            .heat-cell {
+                padding: var(--space-lg);
+            }
+
+            .heat-cell-label {
+                font-size: var(--font-size-sm);
+            }
+
+            .heat-cell-value {
+                font-size: var(--font-size-2xl);
+            }
+
+            .cascade-level {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+
+            .flow-item {
+                max-width: none;
+            }
+
+            .flow-chart svg {
+                display: none;
+            }
+
+            .arrow-track {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .arrow-label {
+                min-width: auto;
+            }
+
+            .arrow-path {
+                width: 100%;
+            }
+
+            .factors-grid {
+                flex-direction: column;
+            }
+
+            .factor-card {
+                min-width: auto;
+            }
+
+            .balance-factors {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: var(--space-2xl) 1.25rem;
+            }
+        }
+
+        /* Section entry animation variants */
+        .content .bar-chart {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .content.visible .bar-chart {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .content .quote-box,
+        .content .quote {
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .content.visible .quote-box,
+        .content.visible .quote {
+            animation: quoteAppear 0.7s ease forwards;
+        }
+
+        @keyframes quoteAppear {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .content .stat-large {
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .content.visible .stat-large {
+            display: inline-block;
+            animation: statPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes statPop {
+            from { opacity: 0; transform: scale(0.7); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* SVG draw-in effect for connecting lines only */
+        .flow-chart svg line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 2s ease;
+        }
+
+        .content.visible .flow-chart svg line {
+            stroke-dashoffset: 0;
+        }
+
+        /* Split panel variants for accelerating/lagging */
+        .split-panel-accelerating {
+            border-left-color: var(--color-primary) !important;
+        }
+        .split-panel-accelerating h3::before {
+            content: '\2197 ';
+        }
+
+        .split-panel-lagging {
+            border-left-color: #E85D6C !important;
+        }
+        .split-panel-lagging h3::before {
+            content: '\2198 ';
+        }
+
+        /* Split panel variants for problem/solution */
+        .split-panel-problem {
+            border-left-color: #E85D6C !important;
+        }
+
+        .split-panel-solution {
+            border-left-color: var(--color-primary) !important;
+        }
+
+        .split-panel-barriers {
+            border-left-color: #E8A838 !important;
+        }
+
+        /* Dark section split panel overrides — consolidated above */
+
+        /* Geometric pattern background for stakeholder priorities */
+        #stakeholder-priorities {
+            background: #F0F3F5;
+            position: relative;
+        }
+
+        #stakeholder-priorities::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(45deg, rgba(0,0,0,0.02) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(0,0,0,0.02) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.02) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.02) 75%);
+            background-size: 30px 30px;
+            background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
+            pointer-events: none;
+        }
+
+        /* Ensure all interactive elements have pointer cursor */
+        .bar-bg,
+        .heat-cell,
+        .flow-item,
+        .split-panel,
+        .factor-card,
+        .balance-factor,
+        .quote,
+        .quote-box,
+        .related-research-card,
+        .scroll-indicator,
+        .sidebar-toggle,
+        .sidebar nav a {
+            cursor: pointer;
+        }
+
+        /* ===== NEW VIZ: Overlapping Blobs for Interconnected Challenges ===== */
+        .challenges-viz {
+            position: relative;
+            height: 420px;
+            margin: 3rem auto;
+            max-width: 700px;
+        }
+
+        .challenge-blob {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 260px;
+            height: 260px;
+            border-radius: 60% 40% 70% 30% / 30% 60% 40% 70%;
+            animation: blobMorph 8s ease-in-out infinite alternate;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .challenge-harms {
+            background: rgba(232, 93, 108, 0.55);
+            top: 0; left: 5%;
+            animation-delay: 0s;
+        }
+        .challenge-gaps {
+            background: rgba(232, 168, 56, 0.55);
+            top: 10%; right: 5%;
+            animation-delay: -3s;
+        }
+        .challenge-infra {
+            background: rgba(49, 126, 109, 0.55);
+            bottom: 0; left: 25%;
+            animation-delay: -5s;
+        }
+
+        .blob-percent {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            font-family: 'Garnett', Georgia, serif;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        .blob-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            margin-top: 0.5rem;
+        }
+
+        @keyframes blobMorph {
+            0% { border-radius: 60% 40% 70% 30% / 30% 60% 40% 70%; transform: rotate(0deg) scale(1); }
+            33% { border-radius: 40% 60% 30% 70% / 70% 30% 60% 40%; transform: rotate(3deg) scale(1.03); }
+            66% { border-radius: 50% 50% 60% 40% / 40% 60% 50% 50%; transform: rotate(-2deg) scale(0.97); }
+            100% { border-radius: 70% 30% 40% 60% / 60% 40% 30% 70%; transform: rotate(1deg) scale(1.02); }
+        }
+
+        /* ===== NEW VIZ: Fracture Cascade for "What Could Go Wrong" ===== */
+        .fracture-viz {
+            max-width: 700px;
+            margin: 3rem auto;
+        }
+
+        .fracture-stage {
+            position: relative;
+        }
+
+        .fracture-origin {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: linear-gradient(135deg, #1a3a33, #0F1F1B);
+            padding: 2rem 2.5rem;
+            border-radius: 16px;
+            color: white;
+        }
+
+        .fracture-origin h4 {
+            font-family: 'Garnett', Georgia, serif;
+            font-size: 1.5rem;
+            margin: 0 0 0.25rem 0;
+            color: white;
+        }
+        .fracture-origin p {
+            color: rgba(255,255,255,0.7);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .fracture-number {
+            font-family: 'Garnett', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            opacity: 0.2;
+            line-height: 1;
+            min-width: 60px;
+            color: white;
+        }
+
+        .fracture-crack {
+            height: 40px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .fracture-crack::after {
+            content: '';
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(232, 93, 108, 0.3), rgba(232, 93, 108, 0.8));
+        }
+        .fracture-crack-wide::after {
+            width: 3px;
+            background: linear-gradient(180deg, rgba(232, 93, 108, 0.5), rgba(200, 40, 40, 1));
+            box-shadow: 0 0 12px rgba(232, 93, 108, 0.4);
+        }
+
+        .fracture-branches {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .fracture-branch {
+            background: white;
+            border: 1px solid #e8e4df;
+            border-top: 3px solid;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .fracture-branch:nth-child(1) { border-top-color: #E85D6C; }
+        .fracture-branch:nth-child(2) { border-top-color: #E8A838; }
+        .fracture-branch:nth-child(3) { border-top-color: #6B7C8D; }
+
+        .fracture-branch .fracture-number {
+            color: var(--color-text);
+            font-size: 2rem;
+        }
+
+        .fracture-branch span {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            color: var(--color-text);
+        }
+
+        .fracture-branch:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .fracture-result {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: linear-gradient(135deg, #8B1A2B, #5C1118);
+            padding: 2rem 2.5rem;
+            border-radius: 16px;
+            color: white;
+            animation: pulseRedGlow 3s ease-in-out infinite;
+        }
+
+        .fracture-result h4 {
+            font-family: 'Garnett', Georgia, serif;
+            font-size: 1.5rem;
+            margin: 0 0 0.25rem 0;
+            color: white;
+        }
+        .fracture-result p {
+            color: rgba(255,255,255,0.7);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        @keyframes pulseRedGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(139, 26, 43, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(139, 26, 43, 0.6); }
+        }
+
+        /* ===== NEW VIZ: Pressure Meter for Balance Section ===== */
+        .pressure-meter {
+            max-width: 700px;
+            margin: 2rem auto 1.5rem auto;
+        }
+
+        .pressure-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .pressure-labels span:first-child { color: #C41E1E; }
+        .pressure-labels span:nth-child(2) { color: #E8A838; }
+        .pressure-labels span:last-child { color: var(--color-primary); }
+
+        .pressure-track {
+            position: relative;
+            height: 32px;
+            border-radius: 16px;
+            overflow: visible;
+            display: flex;
+        }
+
+        .pressure-zone {
+            height: 100%;
+        }
+
+        .pressure-danger {
+            background: linear-gradient(90deg, #8b0000, #C41E1E);
+            width: 33.3%;
+            border-radius: 16px 0 0 16px;
+        }
+        .pressure-warning {
+            background: linear-gradient(90deg, #E8A838, #F0C050);
+            width: 33.3%;
+        }
+        .pressure-safe {
+            background: linear-gradient(90deg, #6DB5A3, var(--color-primary));
+            width: 33.4%;
+            border-radius: 0 16px 16px 0;
+        }
+
+        .pressure-marker {
+            position: absolute;
+            top: -8px;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pressure-marker::before {
+            content: '';
+            width: 4px;
+            height: 48px;
+            background: var(--color-text);
+            border-radius: 2px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.3);
+        }
+
+        .pressure-marker-label {
+            margin-top: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--color-text);
+            white-space: nowrap;
+            background: white;
+            padding: 2px 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* ===== Dark section treatment for "What Could Go Wrong" ===== */
+        .section-dark {
+            background: #0F1F1B;
+            --color-text: rgba(255, 255, 255, 0.9);
+            --color-text-muted: rgba(255, 255, 255, 0.6);
+            --color-text-light: rgba(255, 255, 255, 0.85);
+            --color-text-dark: rgba(255, 255, 255, 0.9);
+            --color-primary-dark: #6DB5A3;
+            --color-bg-subtle: rgba(255, 255, 255, 0.05);
+            --color-bg-alt: rgba(255, 255, 255, 0.08);
+            --color-border: rgba(255, 255, 255, 0.12);
+        }
+
+        .section-dark h2 {
+            color: #6DB5A3;
+        }
+
+        .section-dark h2::before {
+            background: linear-gradient(90deg, rgba(232, 93, 108, 0.7), rgba(200, 40, 40, 0.5)) !important;
+        }
+
+        .section-dark .bar-label-percent {
+            color: #6DB5A3;
+        }
+
+        .section-dark .bar-bg {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .section-dark .fracture-branch {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .section-dark .fracture-branch .fracture-number,
+        .section-dark .fracture-branch span {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .section-dark .bar-label-text {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .section-dark .lead-text {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .section-dark .fracture-origin h4,
+        .section-dark .fracture-result h4 {
+            color: white;
+        }
+
+        .section-dark .fracture-origin p,
+        .section-dark .fracture-result p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .section-dark p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .section-dark .stat-large {
+            color: white;
+        }
+
+        .section-dark .stat-description {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .section-dark .quote:not(.quote-fullbleed) {
+            background: rgba(255, 255, 255, 0.06);
+            border-image: none;
+            border-left: 4px solid rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .section-dark .quote:not(.quote-fullbleed)::before {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .section-dark .split-panel {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-top: 3px solid rgba(255, 255, 255, 0.15);
+            border-left: 4px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .section-dark .split-panel h3 {
+            color: white;
+        }
+
+        .section-dark .split-panel li {
+            color: rgba(255, 255, 255, 0.9);
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .section-dark .split-panel li:before {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .section-dark .split-panel li span {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .section-dark .quote-highlight {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .section-dark .quote-highlight::after,
+        .section-dark .quote-highlight .quote-highlight-rule {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .section-dark .quote-with-stat .quote-stat-number {
+            color: white;
+        }
+
+        .section-dark .quote-with-stat {
+            background: rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* ===== Section background: Three Pillars (mint) ===== */
+        .section-pillars-bg {
+            background: #E8F5F0;
+            position: relative;
+        }
+
+        .section-pillars-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(60deg, rgba(49,126,109,0.04) 25%, transparent 25%),
+                linear-gradient(-60deg, rgba(49,126,109,0.04) 25%, transparent 25%),
+                linear-gradient(60deg, transparent 75%, rgba(49,126,109,0.04) 75%),
+                linear-gradient(-60deg, transparent 75%, rgba(49,126,109,0.04) 75%);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        /* ===== Section background: Economic Reality (warm amber) ===== */
+        .section-economic-bg {
+            background: #FFF8EE;
+            position: relative;
+        }
+
+        .section-economic-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(232,168,56,0.06) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+        }
+
+        /* ===== Mobile responsive for new visualizations ===== */
+        @media (max-width: 768px) {
+            .challenges-viz {
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .challenge-blob {
+                position: relative;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                width: 200px;
+                height: 200px;
+            }
+
+            .blob-percent {
+                font-size: 2.2rem;
+            }
+
+            .blob-label {
+                font-size: 0.9rem;
+            }
+
+            .fracture-branches {
+                grid-template-columns: 1fr;
+            }
+
+            .fracture-origin,
+            .fracture-result {
+                padding: 1.5rem;
+            }
+
+            .fracture-number {
+                font-size: 2rem;
+                min-width: 40px;
+            }
+
+            .pressure-labels {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* ===== Collaboration "The Table" ===== */
+        .collab-stat {
+            text-align: center;
+            margin: 4rem 0 3rem;
+            padding: 3rem 0;
+        }
+
+        .collab-stat-number {
+            display: block;
+            font-family: 'Garnett', Georgia, serif;
+            font-size: clamp(5rem, 12vw, 9rem);
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1;
+            letter-spacing: -0.03em;
+        }
+
+        .collab-stat-text {
+            display: block;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--color-text-muted);
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+
+        .collab-stat-text strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .collab-subhead {
+            text-align: center;
+            font-family: 'Garnett', Georgia, serif;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.9rem;
+        }
+
+        .collab-roster {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .roster-card {
+            background: white;
+            border: 1px solid var(--color-border);
+            border-top: 3px solid var(--accent);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .roster-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            border-top-width: 4px;
+        }
+
+        .roster-role {
+            display: block;
+            font-family: 'Garnett', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.4rem;
+        }
+
+        .roster-brings {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        .collab-punchline {
+            text-align: center;
+            max-width: 600px;
+            margin: 2rem auto 0;
+        }
+
+        .collab-punchline p {
+            font-family: 'Garnett', Georgia, serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--color-text);
+            line-height: 1.7;
+            border-top: 1px solid var(--color-border);
+            padding-top: 2rem;
+        }
+
+        /* ===== Weight Comparison Cards ===== */
+        .weight-comparison {
+            display: flex;
+            align-items: stretch;
+            gap: 0;
+            margin: 3rem auto;
+            max-width: 750px;
+        }
+
+        .weight-card {
+            flex: 1;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            position: relative;
+        }
+
+        .weight-card-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        .weight-card h4 {
+            font-family: 'Garnett', Georgia, serif;
+            font-size: 1.3rem;
+            margin: 0 0 1.25rem 0;
+        }
+
+        .weight-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .weight-card li {
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .weight-card li:last-child {
+            border-bottom: none;
+        }
+
+        .weight-investment {
+            background: linear-gradient(135deg, #E8F5F0, #D4EDE5);
+            border: 1px solid rgba(49, 126, 109, 0.2);
+        }
+
+        .weight-investment h4 { color: var(--color-primary); }
+        .weight-investment li { color: var(--color-text); }
+
+        .weight-inaction {
+            background: linear-gradient(135deg, #2A1A1A, #1A0F0F);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+            z-index: 1;
+        }
+
+        .weight-inaction h4 { color: #E85D6C; }
+        .weight-inaction li { color: rgba(255,255,255,0.85); border-bottom-color: rgba(255,255,255,0.1); }
+        .weight-inaction .weight-card-icon { color: #E85D6C; }
+
+        .weight-vs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            margin: 0 -1rem;
+        }
+
+        .weight-vs span {
+            background: white;
+            border: 2px solid var(--color-border);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .weight-tag {
+            display: inline-block;
+            margin-top: 1.25rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(49, 126, 109, 0.15);
+            color: var(--color-primary);
+        }
+
+        .weight-tag-heavy {
+            background: rgba(232, 93, 108, 0.2);
+            color: #E85D6C;
+        }
+
+        /* ===== Mobile: Collaboration & Weight Comparison ===== */
+        @media (max-width: 768px) {
+            .collab-roster {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .collab-stat-number {
+                font-size: 5rem;
+            }
+
+            .weight-comparison {
+                flex-direction: column;
+                gap: 0;
+                align-items: center;
+            }
+
+            .weight-card {
+                width: 100%;
+                padding: 2rem 1.5rem;
+            }
+
+            .weight-inaction {
+                transform: none;
+                border-radius: 0 0 16px 16px;
+            }
+
+            .weight-investment {
+                border-radius: 16px 16px 0 0;
+            }
+
+            .weight-vs {
+                margin: -1rem 0;
+            }
+        }
+
+        /* ===== Quote Variant B: Stat Quote ===== */
+        .quote-with-stat {
+            border-left: none;
+            border-image: none;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: var(--radius-md);
+            padding: var(--space-xl) var(--space-xl);
+        }
+        .quote-with-stat::before {
+            display: none;
+        }
+        .quote-with-stat .quote-stat-number {
+            display: block;
+            font-family: 'Garnett', Georgia, serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            line-height: 1;
+            margin-bottom: 0.75rem;
+            font-style: normal;
+        }
+        .section-challenges .quote-with-stat .quote-stat-number {
+            color: white;
+        }
+        .section-challenges .quote-with-stat {
+            background: rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* ===== Quote Variant C: Highlight / Pull Quote ===== */
+        .quote-highlight {
+            border-left: none;
+            border-image: none;
+            text-align: center;
+            font-size: 1.2rem;
+            padding: var(--space-2xl) var(--space-xl);
+            position: relative;
+            background: transparent;
+        }
+        .quote-highlight::before {
+            display: none;
+        }
+        .quote-highlight::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent-mint));
+            margin: var(--space-lg) auto 0;
+        }
+        .quote-highlight .quote-highlight-rule {
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent-mint));
+            margin: 0 auto var(--space-lg);
+        }
+        .section-challenges .quote-highlight {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .section-challenges .quote-highlight::after,
+        .section-challenges .quote-highlight .quote-highlight-rule {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .quote-highlight:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* ===== Section background: Underground (warm dark) ===== */
+        .section-underground {
+            background: #1A1410;
+            --color-text: rgba(255, 255, 255, 0.9);
+            --color-text-muted: rgba(255, 255, 255, 0.6);
+            --color-text-light: rgba(255, 255, 255, 0.85);
+            --color-text-dark: rgba(255, 255, 255, 0.9);
+            --color-primary-dark: #6DB5A3;
+            --color-bg-subtle: rgba(255, 255, 255, 0.05);
+            --color-bg-alt: rgba(255, 255, 255, 0.08);
+            --color-border: rgba(255, 255, 255, 0.12);
+        }
+        .section-underground h2 { color: #E8A838; }
+        .section-underground h2::before {
+            background: linear-gradient(90deg, rgba(232,168,56,0.7), rgba(232,93,108,0.5)) !important;
+        }
+        .section-underground h3 { color: #E8A838; }
+        .section-underground .bar-label-percent { color: #E8A838; }
+        .section-underground .bar-bg { background: rgba(255, 255, 255, 0.08); }
+        .section-underground .bar-label-text { color: rgba(255, 255, 255, 0.9); }
+        .section-underground .lead-text { color: rgba(255, 255, 255, 0.85); }
+        .section-underground p { color: rgba(255, 255, 255, 0.85); }
+        .section-underground .stat-large { color: #E8A838; }
+        .section-underground .stat-description { color: rgba(255, 255, 255, 0.85); }
+        .section-underground .quote:not(.quote-fullbleed) {
+            background: rgba(255, 255, 255, 0.06);
+            border-image: none;
+            border-left: 4px solid rgba(232, 168, 56, 0.6);
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .section-underground .quote:not(.quote-fullbleed)::before { color: rgba(255, 255, 255, 0.2); }
+        .section-underground .quote-fullbleed { background: rgba(49, 126, 109, 0.15); }
+        .section-underground .split-panel {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-top: 3px solid rgba(255, 255, 255, 0.15);
+            border-left: 4px solid rgba(255, 255, 255, 0.15);
+        }
+        .section-underground .split-panel h3 { color: white; }
+        .section-underground .split-panel li { color: rgba(255, 255, 255, 0.9); border-bottom-color: rgba(255, 255, 255, 0.1); }
+        .section-underground .split-panel li:before { color: rgba(255, 255, 255, 0.5); }
+        .section-underground .split-panel li span { color: rgba(255, 255, 255, 0.6); }
+        .section-underground .quote-highlight {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .section-underground .quote-highlight::after,
+        .section-underground .quote-highlight .quote-highlight-rule {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ===== Section background: Emergency Response (coral tint) ===== */
+        .section-emergency-bg {
+            background: #FFF5F5;
+        }
+        .section-emergency-bg .quote:not(.quote-fullbleed) {
+            background: #FFFFFF;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== Section background: Integration Crisis (amber tint) ===== */
+        .section-integration-bg {
+            background: #FFFBF0;
+        }
+
+        /* ===== Section background: Success (mint) ===== */
+        .section-success-bg {
+            background: #EEFAF6;
+            position: relative;
+        }
+        .section-success-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(49,126,109,0.04) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+
+        /* ===== Three Pillars: Visual Climax ===== */
+        .section-pillars-dark {
+            background: #0B2924;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-pillars-dark::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(rgba(109,181,163,0.06) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+        }
+        .section-pillars-dark::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(49, 126, 109, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 50%, rgba(232, 168, 56, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        .section-pillars-dark h2 { color: white; }
+        .section-pillars-dark h2::before {
+            background: linear-gradient(90deg, rgba(255,255,255,0.5), rgba(109,181,163,0.5)) !important;
+        }
+        .section-pillars-dark p,
+        .section-pillars-dark .lead-text { color: rgba(255, 255, 255, 0.85); }
+        .section-pillars-dark .content { position: relative; z-index: 1; }
+
+        .pillar-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: var(--space-2xl) 0;
+        }
+        .pillar-card {
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .pillar-card-number {
+            position: absolute;
+            top: -0.2rem;
+            left: 1rem;
+            font-family: 'Garnett', Georgia, serif;
+            font-size: 8rem;
+            font-weight: 700;
+            opacity: 0.12;
+            line-height: 1;
+            color: white;
+        }
+        .pillar-card h3 {
+            color: white;
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+        .pillar-card p {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.95rem;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            line-height: 1.7;
+        }
+        .pillar-card-1 {
+            background: linear-gradient(135deg, #317E6D 0%, #1A4A3F 100%);
+            box-shadow: 0 8px 32px rgba(49, 126, 109, 0.3);
+        }
+        .pillar-card-2 {
+            background: linear-gradient(135deg, #C48420 0%, #8B5A10 100%);
+            box-shadow: 0 8px 32px rgba(196, 132, 32, 0.3);
+        }
+        .pillar-card-3 {
+            background: linear-gradient(135deg, #6B7AA1 0%, #3E4D6B 100%);
+            box-shadow: 0 8px 32px rgba(107, 122, 161, 0.3);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-6px);
+            transition: transform 0.3s ease;
+        }
+
+        .section-pillars-dark .split-view {
+            margin-top: var(--space-xl);
+        }
+        .section-pillars-dark .split-panel {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-top: 3px solid rgba(255, 255, 255, 0.15);
+            border-left: 4px solid rgba(255, 255, 255, 0.15);
+        }
+        .section-pillars-dark .split-panel h3 { color: white; }
+        .section-pillars-dark .split-panel li { color: rgba(255,255,255,0.9); border-bottom-color: rgba(255,255,255,0.1); }
+        .section-pillars-dark .split-panel li:before { color: rgba(255,255,255,0.5); }
+        .section-pillars-dark .split-panel li span { color: rgba(255,255,255,0.6); }
+        .section-pillars-dark .quote:not(.quote-fullbleed) {
+            background: rgba(255, 255, 255, 0.06);
+            border-image: none;
+            border-left: 4px solid rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .section-pillars-dark .quote:not(.quote-fullbleed)::before { color: rgba(255, 255, 255, 0.2); }
+        .section-pillars-dark .stat-large { color: white; }
+        .section-pillars-dark .stat-description { color: rgba(255, 255, 255, 0.85); }
+
+        @media (max-width: 768px) {
+            .pillar-cards { grid-template-columns: 1fr; }
+            .pillar-card { min-height: 240px; }
+            .pillar-card-number { font-size: 5rem; }
+        }
+
+        /* ===== Section Divider: Editorial redesign ===== */
+        .section-divider {
+            padding: 6rem 2rem 3rem 2rem;
+        }
+        .divider-label {
+            background: transparent;
+            color: var(--color-text-muted);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            padding: 0;
+            margin-bottom: var(--space-md);
+        }
+        .section-challenges .divider-label {
+            background: transparent;
+            color: rgba(255,255,255,0.4);
+        }
+        .section-solutions .divider-label {
+            background: transparent;
+            color: var(--color-text-muted);
+        }
+        .divider-title {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+        .divider-line {
+            width: 50px;
+            height: 3px;
+        }
+
+        /* ===== CTA: Climactic final section ===== */
+        .section-final h2 {
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            text-align: center;
+        }
+        .section-final h2::before {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-summary {
+            text-align: center;
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.85);
+            max-width: 640px;
+            margin: 0 auto var(--space-xl);
+            line-height: 1.8;
+        }
+        .cta-button {
+            padding: var(--space-lg) var(--space-3xl);
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(109,181,163,0.4), rgba(72,165,204,0.4), rgba(109,181,163,0.4));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            animation: ctaGlow 3s ease-in-out infinite;
+        }
+        .cta-button:hover::after { opacity: 1; }
+        @keyframes ctaGlow {
+            0%, 100% { opacity: 0; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.04); }
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.35), 0 0 30px rgba(109,181,163,0.2);
+        }
+
+        /* ===== Emergency Response Chain (HTML/CSS replacement) ===== */
+        .response-chain {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 0;
+            margin: 3rem auto;
+            max-width: 750px;
+        }
+
+        .response-step {
+            flex: 1;
+            text-align: center;
+        }
+
+        .response-step-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            font-weight: 700;
+            border: 3px solid;
+        }
+
+        .response-icon-crisis {
+            background: #FFF0F0;
+            border-color: #E85D6C;
+            color: #E85D6C;
+            font-family: 'Garnett', Georgia, serif;
+            font-size: 1.4rem;
+        }
+
+        .response-icon-responder {
+            background: #FFF5EB;
+            border-color: #E8A838;
+            font-size: 2.2rem;
+        }
+
+        .response-icon-hospital {
+            background: #F0F4FF;
+            border-color: #6B7AA1;
+            font-size: 2.2rem;
+        }
+
+        .response-step-info h4 {
+            font-family: 'Garnett', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin: 0 0 0.75rem;
+        }
+
+        .response-gap {
+            background: #FFF0F0;
+            border: 1px solid rgba(232, 93, 108, 0.2);
+            border-radius: 8px;
+            padding: 0.6rem 1rem;
+            font-size: 0.85rem;
+            color: #C94B5A;
+            display: inline-block;
+        }
+
+        .response-gap-x {
+            color: #E85D6C;
+            font-weight: 700;
+            margin-right: 0.3rem;
+        }
+
+        .response-arrow {
+            display: flex;
+            align-items: center;
+            padding-top: 28px;
+            font-size: 1.5rem;
+            color: var(--color-text-muted);
+            opacity: 0.4;
+            flex-shrink: 0;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .response-chain {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            .response-arrow {
+                transform: rotate(90deg);
+                padding-top: 0;
+            }
+        }
+
+        /* ===== Integration Timeline (HTML/CSS replacement) ===== */
+        .integration-timeline {
+            display: flex;
+            align-items: stretch;
+            margin: 3rem auto;
+            max-width: 750px;
+            gap: 0;
+        }
+
+        .timeline-phase {
+            flex: 1;
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .timeline-supported {
+            background: rgba(49, 126, 109, 0.08);
+            border: 1px solid rgba(49, 126, 109, 0.15);
+        }
+
+        .timeline-abandoned {
+            background: rgba(232, 93, 108, 0.05);
+            border: 1px dashed rgba(232, 93, 108, 0.2);
+        }
+
+        .timeline-phase-label {
+            font-family: 'Garnett', Georgia, serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .timeline-supported .timeline-phase-label { color: var(--color-primary); }
+        .timeline-abandoned .timeline-phase-label { color: #C94B5A; }
+
+        .timeline-sessions {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .timeline-session {
+            text-align: center;
+            padding: 0.75rem;
+            border-radius: 10px;
+            min-width: 65px;
+        }
+
+        .session-active {
+            background: white;
+            border: 1px solid rgba(49, 126, 109, 0.2);
+        }
+
+        .session-ghost {
+            background: transparent;
+            border: 1px dashed rgba(232, 93, 108, 0.2);
+            opacity: 0.5;
+        }
+
+        .session-fading {
+            opacity: 0.25;
+        }
+
+        .session-icon {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .session-label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--color-text-muted);
+        }
+
+        .timeline-break {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .timeline-break-line {
+            width: 3px;
+            flex: 1;
+            background: repeating-linear-gradient(
+                180deg,
+                #E85D6C 0px,
+                #E85D6C 6px,
+                transparent 6px,
+                transparent 12px
+            );
+            min-height: 60px;
+        }
+
+        .timeline-break-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #E85D6C;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .integration-timeline {
+                flex-direction: column;
+                gap: 0;
+            }
+            .timeline-break {
+                flex-direction: row;
+                padding: 0.75rem 0;
+            }
+            .timeline-break-line {
+                width: auto;
+                height: 3px;
+                min-height: auto;
+                flex: 1;
+                background: repeating-linear-gradient(
+                    90deg,
+                    #E85D6C 0px,
+                    #E85D6C 6px,
+                    transparent 6px,
+                    transparent 12px
+                );
+            }
+            .timeline-break-label {
+                margin-top: 0;
+                margin-left: 0.5rem;
+            }
+        }
+
+        /* ===== Full-bleed quotes in dark/underground sections ===== */
+        .section-dark .quote-fullbleed,
+        .section-underground .quote-fullbleed {
+            background: rgba(49, 126, 109, 0.15);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Sidebar Toggle -->
+    <button class="sidebar-toggle" onclick="toggleSidebar()">&#9776; Navigation</button>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-progress" id="sidebarProgress"></div>
+        <h3>Contents</h3>
+        <nav>
+            <a href="#hero">Introduction</a>
+            <a href="#human-impacts">Human Impacts</a>
+            <a href="#what-could-go-wrong">What Could Go Wrong</a>
+            <a href="#turning-points">Turning Points</a>
+            <a href="#coordination">Coordination Challenge</a>
+            <a href="#professional-crisis">Professional Crisis</a>
+            <a href="#emergency-response">Emergency Response Gap</a>
+            <a href="#integration-crisis">Integration Crisis</a>
+            <a href="#equity">Equity & Diversity</a>
+            <a href="#underground">Underground Reality</a>
+            <a href="#data-driven">Data-Driven Solutions</a>
+            <a href="#three-pillars">Three Pillars</a>
+            <a href="#success">What Success Looks Like</a>
+            <a href="#economic">Economic Reality</a>
+            <a href="#collaboration">Collaboration</a>
+            <a href="#call-to-action">Call to Action</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="section hero" id="hero">
+        <div class="content">
+            <h1>Mapping the Path to Psychedelic Safety</h1>
+            <h2>Voices from the Field</h2>
+            <p style="margin-top: 2rem;">When 151 stakeholders across the psychedelic ecosystem were asked about safety, the message was clear: safety is foundational to the future of the field.</p>
+            <div class="hero-stats">
+                <div class="hero-stat-card">
+                    <span class="hero-stat-number">151</span>
+                    <span class="hero-stat-label">Stakeholders</span>
+                </div>
+                <div class="hero-stat-card">
+                    <span class="hero-stat-number">12</span>
+                    <span class="hero-stat-label">Key Themes</span>
+                </div>
+                <div class="hero-stat-card">
+                    <span class="hero-stat-number">1</span>
+                    <span class="hero-stat-label">Shared Vision</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('human-impacts').scrollIntoView({behavior: 'smooth'})">
+            <span class="scroll-indicator-text">Scroll to explore</span>
+            <span class="scroll-indicator-arrow">&darr;</span>
+        </div>
+    </section>
+
+    <!-- Section Divider: Introduction -->
+    <section class="section section-divider">
+        <div class="content">
+            <div class="divider-label">Part One</div>
+            <h2 class="divider-title">Understanding the Landscape</h2>
+            <div class="divider-line"></div>
+        </div>
+    </section>
+
+    <!-- Psychedelic Safety Has Human Impacts -->
+    <section class="section" id="human-impacts">
+        <div class="content">
+            <h2>Psychedelic Safety Has Human Impacts</h2>
+            <p class="lead-text">Nearly all stakeholders agree that psychedelics are powerful substances requiring careful handling, and how we approach safety now will determine whether psychedelics fulfill their therapeutic potential or set the field back.</p>
+
+            <p class="lead-text">Stakeholders see interconnected challenges: preventing harms like psychological trauma (82%), addressing systemic gaps like unethical practitioners (61%), and building foundational infrastructure (education, standards, accountability) that largely don't yet exist.</p>
+
+            <!-- Interconnected Challenges Visualization: Overlapping Blobs -->
+            <div class="challenges-viz">
+                <div class="challenge-blob challenge-harms">
+                    <span class="blob-percent">82%</span>
+                    <span class="blob-label">Reducing Harms</span>
+                </div>
+                <div class="challenge-blob challenge-gaps">
+                    <span class="blob-percent">61%</span>
+                    <span class="blob-label">Systemic Gaps</span>
+                </div>
+                <div class="challenge-blob challenge-infra">
+                    <span class="blob-percent">96%</span>
+                    <span class="blob-label">Building Infrastructure</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Turning Points -->
+    <section class="section" id="turning-points">
+        <div class="content">
+            <h2>The Turning Points: Critical Factors</h2>
+            <p class="lead-text">The next three to five years will reveal whether the psychedelic field can manage a fundamental challenge: multiple forces are expanding who can access psychedelics and how, while the infrastructure to ensure safety struggles to keep pace.</p>
+
+            <div class="two-col" style="margin-bottom: var(--space-3xl);">
+                <div class="split-panel split-panel-accelerating">
+                    <h3>What's Accelerating Use</h3>
+                    <ul>
+                        <li>State programs launching<br><span style="font-size: var(--font-size-sm); color: var(--color-text-muted);">(28% cite as having big impact)</span></li>
+                        <li>Decriminalization spreading<br><span style="font-size: var(--font-size-sm); color: var(--color-text-muted);">(87% cite as opportunity and risk)</span></li>
+                        <li>Unregulated use surging<br><span style="font-size: var(--font-size-sm); color: var(--color-text-muted);">(64% concerned)</span></li>
+                    </ul>
+                </div>
+
+                <div class="split-panel split-panel-lagging">
+                    <h3>What's Lagging Behind</h3>
+                    <ul>
+                        <li>Practitioner training quality<br><span style="font-size: var(--font-size-sm); color: var(--color-text-muted);">(60% cite as critical)</span></li>
+                        <li>Safety infrastructure not keeping pace<br><span style="font-size: var(--font-size-sm); color: var(--color-text-muted);">(64% identify as gap)</span></li>
+                        <li>Youth-specific protections<br><span style="font-size: var(--font-size-sm); color: var(--color-text-muted);">(only 7% developing resources)</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="balance-section">
+                <div class="balance-header" style="flex-direction: column; gap: 0;">
+                    <h3>What Will Determine If Safety Infrastructure Keeps Pace</h3>
+                    <div class="pressure-meter">
+                        <div class="pressure-labels">
+                            <span>Crisis</span>
+                            <span>At Risk</span>
+                            <span>On Track</span>
+                        </div>
+                        <div class="pressure-track">
+                            <div class="pressure-zone pressure-danger"></div>
+                            <div class="pressure-zone pressure-warning"></div>
+                            <div class="pressure-zone pressure-safe"></div>
+                            <div class="pressure-marker" style="left: 35%;">
+                                <span class="pressure-marker-label">Current State</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="balance-factors">
+                    <div class="balance-factor">
+                        <strong>Political environment</strong>
+                        <span style="font-size: 0.82rem; display: block; margin-top: 0.6rem;">Policy decisions and regulatory changes</span>
+                        <span style="color: var(--color-text-muted); font-size: 0.8rem;">(66% cite as factor)</span>
+                        <span class="factor-progress"><span class="factor-progress-fill" style="width: 66%;"></span></span>
+                    </div>
+                    <div class="balance-factor">
+                        <strong>Public perception</strong>
+                        <span style="font-size: 0.82rem; display: block; margin-top: 0.6rem;">How the public views psychedelics based on media coverage and high-profile incidents</span>
+                        <span style="color: var(--color-text-muted); font-size: 0.8rem;">(87% see as pivotal)</span>
+                        <span class="factor-progress"><span class="factor-progress-fill" style="width: 87%;"></span></span>
+                    </div>
+                    <div class="balance-factor">
+                        <strong>Commercialization pressure</strong>
+                        <span style="font-size: 0.82rem; display: block; margin-top: 0.6rem;">Market incentives prioritizing profit over safety protocols</span>
+                        <span style="color: var(--color-text-muted); font-size: 0.8rem;">(61% worried)</span>
+                        <span class="factor-progress"><span class="factor-progress-fill" style="width: 61%;"></span></span>
+                    </div>
+                </div>
+                <p class="balance-context">How the field navigates these complex tensions will shape the landscape for decades. State-regulated programs in Oregon and Colorado serve as critical testing grounds—early real-world experiments in whether safety infrastructure can scale alongside legal access.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Could Go Wrong -->
+    <section class="section section-dark" id="what-could-go-wrong">
+        <div class="content">
+            <h2>Where Things Could Go Wrong</h2>
+            <p class="lead-text">Without proper safety measures, stakeholders envision a domino effect: increased harm leads to negative media coverage, which triggers policy reversals and ultimately prevents psychedelics from reaching those who need them most.</p>
+
+            <p class="lead-text">The fear of irreversible damage to public trust weighs heavily—once lost, that trust may never return. This matters because trust is the foundation everything else rests on—research funding, policy reform, therapeutic access, public acceptance.</p>
+
+            <!-- Fracture Cascade Visualization -->
+            <div class="fracture-viz">
+                <div class="fracture-stage fracture-origin">
+                    <div class="fracture-number">01</div>
+                    <div class="fracture-content">
+                        <h4>Increased Harm</h4>
+                        <p>Without proper safety measures, harm increases</p>
+                    </div>
+                </div>
+                <div class="fracture-crack"></div>
+                <div class="fracture-stage fracture-spread">
+                    <div class="fracture-branches">
+                        <div class="fracture-branch">
+                            <div class="fracture-number">02</div>
+                            <span>Negative Media</span>
+                        </div>
+                        <div class="fracture-branch">
+                            <div class="fracture-number">03</div>
+                            <span>Erosion of Trust</span>
+                        </div>
+                        <div class="fracture-branch">
+                            <div class="fracture-number">04</div>
+                            <span>Policy Reversals</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fracture-crack fracture-crack-wide"></div>
+                <div class="fracture-stage fracture-result">
+                    <div class="fracture-number">05</div>
+                    <div class="fracture-content">
+                        <h4>Lost Access</h4>
+                        <p>Those who need psychedelics most can't reach them</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Fear erosion of public trust</span>
+                        <span class="bar-label-percent">90%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="90%" style="--width: 90%; background: #E85D6C;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Believe lost trust may be irretrievable</span>
+                        <span class="bar-label-percent">89%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="89%" style="--width: 89%; background: #D44A59;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Worry therapeutic potential will not be realized</span>
+                        <span class="bar-label-percent">79%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="79%" style="--width: 79%; background: #C94B5A;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Expect scientific research to be halted or restricted</span>
+                        <span class="bar-label-percent">60%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="60%" style="--width: 60%; background: #E8A838;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stakeholder Priorities -->
+    <section class="section" id="stakeholder-priorities">
+        <div class="content">
+            <h2>Stakeholder Priorities: What Would Make a Meaningful Difference</h2>
+            <p class="lead-text">When asked what would make a meaningful difference in psychedelic safety, stakeholders identified clear priorities. These aren't abstract ideals—they're actionable areas where progress is both urgent and achievable.</p>
+
+            <!-- Heat Map showing priorities -->
+            <div class="heat-map">
+                <!-- Row 1: Education -->
+                <div class="heat-map-row">
+                    <div class="heat-map-row-header">Education</div>
+                    <div class="heat-map-cells">
+                        <div class="heat-cell" data-intensity="92">
+                            <div class="heat-cell-label">Achieve Universal Psychedelic Literacy</div>
+                            <div class="heat-cell-value">92%</div>
+                        </div>
+                        <div class="heat-cell" data-intensity="89">
+                            <div class="heat-cell-label">Foster Cultural Normalization & Destigmatization</div>
+                            <div class="heat-cell-value">89%</div>
+                        </div>
+                        <div class="heat-cell" data-intensity="75">
+                            <div class="heat-cell-label">Mandate Training Standards</div>
+                            <div class="heat-cell-value">75%</div>
+                        </div>
+                        <div class="heat-cell" data-intensity="68">
+                            <div class="heat-cell-label">Educate Healthcare Professionals</div>
+                            <div class="heat-cell-value">68%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Standards -->
+                <div class="heat-map-row">
+                    <div class="heat-map-row-header">Standards</div>
+                    <div class="heat-map-cells">
+                        <div class="heat-cell" data-intensity="91">
+                            <div class="heat-cell-label">Track Safety & Outcomes</div>
+                            <div class="heat-cell-value">91%</div>
+                        </div>
+                        <div class="heat-cell" data-intensity="81">
+                            <div class="heat-cell-label">Establish Standardized Protocols</div>
+                            <div class="heat-cell-value">81%</div>
+                        </div>
+                        <div class="heat-cell" data-intensity="75">
+                            <div class="heat-cell-label">Implement Accountability Systems</div>
+                            <div class="heat-cell-value">75%</div>
+                        </div>
+                        <div class="heat-cell" data-intensity="62">
+                            <div class="heat-cell-label">Create Professional Accreditation Bodies</div>
+                            <div class="heat-cell-value">62%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Access & Equity -->
+                <div class="heat-map-row">
+                    <div class="heat-map-row-header">Access & Equity</div>
+                    <div class="heat-map-cells">
+                        <div class="heat-cell" data-intensity="98">
+                            <div class="heat-cell-label">Decriminalize & Regulate Sensibly</div>
+                            <div class="heat-cell-value">98%</div>
+                        </div>
+                        <div class="heat-cell" data-intensity="78">
+                            <div class="heat-cell-label">Provide Universal Integration Support</div>
+                            <div class="heat-cell-value">78%</div>
+                        </div>
+                        <div class="heat-cell" data-intensity="75">
+                            <div class="heat-cell-label">Enable Affordable Access</div>
+                            <div class="heat-cell-value">75%</div>
+                        </div>
+                        <div class="heat-cell" data-intensity="72">
+                            <div class="heat-cell-label">Ensure Safe, Tested Supply</div>
+                            <div class="heat-cell-value">72%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heat map legend -->
+            <div class="heat-legend">
+                <span>Lower priority</span>
+                <div class="heat-legend-bar"></div>
+                <span>Higher priority</span>
+            </div>
+
+            <p style="text-align: center; margin-top: var(--space-md); color: var(--color-text-muted); font-size: var(--font-size-sm);">Hover over cells to reveal percentages</p>
+
+            <p style="margin-top: var(--space-lg); color: var(--color-text-muted); font-size: var(--font-size-sm); line-height: 1.7;">Note: From structured questions with open-ended responses. Higher percentages indicate issues people gravitated toward mentioning—showing they're both key concerns and widely shared. Lower percentages may reflect either that a topic is more granular (harder to articulate spontaneously), or that there's genuine disagreement within the field. See the <a href="https://www.psychedeliccommunitysurveys.org/stakeholder-interviews?tab=methodology" target="_blank" style="color: var(--color-primary); text-decoration: underline;">interview methodology</a> for details.</p>
+        </div>
+    </section>
+
+    <!-- Section Divider: Challenges -->
+    <section class="section section-divider section-challenges">
+        <div class="content">
+            <div class="divider-label">Part Two</div>
+            <h2 class="divider-title">The Challenges We Face</h2>
+            <div class="divider-line"></div>
+        </div>
+    </section>
+
+    <!-- Coordination Challenge -->
+    <section class="section section-challenges" id="coordination">
+        <div class="content">
+            <h2>The Coordination Challenge</h2>
+            <p class="lead-text">A striking finding emerges when stakeholders identify major obstacles to progress: many point to internal field dynamics and coordination challenges.</p>
+
+            <p class="lead-text">Organizations work in silos, duplicating efforts rather than coordinating. Academic researchers face pressure to publish first rather than share data openly. Commercial interests sometimes prioritize profit over collaboration. And practitioners themselves struggle with ego and blind spots that can compromise safety. What's needed, stakeholders suggest, is a field-wide commitment to greater collaboration, maturity, and humility.</p>
+
+            <div class="quote-group">
+                <div class="quote quote-highlight"><span class="quote-highlight-rule"></span>"It's still so fragmented, in terms of who has what information."</div>
+                <div class="quote">"I worry about duplication... I often feel frustrated by how many resources are going toward processes that already exist. It's the competition thing again."</div>
+                <div class="quote quote-fullbleed">"People on opposing sides, arguing about who's right, or who's wrong. Instead of a dialogue that increases opportunities to be curious together."</div>
+            </div>
+
+            <div class="quote quote-with-stat">
+                <span class="quote-stat-number">84%</span>
+                cite siloed operations as major barrier
+            </div>
+
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Practitioner ego and competition as obstacles</span>
+                        <span class="bar-label-percent">60%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="60%" style="--width: 60%; background: #E8A838;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Field immaturity as challenge</span>
+                        <span class="bar-label-percent">53%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="53%" style="--width: 53%; background: #E8A838;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">"Psychedelic exceptionalism" limiting learning</span>
+                        <span class="bar-label-percent">44%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="44%" style="--width: 44%; background: #C48420;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Commercial competition overriding collaboration</span>
+                        <span class="bar-label-percent">42%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="42%" style="--width: 42%; background: #C48420;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="lead-text">The field hasn't yet developed the collaborative infrastructure needed to pool knowledge, coordinate efforts, and work toward shared safety goals. Whether other goals become achievable may depend significantly on addressing these internal coordination challenges.</p>
+        </div>
+    </section>
+
+    <!-- Professional Crisis -->
+    <section class="section section-challenges" id="professional-crisis">
+        <div class="content">
+            <h2>The Professional Crisis: Who's Qualified?</h2>
+            <p class="lead-text">The field faces a fundamental challenge: we're training people to guide others through some of the most vulnerable moments of their lives, yet we lack agreement on what competence looks like.</p>
+
+            <p class="lead-text">Some programs offer weekend certifications while others require years of study. And when practitioners cause harm? There's minimal accountability infrastructure—very few registries, complaint systems, or ways to track or remove bad actors.</p>
+
+            <p style="text-align: center;"><span class="stat-large" style="display: inline; margin: 0;">95%</span> <span class="stat-description" style="display: inline;">prioritize standardized, comprehensive training</span></p>
+
+            <div class="two-col">
+                <div class="split-panel split-panel-problem">
+                    <h3>The Problem</h3>
+                    <ul>
+                        <li>74% report inconsistent training quality</li>
+                        <li>60% cite lack of accountability systems</li>
+                        <li>66% worry training organizations prioritize profit over education</li>
+                        <li>52% fear proliferation of unethical practitioners</li>
+                    </ul>
+                </div>
+
+                <div class="split-panel split-panel-solution">
+                    <h3>What's Needed</h3>
+                    <ul>
+                        <li>95% support standardized training</li>
+                        <li>74% emphasize ethics-focused curricula</li>
+                        <li>47% worry practitioners lack skills for adverse events</li>
+                        <li>70% say adverse events require specific protocols</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Response Gap -->
+    <section class="section section-emergency-bg" id="emergency-response">
+        <div class="content">
+            <h2>The Emergency Response Gap</h2>
+            <p class="lead-text">A critical vulnerability emerges in how existing emergency systems handle psychedelic crises. Respondents agree that first responders need training, yet minimal action has been made to provide it.</p>
+
+            <p class="lead-text">This gap means someone experiencing a difficult psychedelic experience might encounter emergency personnel who inadvertently escalate the situation through inappropriate interventions, turning a manageable situation into a traumatic one.</p>
+
+            <div class="quote-group">
+                <div class="quote quote-fullbleed">"It's a failing of our society that... the staff and the doctors and the nurses and so forth don't know what they should in many cases to be able to properly provide care in this situation."</div>
+                <div class="quote">"[A psychedelic crisis is] probably very different than many other types of trauma or emergency medicine situations that they encounter."</div>
+            </div>
+
+            <!-- Emergency Response Chain Visualization -->
+            <div class="response-chain">
+                <div class="response-step">
+                    <div class="response-step-icon response-icon-crisis">911</div>
+                    <div class="response-step-info">
+                        <h4>Crisis Call</h4>
+                        <div class="response-gap">
+                            <span class="response-gap-x">&#10005;</span>
+                            No specialized crisis guidelines
+                        </div>
+                    </div>
+                </div>
+                <div class="response-arrow">&rarr;</div>
+                <div class="response-step">
+                    <div class="response-step-icon response-icon-responder">&#128657;</div>
+                    <div class="response-step-info">
+                        <h4>First Responders</h4>
+                        <div class="response-gap">
+                            <span class="response-gap-x">&#10005;</span>
+                            Lack de-escalation protocols
+                        </div>
+                    </div>
+                </div>
+                <div class="response-arrow">&rarr;</div>
+                <div class="response-step">
+                    <div class="response-step-icon response-icon-hospital">&#127973;</div>
+                    <div class="response-step-info">
+                        <h4>Hospital / ER</h4>
+                        <div class="response-gap">
+                            <span class="response-gap-x">&#10005;</span>
+                            No psychedelic triage protocols
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote quote-with-stat" style="margin-top: var(--space-sm);">
+                <span class="quote-stat-number">94%</span>
+                say first responders need psychedelic-specific training
+            </div>
+
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Want de-escalation protocols developed</span>
+                        <span class="bar-label-percent">83%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="83%" style="--width: 83%; background: #E85D6C;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Want specific response guidelines for psychedelic crises</span>
+                        <span class="bar-label-percent">54%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="54%" style="--width: 54%; background: #D44A59;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Want triage protocols developed</span>
+                        <span class="bar-label-percent">28%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="28%" style="--width: 28%; background: #C94B5A;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Support training ER and hospital staff</span>
+                        <span class="bar-label-percent">18%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="18%" style="--width: 18%; background: #E8A838;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="lead-text" style="margin-top: var(--space-xl);">However, promising efforts are emerging. In Colorado, a psychedelic harm reduction training video was developed for first responders—demonstrating how law enforcement and medical personnel can be trained to respond more appropriately to psychedelic crises. This represents a move in the right direction, showing what's possible when emergency systems acknowledge the need for specialized approaches.</p>
+        </div>
+    </section>
+
+    <!-- Integration Crisis -->
+    <section class="section section-integration-bg" id="integration-crisis">
+        <div class="content">
+            <h2>The Integration Crisis</h2>
+            <p class="lead-text">Every practitioner surveyed agrees that comprehensive integration support is essential for safety—helping people process and incorporate their experiences. Seventy percent of stakeholders prioritize integration support networks, and 84% say thorough preparation is critical. Yet clinical trials rarely provide ongoing or comprehensive support, leaving participants to navigate profound experiences alone. Moreover, 78% want research participants to be connected with external post-trial resources (such as community groups, therapists, or crisis lines), but most trials end without providing these connections.</p>
+
+            <p class="lead-text">Here's the economic reality: providing months of ongoing integration care on top of already expensive psychedelic sessions is very costly. This creates pressure to cut corners—terminating support too early, or skipping integration altogether to keep costs down.</p>
+
+            <div class="integration-timeline" style="margin-top: var(--space-3xl);">
+                <div class="timeline-phase timeline-supported">
+                    <div class="timeline-phase-label">During Trial</div>
+                    <div class="timeline-sessions">
+                        <div class="timeline-session session-active">
+                            <span class="session-icon">&#128138;</span>
+                            <span class="session-label">Dosing</span>
+                        </div>
+                        <div class="timeline-session session-active">
+                            <span class="session-icon">&#128483;&#65039;</span>
+                            <span class="session-label">Integration</span>
+                        </div>
+                        <div class="timeline-session session-active">
+                            <span class="session-icon">&#128483;&#65039;</span>
+                            <span class="session-label">Integration</span>
+                        </div>
+                        <div class="timeline-session session-active">
+                            <span class="session-icon">&#128483;&#65039;</span>
+                            <span class="session-label">Integration</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-break">
+                    <div class="timeline-break-line"></div>
+                    <span class="timeline-break-label">Trial Ends</span>
+                </div>
+                <div class="timeline-phase timeline-abandoned">
+                    <div class="timeline-phase-label">Ongoing Needs &mdash; Unmet</div>
+                    <div class="timeline-sessions">
+                        <div class="timeline-session session-ghost">
+                            <span class="session-icon">&#128483;&#65039;</span>
+                            <span class="session-label">???</span>
+                        </div>
+                        <div class="timeline-session session-ghost">
+                            <span class="session-icon">&#128483;&#65039;</span>
+                            <span class="session-label">???</span>
+                        </div>
+                        <div class="timeline-session session-ghost session-fading">
+                            <span class="session-icon">&#128483;&#65039;</span>
+                            <span class="session-label">???</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-top: 0; text-align: center;">Clinical trials usually provide 3 integration sessions per dosing session (Brennan & Belser, 2022)</p>
+
+            <!-- Underground Models - emphasized section -->
+            <div style="margin-top: var(--space-3xl); padding: var(--space-2xl); background: var(--color-bg-subtle); border-radius: var(--radius-lg); border-left: 4px solid var(--color-primary);">
+                <h3 style="margin-top: 0;">Underground Models Show a Path Forward</h3>
+                <p class="lead-text">Underground communities have developed cost-effective, peer-based integration models that offer ongoing support—not just the limited sessions typical of clinical trials. These grassroots organizations demonstrate what's possible when accessibility and community are prioritized. Stakeholders specifically mentioned these organizations as examples of effective peer-based integration models:</p>
+
+                <!-- Organization Cards -->
+                <div style="display: grid; gap: var(--space-lg);">
+                    <!-- French Psychedelic Society -->
+                    <div style="padding: var(--space-lg); background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border-top: 3px solid var(--color-primary);">
+                        <h5 style="color: var(--color-primary); margin-top: 0; margin-bottom: var(--space-sm); font-size: var(--font-size-lg);">French Psychedelic Society</h5>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-sm); margin-bottom: var(--space-md);">
+                            <div style="background: var(--color-bg-subtle); padding: var(--space-sm); border-radius: var(--radius-sm); text-align: center;">
+                                <strong style="display: block; color: var(--color-primary); font-size: var(--font-size-lg);">3,000+</strong>
+                                <span style="font-size: var(--font-size-xs);">participants served</span>
+                            </div>
+                            <div style="background: var(--color-bg-subtle); padding: var(--space-sm); border-radius: var(--radius-sm); text-align: center;">
+                                <strong style="display: block; color: var(--color-primary); font-size: var(--font-size-lg);">44+</strong>
+                                <span style="font-size: var(--font-size-xs);">monthly sessions</span>
+                            </div>
+                            <div style="background: var(--color-bg-subtle); padding: var(--space-sm); border-radius: var(--radius-sm); text-align: center;">
+                                <strong style="display: block; color: var(--color-primary); font-size: var(--font-size-lg);">FREE</strong>
+                                <span style="font-size: var(--font-size-xs);">cost to participants</span>
+                            </div>
+                        </div>
+                        <p style="margin: 0; font-size: var(--font-size-sm);">Monthly online integration circles with ~40 trained facilitators. Also operates in-person circles across 8+ French cities. Provides free harm reduction manual and hosts groups for people harmed by underground facilitators.</p>
+                    </div>
+
+                    <!-- Fireside Project -->
+                    <div style="padding: var(--space-lg); background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border-top: 3px solid var(--color-primary);">
+                        <h5 style="color: var(--color-primary); margin-top: 0; margin-bottom: var(--space-sm); font-size: var(--font-size-lg);">Fireside Project</h5>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-sm); margin-bottom: var(--space-md);">
+                            <div style="background: var(--color-bg-subtle); padding: var(--space-sm); border-radius: var(--radius-sm); text-align: center;">
+                                <strong style="display: block; color: var(--color-primary); font-size: var(--font-size-lg);">25,000+</strong>
+                                <span style="font-size: var(--font-size-xs);">conversations</span>
+                            </div>
+                            <div style="background: var(--color-bg-subtle); padding: var(--space-sm); border-radius: var(--radius-sm); text-align: center;">
+                                <strong style="display: block; color: var(--color-primary); font-size: var(--font-size-lg);">365</strong>
+                                <span style="font-size: var(--font-size-xs);">days/year available</span>
+                            </div>
+                            <div style="background: var(--color-bg-subtle); padding: var(--space-sm); border-radius: var(--radius-sm); text-align: center;">
+                                <strong style="display: block; color: var(--color-primary); font-size: var(--font-size-lg);">FREE</strong>
+                                <span style="font-size: var(--font-size-xs);">& anonymous</span>
+                            </div>
+                        </div>
+                        <p style="margin: 0; font-size: var(--font-size-sm);">Peer support hotline available 24/7 via phone or text. Trained volunteers support people actively tripping or integrating experiences—even years later. Extensively trained volunteers provide peer support, not therapy.</p>
+                    </div>
+
+                    <!-- Other Organizations Grid -->
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md);">
+                        <div style="padding: var(--space-md); background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border-top: 3px solid var(--color-primary);">
+                            <h5 style="color: var(--color-primary); margin-top: 0; margin-bottom: var(--space-xs); font-size: 1rem;">Zendo Project</h5>
+                            <p style="margin: 0; font-size: var(--font-size-sm);">Peer support at festivals/events since 2013. Offers 12-hour training for peer supporters.</p>
+                        </div>
+                        <div style="padding: var(--space-md); background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border-top: 3px solid var(--color-primary);">
+                            <h5 style="color: var(--color-primary); margin-top: 0; margin-bottom: var(--space-xs); font-size: 1rem;">Psychedelic Recovery</h5>
+                            <p style="margin: 0; font-size: var(--font-size-sm);">Peer support for people in addiction/recovery. Over 5,000 people served.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Features -->
+                <div style="margin-top: var(--space-xl); padding: var(--space-lg); background: white; border-radius: var(--radius-md); border: 2px solid var(--color-primary); border-style: dashed;">
+                    <h5 style="margin-top: 0; color: var(--color-primary-dark); font-size: var(--font-size-lg);">Key Features</h5>
+                    <ul style="margin: 0; padding-left: var(--space-lg); font-size: 0.95rem; line-height: 1.8;">
+                        <li><strong>Ongoing support</strong> available months or years later—not limited to 3 sessions</li>
+                        <li><strong>Free or donation-based</strong> models remove cost barriers</li>
+                        <li><strong>Peer-led</strong> by people with lived experience</li>
+                        <li><strong>Flexible formats</strong>—online, phone, text, or in-person</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equity and Diversity Challenge -->
+    <section class="section section-challenges" id="equity">
+        <div class="content">
+            <h2>The Equity and Diversity Challenge</h2>
+            <p class="lead-text">Stakeholders agree that psychedelic healing should not be reserved for only those who can afford it. Yet marginalized communities face compounded barriers at every level.</p>
+
+            <p class="lead-text">Historical medical exclusion has created deep mistrust in marginalized communities. Cultural frameworks get ignored or appropriated, legal risks hit harder for those already surveilled, and cost puts access out of reach for many. These barriers extend into clinical research itself, where the very people who could benefit most are systematically excluded from the studies that shape treatment approaches.</p>
+
+            <!-- Trial Representation Statistics Inset -->
+            <div style="margin: var(--space-xl) 0; padding: var(--space-lg); background: #FDF8F3; border-radius: var(--radius-lg); border-left: 4px solid var(--color-warning);">
+                <h4 style="margin-top: 0; color: var(--color-warning-dark); font-size: var(--font-size-lg); text-align: center; margin-bottom: var(--space-md);">Clinical Trial Representation</h4>
+
+                <p style="text-align: center; margin-bottom: var(--space-md); font-size: 0.95rem; color: var(--color-text-muted);">Systematic reviews of psychedelic clinical trials reveal severe underrepresentation of marginalized communities:</p>
+
+                <div style="display: grid; grid-template-columns: 3fr 1fr; gap: var(--space-sm); max-width: 500px; margin: 0 auto var(--space-md) auto;">
+                    <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                        <div style="height: 24px; background: var(--color-primary); border-radius: var(--radius-sm); width: 100%;"></div>
+                        <span style="font-size: var(--font-size-sm); white-space: nowrap;">Non-Hispanic White</span>
+                    </div>
+                    <div style="text-align: right; font-weight: 600; color: var(--color-primary);">82.3%</div>
+
+                    <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                        <div style="height: 24px; background: var(--color-warning); border-radius: var(--radius-sm); width: 12%;"></div>
+                        <span style="font-size: var(--font-size-sm); white-space: nowrap;">Indigenous</span>
+                    </div>
+                    <div style="text-align: right; font-weight: 600; color: var(--color-warning-dark);">4.6%</div>
+
+                    <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                        <div style="height: 24px; background: #8B7AB8; border-radius: var(--radius-sm); width: 10%;"></div>
+                        <span style="font-size: var(--font-size-sm); white-space: nowrap;">African-American</span>
+                    </div>
+                    <div style="text-align: right; font-weight: 600; color: #8B7AB8;">2.5%</div>
+
+                    <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                        <div style="height: 24px; background: #C8846C; border-radius: var(--radius-sm); width: 9%;"></div>
+                        <span style="font-size: var(--font-size-sm); white-space: nowrap;">Latino</span>
+                    </div>
+                    <div style="text-align: right; font-weight: 600; color: #C8846C;">2.1%</div>
+
+                    <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                        <div style="height: 24px; background: #6B9DAA; border-radius: var(--radius-sm); width: 8%;"></div>
+                        <span style="font-size: var(--font-size-sm); white-space: nowrap;">Asian</span>
+                    </div>
+                    <div style="text-align: right; font-weight: 600; color: #6B9DAA;">1.8%</div>
+                </div>
+
+                <p style="margin: 0; font-size: var(--font-size-xs); color: var(--color-text-muted); text-align: center; font-style: italic;">Based on systematic review of 18 psychedelic clinical trials (Williams et al., 2018).<br>Studies through 2024 show these disparities persist despite modest improvements.</p>
+            </div>
+
+            <div class="quote-group">
+                <div class="quote quote-highlight"><span class="quote-highlight-rule"></span>"[I am] often the only person of color in trainings... predominantly white spaces."</div>
+                <div class="quote">"Very white male wealthy, white male dominated area."</div>
+            </div>
+
+            <p class="lead-text">Meaningful equity work means not just studying marginalized communities, but centering them in research design, decision-making, and field leadership. Stakeholders have identified both the specific barriers that perpetuate exclusion and concrete solutions to address them.</p>
+
+            <div class="two-col">
+                <div class="split-panel split-panel-barriers">
+                    <h3>Barriers Identified</h3>
+                    <ul>
+                        <li>93% identify heightened legal risks for marginalized groups</li>
+                        <li>86% report cultural insensitivity in current approaches</li>
+                        <li>73% report economic barriers for lower-income individuals</li>
+                        <li>67% cite systemic mistrust as major obstacle</li>
+                    </ul>
+                </div>
+
+                <div class="split-panel split-panel-solution">
+                    <h3>Solutions Proposed</h3>
+                    <ul>
+                        <li>100% prioritize inclusive research practices</li>
+                        <li>98% emphasize trust-building as essential</li>
+                        <li>79% highlight need for indigenous representation</li>
+                        <li>58% support community-led approaches</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Underground Reality -->
+    <section class="section section-challenges section-underground" id="underground">
+        <div class="content">
+            <h2>The Underground Reality</h2>
+            <p class="lead-text">Stakeholders acknowledge that unregulated use will continue regardless of legal status. Rather than ignoring this reality, the underground ecosystem is already building sophisticated safety infrastructure.</p>
+
+            <p class="lead-text">Beyond basic harm reduction, underground communities are engaging in collective ethical inquiry—examining their own practices, discussing boundaries and consent, and identifying where harms occur. They're also establishing peer accountability systems, including efforts like the Shine Collective, which tracks practitioner complaints and helps communities identify concerning patterns. These organic efforts represent a critical advancement: communities developing safety systems without waiting for legal frameworks or institutional approval.</p>
+
+            <!-- Parallel Pathways Visualization -->
+            <svg viewBox="0 0 900 200" style="max-width: 100%; height: auto; margin: var(--space-3xl) 0;">
+                    <!-- Underground pathway on top - squiggly line with arrow -->
+                    <defs>
+                        <marker id="arrow-underground" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                            <path d="M0,0 L0,6 L6,3 z" fill="var(--color-warning)" />
+                        </marker>
+                        <marker id="arrow-regulated" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                            <path d="M0,0 L0,6 L6,3 z" fill="var(--color-primary)" />
+                        </marker>
+                    </defs>
+
+                    <path d="M 50 60 Q 150 45, 250 55 T 450 50 T 650 45 L 720 40"
+                          stroke="var(--color-warning)"
+                          stroke-width="4"
+                          fill="none"
+                          stroke-linecap="round"
+                          marker-end="url(#arrow-underground)"/>
+                    <text x="50" y="45" font-size="14" font-weight="bold" fill="var(--color-warning)">Underground pathway</text>
+
+                    <!-- Regulated pathway on bottom - squiggly line with arrow -->
+                    <path d="M 50 140 Q 150 155, 250 145 T 450 150 T 650 145 L 720 140"
+                          stroke="var(--color-primary)"
+                          stroke-width="4"
+                          fill="none"
+                          stroke-linecap="round"
+                          marker-end="url(#arrow-regulated)"/>
+                    <text x="50" y="125" font-size="14" font-weight="bold" fill="var(--color-primary)">Regulated pathway</text>
+
+                    <!-- "Greater Safety Outcomes" label on the right, aligned with both arrows -->
+                    <text x="750" y="82" font-size="18" font-weight="bold" fill="var(--color-text)">Greater Safety</text>
+                    <text x="750" y="104" font-size="18" font-weight="bold" fill="var(--color-text)">Outcomes</text>
+            </svg>
+
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Believe legal frameworks must reduce reliance on unregulated settings</span>
+                        <span class="bar-label-percent">95%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="95%" style="--width: 95%; background: #E8A838;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Support making harm reduction training accessible to underground practitioners</span>
+                        <span class="bar-label-percent">90%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="90%" style="--width: 90%; background: var(--color-primary);"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Report peer support networks forming organically</span>
+                        <span class="bar-label-percent">68%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="68%" style="--width: 68%; background: var(--color-primary);"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Support voluntary ethical certification</span>
+                        <span class="bar-label-percent">64%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="64%" style="--width: 64%; background: #C48420;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Researching ethical challenges in unregulated settings</span>
+                        <span class="bar-label-percent">61%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="61%" style="--width: 61%; background: #E8A838;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data-Driven Solutions -->
+    <section class="section section-challenges" id="data-driven">
+        <div class="content">
+            <h2>The Need for Data-Driven Solutions</h2>
+            <p class="lead-text">The psychedelic field faces a fundamental data problem. Enormous resources flow toward understanding safety in highly controlled clinical contexts, while the vast majority of use happens in real-world settings those trials tell us little about.</p>
+
+            <div class="quote quote-with-stat">
+                <span class="quote-stat-number">85%</span>
+                recognize trial results don't translate to real-world safety
+            </div>
+
+            <p class="lead-text">The most fundamental gap: we lack consensus on what we're measuring. What does "safety" actually mean in different contexts? What distinguishes an adverse event from a therapeutically challenging experience? Without agreed-upon definitions, different researchers, practitioners, and programs can't compare their findings or learn from each other's experiences.</p>
+
+            <p class="lead-text">Beyond definitions, basic questions remain unanswered: How often do adverse events really occur? Which populations face higher risks? How do medications and existing conditions interact with psychedelics? What happens in the months and years after use? The absence of systematic data collection means every practitioner, user, and policymaker is making decisions without sufficient evidence.</p>
+
+            <div class="quote-group">
+                <div class="quote quote-fullbleed">"We're not collecting enough real-world data about people as they are... I think we actually know pretty very little about who is using psychedelics in the wild, why they're using, what's happening to them when they use."</div>
+                <div class="quote quote-highlight"><span class="quote-highlight-rule"></span>"[We need to] have a better definition of adverse events and a system for collecting them."</div>
+                <div class="quote">"Uniform data, and that data being transparent and that data being shared. Right now, it feels like there's not really a true system of really seeing what's going on through the numbers."</div>
+            </div>
+
+            <!-- What We Don't Know - in a box -->
+            <div style="margin-top: var(--space-3xl); padding: var(--space-2xl); background: var(--color-bg-subtle); border-radius: var(--radius-lg); border-left: 4px solid var(--color-warning);">
+                <h3 style="margin-top: 0;">What We Don't Know</h3>
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span class="bar-label-text">Insufficient data on comorbidities and contraindications</span>
+                            <span class="bar-label-percent">76%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill" data-value="76%" style="--width: 76%; background: #E85D6C;"></div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span class="bar-label-text">Overly clinical approaches may compromise safety</span>
+                            <span class="bar-label-percent">73%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill" data-value="73%" style="--width: 73%; background: #E8A838;"></div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span class="bar-label-text">Lack of long-term outcomes data</span>
+                            <span class="bar-label-percent">68%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill" data-value="68%" style="--width: 68%; background: #E85D6C;"></div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span class="bar-label-text">Population-specific risk information is missing</span>
+                            <span class="bar-label-percent">54%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill" data-value="54%" style="--width: 54%; background: #C94B5A;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What We Need - in a box -->
+            <div style="margin-top: var(--space-3xl); padding: var(--space-2xl); background: var(--color-bg-subtle); border-radius: var(--radius-lg); border-left: 4px solid var(--color-primary);">
+                <h3 style="margin-top: 0;">What We Need</h3>
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span class="bar-label-text">Robust data systems are essential</span>
+                            <span class="bar-label-percent">92%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill" data-value="92%" style="--width: 92%; background: var(--color-primary);"></div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span class="bar-label-text">Standardized validated measures to track safety</span>
+                            <span class="bar-label-percent">75%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill" data-value="75%" style="--width: 75%; background: var(--color-accent-mint);"></div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span class="bar-label-text">Identify establishing standardized safety metrics as critical 5-year goal</span>
+                            <span class="bar-label-percent">60%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill" data-value="60%" style="--width: 60%; background: var(--color-primary);"></div>
+                        </div>
+                    </div>
+
+                    <div class="bar-item">
+                        <div class="bar-label">
+                            <span class="bar-label-text">Support adverse event registries</span>
+                            <span class="bar-label-percent">58%</span>
+                        </div>
+                        <div class="bar-bg">
+                            <div class="bar-fill" data-value="58%" style="--width: 58%; background: var(--color-accent-mint);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider: Solutions -->
+    <section class="section section-divider section-solutions">
+        <div class="content">
+            <div class="divider-label">Part Three</div>
+            <h2 class="divider-title">The Path Forward: Building Solutions</h2>
+            <div class="divider-line"></div>
+        </div>
+    </section>
+
+    <!-- Three Pillars -->
+    <section class="section section-pillars-dark" id="three-pillars">
+        <div class="content">
+            <h2>Building Solutions: Three Pillars of Safety</h2>
+            <p class="lead-text">Where stakeholders find consensus, a clear architecture for safety emerges. <strong>Education</strong> ensures people know what they're getting into—from the public understanding risks before first use, to practitioners developing the competencies needed to care for vulnerable people safely. <strong>Standards</strong> create accountability and consistency—from consensus definitions of what "safety" and "adverse events" mean to who's qualified to practice, what protocols to follow when things go wrong, and how to track outcomes systematically. <strong>Equitable access</strong> ensures safety for everyone and builds pathways for marginalized communities to access psychedelics.</p>
+
+            <p class="lead-text">All three are necessary. Education alone can't prevent harm without standards to guide practice. Standards mean nothing without education to implement them. And neither matters if only some people can access them.</p>
+
+            <!-- Three Pillars Cards -->
+            <div class="pillar-cards">
+                <div class="pillar-card pillar-card-1">
+                    <span class="pillar-card-number">1</span>
+                    <h3>Education</h3>
+                    <p>Ensuring the public understands risks, practitioners develop core competencies, and harm reduction knowledge reaches everyone who needs it.</p>
+                </div>
+                <div class="pillar-card pillar-card-2">
+                    <span class="pillar-card-number">2</span>
+                    <h3>Standards</h3>
+                    <p>Creating accountability through consensus definitions, qualified practitioner criteria, safety protocols, and systematic outcome tracking.</p>
+                </div>
+                <div class="pillar-card pillar-card-3">
+                    <span class="pillar-card-number">3</span>
+                    <h3>Access &amp; Equity</h3>
+                    <p>Building pathways for marginalized communities and ensuring safety infrastructure serves everyone, not just those who can afford it.</p>
+                </div>
+            </div>
+
+            <!-- Content below pillars -->
+            <div class="split-view" style="margin-top: var(--space-md);">
+                <div class="split-panel">
+                    <ul>
+                        <li>96% see education as foundational</li>
+                        <li>92% want public campaigns</li>
+                        <li>90% say harm reduction must be integrated</li>
+                        <li>73% emphasize professional training</li>
+                    </ul>
+                </div>
+
+                <div class="split-panel">
+                    <ul>
+                        <li>95% support evidence-based protocols</li>
+                        <li>94% emphasize standardization in regulated settings</li>
+                        <li>78% support comprehensive data collection</li>
+                        <li>65% want ethical codes with enforcement</li>
+                    </ul>
+                </div>
+
+                <div class="split-panel">
+                    <ul>
+                        <li>94% prioritize equitable access</li>
+                        <li>89% emphasize affordable care models</li>
+                        <li>85% support culturally competent services</li>
+                        <li>76% support community-led resources</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Success Looks Like -->
+    <section class="section section-solutions section-success-bg" id="success">
+        <div class="content">
+            <h2>What Success Looks Like</h2>
+            <p class="lead-text">When asked to envision success, stakeholders describe a mature, responsible field. One where seeking psychedelic support doesn't require choosing between legal risk and safety. Where practitioners are trained, accountable, and supported. Where communities lead their own healing rather than having solutions imposed. Where data guides decisions, and mistakes become learning opportunities rather than catastrophes.</p>
+
+            <!-- Timeline Visualization -->
+            <svg viewBox="0 0 800 140" style="max-width: 100%; height: auto; margin: var(--space-2xl) 0;">
+                <!-- Gradient definition -->
+                <defs>
+                    <linearGradient id="timeline-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4A7C59;stop-opacity:1" />
+                        <stop offset="33%" style="stop-color:#4A7C59;stop-opacity:1" />
+                        <stop offset="33.1%" style="stop-color:#D97236;stop-opacity:1" />
+                        <stop offset="66%" style="stop-color:#D97236;stop-opacity:1" />
+                        <stop offset="66.1%" style="stop-color:#6B7AA1;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#6B7AA1;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Title -->
+                <text x="400" y="25" font-size="16" font-weight="bold" fill="var(--color-text)" text-anchor="middle">From Current Reality to Aspirational Future</text>
+
+                <!-- Continuous timeline bar with gradient -->
+                <rect x="50" y="65" width="700" height="10" fill="url(#timeline-gradient)"/>
+
+                <!-- Arrow head at the end -->
+                <polygon points="750,65 750,75 765,70" fill="#6B7AA1"/>
+
+                <!-- Labels underneath -->
+                <text x="165" y="105" font-size="14" font-weight="bold" fill="#4A7C59" text-anchor="middle">Immediate Wins</text>
+                <text x="400" y="105" font-size="14" font-weight="bold" fill="#D97236" text-anchor="middle">Medium-term Goals</text>
+                <text x="635" y="105" font-size="14" font-weight="bold" fill="#6B7AA1" text-anchor="middle">Long-term Vision</text>
+            </svg>
+
+            <h3>Immediate Wins</h3>
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Want crisis support infrastructure</span>
+                        <span class="bar-label-percent">83%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="83%" style="--width: 83%; background: #4A7C59;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Prioritize practitioner accountability systems</span>
+                        <span class="bar-label-percent">81%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="81%" style="--width: 81%; background: #5A9169;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Expect quality integration support as standard</span>
+                        <span class="bar-label-percent">78%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="78%" style="--width: 78%; background: #90C695;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Medium-term Goals</h3>
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">See decriminalization reducing harm</span>
+                        <span class="bar-label-percent">98%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="98%" style="--width: 98%; background: #D97236;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Expect culturally responsive care as norm</span>
+                        <span class="bar-label-percent">94%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="94%" style="--width: 94%; background: #E68A4F;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">View insurance coverage as crucial for access</span>
+                        <span class="bar-label-percent">15%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="15%" style="--width: 15%; background: #F4A460;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Long-term Vision</h3>
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Envision universal psychedelic literacy</span>
+                        <span class="bar-label-percent">92%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="92%" style="--width: 92%; background: #6B7AA1;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Want safe, tested supply universally available</span>
+                        <span class="bar-label-percent">72%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="72%" style="--width: 72%; background: #7B8BAD;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Envision evidence-based policy replacing prohibition</span>
+                        <span class="bar-label-percent">71%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="71%" style="--width: 71%; background: #8B9BBD;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Economic Reality -->
+    <section class="section section-solutions section-economic-bg" id="economic">
+        <div class="content">
+            <h2>The Economic Reality: Resourcing the Path Forward</h2>
+            <p class="lead-text">Safety infrastructure is an investment, not an expense. Training practitioners, building data systems, funding harm reduction—these cost money upfront but prevent the far greater costs of preventable harm, public backlash, and lost therapeutic potential. Yet foundational safety infrastructure remains underfunded while use rapidly expands.</p>
+
+            <!-- Cost-Benefit Weight Comparison -->
+            <div class="weight-comparison">
+                <div class="weight-card weight-investment">
+                    <div class="weight-card-icon">&uarr;</div>
+                    <h4>Upfront Investment</h4>
+                    <ul>
+                        <li>Training practitioners</li>
+                        <li>Building data systems</li>
+                        <li>Funding harm reduction</li>
+                    </ul>
+                    <div class="weight-tag">Manageable</div>
+                </div>
+                <div class="weight-vs">
+                    <span>vs</span>
+                </div>
+                <div class="weight-card weight-inaction">
+                    <div class="weight-card-icon">&darr;</div>
+                    <h4>Costs of Inaction</h4>
+                    <ul>
+                        <li>Preventable harm to people</li>
+                        <li>Public backlash &amp; lost trust</li>
+                        <li>Lost therapeutic potential</li>
+                    </ul>
+                    <div class="weight-tag weight-tag-heavy">Far Greater</div>
+                </div>
+            </div>
+
+            <p class="lead-text">The field stands at a rare juncture: we know what's needed before systems become entrenched. While 84% say government funding is essential and 66% worry commercialization pressures will compromise safety, 46% see potential in hybrid models combining public investment in foundational infrastructure with responsible private participation. The priorities are clear; what's needed is the collective will to resource them.</p>
+
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Worry profit motives will compromise safety</span>
+                        <span class="bar-label-percent">66%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="66%" style="--width: 66%; background: #E8A838;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Report staffing shortages limiting safety initiatives</span>
+                        <span class="bar-label-percent">62%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="62%" style="--width: 62%; background: #C48420;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Fear commercial interests dominate over patient wellbeing</span>
+                        <span class="bar-label-percent">53%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="53%" style="--width: 53%; background: #E85D6C;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">See opportunity in hybrid public-private models</span>
+                        <span class="bar-label-percent">46%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="46%" style="--width: 46%; background: var(--color-primary);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaboration -->
+    <section class="section section-solutions" id="collaboration">
+        <div class="content">
+            <h2>Collaboration is Essential</h2>
+            <p class="lead-text">Perhaps the most unanimous finding: no one can solve this alone. Not the researchers, not the practitioners, not the advocates, not the funders. PSI's Psychedelic Safety Summit represented a rare moment when the ecosystem's diverse voices gathered with shared purpose.</p>
+
+            <!-- The Table: Collaboration Visualization -->
+            <div class="collab-stat">
+                <span class="collab-stat-number">99%</span>
+                <span class="collab-stat-text">of stakeholders say<br><strong>no one can solve this alone</strong></span>
+            </div>
+
+            <p class="collab-subhead">Who needs to be at the table</p>
+            <div class="collab-roster">
+                <div class="roster-card" style="--accent: #317E6D;">
+                    <span class="roster-role">Researchers</span>
+                    <span class="roster-brings">Evidence &amp; methodology</span>
+                </div>
+                <div class="roster-card" style="--accent: #E8A838;">
+                    <span class="roster-role">Practitioners</span>
+                    <span class="roster-brings">Clinical wisdom &amp; direct care</span>
+                </div>
+                <div class="roster-card" style="--accent: #6DB5A3;">
+                    <span class="roster-role">Advocates</span>
+                    <span class="roster-brings">Public voice &amp; access equity</span>
+                </div>
+                <div class="roster-card" style="--accent: #6B7AA1;">
+                    <span class="roster-role">Policymakers</span>
+                    <span class="roster-brings">Legal frameworks &amp; protection</span>
+                </div>
+                <div class="roster-card" style="--accent: #C48420;">
+                    <span class="roster-role">Funders</span>
+                    <span class="roster-brings">Resources &amp; sustainability</span>
+                </div>
+                <div class="roster-card" style="--accent: #317E6D;">
+                    <span class="roster-role">Community Leaders</span>
+                    <span class="roster-brings">Trust &amp; lived experience</span>
+                </div>
+            </div>
+
+            <div class="collab-punchline">
+                <p>The Safety Summit proved it's possible. The question is whether the field can sustain it.</p>
+            </div>
+
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Say collaboration is essential</span>
+                        <span class="bar-label-percent">99%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="99%" style="--width: 99%; background: var(--color-primary);"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Want structured working groups to emerge</span>
+                        <span class="bar-label-percent">93%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="93%" style="--width: 93%; background: var(--color-accent-mint);"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Worry ego and competition could derail progress</span>
+                        <span class="bar-label-percent">51%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="51%" style="--width: 51%; background: #E8A838;"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Fear lack of unified vision</span>
+                        <span class="bar-label-percent">39%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" data-value="39%" style="--width: 39%; background: #6B7AA1;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Research -->
+    <section class="section" style="background: #F0F3F5;">
+        <div class="content">
+            <h2 style="text-align: center;">Explore Our Other Research</h2>
+            <p style="font-size: var(--font-size-lg); color: var(--color-text-muted); max-width: 700px; margin: 1rem auto 2.5rem; line-height: 1.8; text-align: center;">These stakeholder interviews are part of a broader investigation into psychedelic safety in Colorado. Dive deeper with these companion studies.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+                <a href="/" class="related-research-card">
+                    <h3 style="color: var(--color-primary); font-size: 1.15rem; margin-bottom: 0.75rem;">Market Research Report</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin: 0;">Data-driven insights on pricing, access, the underground vs. licensed divide, and the emerging Colorado psychedelic ecosystem.</p>
+                </a>
+                <a href="/community-leaders-scrolly/" class="related-research-card">
+                    <h3 style="color: var(--color-primary); font-size: 1.15rem; margin-bottom: 0.75rem;">Community Leaders Survey</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin: 0;">Safety challenges and a vision for safer practices from 40 community and student leaders.</p>
+                </a>
+                <a href="/underground-manufacturers-scrolly/" class="related-research-card">
+                    <h3 style="color: var(--color-primary); font-size: 1.15rem; margin-bottom: 0.75rem;">Underground Manufacturers</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin: 0;">Product safety challenges from underground supply networks — consumer impact, education gaps, and building a responsible industry.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section section-final" id="call-to-action">
+        <div class="content">
+            <h2>The Call to Action</h2>
+            <p class="lead-text">The stakeholders have spoken with remarkable clarity. They've identified the problems, proposed solutions, and outlined a path forward.</p>
+
+            <p class="lead-text">Now comes the opportunity: turning insight into action, consensus into collaboration, vision into reality. Every delay means more preventable harm and more missed opportunities for healing.</p>
+
+            <p class="lead-text" style="font-weight: var(--font-weight-semibold); margin-top: 2rem;">This isn't about perfection—it's about progress. And progress starts now.</p>
+
+            <p class="cta-summary">151 stakeholders across the psychedelic ecosystem spoke with remarkable clarity. They identified the problems, proposed solutions, and outlined a path forward. The question is no longer what to do. The question is whether the field will act.</p>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p>PSI is committed to supporting psychedelic safety through research, education, and advocacy.</p>
+                <p style="font-size: var(--font-size-sm); opacity: 0.7; margin-top: 2rem;">This report is based on 151 stakeholder interviews conducted by PSI</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Scroll progress bar
+        function updateScrollProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+
+            // Update sidebar progress too
+            const sidebarProgress = document.getElementById('sidebarProgress');
+            if (sidebarProgress) {
+                sidebarProgress.style.height = scrollPercent + '%';
+            }
+        }
+
+        window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px'
+        };
+
+        // Animated number counter
+        function animateNumber(el) {
+            if (el.dataset.animated) return;
+            el.dataset.animated = 'true';
+            const text = el.textContent.trim();
+            const match = text.match(/^(\d+)/);
+            if (!match) return;
+            const target = parseInt(match[1]);
+            const suffix = text.replace(/^\d+/, '');
+            const duration = 1500;
+            const startTime = performance.now();
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(target * eased);
+                el.textContent = current + suffix;
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            requestAnimationFrame(update);
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Animate bar charts
+                    const barFills = entry.target.querySelectorAll('.bar-fill');
+                    barFills.forEach(bar => {
+                        bar.classList.add('animate');
+                    });
+
+                    // Animate stat numbers
+                    const stats = entry.target.querySelectorAll('.stat-large');
+                    stats.forEach(stat => {
+                        animateNumber(stat);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe all content sections
+        document.querySelectorAll('.content').forEach(content => {
+            observer.observe(content);
+        });
+
+        // Sidebar functionality
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('visible');
+        }
+
+        // Active nav tracking
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.sidebar nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Close sidebar when clicking a link (mobile)
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    document.getElementById('sidebar').classList.remove('visible');
+                }
+            });
+        });
+
+        // Add inner labels to wide bar fills
+        document.querySelectorAll('.bar-fill').forEach(bar => {
+            const value = bar.getAttribute('data-value');
+            if (value) {
+                const pct = parseInt(value);
+                if (pct >= 35) {
+                    const label = document.createElement('span');
+                    label.className = 'bar-inner-label';
+                    label.textContent = value;
+                    bar.appendChild(label);
+                }
+            }
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            const sidebar = document.getElementById('sidebar');
+            const toggle = document.querySelector('.sidebar-toggle');
+            if (sidebar.classList.contains('visible') &&
+                !sidebar.contains(e.target) &&
+                !toggle.contains(e.target) &&
+                window.innerWidth <= 768) {
+                sidebar.classList.remove('visible');
+            }
+        });
+
+    </script>
+</body>
+</html>

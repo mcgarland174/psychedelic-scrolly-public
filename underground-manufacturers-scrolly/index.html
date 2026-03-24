@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Product Safety Challenges: Underground Manufacturers Survey</title>
+    <meta name="description" content="Understanding product safety challenges through surveys of underground manufacturers — perspectives on consumer impact, education gaps, and building a responsible industry.">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FTX4SK993B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FTX4SK993B');
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/garnett" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Brand Colors */
+            --color-primary: #317E6D;
+            --color-primary-dark: #133931;
+            --color-primary-light: #48A5CC;
+
+            /* Semantic Colors */
+            --color-success: #317E6D;
+            --color-success-dark: #1F5F51;
+            --color-warning: #D9994F;
+            --color-warning-dark: #9B6D3F;
+            --color-warning-light: #FAE6CC;
+            --color-error: #DE0A32;
+            --color-error-dark: #A87548;
+            --color-info: #48A5CC;
+            --color-info-dark: #317E6D;
+
+            /* Neutral Colors */
+            --color-text: #2B180A;
+            --color-text-dark: #2C3E50;
+            --color-text-muted: #736C66;
+            --color-text-light: #736C66;
+            --color-bg: #F7F0E8;
+            --color-bg-alt: #FFFFFF;
+            --color-bg-subtle: #FDF6EE;
+            --color-border: #EFE5DE;
+            --color-border-muted: #E6C8A1;
+
+            /* Accent Colors */
+            --color-accent-mint: #6DB5A3;
+
+            /* Typography Scale */
+            --font-size-xs: 0.7rem;
+            --font-size-sm: 0.75rem;
+            --font-size-base: 0.85rem;
+            --font-size-lg: 0.95rem;
+            --font-size-xl: 1rem;
+            --font-size-2xl: 1.2rem;
+            --font-size-3xl: 1.4rem;
+            --font-size-4xl: 1.8rem;
+            --font-size-5xl: 2.4rem;
+            --font-size-6xl: 2.8rem;
+
+            /* Font Weights */
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+
+            /* Spacing Scale */
+            --space-xs: 0.4rem;
+            --space-sm: 0.8rem;
+            --space-md: 1.2rem;
+            --space-lg: 1.6rem;
+            --space-xl: 2.4rem;
+            --space-2xl: 3.2rem;
+            --space-3xl: 4.8rem;
+
+            /* Border Radius */
+            --radius-xs: 6px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 50px;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-base: 0.3s ease;
+            --transition-slow: 0.8s ease;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.75;
+            color: var(--color-text);
+            background: var(--color-bg);
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-2xl) 2rem;
+            position: relative;
+        }
+
+        .content {
+            max-width: 850px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 3rem 0 5rem 0;
+        }
+
+        .hero .content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 2rem 1rem;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-indicator:hover {
+            color: rgba(255, 255, 255, 1);
+            transform: translateX(-50%) translateY(-4px);
+        }
+
+        .scroll-indicator-text {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        .scroll-indicator-arrow {
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        h1 {
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            font-size: var(--font-size-5xl);
+            margin-bottom: var(--space-sm);
+            line-height: 1.4;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        h2 {
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--space-lg);
+            margin-top: var(--space-2xl);
+            color: var(--color-text);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        h3 {
+            font-family: 'Garnett', Georgia, 'Times New Roman', serif;
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-md);
+            margin-top: var(--space-lg);
+            color: var(--color-primary);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: var(--font-size-5xl);
+        }
+
+        .hero h2 {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-normal);
+            margin-top: var(--space-md);
+        }
+
+        p {
+            font-size: var(--font-size-base);
+            margin-bottom: var(--space-md);
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        .lead-text {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-normal);
+            line-height: 1.7;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: var(--font-size-lg);
+        }
+
+        .stat-large {
+            font-size: var(--font-size-6xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin: var(--space-lg) 0;
+            text-align: center;
+        }
+
+        .stat-description {
+            font-size: var(--font-size-xl);
+            color: var(--color-primary);
+            font-weight: var(--font-weight-semibold);
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        .bar-chart {
+            margin: var(--space-lg) 0;
+        }
+
+        .bar-item {
+            margin: var(--space-md) 0;
+        }
+
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            font-size: var(--font-size-base);
+            color: var(--color-text);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .bar-label-text {
+            flex: 1;
+        }
+
+        .bar-label-percent {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            min-width: 60px;
+            text-align: right;
+        }
+
+        .bar-bg {
+            background: rgba(203, 213, 217, 0.15);
+            height: 45px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: var(--color-primary);
+            border-radius: var(--radius-sm);
+            width: 0;
+            transition: width 1.5s ease;
+            display: flex;
+            align-items: center;
+            padding-left: var(--space-sm);
+            color: white;
+            font-weight: var(--font-weight-semibold);
+            box-shadow: 0 2px 6px rgba(43, 24, 10, 0.08);
+        }
+
+        .visible .bar-fill {
+            width: var(--width);
+        }
+
+        .bar-fill:hover {
+            transform: scaleX(1.01);
+            box-shadow: 0 3px 8px rgba(43, 24, 10, 0.12);
+        }
+
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: var(--space-sm);
+            margin: var(--space-xl) auto;
+            max-width: 600px;
+        }
+
+        .icon {
+            width: 100%;
+            padding-bottom: 100%;
+            position: relative;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+        }
+
+        .icon svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .icon.highlighted {
+            opacity: 1;
+        }
+
+        .quote-box {
+            background: var(--color-bg-alt);
+            border-left: 6px solid var(--color-primary);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            font-size: var(--font-size-lg);
+            font-style: italic;
+            color: var(--color-text-muted);
+            box-shadow: 0 2px 8px rgba(43, 24, 10, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            line-height: 1.6;
+        }
+
+        .quote-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(43, 24, 10, 0.15);
+        }
+
+        .quote-attribution {
+            text-align: right;
+            margin-top: 1rem;
+            font-style: normal;
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+        }
+
+        .split-view {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+            margin: var(--space-xl) 0;
+        }
+
+        .split-panel {
+            background: var(--color-bg-alt);
+            padding: var(--space-xl);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .split-panel:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .split-panel h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            font-size: var(--font-size-2xl);
+        }
+
+        .split-panel ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .split-panel li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: var(--font-size-base);
+        }
+
+        .split-panel li:last-child {
+            border-bottom: none;
+        }
+
+        .split-panel li:before {
+            content: "→ ";
+            color: var(--color-primary);
+            font-weight: var(--font-weight-bold);
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            margin: var(--space-xl) 0;
+        }
+
+        .methodology {
+            background: var(--color-bg-alt);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            margin: var(--space-lg) 0;
+        }
+
+        .methodology h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .checklist {
+            background: var(--color-bg-subtle);
+            padding: var(--space-xl);
+            border-radius: var(--radius-md);
+            margin: var(--space-xl) 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .checklist h4 {
+            font-weight: var(--font-weight-bold);
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+            font-size: var(--font-size-xl);
+        }
+
+        .checklist-item {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-left: 4px solid var(--color-error);
+            font-size: var(--font-size-base);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .checklist-item:before {
+            content: "✗ ";
+            color: var(--color-error);
+            font-weight: var(--font-weight-bold);
+            margin-right: 0.5rem;
+        }
+
+        .venn-diagram {
+            margin: var(--space-2xl) auto;
+            text-align: center;
+        }
+
+        .venn-title {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-xl);
+            color: var(--color-primary);
+            font-weight: var(--font-weight-bold);
+        }
+
+        .venn-circles {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 200px;
+            margin: 2rem 0;
+        }
+
+        .venn-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: var(--font-weight-bold);
+            color: white;
+            position: absolute;
+            font-size: var(--font-size-lg);
+        }
+
+        .venn-circle:nth-child(1) {
+            background: rgba(49, 126, 109, 0.6);
+            left: 30%;
+        }
+
+        .venn-circle:nth-child(2) {
+            background: rgba(204, 141, 55, 0.6);
+            left: 45%;
+        }
+
+        .venn-circle:nth-child(3) {
+            background: rgba(222, 10, 50, 0.6);
+            left: 60%;
+        }
+
+        .flow-chart {
+            margin: var(--space-2xl) 0;
+        }
+
+        .flow-items {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+        }
+
+        .flow-item {
+            background: var(--color-primary);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            min-width: 150px;
+            text-align: center;
+            color: white;
+            font-weight: var(--font-weight-semibold);
+        }
+
+        .flow-arrow {
+            color: var(--color-primary);
+            font-size: 2rem;
+            font-weight: var(--font-weight-bold);
+        }
+
+        .key-takeaway {
+            padding: var(--space-lg) 0 var(--space-lg) var(--space-xl);
+            border-left: 4px solid rgba(255, 255, 255, 0.3);
+            margin: var(--space-xl) 0;
+        }
+
+        .key-takeaway h3 {
+            color: white;
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-2xl);
+        }
+
+        .key-takeaway ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .key-takeaway li {
+            padding: 0.6rem 0;
+            font-size: var(--font-size-base);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .key-takeaway li:before {
+            content: "✓ ";
+            margin-right: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: var(--font-weight-bold);
+        }
+
+        .case-study-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: var(--space-xl);
+            border-radius: var(--radius-md);
+            margin: var(--space-2xl) 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .case-study-box h3 {
+            color: var(--color-primary) !important;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: var(--font-size-3xl);
+        }
+
+        .case-study-box p {
+            color: var(--color-text-dark) !important;
+            line-height: 1.8;
+        }
+
+        .section-final {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+        }
+
+        .section-final h2 {
+            color: white;
+        }
+
+        .section-final p {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .logo-credit {
+            font-size: var(--font-size-sm);
+            opacity: 0.8;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: var(--font-size-4xl);
+            }
+
+            h2 {
+                font-size: var(--font-size-3xl);
+            }
+
+            .split-view {
+                grid-template-columns: 1fr;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .icon-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            .flow-items {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+
+            .venn-circles {
+                flex-direction: column;
+                height: auto;
+                gap: 1rem;
+            }
+
+            .venn-circle {
+                position: relative;
+                left: auto !important;
+            }
+        }
+
+        .related-research-card {
+            display: block;
+            text-decoration: none;
+            background: var(--color-bg-subtle);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm, 8px);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .related-research-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 4px 16px rgba(49, 126, 109, 0.12);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="section hero">
+        <div class="content">
+            <h1>Understanding Product Safety Challenges</h1>
+            <h2>Survey Results from Hard-to-Access Supply Networks</h2>
+            <p style="margin-top: 2rem;">PSI surveyed 20 underground manufacturers, which revealed significant concerns about product safety and authenticity in the psychedelic marketplace.</p>
+            <p class="logo-credit" style="margin-top: 2rem;">Thank you to PsiloSafe for their collaboration and support in collecting these responses.</p>
+        </div>
+        <div class="scroll-indicator" onclick="document.querySelector('.section:nth-of-type(2)').scrollIntoView({behavior: 'smooth'})">
+            <span class="scroll-indicator-text">Scroll to explore</span>
+            <span class="scroll-indicator-arrow">↓</span>
+        </div>
+    </section>
+
+    <!-- Understanding the Landscape -->
+    <section class="section">
+        <div class="content">
+            <h2>Understanding the Landscape: Underground vs. Regulated</h2>
+
+            <div class="two-col">
+                <div class="methodology" style="background: rgba(49, 126, 109, 0.1); border: 2px solid var(--color-primary);">
+                    <h3 style="color: var(--color-primary-dark);">Underground Manufacturers</h3>
+                    <p style="color: var(--color-primary-dark);">Operating in the gray market—community or ceremonial spaces outside formal regulatory frameworks. Similarly, underground therapeutic practitioners offering one-on-one sessions exist in this same gray area, providing individualized support without formal regulatory oversight.</p>
+                </div>
+                <div class="methodology" style="background: var(--color-warning-light); border: 2px solid var(--color-warning-dark);">
+                    <h3 style="color: var(--color-warning-dark);">Regulated Manufacturers</h3>
+                    <p style="color: var(--color-warning-dark);">Operating in jurisdictions where psychedelics are legal for medical or therapeutic use, following state regulations on manufacturing, testing, and labeling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Erosion Section -->
+    <section class="section">
+        <div class="content">
+            <h2>Perspectives from Those on the Ground</h2>
+            <p class="lead-text">Among the 20 underground manufacturers surveyed:</p>
+
+            <div class="stat-large">95%</div>
+            <p class="stat-description">report erosion of trust in psychedelic products</p>
+
+            <div class="icon-grid" id="trustGrid">
+                <!-- Icons generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Integrity Concerns -->
+    <section class="section">
+        <div class="content">
+            <h2>What Underground Manufacturers Are Seeing</h2>
+            <h3>Product Integrity Concerns</h3>
+            <p class="lead-text">85% of manufacturers identified authenticity issues in the market:</p>
+
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Inconsistent dosing across various products</span>
+                        <span class="bar-label-percent">94%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 94%; background: var(--color-primary);"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Competitors using false or misleading labels</span>
+                        <span class="bar-label-percent">76%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 76%; background: var(--color-warning);"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Products with undisclosed adulterants</span>
+                        <span class="bar-label-percent">30%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 30%; background: var(--color-accent-mint);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                "Undisclosed and dangerous additives in products. Falsely disclosed products (saying Amanita is an ingredient but no amanita present etc)."
+                <div class="quote-attribution">— Underground manufacturer</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact on Consumers -->
+    <section class="section">
+        <div class="content">
+            <h2>Impact on Consumers and Communities</h2>
+            <p class="lead-text">These product integrity issues have real consequences. Manufacturers report witnessing concerning outcomes in their communities:</p>
+
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">See direct safety risks to consumers</span>
+                        <span class="bar-label-percent">61%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 61%; background: var(--color-warning);"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Observe mis-dosing incidents in their communities</span>
+                        <span class="bar-label-percent">61%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 61%; background: var(--color-warning-dark);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="lead-text" style="margin-top: 2rem;">Multiple manufacturers express concern about how bad actors affect the entire industry, noting how these issues ripple outward:</p>
+
+            <div class="flow-chart">
+                <div class="flow-items">
+                    <div class="flow-item">Product Issues</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item">Impact on Consumers</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item">Impact on Communities</div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item">Impact on Legalization Efforts</div>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                "The mushroom community is trying so hard for legalization to pass... Injuries or deaths that may possibly occur can be attributed to psilocybin directly."
+                <div class="quote-attribution">— Underground manufacturer</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions -->
+    <section class="section">
+        <div class="content" style="max-width: 950px;">
+            <h2>Solutions from Within the Industry: Manufacturers' Recommendations</h2>
+            <p class="lead-text">Those working in the underground market have clear ideas about what would improve safety:</p>
+
+            <div class="two-col">
+                <div class="split-panel" style="background: var(--color-primary); color: white;">
+                    <h3 style="color: white;">Product Standards</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: white; border-bottom-color: rgba(255,255,255,0.3); padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.3);">→ Standardized testing protocols (67%)</li>
+                        <li style="color: white; border-bottom-color: rgba(255,255,255,0.3); padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.3);">→ Accurate labeling requirements (53%)</li>
+                        <li style="color: white; border-bottom-color: rgba(255,255,255,0.3); padding: 0.75rem 0;">→ Manufacturing quality controls (33%)</li>
+                    </ul>
+                </div>
+                <div class="split-panel" style="background: var(--color-primary); color: white;">
+                    <h3 style="color: white;">Accountability Systems</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: white; border-bottom-color: rgba(255,255,255,0.3); padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.3);">→ Third-party certification (50%)</li>
+                        <li style="color: white; border-bottom-color: rgba(255,255,255,0.3); padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.3);">→ Industry self-regulation (50%)</li>
+                        <li style="color: white; border-bottom-color: rgba(255,255,255,0.3); padding: 0.75rem 0;">→ Legalization essential for addressing safety (38%)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                "Regulations on proper labeling procedures. Forums, articles and blogs to warn and educate people."
+                <div class="quote-attribution">— Manufacturer recommendation</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Gap -->
+    <section class="section">
+        <div class="content">
+            <h2>The Education Gap: What's Missing from the Market</h2>
+
+            <p style="text-align: center;"><span class="stat-large" style="display: inline; margin: 0;">75%</span> <span class="stat-description" style="display: inline;">of manufacturers identify critical gaps in consumer education</span></p>
+
+            <div class="checklist" style="background: var(--color-warning-light);">
+                <h4 style="color: var(--color-warning-dark);">Essential Information Often Missing:</h4>
+                <div class="checklist-item" style="background: var(--color-bg-alt);">Limited information on set and setting</div>
+                <div class="checklist-item" style="background: var(--color-bg-alt);">Absence of proper dosing guidance</div>
+                <div class="checklist-item" style="background: var(--color-bg-alt);">Lack of informed consent practices (80%)</div>
+                <div class="checklist-item" style="background: var(--color-bg-alt);">Missing harm reduction resources</div>
+            </div>
+
+            <p class="lead-text">Manufacturers recognize that even well-intentioned producers often fail to provide adequate educational materials with their products.</p>
+
+            <h3>How Manufacturers Want to Address This</h3>
+            <p class="lead-text">86% believe comprehensive consumer education is essential to improving safety:</p>
+            <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <li>Creation of forums, guides, and safety resources</li>
+                <li>Integration of harm reduction principles</li>
+                <li>Clear communication about preparation and risk factors</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Shared Vision -->
+    <section class="section">
+        <div class="content">
+            <h2>The Bigger Picture: A Shared Vision for Safety</h2>
+            <p class="lead-text">Manufacturers emphasize the need for comprehensive approaches:</p>
+
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Call for evidence-based practices over marketing hype</span>
+                        <span class="bar-label-percent">92%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 92%; background: var(--color-warning);"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Want clear standards for educating consumers about potency and dosing</span>
+                        <span class="bar-label-percent">71%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 71%; background: var(--color-warning-dark);"></div>
+                    </div>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar-label">
+                        <span class="bar-label-text">Support third-party testing certification</span>
+                        <span class="bar-label-percent">53%</span>
+                    </div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="--width: 53%; background: var(--color-accent-mint);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="venn-diagram">
+                <p class="venn-title">Safety requires the intersection of:</p>
+                <div class="venn-circles">
+                    <div class="venn-circle">Testing & Certification</div>
+                    <div class="venn-circle">Education</div>
+                    <div class="venn-circle">Harm Reduction</div>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                "A meaningful strategy for psychedelic public health and safety should prioritize education, harm reduction, and accessibility... Public health efforts should be centered around transparency, community support, and reducing stigma."
+                <div class="quote-attribution">— Underground manufacturer</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges -->
+    <section class="section">
+        <div class="content">
+            <h2>Challenges and Opportunities: What Stands in the Way</h2>
+            <p class="lead-text">Manufacturers identify key obstacles:</p>
+
+            <div class="two-col">
+                <div class="methodology">
+                    <h3>Structural Barriers</h3>
+                    <ul style="list-style: disc; margin-left: 1.5rem;">
+                        <li>Lack of regulatory framework makes standardization difficult</li>
+                        <li>No unified certifying body for establishing best practices and maintaining accountability</li>
+                        <li>Need for confidential certification given legal risks</li>
+                    </ul>
+                </div>
+                <div class="methodology">
+                    <h3>Cultural Barriers</h3>
+                    <ul style="list-style: disc; margin-left: 1.5rem;">
+                        <li>Fear of legal repercussions prevents open dialogue</li>
+                        <li>Bad actors undermining responsible manufacturers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="lead-text" style="margin-top: 2rem;">Manufacturers are clear about what's missing:</p>
+
+            <div class="quote-box">
+                "Certifying body who can keep confidentiality while reviewing our claims on our packaging."
+                <div class="quote-attribution">— Underground manufacturer</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Path Forward -->
+    <section class="section">
+        <div class="content">
+            <h2>The Path Forward</h2>
+            <p class="lead-text">Despite operating underground, manufacturers show commitment to:</p>
+            <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <li>Improving product safety standards</li>
+                <li>Supporting consumer education</li>
+                <li>Building trust within communities</li>
+                <li>Contributing to responsible industry development</li>
+            </ul>
+
+            <!-- Horizontal Timeline -->
+            <div style="margin: var(--space-3xl) 0; padding: var(--space-xl); background: var(--color-bg-subtle); border-radius: var(--radius-md);">
+                <h3 style="text-align: center; color: var(--color-primary); margin-bottom: 2rem; font-size: 1.8rem;">Building a Safer Future</h3>
+                <div style="max-width: 1400px; margin: 0 auto; padding: 60px;">
+
+                    <!-- Circles and Boxes (Above Timeline) -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 0; gap: 20px;">
+
+                        <!-- Current State Circle -->
+                        <div style="width: 25%; display: flex; justify-content: center;">
+                            <div style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--color-warning-dark); background: var(--color-warning-light); display: flex; align-items: center; justify-content: center; font-weight: var(--font-weight-bold); color: var(--color-warning-dark); font-size: 1rem; text-align: center; padding: 10px;">Current State</div>
+                        </div>
+
+                        <!-- Industry Self-Regulation Box -->
+                        <div style="width: 25%; display: flex; justify-content: center;">
+                            <div style="background: white; padding: 1.25rem; border-radius: var(--radius-sm); border-left: 5px solid var(--color-accent-mint); box-shadow: 0 4px 12px rgba(0,0,0,0.12); max-width: 290px;">
+                                <div style="font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1rem;">Industry Self-Regulation</div>
+                                <p style="margin: 0; color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.4;">Testing protocols, certifications</p>
+                            </div>
+                        </div>
+
+                        <!-- Consumer Education Box -->
+                        <div style="width: 25%; display: flex; justify-content: center;">
+                            <div style="background: white; padding: 1.25rem; border-radius: var(--radius-sm); border-left: 5px solid var(--color-primary); box-shadow: 0 4px 12px rgba(0,0,0,0.12); max-width: 290px;">
+                                <div style="font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1rem;">Consumer Education</div>
+                                <p style="margin: 0; color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.4;">Harm reduction resources, dosing guidance</p>
+                            </div>
+                        </div>
+
+                        <!-- Desired Future Circle -->
+                        <div style="width: 25%; display: flex; justify-content: center;">
+                            <div style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--color-primary-dark); background: var(--color-primary); display: flex; align-items: center; justify-content: center; font-weight: var(--font-weight-bold); color: white; font-size: 1rem; text-align: center; padding: 10px;">Desired Future</div>
+                        </div>
+
+                    </div>
+
+                    <!-- Connector Lines and Diamonds -->
+                    <div style="display: flex; justify-content: space-between; position: relative; height: 80px;">
+
+                        <!-- Current State Connector -->
+                        <div style="width: 25%; position: relative;">
+                            <div style="position: absolute; left: 50%; top: 0; width: 3px; height: 70px; background: var(--color-warning-dark); transform: translateX(-50%);"></div>
+                            <div style="position: absolute; bottom: 0; left: 50%; width: 18px; height: 18px; background: var(--color-warning); transform: translateX(-50%) rotate(45deg); border: 3px solid var(--color-warning-dark);"></div>
+                        </div>
+
+                        <!-- Industry Self-Regulation Connector -->
+                        <div style="width: 25%; position: relative;">
+                            <div style="position: absolute; left: 50%; top: 0; width: 3px; height: 70px; background: var(--color-accent-mint); transform: translateX(-50%);"></div>
+                            <div style="position: absolute; bottom: 0; left: 50%; width: 18px; height: 18px; background: var(--color-accent-mint); transform: translateX(-50%) rotate(45deg); border: 3px solid var(--color-primary);"></div>
+                        </div>
+
+                        <!-- Consumer Education Connector -->
+                        <div style="width: 25%; position: relative;">
+                            <div style="position: absolute; left: 50%; top: 0; width: 3px; height: 70px; background: var(--color-primary); transform: translateX(-50%);"></div>
+                            <div style="position: absolute; bottom: 0; left: 50%; width: 18px; height: 18px; background: var(--color-primary); transform: translateX(-50%) rotate(45deg); border: 3px solid var(--color-primary-dark);"></div>
+                        </div>
+
+                        <!-- Desired Future Connector -->
+                        <div style="width: 25%; position: relative;">
+                            <div style="position: absolute; left: 50%; top: 0; width: 3px; height: 70px; background: var(--color-primary-dark); transform: translateX(-50%);"></div>
+                            <div style="position: absolute; bottom: 0; left: 50%; width: 18px; height: 18px; background: var(--color-primary); transform: translateX(-50%) rotate(45deg); border: 3px solid var(--color-primary-dark);"></div>
+                        </div>
+
+                    </div>
+
+                    <!-- Timeline Bar -->
+                    <div style="height: 12px; background: linear-gradient(to right, var(--color-warning) 0%, var(--color-warning) 25%, var(--color-accent-mint) 50%, var(--color-primary) 75%, var(--color-primary-dark) 100%); border-radius: var(--radius-xs); margin: -6px 0 20px 0;"></div>
+
+                    <!-- Description Text Below Timeline -->
+                    <div style="display: flex; justify-content: space-between;">
+
+                        <!-- Current State Text -->
+                        <div style="width: 25%; display: flex; justify-content: center;">
+                            <p style="margin: 0; color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.4; text-align: center; max-width: 180px;">Unregulated market with safety concerns</p>
+                        </div>
+
+                        <!-- Empty spacers for middle items -->
+                        <div style="width: 25%;"></div>
+                        <div style="width: 25%;"></div>
+
+                        <!-- Desired Future Text -->
+                        <div style="width: 25%; display: flex; justify-content: center;">
+                            <p style="margin: 0; color: var(--color-text-muted); font-size: 0.9rem; line-height: 1.4; text-align: center; max-width: 180px;">Safe and accountable industry</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section class="section section-final">
+        <div class="content">
+            <h2>Building a Responsible Industry: A Collective Responsibility</h2>
+            <p class="lead-text" style="color: rgba(255, 255, 255, 0.95);">The manufacturers surveyed aren't just identifying problems—they're actively seeking solutions. Their message is clear: safety improvements require industry-led standards and testing protocols now, with self-regulation filling the gap until legalization enables formal oversight and accountability.</p>
+
+            <div class="key-takeaway">
+                <h3>Key Takeaways</h3>
+                <ul>
+                    <li>Responsible manufacturers want higher standards - 75% call for specific product and manufacturing standards, with two-thirds demanding standardized testing and dosing protocols</li>
+                    <li>Education and transparency benefit everyone - 85.7% of those emphasizing education see consumer resources as essential for safe use</li>
+                    <li>Community self-regulation is already beginning - Equal numbers (50%) support both industry self-regulation and third-party certification as parallel paths forward</li>
+                    <li>Legal frameworks would enable better safety measures - While 37.5% see legalization as necessary for full accountability, the industry isn't waiting</li>
+                </ul>
+            </div>
+
+            <div class="case-study-box">
+                <h3>Case Study: PsiloSafe</h3>
+                <p>The accountability systems manufacturers envision are already taking shape. PsiloSafe, a 501(c)(3) nonprofit partnered with Tryptonomics testing laboratories, demonstrates how industry-led standards work in practice.</p>
+
+                <p>Their certification system directly implements what manufacturers called for: laboratory testing of every product for psilocybin, psilocin, and other alkaloids; QR codes on packaging linking to data sheets with exact potency levels and dosing guidance; and third-party verification that maintains confidentiality for brands operating in legal gray areas.</p>
+
+                <p>Currently working with 15 brands including Counter Culture, Empathacary, Stem Social, and BrainSpa, PsiloSafe addresses the authenticity crisis head-on. As founder Joe Robinson notes, "We want to launch this underground, gray market in a way that is ethically, morally proper and has some risk mitigation initiatives to make sure that a black swan event doesn't pop up and set us back another 20 years."</p>
+            </div>
+
+            <h3 style="color: white; margin-top: 3rem;">Laying the Groundwork</h3>
+            <p class="lead-text">By establishing testing protocols, labeling standards, and verification systems now, the underground market is building the foundation for responsible regulation. The industry isn't waiting for permission to do the right thing—safety improvements are happening now, led by those who understand both the profound potential and serious risks of these compounds.</p>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-size: var(--font-size-sm); opacity: 0.8;">This report is based on 20 underground manufacturer surveys conducted in collaboration with PsiloSafe</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Research -->
+    <section class="section" style="background: var(--color-bg);">
+        <div class="content">
+            <h2 style="text-align: center;">Explore Our Other Research</h2>
+            <p style="font-size: var(--font-size-lg); color: var(--color-text-muted); max-width: 700px; margin: 1rem auto 2.5rem; line-height: 1.75; text-align: center;">This underground manufacturers survey is part of a broader investigation into psychedelic safety in Colorado. Dive deeper with these companion studies.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+                <a href="/" class="related-research-card">
+                    <h3 style="color: var(--color-primary); font-size: 1.15rem; margin-bottom: 0.75rem;">Market Research Report</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Data-driven insights on pricing, access, the underground vs. licensed divide, and the emerging Colorado psychedelic ecosystem.</p>
+                </a>
+                <a href="/stakeholder-interviews-scrolly/" class="related-research-card">
+                    <h3 style="color: var(--color-primary); font-size: 1.15rem; margin-bottom: 0.75rem;">Stakeholder Interviews</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Voices from the field on human impacts, professional crisis, emergency response gaps, and collaborative solutions.</p>
+                </a>
+                <a href="/community-leaders-scrolly/" class="related-research-card">
+                    <h3 style="color: var(--color-primary); font-size: 1.15rem; margin-bottom: 0.75rem;">Community Leaders Survey</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">Safety challenges and a vision for safer practices from 40 community and student leaders.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Special animation for trust grid
+                    if (entry.target.querySelector('#trustGrid')) {
+                        animateTrustGrid();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all content sections
+        document.querySelectorAll('.content').forEach(content => {
+            observer.observe(content);
+        });
+
+        // Generate and animate trust grid
+        function createTrustGrid() {
+            const grid = document.getElementById('trustGrid');
+            if (!grid) return;
+
+            for (let i = 0; i < 20; i++) {
+                const icon = document.createElement('div');
+                icon.className = 'icon';
+                icon.innerHTML = `
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="8" r="4" fill="#E6C8A1"/>
+                        <path d="M6 21c0-3.314 2.686-6 6-6s6 2.686 6 6" fill="#E6C8A1"/>
+                    </svg>
+                `;
+                grid.appendChild(icon);
+            }
+        }
+
+        function animateTrustGrid() {
+            const icons = document.querySelectorAll('#trustGrid .icon');
+            // Highlight 95% (19 out of 20) - leave last one unhighlighted
+            for (let i = 0; i < 19; i++) {
+                setTimeout(() => {
+                    icons[i].classList.add('highlighted');
+                    const svg = icons[i].querySelector('svg');
+                    svg.querySelectorAll('circle, path').forEach(el => {
+                        el.setAttribute('fill', '#317E6D');
+                    });
+                }, i * 80);
+            }
+        }
+
+        // Initialize
+        createTrustGrid();
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
